@@ -1,0 +1,457 @@
+{
+ "generated_at": "2026-09-16 23:56 LA",
+ "boxes": [
+  {
+   "name": "A800",
+   "label": "A800 ×4 (80 GB)",
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 39299,
+     "mem_total": 81920,
+     "util": 100,
+     "owner": "ours"
+    },
+    {
+     "idx": 1,
+     "mem_used": 39299,
+     "mem_total": 81920,
+     "util": 100,
+     "owner": "ours"
+    },
+    {
+     "idx": 2,
+     "mem_used": 39299,
+     "mem_total": 81920,
+     "util": 100,
+     "owner": "ours"
+    },
+    {
+     "idx": 3,
+     "mem_used": 39300,
+     "mem_total": 81920,
+     "util": 100,
+     "owner": "ours"
+    }
+   ]
+  },
+  {
+   "name": "3090",
+   "label": "3090 ×8 (24 GB, .110)",
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 23686,
+     "mem_total": 24576,
+     "util": 95,
+     "owner": "ours"
+    },
+    {
+     "idx": 1,
+     "mem_used": 22936,
+     "mem_total": 24576,
+     "util": 86,
+     "owner": "ours"
+    },
+    {
+     "idx": 2,
+     "mem_used": 24170,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 3,
+     "mem_used": 24170,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 4,
+     "mem_used": 3972,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 5,
+     "mem_used": 11184,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 6,
+     "mem_used": 23686,
+     "mem_total": 24576,
+     "util": 95,
+     "owner": "ours"
+    },
+    {
+     "idx": 7,
+     "mem_used": 22936,
+     "mem_total": 24576,
+     "util": 91,
+     "owner": "ours"
+    }
+   ]
+  },
+  {
+   "name": "fuxin",
+   "label": "fuxin 4090 ×8 (48 GB, 公司)",
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 28724,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 1,
+     "mem_used": 43335,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 2,
+     "mem_used": 25847,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 3,
+     "mem_used": 1599,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 4,
+     "mem_used": 28657,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 5,
+     "mem_used": 23287,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 6,
+     "mem_used": 18,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 7,
+     "mem_used": 48225,
+     "mem_total": 49140,
+     "util": 81,
+     "owner": "other"
+    }
+   ]
+  },
+  {
+   "name": "new105",
+   "label": "new105 4090D ×2 (48 GB, 公司)",
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 40281,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 1,
+     "mem_used": 36826,
+     "mem_total": 49140,
+     "util": 85,
+     "owner": "ours"
+    }
+   ]
+  }
+ ],
+ "jobs": [
+  {
+   "id": "www-stage7",
+   "repo": "WWW2027-1",
+   "title": "stage7 六臂修正版 GRPO",
+   "box": "A800",
+   "cards": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "kind": "train",
+   "status": "running",
+   "progress": {
+    "done": 6,
+    "total": 6,
+    "unit": "臂"
+   },
+   "detail": "当前臂 process-envonly-seed2-full，step 23",
+   "arms": [
+    {
+     "arm": "process-envonly-seed2-full",
+     "steps": 23,
+     "last": {
+      "step": 23,
+      "kl": 0.015,
+      "entropy": 0.909,
+      "pg_loss": -0.004,
+      "reward": 0.395,
+      "resp_len": 801.213
+     }
+    },
+    {
+     "arm": "process-envonly-seed1-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.56,
+      "entropy": 2.463,
+      "pg_loss": 0.069,
+      "reward": 0.453,
+      "resp_len": 1232.04
+     }
+    },
+    {
+     "arm": "dense-null-seed3-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 6.502,
+      "entropy": 0.029,
+      "pg_loss": 0.0,
+      "reward": 0.0,
+      "resp_len": 994.035
+     }
+    },
+    {
+     "arm": "dense-null-seed2-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.13,
+      "entropy": 0.328,
+      "pg_loss": 0.014,
+      "reward": 9.837,
+      "resp_len": 1206.923
+     }
+    },
+    {
+     "arm": "dense-null-seed1-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "reward": 0.0,
+      "resp_len": 295.0
+     }
+    },
+    {
+     "arm": "outcome-seed3-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.476,
+      "entropy": 1.629,
+      "pg_loss": 0.085,
+      "reward": 0.394,
+      "resp_len": 812.275
+     }
+    },
+    {
+     "arm": "process-seed3-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.283,
+      "entropy": 0.739,
+      "pg_loss": -0.04,
+      "reward": 1.625,
+      "resp_len": 1524.748
+     }
+    },
+    {
+     "arm": "process-seed2-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.321,
+      "entropy": 0.509,
+      "pg_loss": -0.026,
+      "reward": 0.851,
+      "resp_len": 1400.787
+     }
+    },
+    {
+     "arm": "outcome-seed2-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.574,
+      "entropy": 2.001,
+      "pg_loss": 0.01,
+      "reward": 0.323,
+      "resp_len": 1019.246
+     }
+    },
+    {
+     "arm": "process-seed1-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.652,
+      "entropy": 2.346,
+      "pg_loss": -0.126,
+      "reward": 0.205,
+      "resp_len": 1371.379
+     }
+    },
+    {
+     "arm": "outcome-seed1-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.655,
+      "entropy": 1.682,
+      "pg_loss": 0.015,
+      "reward": 0.385,
+      "resp_len": 881.046
+     }
+    }
+   ]
+  },
+  {
+   "id": "iclr9-ladder",
+   "repo": "ICLR2027-9",
+   "title": "14B 温度阶梯（TP2，两路）",
+   "box": "3090",
+   "cards": [
+    0,
+    1,
+    6,
+    7
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 5,
+    "total": 12,
+    "unit": "run"
+   },
+   "detail": "lane1 rlvr T=0.4；lane2 base T=1.2",
+   "runs": [
+    {
+     "arm": "base",
+     "T": 0.2,
+     "wall_h": 6.46
+    },
+    {
+     "arm": "rlvr",
+     "T": 0.2,
+     "wall_h": 7.11
+    },
+    {
+     "arm": "base",
+     "T": 0.4,
+     "wall_h": 5.94
+    },
+    {
+     "arm": "base",
+     "T": 0.8,
+     "wall_h": 5.4
+    },
+    {
+     "arm": "rlvr",
+     "T": 0.8,
+     "wall_h": 6.96
+    }
+   ],
+   "alerts": []
+  },
+  {
+   "id": "chronocheck_32b-awq_critic_fuxin_status",
+   "repo": "ICLR2027-6",
+   "title": "CRITIC@32B-AWQ",
+   "box": "fuxin",
+   "cards": [
+    3
+   ],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 430,
+    "total": 887,
+    "unit": "行"
+   },
+   "detail": "FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
+   "per_arm": {
+    "critic": 430
+   }
+  },
+  {
+   "id": "chronocheck_llama8b_critic_fuxin_status",
+   "repo": "ICLR2027-6",
+   "title": "CRITIC@Llama-3.1-8B",
+   "box": "fuxin",
+   "cards": [
+    4
+   ],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 156,
+    "total": 887,
+    "unit": "行"
+   },
+   "detail": "FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292",
+   "per_arm": {
+    "critic": 156
+   }
+  },
+  {
+   "id": "chronocheck_chatts14b_status",
+   "repo": "ICLR2027-6",
+   "title": "ChatTS-14B 五臂",
+   "box": "new105",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 2641,
+    "total": 4435,
+    "unit": "行"
+   },
+   "detail": "LOCK_TAKEN 2026-09-17T10:29:30+08:00 card=1",
+   "per_arm": {
+    "zero_shot": 887,
+    "cot": 887,
+    "chronocheck": 867,
+    "certify_abstain": 0,
+    "repair_gated": 0
+   }
+  }
+ ],
+ "alerts": [
+  "CRITIC@32B-AWQ 失败：FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
+  "CRITIC@Llama-3.1-8B 失败：FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292"
+ ],
+ "collect_s": 14.9
+}

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fleet Board</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#ffffff; --ink:#1b2430; --ink2:#5b6675; --ink3:#8b95a3; --line:#e2e6ec;
+  --ours:#2f6fdb; --ours-bg:#e4edfb; --other:#c7ccd4; --other-bg:#f0f2f5; --free:#2e9b6a; --free-bg:#e2f4ea;
+  --warn:#c9741c; --warn-bg:#fbeedd; --bad:#c9364a; --bad-bg:#fbe3e6;
+  --s1:#2f6fdb; --s2:#e08a2e; --s3:#3aa17e; --s4:#8b5cf6; --s5:#d4477d; --s6:#0f9bb8; --muted:#b9c0ca;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace; --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#12161c; --panel:#1a2029; --ink:#e6eaf0; --ink2:#a5aeba; --ink3:#727c89; --line:#2a323d;
+  --ours:#6a9df0; --ours-bg:#1d2d4a; --other:#3a434f; --other-bg:#232a34; --free:#4fbf8a; --free-bg:#173327;
+  --warn:#e29a45; --warn-bg:#3a2a14; --bad:#e46b7c; --bad-bg:#3d1c22; --muted:#4a5462;
+}}
+:root[data-theme="dark"]{
+  --bg:#12161c; --panel:#1a2029; --ink:#e6eaf0; --ink2:#a5aeba; --ink3:#727c89; --line:#2a323d;
+  --ours:#6a9df0; --ours-bg:#1d2d4a; --other:#3a434f; --other-bg:#232a34; --free:#4fbf8a; --free-bg:#173327;
+  --warn:#e29a45; --warn-bg:#3a2a14; --bad:#e46b7c; --bad-bg:#3d1c22; --muted:#4a5462;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--sans)}
+body{padding:0 16px 40px}
+header{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;padding:18px 0 10px;border-bottom:1px solid var(--line)}
+header h1{font-size:18px;font-weight:600;margin:0;letter-spacing:.2px}
+header .stamp{color:var(--ink3);font:12px var(--mono)}
+header .kpis{margin-left:auto;display:flex;gap:14px;font:12px var(--mono);color:var(--ink2)}
+.kpis b{color:var(--ink);font-weight:600}
+section{margin-top:22px}
+h2{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin:0 0 10px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.box .name{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.box .name b{font-weight:600}
+.box .name span{font:11px var(--mono);color:var(--ink3)}
+.cards{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.card{min-width:44px;padding:4px 6px;border-radius:4px;font:11px var(--mono);text-align:center;border:1px solid transparent}
+.card.ours{background:var(--ours-bg);color:var(--ours);border-color:var(--ours)}
+.card.other{background:var(--other-bg);color:var(--ink3);border-color:var(--other)}
+.card.free{background:var(--free-bg);color:var(--free);border-color:var(--free)}
+.card small{display:block;font-size:10px;opacity:.85}
+.unreach{color:var(--bad);font:12px var(--mono)}
+.legend{display:flex;gap:14px;font:11px var(--mono);color:var(--ink3);margin-top:8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+th,td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);font-weight:600}
+tr:last-child td{border-bottom:0}
+.tw{overflow-x:auto}
+.pill{display:inline-block;padding:1px 8px;border-radius:999px;font:11px var(--mono);border:1px solid}
+.pill.running{color:var(--ours);border-color:var(--ours);background:var(--ours-bg)}
+.pill.done{color:var(--free);border-color:var(--free);background:var(--free-bg)}
+.pill.failed{color:var(--bad);border-color:var(--bad);background:var(--bad-bg)}
+.pill.unknown,.pill.waiting{color:var(--warn);border-color:var(--warn);background:var(--warn-bg)}
+.bar{height:6px;background:var(--other-bg);border-radius:3px;overflow:hidden;margin-top:4px;min-width:120px}
+.bar i{display:block;height:100%;background:var(--ours);border-radius:3px}
+.bar.failed i{background:var(--bad)}
+.bar.done i{background:var(--free)}
+.num{font:12px var(--mono);color:var(--ink2);font-variant-numeric:tabular-nums}
+.detail{color:var(--ink2);font-size:12px}
+.mono{font-family:var(--mono)}
+.alerts{display:flex;flex-direction:column;gap:6px}
+.alert{background:var(--bad-bg);color:var(--bad);border-left:3px solid var(--bad);padding:6px 10px;border-radius:0 4px 4px 0;font:12px var(--mono);word-break:break-all}
+.alert.ok{background:var(--free-bg);color:var(--free);border-color:var(--free)}
+.charts{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.chart{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px 12px 6px}
+.chart h3{margin:0 0 4px;font-size:12px;font-weight:600;color:var(--ink2)}
+.chart .c{position:relative;height:200px}
+.ladder{display:grid;grid-template-columns:auto repeat(6,1fr);gap:4px;font:12px var(--mono);max-width:560px}
+.ladder div{padding:6px 4px;text-align:center;border-radius:4px;background:var(--other-bg);color:var(--ink3)}
+.ladder .h{background:none;color:var(--ink3);font-size:11px}
+.ladder .done{background:var(--free-bg);color:var(--free)}
+.ladder .run{background:var(--ours-bg);color:var(--ours)}
+.foot{margin-top:28px;color:var(--ink3);font:11px var(--mono)}
+a{color:var(--ours)}
+@media (max-width:480px){ header .kpis{margin-left:0} .chart .c{height:170px} }
+</style>
+</head>
+<body>
+<header>
+  <h1>Fleet Board</h1>
+  <span class="stamp" id="stamp">加载中…</span>
+  <div class="kpis" id="kpis"></div>
+</header>
+
+<section>
+  <h2>卡占用</h2>
+  <div class="grid" id="boxes"></div>
+  <div class="legend"><span><i style="background:var(--ours)"></i>我们的作业</span><span><i style="background:var(--other)"></i>他人占用</span><span><i style="background:var(--free)"></i>空闲</span></div>
+</section>
+
+<section>
+  <h2>作业</h2>
+  <div class="tw"><table id="jobs"><thead><tr><th>作业</th><th>机器 / 卡</th><th>状态</th><th>进度</th><th>当前</th></tr></thead><tbody></tbody></table></div>
+</section>
+
+<section>
+  <h2>WWW stage7 训练曲线（GRPO，六臂修正版；灰线为 T0 三十格旧臂）</h2>
+  <div class="charts">
+    <div class="chart"><h3>reward mean</h3><div class="c"><canvas id="c_reward"></canvas></div></div>
+    <div class="chart"><h3>response length (tokens)</h3><div class="c"><canvas id="c_resp"></canvas></div></div>
+    <div class="chart"><h3>entropy</h3><div class="c"><canvas id="c_ent"></canvas></div></div>
+    <div class="chart"><h3>KL</h3><div class="c"><canvas id="c_kl"></canvas></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>ICLR2027-9 14B 温度阶梯（3090，12 次运行）</h2>
+  <div class="ladder" id="ladder"></div>
+</section>
+
+<section>
+  <h2>告警</h2>
+  <div class="alerts" id="alerts"></div>
+</section>
+
+<div class="foot">数据每 10 分钟由本地采集器写入 <a href="https://github.com/qqyjx/fleet-board">qqyjx/fleet-board</a>，页面每 5 分钟自动刷新。时间均为洛杉矶时间。</div>
+
+<script>
+const $=s=>document.querySelector(s);
+const SERIES=['--s1','--s2','--s3','--s4','--s5','--s6'];
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+let charts={};
+function fmtETA(j){
+  if(!j.progress||!j.progress.total) return '';
+  const p=j.progress.done/j.progress.total; return Math.round(p*100)+'%';
+}
+function render(f,curves){
+  $('#stamp').textContent='采集于 '+f.generated_at+'（'+f.collect_s+' s）';
+  let ours=0,free=0,other=0;
+  f.boxes.forEach(b=>b.cards.forEach(c=>{if(c.owner==='ours')ours++;else if(c.owner==='free')free++;else other++;}));
+  const running=f.jobs.filter(j=>j.status==='running').length;
+  $('#kpis').innerHTML=`<span>我们的卡 <b>${ours}</b></span><span>空闲 <b>${free}</b></span><span>在跑作业 <b>${running}</b></span><span>告警 <b>${f.alerts.length}</b></span>`;
+  $('#boxes').innerHTML=f.boxes.map(b=>`<div class="box"><div class="name"><b>${b.name}</b><span>${b.label}</span></div>`+
+    (b.reachable?`<div class="cards">${b.cards.map(c=>`<div class="card ${c.owner}">${c.idx}<small>${Math.round(c.mem_used/1024)}G·${c.util}%</small></div>`).join('')}</div>`:`<div class="unreach">不可达</div>`)+`</div>`).join('');
+  $('#jobs tbody').innerHTML=f.jobs.map(j=>{const p=j.progress; const pct=p&&p.total?Math.min(100,100*p.done/p.total):0;
+    return `<tr><td><b>${j.title}</b><div class="detail">${j.repo}</div></td><td class="mono">${j.box} / ${j.cards.join(',')}</td><td><span class="pill ${j.status}">${j.status}</span></td>
+    <td><span class="num">${p?p.done+' / '+p.total+' '+p.unit:''}</span><div class="bar ${j.status}"><i style="width:${pct}%"></i></div></td><td class="detail">${j.detail||''}</td></tr>`;}).join('');
+  $('#alerts').innerHTML=f.alerts.length?f.alerts.map(a=>`<div class="alert">${a}</div>`).join(''):`<div class="alert ok">无告警</div>`;
+  // ladder grid
+  const lad=f.jobs.find(j=>j.id==='iclr9-ladder');
+  if(lad){const Ts=[0.2,0.4,0.6,0.8,1.0,1.2]; const done=new Set((lad.runs||[]).map(r=>r.arm+'@'+r.T));
+    const inflight=(lad.detail||'').match(/(\w+) T=([\d.]+)/g)||[]; const run=new Set(inflight.map(s=>{const m=s.match(/(\w+) T=([\d.]+)/);return m[1]+'@'+parseFloat(m[2]);}));
+    let h='<div class="h"></div>'+Ts.map(t=>`<div class="h">T=${t}</div>`).join('');
+    ['base','rlvr'].forEach(a=>{h+=`<div class="h">${a}</div>`+Ts.map(t=>{const k=a+'@'+t; const r=(lad.runs||[]).find(x=>x.arm===a&&x.T===t);
+      return `<div class="${done.has(k)?'done':run.has(k)?'run':''}">${done.has(k)?r.wall_h+'h':run.has(k)?'跑中':'—'}</div>`;}).join('');});
+    $('#ladder').innerHTML=h;}
+  // curves
+  const s7=curves.stage7||{}; const names=Object.keys(s7).sort((a,b)=>(a.includes('envonly')?0:1)-(b.includes('envonly')?0:1)||a.localeCompare(b));
+  const mk=(id,key)=>{const ds=[]; let ci=0; names.forEach(n=>{const pts=s7[n].filter(r=>r[key]!==undefined).map(r=>({x:r.step,y:r[key]})); if(!pts.length)return;
+      const main=n.includes('envonly'); const col=main?css(SERIES[ci++%SERIES.length]):css('--muted');
+      ds.push({label:n.replace('-full',''),data:pts,borderColor:col,backgroundColor:col,borderWidth:main?2:1,pointRadius:0,tension:.2,order:main?0:1});});
+    if(charts[id])charts[id].destroy();
+    charts[id]=new Chart($('#'+id),{type:'line',data:{datasets:ds},options:{animation:false,parsing:false,responsive:true,maintainAspectRatio:false,
+      interaction:{mode:'nearest',intersect:false},plugins:{legend:{display:true,labels:{boxWidth:10,font:{size:10},color:css('--ink2'),filter:i=>i.text.includes('envonly')}}},
+      scales:{x:{type:'linear',title:{display:true,text:'step',color:css('--ink3')},ticks:{color:css('--ink3')},grid:{color:css('--line')}},y:{ticks:{color:css('--ink3')},grid:{color:css('--line')}}}}});};
+  mk('c_reward','reward'); mk('c_resp','resp_len'); mk('c_ent','entropy'); mk('c_kl','kl');
+}
+async function load(){
+  try{const [f,c]=await Promise.all([fetch('data/fleet.json?t='+Date.now()).then(r=>r.json()),fetch('data/curves.json?t='+Date.now()).then(r=>r.json())]); render(f,c);}
+  catch(e){$('#stamp').textContent='数据加载失败：'+e;}
+}
+load(); setInterval(load,5*60*1000);
+</script>
+</body>
+</html>
