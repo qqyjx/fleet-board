@@ -98,7 +98,7 @@ def ladder():
     done = {(a, t): int(w) for a, t, rc, w in ends if rc == "0"}
     # in-flight: newest gen log per lane
     inflight = []
-    for lane, pat in (("lane1", "ladder_[a-z]*_t*.log"), ("lane2", "ladder_lane2_[a-z]*_t*.log")):
+    for lane, pat in (("lane1", "ladder_[br][a-z]*_t*.log"), ("lane2", "ladder_lane2_[a-z]*_t*.log")):
         out = ssh(host, f"f=$(ls -t /data/xyf/ICLR2027-9/logs/{pat} 2>/dev/null | head -1); echo $f; tail -c 3000 $f 2>/dev/null | tr '\\r' '\\n' | grep -o 'Processed prompts: *[0-9]*/[0-9]*' | tail -1")
         if not out: continue
         lines = out.strip().splitlines()
@@ -135,6 +135,24 @@ def chrono(host, status, outdir, title, cards, total_rows, arms, repo="ICLR2027-
             "progress": {"done": done_rows, "total": total_rows * len(arms), "unit": "行"},
             "detail": last[:110], "per_arm": {a: counts.get(f"{a}.jsonl", 0) for a in arms}}
 
+# ---------------- 194: ICLR2027-3 B7-TP2 (72B-AWQ, cards 2/3) ----------------
+def b7tp2():
+    host = "194-yyd"
+    st = ssh(host, "tail -n 3 /data/yyd/b7_status 2>/dev/null; echo ==; wc -l /data/yyd/ICLR2027-3/experiments/credo/results/raw_72b_awq/qwen2.5-vl-72b-awq/*/responses.jsonl 2>/dev/null | grep -v total; echo ==; tail -n 2 /data/yyd/provision_status 2>/dev/null")
+    if st is None: return None
+    parts = st.split("==")
+    lines = [l for l in parts[0].strip().splitlines() if l.strip()]
+    if not lines: return None
+    last = lines[-1]
+    rows = sum(int(l.split()[0]) for l in parts[1].strip().splitlines() if l.strip() and l.split()[0].isdigit())
+    status = "running"
+    if last.startswith("END b7tp2 0"): status = "done"
+    elif last.startswith("END b7tp2") or "DOES_NOT_FIT" in last: status = "failed"
+    return {"id": "iclr3-b7tp2", "repo": "ICLR2027-3", "title": "B7-TP2 72B-AWQ 第四规模点（194 双卡）", "box": host,
+            "cards": [2, 3], "kind": "gen", "status": status,
+            "progress": {"done": rows, "total": 6294, "unit": "题"},
+            "detail": last[:110]}
+
 def main():
     t0 = time.time()
     curves = json.loads((DATA / "curves.json").read_text()) if (DATA / "curves.json").exists() else {}
@@ -145,6 +163,7 @@ def main():
         boxes.append({"name": name, "label": label, "reachable": cards is not None, "cards": cards or []})
     j = stage7(curves);  jobs.append(j) if j else alerts.append("A800 stage7 状态不可读")
     j = ladder();        jobs.append(j) if j else alerts.append("3090 阶梯状态不可读")
+    j = b7tp2();         jobs.append(j) if j else None
     R = "/data/xyf/ICLR2027-6/experiments/chronocheck/results/main"
     for args in (("fuxin", "/data/xyf/chronocheck_32b-awq_critic_fuxin_status", f"{R}/32b-awq_critic_fuxin", "CRITIC@32B-AWQ", [3], 887, ["critic"]),
                  ("fuxin", "/data/xyf/chronocheck_llama8b_critic_fuxin_status", f"{R}/llama8b_critic_fuxin", "CRITIC@Llama-3.1-8B", [4], 887, ["critic"]),
