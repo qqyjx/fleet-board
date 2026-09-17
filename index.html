@@ -163,7 +163,7 @@ function render(f,curves){
   mk('c_reward','reward'); mk('c_resp','resp_len'); mk('c_ent','entropy'); mk('c_kl','kl');
 }
 async function load(){
-  try{const [f,c]=await Promise.all([fetch('data/fleet.json?t='+Date.now()).then(r=>r.json()),fetch('data/curves.json?t='+Date.now()).then(r=>r.json())]); render(f,c);}
+  try{const [f,c]=await Promise.all([fetch('https://raw.githubusercontent.com/qqyjx/fleet-board/main/data/fleet.json?t='+Date.now()).then(r=>r.json()),fetch('https://raw.githubusercontent.com/qqyjx/fleet-board/main/data/curves.json?t='+Date.now()).then(r=>r.json())]); render(f,c);}
   catch(e){$('#stamp').textContent='数据加载失败：'+e;}
 }
 load(); setInterval(load,5*60*1000);
