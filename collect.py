@@ -140,7 +140,7 @@ def main():
     curves = json.loads((DATA / "curves.json").read_text()) if (DATA / "curves.json").exists() else {}
     boxes, jobs, alerts = [], [], []
     for name, label in (("A800", "A800 ×4 (80 GB)"), ("3090", "3090 ×8 (24 GB, .110)"),
-                        ("fuxin", "fuxin 4090 ×8 (48 GB, 公司)"), ("new105", "new105 4090D ×2 (48 GB, 公司)")):
+                        ("fuxin", "fuxin 4090 ×8 (48 GB, 公司)"), ("new105", "new105 4090D ×2 (48 GB, 公司)"), ("194-yyd", "194 4090D ×4 (48 GB, 公司)")):
         cards = gpus(name)
         boxes.append({"name": name, "label": label, "reachable": cards is not None, "cards": cards or []})
     j = stage7(curves);  jobs.append(j) if j else alerts.append("A800 stage7 状态不可读")
@@ -148,6 +148,8 @@ def main():
     R = "/data/xyf/ICLR2027-6/experiments/chronocheck/results/main"
     for args in (("fuxin", "/data/xyf/chronocheck_32b-awq_critic_fuxin_status", f"{R}/32b-awq_critic_fuxin", "CRITIC@32B-AWQ", [3], 887, ["critic"]),
                  ("fuxin", "/data/xyf/chronocheck_llama8b_critic_fuxin_status", f"{R}/llama8b_critic_fuxin", "CRITIC@Llama-3.1-8B", [4], 887, ["critic"]),
+                 ("194-yyd", "/data/yyd/chronocheck_32b-awq_critic_fuxin_194_status", "/data/yyd/ICLR2027-6/experiments/chronocheck/results/main/32b-awq_critic_fuxin", "CRITIC@32B-AWQ（194 续跑）", [0], 887, ["critic"]),
+                 ("194-yyd", "/data/yyd/chronocheck_llama8b_critic_fuxin_194_status", "/data/yyd/ICLR2027-6/experiments/chronocheck/results/main/llama8b_critic_fuxin", "CRITIC@Llama-3.1-8B（194 续跑）", [1], 887, ["critic"]),
                  ("new105", "/home/xyf/logs/chronocheck_chatts14b_status", "/home/xyf/ICLR2027-6/experiments/chronocheck/results/main/chatts14b", "ChatTS-14B 五臂", [1], 887, ["zero_shot", "cot", "chronocheck", "certify_abstain", "repair_gated"])):
         j = chrono(*args)
         if j: jobs.append(j)
