@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-16 23:58 LA",
+ "generated_at": "2026-09-17 01:11 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 7691,
+     "mem_used": 8163,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 7691,
+     "mem_used": 8163,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 7691,
+     "mem_used": 8163,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 7692,
+     "mem_used": 8164,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 23686,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 94,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 22936,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 97,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 23686,
      "mem_total": 24576,
-     "util": 93,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 22936,
      "mem_total": 24576,
-     "util": 92,
+     "util": 100,
      "owner": "ours"
     }
    ]
@@ -134,7 +134,7 @@
     },
     {
      "idx": 4,
-     "mem_used": 28657,
+     "mem_used": 34618,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
@@ -176,10 +176,45 @@
     },
     {
      "idx": 1,
-     "mem_used": 36826,
+     "mem_used": 2821,
      "mem_total": 49140,
-     "util": 83,
-     "owner": "ours"
+     "util": 0,
+     "owner": "other"
+    }
+   ]
+  },
+  {
+   "name": "194-yyd",
+   "label": "194 4090D ×4 (48 GB, 公司)",
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 1,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 1,
+     "mem_used": 1,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 2,
+     "mem_used": 1,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 3,
+     "mem_used": 1,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "free"
     }
    ]
   }
@@ -203,18 +238,18 @@
     "total": 6,
     "unit": "臂"
    },
-   "detail": "当前臂 process-envonly-seed2-full，step 24/149",
+   "detail": "当前臂 process-envonly-seed2-full，step 35/149",
    "arms": [
     {
      "arm": "process-envonly-seed2-full",
-     "steps": 24,
+     "steps": 35,
      "last": {
-      "step": 24,
-      "kl": 0.008,
-      "entropy": 0.929,
-      "pg_loss": -0.026,
-      "reward": 0.428,
-      "resp_len": 823.883
+      "step": 35,
+      "kl": 0.044,
+      "entropy": 0.878,
+      "pg_loss": -0.076,
+      "reward": 0.371,
+      "resp_len": 886.956
      },
      "tier": "stage7"
     },
@@ -361,11 +396,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 5,
+    "done": 6,
     "total": 12,
     "unit": "run"
    },
-   "detail": "lane1 rlvr T=0.4；lane2 base T=1.2",
+   "detail": "lane1 base T=1.2；lane2 base T=1.2",
    "runs": [
     {
      "arm": "base",
@@ -381,6 +416,11 @@
      "arm": "base",
      "T": 0.4,
      "wall_h": 5.94
+    },
+    {
+     "arm": "rlvr",
+     "T": 0.4,
+     "wall_h": 7.02
     },
     {
      "arm": "base",
@@ -444,19 +484,19 @@
     1
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
-    "done": 2652,
+    "done": 4435,
     "total": 4435,
     "unit": "行"
    },
-   "detail": "LOCK_TAKEN 2026-09-17T10:29:30+08:00 card=1",
+   "detail": "DONE 2026-09-17T16:02:51+08:00 mode=full rc=0 wall_h=5.5558",
    "per_arm": {
     "zero_shot": 887,
     "cot": 887,
-    "chronocheck": 878,
-    "certify_abstain": 0,
-    "repair_gated": 0
+    "chronocheck": 887,
+    "certify_abstain": 887,
+    "repair_gated": 887
    }
   }
  ],
@@ -464,5 +504,5 @@
   "CRITIC@32B-AWQ 失败：FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
   "CRITIC@Llama-3.1-8B 失败：FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292"
  ],
- "collect_s": 11.3
+ "collect_s": 22.2
 }
