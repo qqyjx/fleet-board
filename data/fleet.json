@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18 03:00 LA",
+ "generated_at": "2026-09-18 03:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 19289,
+     "mem_used": 41753,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 19291,
+     "mem_used": 41753,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 19291,
+     "mem_used": 41753,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 19292,
+     "mem_used": 41716,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 23686,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 99,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 22936,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -238,18 +238,18 @@
     "total": 6,
     "unit": "臂"
    },
-   "detail": "当前臂 process-envonly-seed3-full，step 104/149",
+   "detail": "当前臂 process-envonly-seed3-full，step 105/149",
    "arms": [
     {
      "arm": "process-envonly-seed3-full",
-     "steps": 104,
+     "steps": 105,
      "last": {
-      "step": 104,
-      "kl": 0.721,
-      "entropy": 2.317,
-      "pg_loss": 0.035,
-      "reward": 0.08,
-      "resp_len": 1135.527
+      "step": 105,
+      "kl": 0.377,
+      "entropy": 2.069,
+      "pg_loss": 0.01,
+      "reward": 0.128,
+      "resp_len": 1078.915
      },
      "tier": "stage7"
     },
@@ -409,7 +409,7 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 11,
+    "done": 12,
     "total": 12,
     "unit": "run"
    },
@@ -459,6 +459,11 @@
      "arm": "base",
      "T": 1.0,
      "wall_h": 5.61
+    },
+    {
+     "arm": "rlvr",
+     "T": 1.0,
+     "wall_h": 7.07
     },
     {
      "arm": "base",
@@ -601,5 +606,5 @@
   "CRITIC@32B-AWQ 失败：FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
   "CRITIC@Llama-3.1-8B 失败：FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292"
  ],
- "collect_s": 16.3
+ "collect_s": 15.3
 }
