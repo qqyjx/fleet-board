@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17 19:12 LA",
+ "generated_at": "2026-09-17 19:20 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 40673,
+     "mem_used": 18079,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 40673,
+     "mem_used": 18079,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 40673,
+     "mem_used": 18079,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 40674,
+     "mem_used": 18080,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 23686,
      "mem_total": 24576,
-     "util": 100,
+     "util": 95,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 22936,
      "mem_total": 24576,
-     "util": 100,
+     "util": 89,
      "owner": "ours"
     },
     {
@@ -102,14 +102,86 @@
   {
    "name": "fuxin",
    "label": "fuxin 4090 ×8 (48 GB, 公司)",
-   "reachable": false,
-   "cards": []
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 28732,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 1,
+     "mem_used": 43335,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 2,
+     "mem_used": 25847,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 3,
+     "mem_used": 1599,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 4,
+     "mem_used": 731,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 5,
+     "mem_used": 23287,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 6,
+     "mem_used": 18,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 7,
+     "mem_used": 46305,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    }
+   ]
   },
   {
    "name": "new105",
    "label": "new105 4090D ×2 (48 GB, 公司)",
-   "reachable": false,
-   "cards": []
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 40281,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 1,
+     "mem_used": 2821,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    }
+   ]
   },
   {
    "name": "194-yyd",
@@ -132,17 +204,17 @@
     },
     {
      "idx": 2,
-     "mem_used": 44282,
+     "mem_used": 21270,
      "mem_total": 49140,
      "util": 0,
-     "owner": "other"
+     "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 44074,
+     "mem_used": 21270,
      "mem_total": 49140,
      "util": 0,
-     "owner": "other"
+     "owner": "ours"
     }
    ]
   }
@@ -166,18 +238,18 @@
     "total": 6,
     "unit": "臂"
    },
-   "detail": "当前臂 process-envonly-seed3-full，step 38/149",
+   "detail": "当前臂 process-envonly-seed3-full，step 40/149",
    "arms": [
     {
      "arm": "process-envonly-seed3-full",
-     "steps": 38,
+     "steps": 40,
      "last": {
-      "step": 38,
-      "kl": 0.04,
-      "entropy": 0.982,
-      "pg_loss": -0.033,
-      "reward": 0.423,
-      "resp_len": 944.402
+      "step": 40,
+      "kl": 0.105,
+      "entropy": 0.955,
+      "pg_loss": -0.034,
+      "reward": 0.399,
+      "resp_len": 934.638
      },
      "tier": "stage7"
     },
@@ -406,13 +478,13 @@
     3
    ],
    "kind": "gen",
-   "status": "failed",
+   "status": "running",
    "progress": {
     "done": 0,
     "total": 6294,
     "unit": "题"
    },
-   "detail": "END b7tp2 40 2026-09-18T10:08:17+08:00"
+   "detail": "WEIGHTS b7tp2 2026-09-18T10:15:34+08:00"
   },
   {
    "id": "chronocheck_32b-awq_critic_fuxin_status",
@@ -520,9 +592,8 @@
   }
  ],
  "alerts": [
-  "B7-TP2 72B-AWQ 第四规模点（194 双卡） 失败：END b7tp2 40 2026-09-18T10:08:17+08:00",
   "CRITIC@32B-AWQ 失败：FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
   "CRITIC@Llama-3.1-8B 失败：FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292"
  ],
- "collect_s": 121.0
+ "collect_s": 14.7
 }
