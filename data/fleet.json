@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18 04:40 LA",
+ "generated_at": "2026-09-18 06:25 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,30 +8,30 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 43879,
+     "mem_used": 41461,
      "mem_total": 81920,
-     "util": 97,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 43879,
+     "mem_used": 41423,
      "mem_total": 81920,
-     "util": 97,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 43879,
+     "mem_used": 41461,
      "mem_total": 81920,
-     "util": 98,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 43842,
+     "mem_used": 41424,
      "mem_total": 81920,
-     "util": 98,
+     "util": 100,
      "owner": "ours"
     }
    ]
@@ -85,9 +85,9 @@
     },
     {
      "idx": 6,
-     "mem_used": 23920,
+     "mem_used": 23748,
      "mem_total": 24576,
-     "util": 99,
+     "util": 95,
      "owner": "ours"
     },
     {
@@ -106,7 +106,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 28732,
+     "mem_used": 28740,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
@@ -134,10 +134,10 @@
     },
     {
      "idx": 4,
-     "mem_used": 731,
+     "mem_used": 28659,
      "mem_total": 49140,
      "util": 0,
-     "owner": "free"
+     "owner": "other"
     },
     {
      "idx": 5,
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47013,
      "mem_total": 49140,
-     "util": 93,
+     "util": 100,
      "owner": "other"
     }
    ]
@@ -179,44 +179,15 @@
      "mem_used": 2821,
      "mem_total": 49140,
      "util": 0,
-     "owner": "other"
+     "owner": "ours"
     }
    ]
   },
   {
    "name": "194-yyd",
    "label": "194 4090D ×4 (48 GB, 公司)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 44238,
-     "mem_total": 49140,
-     "util": 90,
-     "owner": "other"
-    },
-    {
-     "idx": 1,
-     "mem_used": 44238,
-     "mem_total": 49140,
-     "util": 86,
-     "owner": "other"
-    },
-    {
-     "idx": 2,
-     "mem_used": 1,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 3,
-     "mem_used": 1,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   }
  ],
  "jobs": [
@@ -238,18 +209,18 @@
     "total": 6,
     "unit": "臂"
    },
-   "detail": "当前臂 process-envonly-seed3-full，step 118/149",
+   "detail": "当前臂 process-envonly-seed3-full，step 133/149",
    "arms": [
     {
      "arm": "process-envonly-seed3-full",
-     "steps": 118,
+     "steps": 133,
      "last": {
-      "step": 118,
-      "kl": 0.726,
-      "entropy": 1.185,
-      "pg_loss": 3.113,
-      "reward": 0.106,
-      "resp_len": 1006.417
+      "step": 133,
+      "kl": 1.445,
+      "entropy": 0.623,
+      "pg_loss": 0.978,
+      "reward": 0.143,
+      "resp_len": 1013.5
      },
      "tier": "stage7"
     },
@@ -479,22 +450,43 @@
    "alerts": []
   },
   {
-   "id": "iclr3-b7tp2",
-   "repo": "ICLR2027-3",
-   "title": "B7-TP2 72B-AWQ 第四规模点（194 双卡）",
-   "box": "194-yyd",
+   "id": "iclr2_uitars_seed1_status",
+   "repo": "ICLR2027-2",
+   "title": "UI-TARS 二次抽样（3090 卡 6/7）",
+   "box": "3090",
    "cards": [
-    2,
-    3
+    6,
+    7
    ],
    "kind": "gen",
    "status": "failed",
    "progress": {
     "done": 0,
-    "total": 6294,
-    "unit": "题"
+    "total": 0,
+    "unit": "步"
    },
-   "detail": "END b7tp2 40 2026-09-18T10:41:28+08:00"
+   "detail": "[m2w] 2026-09-18T19:32:33+08:00 FAILED cell=m2w_test_task stage=s1 rc=1 wall=506s",
+   "alerts": [
+    "[m2w] 2026-09-18T19:32:33+08:00 FAILED cell=m2w_test_task stage=s1 rc=1 wall=506s"
+   ]
+  },
+  {
+   "id": "iclr9_ladder_seed1_status_laneC",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed1 lane C（new105 卡 1）",
+   "box": "new105",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "LANEC_ORCH_START 2026-09-18T17:09:31+08:00",
+   "alerts": []
   },
   {
    "id": "chronocheck_32b-awq_critic_fuxin_status",
@@ -537,46 +529,6 @@
    }
   },
   {
-   "id": "chronocheck_32b-awq_critic_fuxin_194_status",
-   "repo": "ICLR2027-6",
-   "title": "CRITIC@32B-AWQ（194 续跑）",
-   "box": "194-yyd",
-   "cards": [
-    0
-   ],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 887,
-    "total": 887,
-    "unit": "行"
-   },
-   "detail": "DONE 2026-09-18T05:27:37+08:00 rc=0 wall_h=3.3092 critic_rows=887",
-   "per_arm": {
-    "critic": 887
-   }
-  },
-  {
-   "id": "chronocheck_llama8b_critic_fuxin_194_status",
-   "repo": "ICLR2027-6",
-   "title": "CRITIC@Llama-3.1-8B（194 续跑）",
-   "box": "194-yyd",
-   "cards": [
-    1
-   ],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 887,
-    "total": 887,
-    "unit": "行"
-   },
-   "detail": "DONE 2026-09-18T06:56:11+08:00 rc=0 wall_h=4.7853 critic_rows=887",
-   "per_arm": {
-    "critic": 887
-   }
-  },
-  {
    "id": "chronocheck_chatts14b_status",
    "repo": "ICLR2027-6",
    "title": "ChatTS-14B 五臂",
@@ -602,9 +554,10 @@
   }
  ],
  "alerts": [
-  "B7-TP2 72B-AWQ 第四规模点（194 双卡） 失败：END b7tp2 40 2026-09-18T10:41:28+08:00",
+  "UI-TARS 二次抽样（3090 卡 6/7） 失败：[m2w] 2026-09-18T19:32:33+08:00 FAILED cell=m2w_test_task stage=s1 rc=1 wall=506s",
+  "UI-TARS 二次抽样（3090 卡 6/7）: [m2w] 2026-09-18T19:32:33+08:00 FAILED cell=m2w_test_task stage=s1 rc=1 wall=506s",
   "CRITIC@32B-AWQ 失败：FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
   "CRITIC@Llama-3.1-8B 失败：FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292"
  ],
- "collect_s": 11.9
+ "collect_s": 172.6
 }
