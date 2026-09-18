@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17 19:40 LA",
+ "generated_at": "2026-09-17 19:50 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,30 +8,30 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 10737,
+     "mem_used": 40167,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 10739,
+     "mem_used": 40167,
      "mem_total": 81920,
-     "util": 100,
+     "util": 99,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 10737,
+     "mem_used": 40167,
      "mem_total": 81920,
-     "util": 100,
+     "util": 99,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 10740,
+     "mem_used": 40130,
      "mem_total": 81920,
-     "util": 100,
+     "util": 99,
      "owner": "ours"
     }
    ]
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 23686,
      "mem_total": 24576,
-     "util": 96,
+     "util": 92,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 22936,
      "mem_total": 24576,
-     "util": 95,
+     "util": 92,
      "owner": "ours"
     },
     {
@@ -204,17 +204,17 @@
     },
     {
      "idx": 2,
-     "mem_used": 48196,
+     "mem_used": 1,
      "mem_total": 49140,
-     "util": 100,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 3,
-     "mem_used": 48194,
+     "mem_used": 1,
      "mem_total": 49140,
-     "util": 100,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     }
    ]
   }
@@ -238,18 +238,18 @@
     "total": 6,
     "unit": "臂"
    },
-   "detail": "当前臂 process-envonly-seed3-full，step 43/149",
+   "detail": "当前臂 process-envonly-seed3-full，step 44/149",
    "arms": [
     {
      "arm": "process-envonly-seed3-full",
-     "steps": 43,
+     "steps": 44,
      "last": {
-      "step": 43,
-      "kl": 0.069,
-      "entropy": 1.015,
-      "pg_loss": -0.026,
-      "reward": 0.435,
-      "resp_len": 971.817
+      "step": 44,
+      "kl": 0.108,
+      "entropy": 1.029,
+      "pg_loss": 0.032,
+      "reward": 0.382,
+      "resp_len": 1027.054
      },
      "tier": "stage7"
     },
@@ -478,13 +478,13 @@
     3
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "failed",
    "progress": {
     "done": 0,
     "total": 6294,
     "unit": "题"
    },
-   "detail": "WEIGHTS b7tp2 2026-09-18T10:15:34+08:00"
+   "detail": "END b7tp2 40 2026-09-18T10:41:28+08:00"
   },
   {
    "id": "chronocheck_32b-awq_critic_fuxin_status",
@@ -592,8 +592,9 @@
   }
  ],
  "alerts": [
+  "B7-TP2 72B-AWQ 第四规模点（194 双卡） 失败：END b7tp2 40 2026-09-18T10:41:28+08:00",
   "CRITIC@32B-AWQ 失败：FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
   "CRITIC@Llama-3.1-8B 失败：FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292"
  ],
- "collect_s": 14.2
+ "collect_s": 27.6
 }
