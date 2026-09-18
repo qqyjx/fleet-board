@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18 03:40 LA",
+ "generated_at": "2026-09-18 03:50 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 8193,
+     "mem_used": 40167,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 8193,
+     "mem_used": 40167,
      "mem_total": 81920,
-     "util": 99,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 8193,
+     "mem_used": 40167,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 8194,
+     "mem_used": 40168,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47013,
      "mem_total": 49140,
-     "util": 0,
+     "util": 100,
      "owner": "other"
     }
    ]
@@ -238,18 +238,18 @@
     "total": 6,
     "unit": "臂"
    },
-   "detail": "当前臂 process-envonly-seed3-full，step 110/149",
+   "detail": "当前臂 process-envonly-seed3-full，step 111/149",
    "arms": [
     {
      "arm": "process-envonly-seed3-full",
-     "steps": 110,
+     "steps": 111,
      "last": {
-      "step": 110,
-      "kl": 0.455,
-      "entropy": 1.802,
-      "pg_loss": 0.147,
-      "reward": 0.134,
-      "resp_len": 1043.173
+      "step": 111,
+      "kl": 0.967,
+      "entropy": 1.528,
+      "pg_loss": 0.065,
+      "reward": 0.092,
+      "resp_len": 1013.054
      },
      "tier": "stage7"
     },
@@ -606,5 +606,5 @@
   "CRITIC@32B-AWQ 失败：FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
   "CRITIC@Llama-3.1-8B 失败：FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292"
  ],
- "collect_s": 14.5
+ "collect_s": 12.5
 }
