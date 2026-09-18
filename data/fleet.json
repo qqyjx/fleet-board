@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17 19:30 LA",
+ "generated_at": "2026-09-17 19:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39359,
+     "mem_used": 10737,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 39359,
+     "mem_used": 10739,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 39359,
+     "mem_used": 10737,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 39362,
+     "mem_used": 10740,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 23686,
      "mem_total": 24576,
-     "util": 93,
+     "util": 96,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 22936,
      "mem_total": 24576,
-     "util": 82,
+     "util": 95,
      "owner": "ours"
     },
     {
@@ -85,7 +85,7 @@
     },
     {
      "idx": 6,
-     "mem_used": 23946,
+     "mem_used": 23954,
      "mem_total": 24576,
      "util": 100,
      "owner": "ours"
@@ -204,14 +204,14 @@
     },
     {
      "idx": 2,
-     "mem_used": 46792,
+     "mem_used": 48196,
      "mem_total": 49140,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 46790,
+     "mem_used": 48194,
      "mem_total": 49140,
      "util": 100,
      "owner": "ours"
@@ -238,18 +238,18 @@
     "total": 6,
     "unit": "臂"
    },
-   "detail": "当前臂 process-envonly-seed3-full，step 41/149",
+   "detail": "当前臂 process-envonly-seed3-full，step 43/149",
    "arms": [
     {
      "arm": "process-envonly-seed3-full",
-     "steps": 41,
+     "steps": 43,
      "last": {
-      "step": 41,
-      "kl": 0.175,
-      "entropy": 1.057,
-      "pg_loss": 0.022,
-      "reward": 0.325,
-      "resp_len": 968.112
+      "step": 43,
+      "kl": 0.069,
+      "entropy": 1.015,
+      "pg_loss": -0.026,
+      "reward": 0.435,
+      "resp_len": 971.817
      },
      "tier": "stage7"
     },
@@ -595,5 +595,5 @@
   "CRITIC@32B-AWQ 失败：FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
   "CRITIC@Llama-3.1-8B 失败：FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292"
  ],
- "collect_s": 14.8
+ "collect_s": 14.2
 }
