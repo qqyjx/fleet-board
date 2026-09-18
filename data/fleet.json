@@ -1,103 +1,17 @@
 {
- "generated_at": "2026-09-17 19:50 LA",
+ "generated_at": "2026-09-18 02:10 LA",
  "boxes": [
   {
    "name": "A800",
    "label": "A800 ×4 (80 GB)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 40167,
-     "mem_total": 81920,
-     "util": 100,
-     "owner": "ours"
-    },
-    {
-     "idx": 1,
-     "mem_used": 40167,
-     "mem_total": 81920,
-     "util": 99,
-     "owner": "ours"
-    },
-    {
-     "idx": 2,
-     "mem_used": 40167,
-     "mem_total": 81920,
-     "util": 99,
-     "owner": "ours"
-    },
-    {
-     "idx": 3,
-     "mem_used": 40130,
-     "mem_total": 81920,
-     "util": 99,
-     "owner": "ours"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   },
   {
    "name": "3090",
    "label": "3090 ×8 (24 GB, .110)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 23686,
-     "mem_total": 24576,
-     "util": 92,
-     "owner": "ours"
-    },
-    {
-     "idx": 1,
-     "mem_used": 22936,
-     "mem_total": 24576,
-     "util": 92,
-     "owner": "ours"
-    },
-    {
-     "idx": 2,
-     "mem_used": 24170,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 3,
-     "mem_used": 24170,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 4,
-     "mem_used": 3972,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 5,
-     "mem_used": 11184,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 6,
-     "mem_used": 23954,
-     "mem_total": 24576,
-     "util": 100,
-     "owner": "ours"
-    },
-    {
-     "idx": 7,
-     "mem_used": 3,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "ours"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   },
   {
    "name": "fuxin",
@@ -155,7 +69,7 @@
     },
     {
      "idx": 7,
-     "mem_used": 46305,
+     "mem_used": 47013,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
@@ -169,7 +83,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 40281,
+     "mem_used": 40283,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
@@ -238,18 +152,18 @@
     "total": 6,
     "unit": "臂"
    },
-   "detail": "当前臂 process-envonly-seed3-full，step 44/149",
+   "detail": "当前臂 process-envonly-seed3-full，step 96/149",
    "arms": [
     {
      "arm": "process-envonly-seed3-full",
-     "steps": 44,
+     "steps": 96,
      "last": {
-      "step": 44,
-      "kl": 0.108,
-      "entropy": 1.029,
-      "pg_loss": 0.032,
-      "reward": 0.382,
-      "resp_len": 1027.054
+      "step": 96,
+      "kl": 0.541,
+      "entropy": 2.396,
+      "pg_loss": -0.048,
+      "reward": 0.162,
+      "resp_len": 1073.381
      },
      "tier": "stage7"
     },
@@ -409,7 +323,7 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 10,
+    "done": 11,
     "total": 12,
     "unit": "run"
    },
@@ -454,6 +368,11 @@
      "arm": "rlvr",
      "T": 0.8,
      "wall_h": 6.96
+    },
+    {
+     "arm": "base",
+     "T": 1.0,
+     "wall_h": 5.61
     },
     {
      "arm": "base",
@@ -596,5 +515,5 @@
   "CRITIC@32B-AWQ 失败：FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
   "CRITIC@Llama-3.1-8B 失败：FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292"
  ],
- "collect_s": 27.6
+ "collect_s": 644.4
 }
