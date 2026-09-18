@@ -153,6 +153,29 @@ def b7tp2():
             "progress": {"done": rows, "total": 6294, "unit": "题"},
             "detail": last[:110]}
 
+# ---------------- generic status-file jobs (terminal lines drive the board) ----------------
+STATUS_JOBS = [
+    ("3090", "/data/xyf/iclr2_uitars_seed1_status", "ICLR2027-2", "UI-TARS 二次抽样（3090 卡 6/7）", [6, 7]),
+    ("194-yyd", "/data/yyd/iclr9_ladder_seed1_status_laneA", "ICLR2027-9", "14B 阶梯 seed1 lane A（194 卡 0）", [0]),
+    ("194-yyd", "/data/yyd/iclr9_ladder_seed1_status_laneB", "ICLR2027-9", "14B 阶梯 seed1 lane B（194 卡 1）", [1]),
+    ("194-yyd", "/data/yyd/iclr9_ladder_seed1_status_laneD", "ICLR2027-9", "14B 阶梯 seed1 lane D（194 卡 2）", [2]),
+    ("194-yyd", "/data/yyd/iclr9_ladder_seed1_status_laneE", "ICLR2027-9", "14B 阶梯 seed1 lane E（194 卡 3）", [3]),
+    ("new105", "/home/xyf/logs/iclr9_ladder_seed1_status_laneC", "ICLR2027-9", "14B 阶梯 seed1 lane C（new105 卡 1）", [1]),
+]
+def status_job(host, path, repo, title, cards):
+    out = ssh(host, f"tail -n 40 {path} 2>/dev/null")
+    if not out or not out.strip(): return None
+    lines = [l for l in out.strip().splitlines() if l.strip()]
+    last = lines[-1]
+    n_done = sum(1 for l in lines if l.startswith("SCORED") or " END " in l and "rc=0" in l or l.startswith("END ") and "rc=0" in l)
+    fails = [l for l in lines if "FAILED" in l or "ABORT" in l]
+    status = "running"
+    if "CHAIN_DONE" in last or last.startswith("DONE") or "ALL_DONE" in last: status = "done"
+    elif fails and (fails[-1] == last): status = "failed"
+    return {"id": os.path.basename(path), "repo": repo, "title": title, "box": host, "cards": cards, "kind": "gen",
+            "status": status, "progress": {"done": n_done, "total": 0, "unit": "步"}, "detail": last[:110],
+            "alerts": [f[:110] for f in fails[-1:]] if status == "failed" else []}
+
 def main():
     t0 = time.time()
     curves = json.loads((DATA / "curves.json").read_text()) if (DATA / "curves.json").exists() else {}
@@ -164,6 +187,9 @@ def main():
     j = stage7(curves);  jobs.append(j) if j else alerts.append("A800 stage7 状态不可读")
     j = ladder();        jobs.append(j) if j else alerts.append("3090 阶梯状态不可读")
     j = b7tp2();         jobs.append(j) if j else None
+    for args in STATUS_JOBS:
+        j = status_job(*args)
+        if j: jobs.append(j)
     R = "/data/xyf/ICLR2027-6/experiments/chronocheck/results/main"
     for args in (("fuxin", "/data/xyf/chronocheck_32b-awq_critic_fuxin_status", f"{R}/32b-awq_critic_fuxin", "CRITIC@32B-AWQ", [3], 887, ["critic"]),
                  ("fuxin", "/data/xyf/chronocheck_llama8b_critic_fuxin_status", f"{R}/llama8b_critic_fuxin", "CRITIC@Llama-3.1-8B", [4], 887, ["critic"]),
