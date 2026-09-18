@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17 19:11 LA",
+ "generated_at": "2026-09-17 19:12 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 2579,
+     "mem_used": 40673,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 2581,
+     "mem_used": 40673,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 2579,
+     "mem_used": 40673,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 2878,
+     "mem_used": 40674,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 23686,
      "mem_total": 24576,
-     "util": 90,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 22936,
      "mem_total": 24576,
-     "util": 79,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -102,65 +102,8 @@
   {
    "name": "fuxin",
    "label": "fuxin 4090 ×8 (48 GB, 公司)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 28732,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 1,
-     "mem_used": 43335,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 2,
-     "mem_used": 25847,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 3,
-     "mem_used": 1599,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 4,
-     "mem_used": 731,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 5,
-     "mem_used": 23287,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 6,
-     "mem_used": 18,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 7,
-     "mem_used": 46305,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   },
   {
    "name": "new105",
@@ -522,13 +465,13 @@
    "kind": "gen",
    "status": "done",
    "progress": {
-    "done": 0,
+    "done": 887,
     "total": 887,
     "unit": "行"
    },
    "detail": "DONE 2026-09-18T05:27:37+08:00 rc=0 wall_h=3.3092 critic_rows=887",
    "per_arm": {
-    "critic": 0
+    "critic": 887
    }
   },
   {
@@ -581,5 +524,5 @@
   "CRITIC@32B-AWQ 失败：FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
   "CRITIC@Llama-3.1-8B 失败：FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292"
  ],
- "collect_s": 192.4
+ "collect_s": 121.0
 }
