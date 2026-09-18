@@ -217,7 +217,7 @@ def main():
     if os.environ.get("FLEET_PUSH", "1") == "1":
         subprocess.run(["git", "-C", str(ROOT), "add", "-A"], capture_output=True)
         subprocess.run(["git", "-C", str(ROOT), "commit", "-qm", f"data {fleet['generated_at']}"], capture_output=True)
-        subprocess.run(["git", "-C", str(ROOT), "push", "-q", "origin", "HEAD:main"], capture_output=True, timeout=120)
+        [subprocess.run(["git", "-C", str(ROOT), "push", "-q", "origin", "HEAD:main"], capture_output=True, timeout=300) for _ in range(2) if subprocess.run(["git", "-C", str(ROOT), "status", "-sb"], capture_output=True, text=True).stdout.splitlines()[0].find("ahead") >= 0]
 
 if __name__ == "__main__":
     main()
