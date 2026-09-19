@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-19 06:13 LA",
+ "generated_at": "2026-09-19 06:23 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 41071,
+     "mem_used": 17041,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 41071,
+     "mem_used": 17041,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 41071,
+     "mem_used": 17043,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 41034,
+     "mem_used": 17042,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
@@ -87,12 +87,12 @@
      "idx": 6,
      "mem_used": 23708,
      "mem_total": 24576,
-     "util": 0,
+     "util": 89,
      "owner": "ours"
     },
     {
      "idx": 7,
-     "mem_used": 0,
+     "mem_used": 16464,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
@@ -190,9 +190,9 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 1,
+     "mem_used": 44020,
      "mem_total": 49140,
-     "util": 0,
+     "util": 84,
      "owner": "ours"
     },
     {
@@ -238,18 +238,18 @@
     "total": 6,
     "unit": "臂"
    },
-   "detail": "当前臂 dense-null-envonly-seed2-full，step 53/149",
+   "detail": "当前臂 dense-null-envonly-seed2-full，step 55/149",
    "arms": [
     {
      "arm": "dense-null-envonly-seed2-full",
-     "steps": 53,
+     "steps": 55,
      "last": {
-      "step": 53,
-      "kl": 0.377,
-      "entropy": 0.69,
-      "pg_loss": -0.059,
-      "reward": 0.457,
-      "resp_len": 1060.448
+      "step": 55,
+      "kl": 0.198,
+      "entropy": 0.691,
+      "pg_loss": -0.027,
+      "reward": 0.445,
+      "resp_len": 1062.677
      },
      "tier": "stage7"
     },
@@ -556,7 +556,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "ORCH_DONE 2026-09-19T06:57:40+08:00",
+   "detail": "GATE lane=A weights_present 2026-09-19T21:17:45+08:00",
    "alerts": []
   },
   {
@@ -628,7 +628,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "LANEC_ORCH_START 2026-09-18T17:09:31+08:00",
+   "detail": "LANEC_CANCELLED 2026-09-19: T=1.2 moved to 194 lanes A/B (push from 194 died with the host thrash) 2026-09-19T",
    "alerts": []
   },
   {
@@ -741,5 +741,5 @@
   "CRITIC@32B-AWQ 失败：FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
   "CRITIC@Llama-3.1-8B 失败：FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292"
  ],
- "collect_s": 48.7
+ "collect_s": 28.2
 }
