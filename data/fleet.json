@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 00:47 LA",
+ "generated_at": "2026-09-20 01:29 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 15153,
+     "mem_used": 38447,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 15153,
+     "mem_used": 38447,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 15153,
+     "mem_used": 38447,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 15154,
+     "mem_used": 38410,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 21838,
+     "mem_used": 22926,
      "mem_total": 24576,
-     "util": 100,
+     "util": 44,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 21836,
+     "mem_used": 22926,
      "mem_total": 24576,
-     "util": 0,
+     "util": 77,
      "owner": "ours"
     },
     {
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47033,
      "mem_total": 49140,
-     "util": 100,
+     "util": 31,
      "owner": "other"
     }
    ]
@@ -192,14 +192,14 @@
      "idx": 0,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 90,
+     "util": 97,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 87,
+     "util": 92,
      "owner": "ours"
     },
     {
@@ -238,18 +238,18 @@
     "total": 6,
     "unit": "臂"
    },
-   "detail": "当前臂 dense-null-envonly-seed3-full，step 69/149",
+   "detail": "当前臂 dense-null-envonly-seed3-full，step 75/149",
    "arms": [
     {
      "arm": "dense-null-envonly-seed3-full",
-     "steps": 69,
+     "steps": 75,
      "last": {
-      "step": 69,
-      "kl": 0.274,
-      "entropy": 0.638,
-      "pg_loss": -0.059,
-      "reward": 0.469,
-      "resp_len": 1123.831
+      "step": 75,
+      "kl": 0.418,
+      "entropy": 0.606,
+      "pg_loss": -0.011,
+      "reward": 0.495,
+      "resp_len": 1140.867
      },
      "tier": "stage7"
     },
@@ -667,5 +667,5 @@
   }
  ],
  "alerts": [],
- "collect_s": 10.2
+ "collect_s": 24.9
 }
