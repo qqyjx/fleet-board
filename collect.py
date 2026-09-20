@@ -158,7 +158,7 @@ def b7tp2():
 
 # ---------------- generic status-file jobs (terminal lines drive the board) ----------------
 STATUS_JOBS = [
-    ("3090", "/data/xyf/iclr2_uitars_seed1_status", "ICLR2027-2", "UI-TARS 二次抽样（3090 卡 0/1 TP2 + 卡 6）", [0, 1, 6]),
+    ("3090", "/data/xyf/iclr2_uitars_seed1_status", "ICLR2027-2", "UI-TARS 二次抽样（3090 卡 0/1 TP2 m2w + 卡 6/7 TP2 android critic）", [0, 1, 6, 7]),
     ("194-yyd", "/data/yyd/iclr9_ladder_seed1_status_laneA", "ICLR2027-9", "14B 阶梯 seed1 lane A（194 卡 0）", [0]),
     ("194-yyd", "/data/yyd/iclr9_ladder_seed1_status_laneB", "ICLR2027-9", "14B 阶梯 seed1 lane B（194 卡 1）", [1]),
     ("194-yyd", "/data/yyd/iclr9_ladder_seed1_status_laneE", "ICLR2027-9", "14B 阶梯 seed1 lane E（194 卡 3）", [3]),
