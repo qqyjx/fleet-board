@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-19 12:23 LA",
+ "generated_at": "2026-09-19 18:23 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 37533,
+     "mem_used": 8149,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 37533,
+     "mem_used": 8149,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 37533,
+     "mem_used": 8149,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 37534,
+     "mem_used": 8150,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 24050,
+     "mem_used": 24240,
      "mem_total": 24576,
-     "util": 100,
+     "util": 87,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 24050,
+     "mem_used": 24238,
      "mem_total": 24576,
-     "util": 100,
+     "util": 57,
      "owner": "ours"
     },
     {
@@ -85,9 +85,9 @@
     },
     {
      "idx": 6,
-     "mem_used": 23708,
+     "mem_used": 23758,
      "mem_total": 24576,
-     "util": 98,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47033,
      "mem_total": 49140,
-     "util": 100,
+     "util": 0,
      "owner": "other"
     }
    ]
@@ -169,14 +169,14 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 40283,
+     "mem_used": 40279,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 2731,
+     "mem_used": 2819,
      "mem_total": 49140,
      "util": 0,
      "owner": "ours"
@@ -190,9 +190,9 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 44238,
+     "mem_used": 44022,
      "mem_total": 49140,
-     "util": 94,
+     "util": 92,
      "owner": "ours"
     },
     {
@@ -234,22 +234,35 @@
    "kind": "train",
    "status": "running",
    "progress": {
-    "done": 4,
+    "done": 5,
     "total": 6,
     "unit": "臂"
    },
-   "detail": "当前臂 dense-null-envonly-seed2-full，step 107/149",
+   "detail": "当前臂 dense-null-envonly-seed3-full，step 12/149",
    "arms": [
     {
-     "arm": "dense-null-envonly-seed2-full",
-     "steps": 107,
+     "arm": "dense-null-envonly-seed3-full",
+     "steps": 12,
      "last": {
-      "step": 107,
-      "kl": 0.441,
-      "entropy": 0.432,
-      "pg_loss": -0.228,
-      "reward": 0.549,
-      "resp_len": 1211.148
+      "step": 12,
+      "kl": 0.003,
+      "entropy": 0.958,
+      "pg_loss": 0.034,
+      "reward": 0.374,
+      "resp_len": 750.079
+     },
+     "tier": "stage7"
+    },
+    {
+     "arm": "dense-null-envonly-seed2-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.296,
+      "entropy": 0.391,
+      "pg_loss": 0.016,
+      "reward": 0.544,
+      "resp_len": 1215.627
      },
      "tier": "stage7"
     },
@@ -538,7 +551,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "[m2w] 2026-09-18T23:35:34+08:00 START card=0,1 cells=3",
+   "detail": "[m2w] 2026-09-20T08:57:27+08:00 START card=0,1 cells=3",
    "alerts": []
   },
   {
@@ -552,11 +565,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 2,
+    "done": 6,
     "total": 0,
     "unit": "步"
    },
-   "detail": "SCORED base 0.2 rc=0 base__minerva__chat__t0.2__n128__lim272__seed1 lane=A 2026-09-20T00:50:52+08:00",
+   "detail": "SCORED base 0.6 rc=0 base__minerva__chat__t0.6__n128__lim272__seed1 lane=A 2026-09-20T07:19:58+08:00",
    "alerts": []
   },
   {
@@ -741,5 +754,5 @@
   "CRITIC@32B-AWQ 失败：FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
   "CRITIC@Llama-3.1-8B 失败：FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292"
  ],
- "collect_s": 24.8
+ "collect_s": 32.8
 }
