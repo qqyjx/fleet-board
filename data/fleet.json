@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 12:23 LA",
+ "generated_at": "2026-09-20 12:39 LA",
  "boxes": [
   {
    "name": "A800",
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 22550,
      "mem_total": 24576,
-     "util": 100,
+     "util": 99,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 22550,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -85,17 +85,17 @@
     },
     {
      "idx": 6,
-     "mem_used": 17778,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 30,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 7,
-     "mem_used": 17776,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 45,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     }
    ]
   },
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47035,
      "mem_total": 49140,
-     "util": 83,
+     "util": 94,
      "owner": "other"
     }
    ]
@@ -199,7 +199,7 @@
      "idx": 1,
      "mem_used": 44035,
      "mem_total": 49140,
-     "util": 88,
+     "util": 97,
      "owner": "ours"
     },
     {
@@ -527,22 +527,20 @@
   {
    "id": "iclr2_uitars_seed1_status",
    "repo": "ICLR2027-2",
-   "title": "UI-TARS 二次抽样（3090 卡 0/1 TP2 m2w + 卡 6/7 TP2 android critic）",
+   "title": "UI-TARS 二次抽样（3090 卡 0/1 TP2 m2w test_domain；android 09-21 03:37 CST 已落地）",
    "box": "3090",
    "cards": [
     0,
-    1,
-    6,
-    7
+    1
    ],
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 2,
+    "done": 3,
     "total": 0,
     "unit": "步"
    },
-   "detail": "[ac] 2026-09-20T23:44:51+08:00 START card=6,7 cells=1",
+   "detail": "[ac] 2026-09-21T03:37:35+08:00 DONE lane=ac wall=13964s",
    "alerts": []
   },
   {
@@ -665,5 +663,5 @@
   }
  ],
  "alerts": [],
- "collect_s": 25.0
+ "collect_s": 23.8
 }
