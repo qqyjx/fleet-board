@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 00:46 LA",
+ "generated_at": "2026-09-20 00:47 LA",
  "boxes": [
   {
    "name": "A800",
@@ -52,7 +52,7 @@
      "idx": 1,
      "mem_used": 21836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47033,
      "mem_total": 49140,
-     "util": 62,
+     "util": 100,
      "owner": "other"
     }
    ]
@@ -192,14 +192,14 @@
      "idx": 0,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 82,
+     "util": 90,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 83,
+     "util": 87,
      "owner": "ours"
     },
     {
@@ -602,46 +602,6 @@
    "alerts": []
   },
   {
-   "id": "chronocheck_32b-awq_critic_fuxin_status",
-   "repo": "ICLR2027-6",
-   "title": "CRITIC@32B-AWQ",
-   "box": "fuxin",
-   "cards": [
-    3
-   ],
-   "kind": "gen",
-   "status": "failed",
-   "progress": {
-    "done": 430,
-    "total": 887,
-    "unit": "行"
-   },
-   "detail": "FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
-   "per_arm": {
-    "critic": 430
-   }
-  },
-  {
-   "id": "chronocheck_llama8b_critic_fuxin_status",
-   "repo": "ICLR2027-6",
-   "title": "CRITIC@Llama-3.1-8B",
-   "box": "fuxin",
-   "cards": [
-    4
-   ],
-   "kind": "gen",
-   "status": "failed",
-   "progress": {
-    "done": 156,
-    "total": 887,
-    "unit": "行"
-   },
-   "detail": "FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292",
-   "per_arm": {
-    "critic": 156
-   }
-  },
-  {
    "id": "chronocheck_32b-awq_critic_fuxin_194_status",
    "repo": "ICLR2027-6",
    "title": "CRITIC@32B-AWQ（194 续跑）",
@@ -706,9 +666,6 @@
    }
   }
  ],
- "alerts": [
-  "CRITIC@32B-AWQ 失败：FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
-  "CRITIC@Llama-3.1-8B 失败：FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292"
- ],
- "collect_s": 12.6
+ "alerts": [],
+ "collect_s": 10.2
 }

@@ -193,9 +193,8 @@ def main():
         j = status_job(*args)
         if j: jobs.append(j)
     R = "/data/xyf/ICLR2027-6/experiments/chronocheck/results/main"
-    for args in (("fuxin", "/data/xyf/chronocheck_32b-awq_critic_fuxin_status", f"{R}/32b-awq_critic_fuxin", "CRITIC@32B-AWQ", [3], 887, ["critic"]),
-                 ("fuxin", "/data/xyf/chronocheck_llama8b_critic_fuxin_status", f"{R}/llama8b_critic_fuxin", "CRITIC@Llama-3.1-8B", [4], 887, ["critic"]),
-                 ("194-yyd", "/data/yyd/chronocheck_32b-awq_critic_fuxin_194_status", "/data/yyd/ICLR2027-6/experiments/chronocheck/results/main/32b-awq_critic_fuxin", "CRITIC@32B-AWQ（194 续跑）", [0], 887, ["critic"]),
+    # fuxin CRITIC originals (rc=137 on 09-17) were resumed and completed on 194; the 194 rows below are the record
+    for args in (("194-yyd", "/data/yyd/chronocheck_32b-awq_critic_fuxin_194_status", "/data/yyd/ICLR2027-6/experiments/chronocheck/results/main/32b-awq_critic_fuxin", "CRITIC@32B-AWQ（194 续跑）", [0], 887, ["critic"]),
                  ("194-yyd", "/data/yyd/chronocheck_llama8b_critic_fuxin_194_status", "/data/yyd/ICLR2027-6/experiments/chronocheck/results/main/llama8b_critic_fuxin", "CRITIC@Llama-3.1-8B（194 续跑）", [1], 887, ["critic"]),
                  ("new105", "/home/xyf/logs/chronocheck_chatts14b_status", "/home/xyf/ICLR2027-6/experiments/chronocheck/results/main/chatts14b", "ChatTS-14B 五臂", [1], 887, ["zero_shot", "cot", "chronocheck", "certify_abstain", "repair_gated"])):
         j = chrono(*args)
