@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 01:34 LA",
+ "generated_at": "2026-09-20 02:51 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 14665,
+     "mem_used": 41707,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 14665,
+     "mem_used": 41707,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 14665,
+     "mem_used": 41707,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 14666,
+     "mem_used": 41670,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 22926,
      "mem_total": 24576,
-     "util": 99,
+     "util": 89,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 22926,
      "mem_total": 24576,
-     "util": 99,
+     "util": 86,
      "owner": "ours"
     },
     {
@@ -85,9 +85,9 @@
     },
     {
      "idx": 6,
-     "mem_used": 23758,
+     "mem_used": 22204,
      "mem_total": 24576,
-     "util": 0,
+     "util": 96,
      "owner": "ours"
     },
     {
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47033,
      "mem_total": 49140,
-     "util": 56,
+     "util": 100,
      "owner": "other"
     }
    ]
@@ -192,14 +192,14 @@
      "idx": 0,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 89,
+     "util": 87,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 87,
+     "util": 86,
      "owner": "ours"
     },
     {
@@ -238,18 +238,18 @@
     "total": 6,
     "unit": "臂"
    },
-   "detail": "当前臂 dense-null-envonly-seed3-full，step 76/149",
+   "detail": "当前臂 dense-null-envonly-seed3-full，step 87/149",
    "arms": [
     {
      "arm": "dense-null-envonly-seed3-full",
-     "steps": 76,
+     "steps": 87,
      "last": {
-      "step": 76,
-      "kl": 0.412,
-      "entropy": 0.611,
-      "pg_loss": 0.075,
-      "reward": 0.444,
-      "resp_len": 1124.456
+      "step": 87,
+      "kl": 1.311,
+      "entropy": 0.499,
+      "pg_loss": -0.017,
+      "reward": 0.242,
+      "resp_len": 908.696
      },
      "tier": "stage7"
     },
@@ -544,7 +544,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "[m2w] 2026-09-20T15:41:30+08:00 START card=0,1 cells=3",
+   "detail": "[ac] 2026-09-20T17:45:25+08:00 START card=6 cells=1",
    "alerts": []
   },
   {
@@ -667,5 +667,5 @@
   }
  ],
  "alerts": [],
- "collect_s": 10.4
+ "collect_s": 15.6
 }
