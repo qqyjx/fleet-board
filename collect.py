@@ -113,7 +113,8 @@ def ladder():
                          "prompts": [int(prog.group(1)), int(prog.group(2))] if prog else None})
     fails = re.findall(r"(ABORT|FAIL)[^\n]*", s1 + s2)
     return {"id": "iclr9-ladder", "repo": "ICLR2027-9", "title": "14B 温度阶梯（TP2，两路）", "box": "3090",
-            "cards": [0, 1, 6, 7], "kind": "gen", "status": "failed" if fails else "running",
+            "cards": [] if len(done) >= 12 else [0, 1, 6, 7], "kind": "gen",
+            "status": "done" if len(done) >= 12 else ("failed" if fails else "running"),
             "progress": {"done": len(done), "total": 12, "unit": "run"},
             "detail": "；".join(f"{x['lane']} {x['arm']} T={x['T']}" + (f" {x['prompts'][0]}/{x['prompts'][1]} 题" if x['prompts'] else "") for x in inflight) or "等待下一对",
             "runs": sorted([{"arm": a, "T": float(t), "wall_h": round(w/3600, 2)} for (a, t), w in done.items()], key=lambda r: (r["T"], r["arm"])),
@@ -147,20 +148,20 @@ def b7tp2():
     rows = sum(int(l.split()[0]) for l in parts[1].strip().splitlines() if l.strip() and l.split()[0].isdigit())
     status = "running"
     if last.startswith("END b7tp2 0"): status = "done"
-    elif last.startswith("END b7tp2") or "DOES_NOT_FIT" in last: status = "failed"
+    elif last.startswith("END b7tp2") or "DOES_NOT_FIT" in last:
+        # closed 09-19 by PREREG outcome (gate failed legitimately, ea7912b): terminal, not an alert
+        status = "done"; last = "已关闭(门禁不过,PREREG_B7_72B outcome) " + last
     return {"id": "iclr3-b7tp2", "repo": "ICLR2027-3", "title": "B7-TP2 72B-AWQ 第四规模点（194 双卡）", "box": host,
-            "cards": [2, 3], "kind": "gen", "status": status,
+            "cards": [] if status == "done" else [2, 3], "kind": "gen", "status": status,
             "progress": {"done": rows, "total": 6294, "unit": "题"},
             "detail": last[:110]}
 
 # ---------------- generic status-file jobs (terminal lines drive the board) ----------------
 STATUS_JOBS = [
-    ("3090", "/data/xyf/iclr2_uitars_seed1_status", "ICLR2027-2", "UI-TARS 二次抽样（3090 卡 6/7）", [6, 7]),
+    ("3090", "/data/xyf/iclr2_uitars_seed1_status", "ICLR2027-2", "UI-TARS 二次抽样（3090 卡 0/1 TP2 + 卡 6）", [0, 1, 6]),
     ("194-yyd", "/data/yyd/iclr9_ladder_seed1_status_laneA", "ICLR2027-9", "14B 阶梯 seed1 lane A（194 卡 0）", [0]),
     ("194-yyd", "/data/yyd/iclr9_ladder_seed1_status_laneB", "ICLR2027-9", "14B 阶梯 seed1 lane B（194 卡 1）", [1]),
-    ("194-yyd", "/data/yyd/iclr9_ladder_seed1_status_laneD", "ICLR2027-9", "14B 阶梯 seed1 lane D（194 卡 2）", [2]),
     ("194-yyd", "/data/yyd/iclr9_ladder_seed1_status_laneE", "ICLR2027-9", "14B 阶梯 seed1 lane E（194 卡 3）", [3]),
-    ("new105", "/home/xyf/logs/iclr9_ladder_seed1_status_laneC", "ICLR2027-9", "14B 阶梯 seed1 lane C（new105 卡 1）", [1]),
 ]
 def status_job(host, path, repo, title, cards):
     out = ssh(host, f"tail -n 40 {path} 2>/dev/null")
@@ -168,7 +169,8 @@ def status_job(host, path, repo, title, cards):
     lines = [l for l in out.strip().splitlines() if l.strip()]
     last = lines[-1]
     n_done = sum(1 for l in lines if l.startswith("SCORED") or " END " in l and "rc=0" in l or l.startswith("END ") and "rc=0" in l)
-    fails = [l for l in lines if "FAILED" in l or "ABORT" in l]
+    # NOTE/RELAUNCH lines are annotations and may quote a failure; only real status lines count
+    fails = [l for l in lines if ("FAILED" in l or "ABORT" in l) and not l.startswith(("NOTE", "RELAUNCH", "LANEB_DEFERRED"))]
     status = "running"
     if "CHAIN_DONE" in last or last.startswith("DONE") or "ALL_DONE" in last: status = "done"
     elif fails and (fails[-1] == last): status = "failed"

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 00:45 LA",
+ "generated_at": "2026-09-20 00:46 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 9453,
+     "mem_used": 15153,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 9453,
+     "mem_used": 15153,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 9453,
+     "mem_used": 15153,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 9454,
+     "mem_used": 15154,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
@@ -45,7 +45,7 @@
      "idx": 0,
      "mem_used": 21838,
      "mem_total": 24576,
-     "util": 99,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -95,7 +95,7 @@
      "mem_used": 0,
      "mem_total": 24576,
      "util": 0,
-     "owner": "ours"
+     "owner": "free"
     }
    ]
   },
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47033,
      "mem_total": 49140,
-     "util": 100,
+     "util": 62,
      "owner": "other"
     }
    ]
@@ -179,7 +179,7 @@
      "mem_used": 2819,
      "mem_total": 49140,
      "util": 0,
-     "owner": "ours"
+     "owner": "other"
     }
    ]
   },
@@ -192,22 +192,22 @@
      "idx": 0,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 89,
+     "util": 82,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 86,
-     "owner": "other"
+     "util": 83,
+     "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 15,
      "mem_total": 49140,
      "util": 0,
-     "owner": "ours"
+     "owner": "free"
     },
     {
      "idx": 3,
@@ -439,14 +439,9 @@
    "repo": "ICLR2027-9",
    "title": "14B 温度阶梯（TP2，两路）",
    "box": "3090",
-   "cards": [
-    0,
-    1,
-    6,
-    7
-   ],
+   "cards": [],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
     "done": 12,
     "total": 12,
@@ -522,27 +517,25 @@
    "repo": "ICLR2027-3",
    "title": "B7-TP2 72B-AWQ 第四规模点（194 双卡）",
    "box": "194-yyd",
-   "cards": [
-    2,
-    3
-   ],
+   "cards": [],
    "kind": "gen",
-   "status": "failed",
+   "status": "done",
    "progress": {
     "done": 0,
     "total": 6294,
     "unit": "题"
    },
-   "detail": "END b7tp2 40 2026-09-18T10:41:28+08:00"
+   "detail": "已关闭(门禁不过,PREREG_B7_72B outcome) END b7tp2 40 2026-09-18T10:41:28+08:00"
   },
   {
    "id": "iclr2_uitars_seed1_status",
    "repo": "ICLR2027-2",
-   "title": "UI-TARS 二次抽样（3090 卡 6/7）",
+   "title": "UI-TARS 二次抽样（3090 卡 0/1 TP2 + 卡 6）",
    "box": "3090",
    "cards": [
-    6,
-    7
+    0,
+    1,
+    6
    ],
    "kind": "gen",
    "status": "running",
@@ -581,33 +574,13 @@
     1
    ],
    "kind": "gen",
-   "status": "failed",
-   "progress": {
-    "done": 0,
-    "total": 0,
-    "unit": "步"
-   },
-   "detail": "NOTE 2026-09-20T15:30+08:00 the 15:00 ABORT card1_locked was a duplicate launch; lane B pid 53400 holds the ca",
-   "alerts": [
-    "NOTE 2026-09-20T15:30+08:00 the 15:00 ABORT card1_locked was a duplicate launch; lane B pid 53400 holds the ca"
-   ]
-  },
-  {
-   "id": "iclr9_ladder_seed1_status_laneD",
-   "repo": "ICLR2027-9",
-   "title": "14B 阶梯 seed1 lane D（194 卡 2）",
-   "box": "194-yyd",
-   "cards": [
-    2
-   ],
-   "kind": "gen",
    "status": "running",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "ORCH_DONE 2026-09-19T06:57:40+08:00",
+   "detail": "NOTE 2026-09-20T15:30+08:00 the 15:00 ABORT card1_locked was a duplicate launch; lane B pid 53400 holds the ca",
    "alerts": []
   },
   {
@@ -626,24 +599,6 @@
     "unit": "步"
    },
    "detail": "ORCH_DONE 2026-09-19T06:57:40+08:00",
-   "alerts": []
-  },
-  {
-   "id": "iclr9_ladder_seed1_status_laneC",
-   "repo": "ICLR2027-9",
-   "title": "14B 阶梯 seed1 lane C（new105 卡 1）",
-   "box": "new105",
-   "cards": [
-    1
-   ],
-   "kind": "gen",
-   "status": "running",
-   "progress": {
-    "done": 0,
-    "total": 0,
-    "unit": "步"
-   },
-   "detail": "LANEC_CANCELLED 2026-09-19: T=1.2 moved to 194 lanes A/B (push from 194 died with the host thrash) 2026-09-19T",
    "alerts": []
   },
   {
@@ -752,11 +707,8 @@
   }
  ],
  "alerts": [
-  "B7-TP2 72B-AWQ 第四规模点（194 双卡） 失败：END b7tp2 40 2026-09-18T10:41:28+08:00",
-  "14B 阶梯 seed1 lane B（194 卡 1） 失败：NOTE 2026-09-20T15:30+08:00 the 15:00 ABORT card1_locked was a duplicate launch; lane B pid 53400 holds the ca",
-  "14B 阶梯 seed1 lane B（194 卡 1）: NOTE 2026-09-20T15:30+08:00 the 15:00 ABORT card1_locked was a duplicate launch; lane B pid 53400 holds the ca",
   "CRITIC@32B-AWQ 失败：FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
   "CRITIC@Llama-3.1-8B 失败：FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292"
  ],
- "collect_s": 18.4
+ "collect_s": 12.6
 }
