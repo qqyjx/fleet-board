@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 00:23 LA",
+ "generated_at": "2026-09-20 00:45 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 8153,
+     "mem_used": 9453,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 8153,
+     "mem_used": 9453,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 8153,
+     "mem_used": 9453,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 8154,
+     "mem_used": 9454,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 8586,
+     "mem_used": 21838,
      "mem_total": 24576,
-     "util": 0,
+     "util": 99,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 8586,
+     "mem_used": 21836,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47033,
      "mem_total": 49140,
-     "util": 61,
+     "util": 100,
      "owner": "other"
     }
    ]
@@ -192,14 +192,14 @@
      "idx": 0,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 97,
+     "util": 89,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 81,
+     "util": 86,
      "owner": "other"
     },
     {
@@ -238,18 +238,18 @@
     "total": 6,
     "unit": "臂"
    },
-   "detail": "当前臂 dense-null-envonly-seed3-full，step 66/149",
+   "detail": "当前臂 dense-null-envonly-seed3-full，step 69/149",
    "arms": [
     {
      "arm": "dense-null-envonly-seed3-full",
-     "steps": 66,
+     "steps": 69,
      "last": {
-      "step": 66,
-      "kl": 0.158,
-      "entropy": 0.669,
-      "pg_loss": 0.033,
-      "reward": 0.466,
-      "resp_len": 1105.019
+      "step": 69,
+      "kl": 0.274,
+      "entropy": 0.638,
+      "pg_loss": -0.059,
+      "reward": 0.469,
+      "resp_len": 1123.831
      },
      "tier": "stage7"
     },
@@ -551,7 +551,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "[m2w] 2026-09-20T14:55:04+08:00 START card=0,1 cells=3",
+   "detail": "[m2w] 2026-09-20T15:41:30+08:00 START card=0,1 cells=3",
    "alerts": []
   },
   {
@@ -587,9 +587,9 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "ABORT lane=B card1_locked 2026-09-20T15:00:05+08:00",
+   "detail": "NOTE 2026-09-20T15:30+08:00 the 15:00 ABORT card1_locked was a duplicate launch; lane B pid 53400 holds the ca",
    "alerts": [
-    "ABORT lane=B card1_locked 2026-09-20T15:00:05+08:00"
+    "NOTE 2026-09-20T15:30+08:00 the 15:00 ABORT card1_locked was a duplicate launch; lane B pid 53400 holds the ca"
    ]
   },
   {
@@ -753,10 +753,10 @@
  ],
  "alerts": [
   "B7-TP2 72B-AWQ 第四规模点（194 双卡） 失败：END b7tp2 40 2026-09-18T10:41:28+08:00",
-  "14B 阶梯 seed1 lane B（194 卡 1） 失败：ABORT lane=B card1_locked 2026-09-20T15:00:05+08:00",
-  "14B 阶梯 seed1 lane B（194 卡 1）: ABORT lane=B card1_locked 2026-09-20T15:00:05+08:00",
+  "14B 阶梯 seed1 lane B（194 卡 1） 失败：NOTE 2026-09-20T15:30+08:00 the 15:00 ABORT card1_locked was a duplicate launch; lane B pid 53400 holds the ca",
+  "14B 阶梯 seed1 lane B（194 卡 1）: NOTE 2026-09-20T15:30+08:00 the 15:00 ABORT card1_locked was a duplicate launch; lane B pid 53400 holds the ca",
   "CRITIC@32B-AWQ 失败：FAILED 2026-09-17T14:16:18+08:00 rc=137 wall_h=3.5864 critic_rows=430",
   "CRITIC@Llama-3.1-8B 失败：FAILED 2026-09-17T14:16:43+08:00 rc=137 wall_h=1.0292"
  ],
- "collect_s": 27.4
+ "collect_s": 18.4
 }
