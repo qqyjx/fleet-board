@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 01:29 LA",
+ "generated_at": "2026-09-20 01:34 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 38447,
+     "mem_used": 14665,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 38447,
+     "mem_used": 14665,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 38447,
+     "mem_used": 14665,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 38410,
+     "mem_used": 14666,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 22926,
      "mem_total": 24576,
-     "util": 44,
+     "util": 99,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 22926,
      "mem_total": 24576,
-     "util": 77,
+     "util": 99,
      "owner": "ours"
     },
     {
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47033,
      "mem_total": 49140,
-     "util": 31,
+     "util": 56,
      "owner": "other"
     }
    ]
@@ -192,14 +192,14 @@
      "idx": 0,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 97,
+     "util": 89,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 92,
+     "util": 87,
      "owner": "ours"
     },
     {
@@ -214,7 +214,7 @@
      "mem_used": 15,
      "mem_total": 49140,
      "util": 0,
-     "owner": "ours"
+     "owner": "free"
     }
    ]
   }
@@ -238,18 +238,18 @@
     "total": 6,
     "unit": "臂"
    },
-   "detail": "当前臂 dense-null-envonly-seed3-full，step 75/149",
+   "detail": "当前臂 dense-null-envonly-seed3-full，step 76/149",
    "arms": [
     {
      "arm": "dense-null-envonly-seed3-full",
-     "steps": 75,
+     "steps": 76,
      "last": {
-      "step": 75,
-      "kl": 0.418,
-      "entropy": 0.606,
-      "pg_loss": -0.011,
-      "reward": 0.495,
-      "resp_len": 1140.867
+      "step": 76,
+      "kl": 0.412,
+      "entropy": 0.611,
+      "pg_loss": 0.075,
+      "reward": 0.444,
+      "resp_len": 1124.456
      },
      "tier": "stage7"
     },
@@ -540,7 +540,7 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 0,
+    "done": 1,
     "total": 0,
     "unit": "步"
    },
@@ -592,7 +592,7 @@
     3
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
     "done": 4,
     "total": 0,
@@ -667,5 +667,5 @@
   }
  ],
  "alerts": [],
- "collect_s": 24.9
+ "collect_s": 10.4
 }

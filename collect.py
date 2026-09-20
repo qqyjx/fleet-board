@@ -168,11 +168,11 @@ def status_job(host, path, repo, title, cards):
     if not out or not out.strip(): return None
     lines = [l for l in out.strip().splitlines() if l.strip()]
     last = lines[-1]
-    n_done = sum(1 for l in lines if l.startswith("SCORED") or " END " in l and "rc=0" in l or l.startswith("END ") and "rc=0" in l)
+    n_done = sum(1 for l in lines if l.startswith("SCORED") or " END " in l and ("rc=0" in l or "greedy=" in l) or l.startswith("END ") and "rc=0" in l)
     # NOTE/RELAUNCH lines are annotations and may quote a failure; only real status lines count
     fails = [l for l in lines if ("FAILED" in l or "ABORT" in l) and not l.startswith(("NOTE", "RELAUNCH", "LANEB_DEFERRED"))]
     status = "running"
-    if "CHAIN_DONE" in last or last.startswith("DONE") or "ALL_DONE" in last: status = "done"
+    if "CHAIN_DONE" in last or last.startswith(("DONE", "ORCH_DONE")) or "ALL_DONE" in last: status = "done"
     elif fails and (fails[-1] == last): status = "failed"
     return {"id": os.path.basename(path), "repo": repo, "title": title, "box": host, "cards": cards, "kind": "gen",
             "status": status, "progress": {"done": n_done, "total": 0, "unit": "步"}, "detail": last[:110],
