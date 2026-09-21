@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 07:02 LA",
+ "generated_at": "2026-09-21 12:24 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,16 +8,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 16123,
+     "mem_used": 78373,
      "mem_total": 81920,
-     "util": 14,
+     "util": 99,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 16159,
+     "mem_used": 24,
      "mem_total": 81920,
-     "util": 16,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -29,9 +29,9 @@
     },
     {
      "idx": 3,
-     "mem_used": 25,
+     "mem_used": 64130,
      "mem_total": 81920,
-     "util": 0,
+     "util": 99,
      "owner": "ours"
     }
    ]
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 23148,
+     "mem_used": 20764,
      "mem_total": 24576,
-     "util": 100,
+     "util": 42,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 23146,
+     "mem_used": 20664,
      "mem_total": 24576,
-     "util": 100,
+     "util": 49,
      "owner": "ours"
     },
     {
@@ -85,16 +85,16 @@
     },
     {
      "idx": 6,
-     "mem_used": 18202,
+     "mem_used": 1554,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 7,
-     "mem_used": 0,
+     "mem_used": 3580,
      "mem_total": 24576,
-     "util": 0,
+     "util": 33,
      "owner": "ours"
     }
    ]
@@ -127,9 +127,9 @@
     },
     {
      "idx": 3,
-     "mem_used": 1597,
+     "mem_used": 7885,
      "mem_total": 49140,
-     "util": 0,
+     "util": 28,
      "owner": "other"
     },
     {
@@ -169,14 +169,14 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 40281,
+     "mem_used": 40283,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 4274,
+     "mem_used": 29934,
      "mem_total": 49140,
      "util": 18,
      "owner": "ours"
@@ -190,31 +190,32 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 44251,
+     "mem_used": 15,
      "mem_total": 49140,
-     "util": 92,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 1,
-     "mem_used": 44251,
+     "mem_used": 15,
      "mem_total": 49140,
-     "util": 97,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 2,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 91,
+     "util": -1,
+     "error": "[N/A]",
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 44035,
+     "mem_used": 15,
      "mem_total": 49140,
-     "util": 89,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     }
    ]
   },
@@ -233,9 +234,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 36504,
+     "mem_used": 5190,
      "mem_total": 49140,
-     "util": 96,
+     "util": 0,
      "owner": "other"
     }
    ]
@@ -553,11 +554,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 3,
+    "done": 4,
     "total": 0,
     "unit": "步"
    },
-   "detail": "[m2w] 2026-09-21T16:52:36+08:00 START card=0,1 cells=3",
+   "detail": "[m2w] 2026-09-22T02:51:02+08:00 DONE lane=m2w wall=35906s",
    "alerts": []
   },
   {
@@ -616,11 +617,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 9,
+    "done": 15,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T09:45:33-04:00 END lane=3 B3_E4_core rc=0",
+   "detail": "2026-09-21T15:09:15-04:00 DONE all lanes",
    "alerts": []
   },
   {
@@ -632,13 +633,13 @@
     0
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
-    "done": 4,
+    "done": 8,
     "total": 0,
     "unit": "步"
    },
-   "detail": "SCORED base 1.0 rc=0 base__minerva__chat__t1.0__n128__lim272__seed2 lane=A 2026-09-21T18:49:34+08:00",
+   "detail": "CHAIN_DONE lane=A 2026-09-22T01:24:37+08:00",
    "alerts": []
   },
   {
@@ -650,14 +651,16 @@
     1
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "failed",
    "progress": {
-    "done": 4,
+    "done": 6,
     "total": 0,
     "unit": "步"
    },
-   "detail": "SCORED rlvr 1.0 rc=0 rlvr__minerva__chat__t1.0__n128__lim272__seed2 lane=B 2026-09-21T20:18:04+08:00",
-   "alerts": []
+   "detail": "ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
+   "alerts": [
+    "ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
+   ]
   },
   {
    "id": "iclr9_ladder_seed2_status_laneD",
@@ -674,7 +677,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "GATE lane=D weights_present 2026-09-21T15:18:11+08:00",
+   "detail": "KILLED_BY_SCHEDULER lane=D base 1.2 pid=3821610 chain=3821591 reason=log_stale_3h_gpu2_telemetry_NA_cuinit_fai",
    "alerts": []
   },
   {
@@ -686,13 +689,13 @@
     3
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
-    "done": 2,
+    "done": 4,
     "total": 0,
     "unit": "步"
    },
-   "detail": "SCORED rlvr 0.8 rc=0 rlvr__minerva__chat__t0.8__n128__lim272__seed2 lane=E 2026-09-21T19:22:52+08:00",
+   "detail": "CHAIN_DONE lane=E 2026-09-21T23:18:52+08:00",
    "alerts": []
   },
   {
@@ -707,11 +710,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 38,
+    "done": 36,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T21:57:48 FULL HuggingFaceTB/SmolLM2-360M mmlu_other rc=0 wall=136.3s cards=6",
+   "detail": "2026-09-22T03:05:14 FULL_START cards=7 tasks=17",
    "alerts": []
   },
   {
@@ -729,7 +732,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T21:53:14 FULL Qwen/Qwen2.5-0.5B mod_arith rc=0 wall=24.8s cards=1",
+   "detail": "2026-09-22T00:38:38 FULL Qwen/Qwen2.5-0.5B mmlu_other rc=0 wall=169.2s cards=1",
    "alerts": []
   },
   {
@@ -739,13 +742,13 @@
    "box": "A800",
    "cards": [],
    "kind": "gen",
-   "status": "done",
+   "status": "running",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T06:51:40 ALL_DONE",
+   "detail": "2026-09-21T12:59:21 SKIP Qwen/Qwen2.5-32B 1818d35814b8319459f4bd55ed1ac8709630f003",
    "alerts": []
   },
   {
@@ -813,6 +816,9 @@
    }
   }
  ],
- "alerts": [],
- "collect_s": 171.9
+ "alerts": [
+  "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
+  "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
+ ],
+ "collect_s": 61.5
 }
