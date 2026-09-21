@@ -1,187 +1,29 @@
 {
- "generated_at": "2026-09-20 12:39 LA",
+ "generated_at": "2026-09-20 19:41 LA",
  "boxes": [
   {
    "name": "A800",
    "label": "A800 ×4 (80 GB)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 25,
-     "mem_total": 81920,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 1,
-     "mem_used": 24,
-     "mem_total": 81920,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 2,
-     "mem_used": 24,
-     "mem_total": 81920,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 3,
-     "mem_used": 25,
-     "mem_total": 81920,
-     "util": 0,
-     "owner": "free"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   },
   {
    "name": "3090",
    "label": "3090 ×8 (24 GB, .110)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 22550,
-     "mem_total": 24576,
-     "util": 99,
-     "owner": "ours"
-    },
-    {
-     "idx": 1,
-     "mem_used": 22550,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "ours"
-    },
-    {
-     "idx": 2,
-     "mem_used": 24170,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 3,
-     "mem_used": 24170,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 4,
-     "mem_used": 3972,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 5,
-     "mem_used": 11184,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 6,
-     "mem_used": 0,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 7,
-     "mem_used": 0,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   },
   {
    "name": "fuxin",
    "label": "fuxin 4090 ×8 (48 GB, 公司)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 28630,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 1,
-     "mem_used": 43335,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 2,
-     "mem_used": 25847,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 3,
-     "mem_used": 1597,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 4,
-     "mem_used": 731,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 5,
-     "mem_used": 23287,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 6,
-     "mem_used": 18,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 7,
-     "mem_used": 47035,
-     "mem_total": 49140,
-     "util": 94,
-     "owner": "other"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   },
   {
    "name": "new105",
    "label": "new105 4090D ×2 (48 GB, 公司)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 40281,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 1,
-     "mem_used": 2819,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   },
   {
    "name": "194-yyd",
@@ -197,10 +39,10 @@
     },
     {
      "idx": 1,
-     "mem_used": 44035,
+     "mem_used": 15,
      "mem_total": 49140,
-     "util": 97,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 2,
@@ -570,13 +412,13 @@
     1
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
-    "done": 6,
+    "done": 8,
     "total": 0,
     "unit": "步"
    },
-   "detail": "SCORED rlvr 0.6 rc=0 rlvr__minerva__chat__t0.6__n128__lim272__seed1 lane=B 2026-09-21T02:33:39+08:00",
+   "detail": "CHAIN_DONE lane=B 2026-09-21T06:23:57+08:00",
    "alerts": []
   },
   {
@@ -663,5 +505,5 @@
   }
  ],
  "alerts": [],
- "collect_s": 23.8
+ "collect_s": 87.2
 }
