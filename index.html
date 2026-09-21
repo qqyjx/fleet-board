@@ -140,7 +140,7 @@ function render(f,curves){
   const running=f.jobs.filter(j=>j.status==='running').length;
   $('#kpis').innerHTML=`<span>我们的卡 <b>${ours}</b></span><span>空闲 <b>${free}</b></span><span>在跑作业 <b>${running}</b></span><span>告警 <b>${f.alerts.length}</b></span>`;
   $('#boxes').innerHTML=f.boxes.map(b=>`<div class="box"><div class="name"><b>${b.name}</b><span>${b.label}</span></div>`+
-    (b.reachable?`<div class="cards">${b.cards.map(c=>`<div class="card ${c.owner}">${c.idx}<small>${Math.round(c.mem_used/1024)}G·${c.util}%</small></div>`).join('')}</div>`:`<div class="unreach">不可达</div>`)+`</div>`).join('');
+    (b.reachable?`<div class="cards">${b.cards.map(c=>`<div class="card ${c.owner}">${c.idx}<small>${Math.round(c.mem_used/1024)}G·${c.util<0?'ERR':c.util+'%'}</small></div>`).join('')}</div>`:`<div class="unreach">不可达</div>`)+`</div>`).join('');
   $('#jobs tbody').innerHTML=f.jobs.map(j=>{const p=j.progress; const pct=p&&p.total?Math.min(100,100*p.done/p.total):0;
     return `<tr><td><b>${j.title}</b><div class="detail">${j.repo}</div></td><td class="mono">${j.box} / ${j.cards.join(',')}</td><td><span class="pill ${j.status}">${j.status}</span></td>
     <td><span class="num">${p?p.done+' / '+p.total+' '+p.unit:''}</span><div class="bar ${j.status}"><i style="width:${pct}%"></i></div></td><td class="detail">${j.detail||''}</td></tr>`;}).join('');

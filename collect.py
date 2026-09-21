@@ -24,7 +24,15 @@ def gpus(host):
     for line in out.strip().splitlines():
         try:
             i, u, tot, ut = [x.strip() for x in line.split(",")]
-            cards.append({"idx": int(i), "mem_used": int(u), "mem_total": int(tot), "util": int(ut)})
+            # a card whose utilization reads [N/A] (driver error state, seen on
+            # 4090-jm card 0 on 2026-09-21) must still show on the board, flagged
+            card = {"idx": int(i), "mem_used": int(u), "mem_total": int(tot)}
+            try:
+                card["util"] = int(ut)
+            except ValueError:
+                card["util"] = -1
+                card["error"] = ut
+            cards.append(card)
         except ValueError:
             pass
     return cards

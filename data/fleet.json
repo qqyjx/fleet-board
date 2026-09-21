@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 01:28 LA",
+ "generated_at": "2026-09-21 01:30 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,28 +10,28 @@
      "idx": 0,
      "mem_used": 68773,
      "mem_total": 81920,
-     "util": 50,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68773,
      "mem_total": 81920,
-     "util": 61,
+     "util": 59,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 68773,
      "mem_total": 81920,
-     "util": 77,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 68774,
      "mem_total": 81920,
-     "util": 47,
+     "util": 76,
      "owner": "ours"
     }
    ]
@@ -87,7 +87,7 @@
      "idx": 6,
      "mem_used": 1514,
      "mem_total": 24576,
-     "util": 40,
+     "util": 38,
      "owner": "ours"
     },
     {
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47035,
      "mem_total": 49140,
-     "util": 47,
+     "util": 100,
      "owner": "other"
     }
    ]
@@ -192,28 +192,28 @@
      "idx": 0,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 97,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 44035,
      "mem_total": 49140,
-     "util": 83,
+     "util": 81,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 91,
+     "util": 94,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 87,
+     "util": 76,
      "owner": "ours"
     }
    ]
@@ -224,10 +224,18 @@
    "reachable": true,
    "cards": [
     {
-     "idx": 1,
-     "mem_used": 29729,
+     "idx": 0,
+     "mem_used": 11090,
      "mem_total": 49140,
-     "util": 59,
+     "util": -1,
+     "error": "[N/A]",
+     "owner": "other"
+    },
+    {
+     "idx": 1,
+     "mem_used": 40810,
+     "mem_total": 49140,
+     "util": 93,
      "owner": "other"
     }
    ]
@@ -769,5 +777,5 @@
   "UI-TARS 二次抽样（3090 卡 0/1 TP2 m2w test_domain；android 09-21 03:37 CST 已落地） 失败：[m2w] 2026-09-21T16:22:24+08:00 FAILED cell=m2w_test_domain stage=s1 rc=1 wall=156s",
   "UI-TARS 二次抽样（3090 卡 0/1 TP2 m2w test_domain；android 09-21 03:37 CST 已落地）: [m2w] 2026-09-21T16:22:24+08:00 FAILED cell=m2w_test_domain stage=s1 rc=1 wall=156s"
  ],
- "collect_s": 36.6
+ "collect_s": 29.8
 }
