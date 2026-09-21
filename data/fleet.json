@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 00:23 LA",
+ "generated_at": "2026-09-21 01:28 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,28 +10,28 @@
      "idx": 0,
      "mem_used": 68773,
      "mem_total": 81920,
-     "util": 56,
+     "util": 50,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68773,
      "mem_total": 81920,
-     "util": 51,
+     "util": 61,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 68773,
      "mem_total": 81920,
-     "util": 0,
+     "util": 77,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 68774,
      "mem_total": 81920,
-     "util": 55,
+     "util": 47,
      "owner": "ours"
     }
    ]
@@ -43,17 +43,17 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 22550,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 99,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 1,
-     "mem_used": 22550,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 100,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 2,
@@ -85,9 +85,9 @@
     },
     {
      "idx": 6,
-     "mem_used": 0,
+     "mem_used": 1514,
      "mem_total": 24576,
-     "util": 0,
+     "util": 40,
      "owner": "ours"
     },
     {
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47035,
      "mem_total": 49140,
-     "util": 0,
+     "util": 47,
      "owner": "other"
     }
    ]
@@ -176,7 +176,7 @@
     },
     {
      "idx": 1,
-     "mem_used": 2731,
+     "mem_used": 7274,
      "mem_total": 49140,
      "util": 0,
      "owner": "ours"
@@ -190,31 +190,45 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 15,
+     "mem_used": 44251,
      "mem_total": 49140,
-     "util": 0,
+     "util": 97,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 44251,
+     "mem_used": 44035,
      "mem_total": 49140,
-     "util": 89,
+     "util": 83,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 44033,
+     "mem_used": 44251,
      "mem_total": 49140,
-     "util": 84,
+     "util": 91,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 15,
+     "mem_used": 44251,
      "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
+     "util": 87,
+     "owner": "ours"
+    }
+   ]
+  },
+  {
+   "name": "4090-jm",
+   "label": "4090-jm ×2 (48 GB, 实验室 .176; 他人共用, 空时才上)",
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 1,
+     "mem_used": 29729,
+     "mem_total": 49140,
+     "util": 59,
+     "owner": "other"
     }
    ]
   }
@@ -529,14 +543,16 @@
     1
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "failed",
    "progress": {
     "done": 3,
     "total": 0,
     "unit": "步"
    },
-   "detail": "[ac] 2026-09-21T03:37:35+08:00 DONE lane=ac wall=13964s",
-   "alerts": []
+   "detail": "[m2w] 2026-09-21T16:22:24+08:00 FAILED cell=m2w_test_domain stage=s1 rc=1 wall=156s",
+   "alerts": [
+    "[m2w] 2026-09-21T16:22:24+08:00 FAILED cell=m2w_test_domain stage=s1 rc=1 wall=156s"
+   ]
   },
   {
    "id": "eval_matrix_t0_corrected.out",
@@ -556,7 +572,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "[2026-09-21T03:19:31-04:00] card 0: dense-null-envonly-seed2-full@125 t0 -> /data0/xyf/www2027-1/results/eval/",
+   "detail": "[2026-09-21T04:24:49-04:00] card 3: dense-null-envonly-seed2-full@100 t0 -> /data0/xyf/www2027-1/results/eval/",
    "alerts": []
   },
   {
@@ -570,11 +586,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 0,
+    "done": 2,
     "total": 0,
     "unit": "步"
    },
-   "detail": "DRIVER_STOPPED lane=A pid=3107624 resplit_to_four_lanes 2026-09-21T15:18:05+08:00",
+   "detail": "GATE lane=A weights_present 2026-09-21T15:38:17+08:00",
    "alerts": []
   },
   {
@@ -588,11 +604,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 0,
+    "done": 2,
     "total": 0,
     "unit": "步"
    },
-   "detail": "DRIVER_STOPPED lane=B pid=3125964 resplit_to_four_lanes 2026-09-21T15:18:06+08:00",
+   "detail": "GATE lane=B weights_present 2026-09-21T16:20:27+08:00",
    "alerts": []
   },
   {
@@ -614,9 +630,27 @@
    "alerts": []
   },
   {
-   "id": "smoke.log",
+   "id": "iclr9_ladder_seed2_status_laneE",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 rlvr 臂 lane E（T 0.8 1.2）",
+   "box": "194-yyd",
+   "cards": [
+    3
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "GATE lane=E weights_present 2026-09-21T15:28:11+08:00",
+   "alerts": []
+  },
+  {
+   "id": "full_eval.log",
    "repo": "Science",
-   "title": "Phase-Trans 计时 smoke（8 题/模型，跟随 30 个 ≤14B 模型的 pin 下载；只记秒数，指标隔离未读）",
+   "title": "Phase-Trans 盲态全量评测（≤14B 30 模型 × 17 任务，跟随 pin 下载；指标隔离在 _blind/ 未读，只记 rc/秒）",
    "box": "3090",
    "cards": [
     6,
@@ -625,17 +659,17 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 28,
+    "done": 22,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T14:54:37 Qwen/Qwen2.5-1.5B gsm8k rc=0 wall=43.2s cards=6",
+   "detail": "2026-09-21T16:12:14 FULL HuggingFaceTB/SmolLM2-135M mod_arith rc=0 wall=24.0s cards=6",
    "alerts": []
   },
   {
-   "id": "smoke.log",
+   "id": "full_eval.log",
    "repo": "Science",
-   "title": "Phase-Trans 计时 smoke（≤4B 子集 20 模型，跟随下载；公司上行 ≈3 MB/s）",
+   "title": "Phase-Trans 盲态全量评测（≤4B 子集 20 模型 × 17 任务；box-floor 行）",
    "box": "new105",
    "cards": [
     1
@@ -643,11 +677,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 14,
+    "done": 24,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T15:21:06 HuggingFaceTB/SmolLM2-135M gsm8k rc=0 wall=41.7s cards=1",
+   "detail": "2026-09-21T16:22:22 FULL HuggingFaceTB/SmolLM2-135M humaneval rc=0 wall=405.0s cards=1",
    "alerts": []
   },
   {
@@ -663,7 +697,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T03:00:22 FAIL Qwen/Qwen2.5-32B ChunkedEncodingError(ProtocolError('Connection broken: IncompleteRea",
+   "detail": "2026-09-21T04:15:46 FAIL Qwen/Qwen2.5-72B ChunkedEncodingError(ProtocolError('Connection broken: IncompleteRea",
    "alerts": []
   },
   {
@@ -731,6 +765,9 @@
    }
   }
  ],
- "alerts": [],
- "collect_s": 11.4
+ "alerts": [
+  "UI-TARS 二次抽样（3090 卡 0/1 TP2 m2w test_domain；android 09-21 03:37 CST 已落地） 失败：[m2w] 2026-09-21T16:22:24+08:00 FAILED cell=m2w_test_domain stage=s1 rc=1 wall=156s",
+  "UI-TARS 二次抽样（3090 卡 0/1 TP2 m2w test_domain；android 09-21 03:37 CST 已落地）: [m2w] 2026-09-21T16:22:24+08:00 FAILED cell=m2w_test_domain stage=s1 rc=1 wall=156s"
+ ],
+ "collect_s": 36.6
 }
