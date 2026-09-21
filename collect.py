@@ -166,7 +166,9 @@ STATUS_JOBS = [
     ("A800", "/data0/xyf/imwut_B_status", "IMWUT2027-1", "ORAL_GAP B1 max-q 门控 / B2 覆盖率扫 / B3 seeds 45-46（四道，排在 WWW 链后）", [0, 1, 2, 3]),
     ("194-yyd", "/data/yyd/iclr9_ladder_seed2_status_laneA", "ICLR2027-9", "14B 阶梯 seed 2 base 臂（Amendment 3；同机 seed-only 底；6 格，0.6/1.0 先）", [0]),
     ("194-yyd", "/data/yyd/iclr9_ladder_seed2_status_laneB", "ICLR2027-9", "14B 阶梯 seed 2 rlvr 臂（Amendment 3；6 格）", [1]),
-    ("3090", "/data/xyf/science/logs/smoke.log", "Science", "Phase-Trans 计时 smoke（8 题/模型，跟随 26 个模型的 pin 下载；只记秒数，指标隔离未读）", [6, 7]),
+    ("3090", "/data/xyf/science/logs/smoke.log", "Science", "Phase-Trans 计时 smoke（8 题/模型，跟随 30 个 ≤14B 模型的 pin 下载；只记秒数，指标隔离未读）", [6, 7]),
+    ("new105", "/home/xyf/science/logs/smoke.log", "Science", "Phase-Trans 计时 smoke（≤4B 子集 20 模型，跟随下载；公司上行 ≈3 MB/s）", [1]),
+    ("A800", "/data0/xyf/science/logs/dl_models.log", "Science", "Phase-Trans A800 腿：Qwen2.5-32B/72B + OPT-30b/66b pin 下载（≈400 GB，4.7 MB/s；只占盘不占卡）", []),
 ]
 def status_job(host, path, repo, title, cards):
     out = ssh(host, f"tail -n 40 {path} 2>/dev/null")
