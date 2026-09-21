@@ -159,9 +159,6 @@ def b7tp2():
 # ---------------- generic status-file jobs (terminal lines drive the board) ----------------
 STATUS_JOBS = [
     ("3090", "/data/xyf/iclr2_uitars_seed1_status", "ICLR2027-2", "UI-TARS 二次抽样（3090 卡 0/1 TP2 m2w test_domain；android 09-21 03:37 CST 已落地）", [0, 1]),
-    ("194-yyd", "/data/yyd/iclr9_ladder_seed1_status_laneA", "ICLR2027-9", "14B 阶梯 seed1 lane A（194 卡 0）", [0]),
-    ("194-yyd", "/data/yyd/iclr9_ladder_seed1_status_laneB", "ICLR2027-9", "14B 阶梯 seed1 lane B（194 卡 1）", [1]),
-    ("194-yyd", "/data/yyd/iclr9_ladder_seed1_status_laneE", "ICLR2027-9", "14B 阶梯 seed1 lane E（194 卡 3）", [3]),
 ]
 def status_job(host, path, repo, title, cards):
     out = ssh(host, f"tail -n 40 {path} 2>/dev/null")
