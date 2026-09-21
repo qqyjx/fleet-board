@@ -1,29 +1,187 @@
 {
- "generated_at": "2026-09-20 19:41 LA",
+ "generated_at": "2026-09-20 20:12 LA",
  "boxes": [
   {
    "name": "A800",
    "label": "A800 ×4 (80 GB)",
-   "reachable": false,
-   "cards": []
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 68773,
+     "mem_total": 81920,
+     "util": 82,
+     "owner": "ours"
+    },
+    {
+     "idx": 1,
+     "mem_used": 68773,
+     "mem_total": 81920,
+     "util": 75,
+     "owner": "ours"
+    },
+    {
+     "idx": 2,
+     "mem_used": 68773,
+     "mem_total": 81920,
+     "util": 81,
+     "owner": "ours"
+    },
+    {
+     "idx": 3,
+     "mem_used": 68774,
+     "mem_total": 81920,
+     "util": 84,
+     "owner": "ours"
+    }
+   ]
   },
   {
    "name": "3090",
    "label": "3090 ×8 (24 GB, .110)",
-   "reachable": false,
-   "cards": []
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 22550,
+     "mem_total": 24576,
+     "util": 100,
+     "owner": "ours"
+    },
+    {
+     "idx": 1,
+     "mem_used": 22550,
+     "mem_total": 24576,
+     "util": 100,
+     "owner": "ours"
+    },
+    {
+     "idx": 2,
+     "mem_used": 24170,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 3,
+     "mem_used": 24170,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 4,
+     "mem_used": 3972,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 5,
+     "mem_used": 11184,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 6,
+     "mem_used": 0,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 7,
+     "mem_used": 0,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "free"
+    }
+   ]
   },
   {
    "name": "fuxin",
    "label": "fuxin 4090 ×8 (48 GB, 公司)",
-   "reachable": false,
-   "cards": []
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 30367,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 1,
+     "mem_used": 43335,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 2,
+     "mem_used": 25847,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 3,
+     "mem_used": 1597,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 4,
+     "mem_used": 28663,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 5,
+     "mem_used": 23287,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 6,
+     "mem_used": 18,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 7,
+     "mem_used": 47035,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    }
+   ]
   },
   {
    "name": "new105",
    "label": "new105 4090D ×2 (48 GB, 公司)",
-   "reachable": false,
-   "cards": []
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 40281,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 1,
+     "mem_used": 2731,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    }
+   ]
   },
   {
    "name": "194-yyd",
@@ -67,20 +225,15 @@
    "repo": "WWW2027-1",
    "title": "stage7 六臂修正版 GRPO",
    "box": "A800",
-   "cards": [
-    0,
-    1,
-    2,
-    3
-   ],
+   "cards": [],
    "kind": "train",
-   "status": "unknown",
+   "status": "done",
    "progress": {
     "done": 6,
     "total": 6,
     "unit": "臂"
    },
-   "detail": "当前臂 None",
+   "detail": "训练队列 QUEUE DONE 09-20 10:08 LA；评测链见下行",
    "arms": [
     {
      "arm": "dense-null-envonly-seed3-full",
@@ -386,57 +539,24 @@
    "alerts": []
   },
   {
-   "id": "iclr9_ladder_seed1_status_laneA",
-   "repo": "ICLR2027-9",
-   "title": "14B 阶梯 seed1 lane A（194 卡 0）",
-   "box": "194-yyd",
+   "id": "eval_matrix_t0_corrected.out",
+   "repo": "WWW2027-1",
+   "title": "修正版六臂 T0 评测（30 作业，四卡；完了自动接 S* → outcome T1 → 噪声底）",
+   "box": "A800",
    "cards": [
-    0
-   ],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 12,
-    "total": 0,
-    "unit": "步"
-   },
-   "detail": "CHAIN_DONE lane=A 2026-09-21T02:07:48+08:00",
-   "alerts": []
-  },
-  {
-   "id": "iclr9_ladder_seed1_status_laneB",
-   "repo": "ICLR2027-9",
-   "title": "14B 阶梯 seed1 lane B（194 卡 1）",
-   "box": "194-yyd",
-   "cards": [
-    1
-   ],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 8,
-    "total": 0,
-    "unit": "步"
-   },
-   "detail": "CHAIN_DONE lane=B 2026-09-21T06:23:57+08:00",
-   "alerts": []
-  },
-  {
-   "id": "iclr9_ladder_seed1_status_laneE",
-   "repo": "ICLR2027-9",
-   "title": "14B 阶梯 seed1 lane E（194 卡 3）",
-   "box": "194-yyd",
-   "cards": [
+    0,
+    1,
+    2,
     3
    ],
    "kind": "gen",
-   "status": "done",
+   "status": "running",
    "progress": {
-    "done": 4,
+    "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "ORCH_DONE 2026-09-19T06:57:40+08:00",
+   "detail": "[2026-09-20T22:56:16-04:00] card 2: process-envonly-seed1-full@75 t0 -> /data0/xyf/www2027-1/results/eval/proc",
    "alerts": []
   },
   {
@@ -505,5 +625,5 @@
   }
  ],
  "alerts": [],
- "collect_s": 87.2
+ "collect_s": 13.3
 }

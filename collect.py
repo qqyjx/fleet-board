@@ -83,10 +83,12 @@ def stage7(curves):
     s7 = [a for a in arms if "envonly" in a["arm"]]
     done = len([a for a in s7 if a["steps"] >= FULL and a["arm"] != running])
     for a in arms: a["tier"] = "stage7" if "envonly" in a["arm"] else "T0"
+    qdone = any("QUEUE DONE" in line for line in q)
     return {"id": "www-stage7", "repo": "WWW2027-1", "title": "stage7 六臂修正版 GRPO", "box": "A800",
-            "cards": [0, 1, 2, 3], "kind": "train", "status": "running" if running else "unknown",
+            "cards": [] if qdone else [0, 1, 2, 3], "kind": "train",
+            "status": "done" if qdone else ("running" if running else "unknown"),
             "progress": {"done": max(0, min(done, total_arms)), "total": total_arms, "unit": "臂"},
-            "detail": f"当前臂 {running}" + (f"，step {[a for a in arms if a['arm']==running][0]['steps']}/{FULL}" if running and any(a['arm']==running for a in arms) else ""),
+            "detail": ("训练队列 QUEUE DONE 09-20 10:08 LA；评测链见下行" if qdone else f"当前臂 {running}") + (f"，step {[a for a in arms if a['arm']==running][0]['steps']}/{FULL}" if running and any(a['arm']==running for a in arms) else ""),
             "arms": arms}
 
 # ---------------- 3090: ICLR2027-9 ladder ----------------
@@ -159,6 +161,9 @@ def b7tp2():
 # ---------------- generic status-file jobs (terminal lines drive the board) ----------------
 STATUS_JOBS = [
     ("3090", "/data/xyf/iclr2_uitars_seed1_status", "ICLR2027-2", "UI-TARS 二次抽样（3090 卡 0/1 TP2 m2w test_domain；android 09-21 03:37 CST 已落地）", [0, 1]),
+    ("A800", "/data0/xyf/www2027-1/logs/eval_matrix_t0_corrected.out", "WWW2027-1", "修正版六臂 T0 评测（30 作业，四卡；完了自动接 S* → outcome T1 → 噪声底）", [0, 1, 2, 3]),
+    ("A800", "/data0/xyf/www2027-1/logs/after_t0_corrected.log", "WWW2027-1", "修正版六臂：T0 评测 30 作业 → S* → outcome T1 → 噪声底（post_matrix_eval corrected）", [0, 1, 2, 3]),
+    ("A800", "/data0/xyf/imwut_B_status", "IMWUT2027-1", "ORAL_GAP B1 max-q 门控 / B2 覆盖率扫 / B3 seeds 45-46（四道，排在 WWW 链后）", [0, 1, 2, 3]),
 ]
 def status_job(host, path, repo, title, cards):
     out = ssh(host, f"tail -n 40 {path} 2>/dev/null")
@@ -201,6 +206,13 @@ def main():
     for b in boxes:
         for c in b["cards"]:
             c["owner"] = "ours" if (b["name"], c["idx"]) in ours else ("other" if c["mem_used"] > 1500 else "free")
+    # a box that did not answer this round cannot vouch for its jobs: mark them stale instead of
+    # carrying the last known status forward (2026-09-20: unreachable boxes kept showing "running")
+    down = {b["name"] for b in boxes if not b["reachable"]}
+    for j in jobs:
+        if j["box"] in down and j["status"] in ("running", "unknown"):
+            j["status"] = "stale"; j["detail"] = f"{j['box']} 本轮未采集到；上次状态：" + j["detail"][:80]
+    for name in sorted(down): alerts.append(f"{name} 本轮采集失败：该机任务状态为上次快照，不作数")
     for j in jobs:
         if j["status"] == "failed": alerts.append(f"{j['title']} 失败：{j['detail']}")
         for a in j.get("alerts", []): alerts.append(f"{j['title']}: {a}")
