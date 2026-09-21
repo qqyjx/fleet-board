@@ -168,8 +168,8 @@ STATUS_JOBS = [
     ("194-yyd", "/data/yyd/iclr9_ladder_seed2_status_laneB", "ICLR2027-9", "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）", [1]),
     ("194-yyd", "/data/yyd/iclr9_ladder_seed2_status_laneD", "ICLR2027-9", "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）", [2]),
     ("194-yyd", "/data/yyd/iclr9_ladder_seed2_status_laneE", "ICLR2027-9", "14B 阶梯 seed 2 rlvr 臂 lane E（T 0.8 1.2）", [3]),
-    ("3090", "/data/xyf/science/logs/smoke.log", "Science", "Phase-Trans 计时 smoke（8 题/模型，跟随 30 个 ≤14B 模型的 pin 下载；只记秒数，指标隔离未读）", [6, 7]),
-    ("new105", "/home/xyf/science/logs/smoke.log", "Science", "Phase-Trans 计时 smoke（≤4B 子集 20 模型，跟随下载；公司上行 ≈3 MB/s）", [1]),
+    ("3090", "/data/xyf/science/logs/full_eval.log", "Science", "Phase-Trans 盲态全量评测（≤14B 30 模型 × 17 任务，跟随 pin 下载；指标隔离在 _blind/ 未读，只记 rc/秒）", [6, 7]),
+    ("new105", "/home/xyf/science/logs/full_eval.log", "Science", "Phase-Trans 盲态全量评测（≤4B 子集 20 模型 × 17 任务；box-floor 行）", [1]),
     ("A800", "/data0/xyf/science/logs/dl_models.log", "Science", "Phase-Trans A800 腿：Qwen2.5-32B/72B + OPT-30b/66b pin 下载（≈400 GB，4.7 MB/s；只占盘不占卡）", []),
 ]
 def status_job(host, path, repo, title, cards):
@@ -177,12 +177,12 @@ def status_job(host, path, repo, title, cards):
     if not out or not out.strip(): return None
     lines = [l for l in out.strip().splitlines() if l.strip()]
     last = lines[-1]
-    n_done = sum(1 for l in lines if l.startswith("SCORED") or " END " in l and ("rc=0" in l or "greedy=" in l) or l.startswith("END ") and "rc=0" in l
+    n_done = sum(1 for l in lines if l.startswith(("SCORED", "FULL ")) and "rc=0" in l or l.startswith("SCORED") or " END " in l and ("rc=0" in l or "greedy=" in l) or l.startswith("END ") and "rc=0" in l
                  or (" wall=" in l and " rc=0 " in l))
     # NOTE/RELAUNCH lines are annotations and may quote a failure; only real status lines count
     fails = [l for l in lines if ("FAILED" in l or "ABORT" in l) and not l.startswith(("NOTE", "RELAUNCH", "LANEB_DEFERRED", "DRIVER_STOPPED"))]
     status = "running"
-    if "CHAIN_DONE" in last or last.startswith(("DONE", "ORCH_DONE")) or "ALL_DONE" in last or "SMOKE_DONE" in last: status = "done"
+    if "CHAIN_DONE" in last or last.startswith(("DONE", "ORCH_DONE")) or "ALL_DONE" in last or "SMOKE_DONE" in last or "FULL_DONE" in last: status = "done"
     elif fails and (fails[-1] == last): status = "failed"
     return {"id": os.path.basename(path), "repo": repo, "title": title, "box": host, "cards": cards, "kind": "gen",
             "status": status, "progress": {"done": n_done, "total": 0, "unit": "步"}, "detail": last[:110],
