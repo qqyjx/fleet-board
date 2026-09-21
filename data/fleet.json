@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 01:30 LA",
+ "generated_at": "2026-09-21 06:29 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,30 +8,30 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 68773,
+     "mem_used": 16123,
      "mem_total": 81920,
-     "util": 0,
+     "util": 28,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 68773,
+     "mem_used": 1147,
      "mem_total": 81920,
-     "util": 59,
+     "util": 15,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 68773,
+     "mem_used": 1225,
      "mem_total": 81920,
-     "util": 0,
+     "util": 15,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 68774,
+     "mem_used": 16128,
      "mem_total": 81920,
-     "util": 76,
+     "util": 15,
      "owner": "ours"
     }
    ]
@@ -43,17 +43,17 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 0,
+     "mem_used": 23148,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 39,
+     "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 0,
+     "mem_used": 23146,
      "mem_total": 24576,
      "util": 0,
-     "owner": "free"
+     "owner": "ours"
     },
     {
      "idx": 2,
@@ -85,7 +85,7 @@
     },
     {
      "idx": 6,
-     "mem_used": 1514,
+     "mem_used": 2620,
      "mem_total": 24576,
      "util": 38,
      "owner": "ours"
@@ -106,7 +106,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 30367,
+     "mem_used": 30459,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47035,
      "mem_total": 49140,
-     "util": 100,
+     "util": 82,
      "owner": "other"
     }
    ]
@@ -176,7 +176,7 @@
     },
     {
      "idx": 1,
-     "mem_used": 7274,
+     "mem_used": 3866,
      "mem_total": 49140,
      "util": 0,
      "owner": "ours"
@@ -192,28 +192,28 @@
      "idx": 0,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 100,
+     "util": 94,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 44035,
+     "mem_used": 44251,
      "mem_total": 49140,
-     "util": 81,
+     "util": 95,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 94,
+     "util": 92,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 44251,
+     "mem_used": 44035,
      "mem_total": 49140,
-     "util": 76,
+     "util": 88,
      "owner": "ours"
     }
    ]
@@ -221,24 +221,8 @@
   {
    "name": "4090-jm",
    "label": "4090-jm ×2 (48 GB, 实验室 .176; 他人共用, 空时才上)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 11090,
-     "mem_total": 49140,
-     "util": -1,
-     "error": "[N/A]",
-     "owner": "other"
-    },
-    {
-     "idx": 1,
-     "mem_used": 40810,
-     "mem_total": 49140,
-     "util": 93,
-     "owner": "other"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   }
  ],
  "jobs": [
@@ -551,16 +535,14 @@
     1
    ],
    "kind": "gen",
-   "status": "failed",
+   "status": "running",
    "progress": {
     "done": 3,
     "total": 0,
     "unit": "步"
    },
-   "detail": "[m2w] 2026-09-21T16:22:24+08:00 FAILED cell=m2w_test_domain stage=s1 rc=1 wall=156s",
-   "alerts": [
-    "[m2w] 2026-09-21T16:22:24+08:00 FAILED cell=m2w_test_domain stage=s1 rc=1 wall=156s"
-   ]
+   "detail": "[m2w] 2026-09-21T16:52:36+08:00 START card=0,1 cells=3",
+   "alerts": []
   },
   {
    "id": "eval_matrix_t0_corrected.out",
@@ -580,7 +562,49 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "[2026-09-21T04:24:49-04:00] card 3: dense-null-envonly-seed2-full@100 t0 -> /data0/xyf/www2027-1/results/eval/",
+   "detail": "[eval_matrix] pass=t0 finished 2026-09-21T06:51:18-04:00",
+   "alerts": []
+  },
+  {
+   "id": "after_t0_corrected.log",
+   "repo": "WWW2027-1",
+   "title": "修正版六臂：T0 评测 30 作业 → S* → outcome T1 → 噪声底（post_matrix_eval corrected）",
+   "box": "A800",
+   "cards": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "2026-09-21T06:53:04-04:00 AFTER-T0 post_matrix_eval VERSION=corrected rc=2",
+   "alerts": []
+  },
+  {
+   "id": "imwut_B_status",
+   "repo": "IMWUT2027-1",
+   "title": "ORAL_GAP B1 max-q 门控 / B2 覆盖率扫 / B3 seeds 45-46（四道，排在 WWW 链后）",
+   "box": "A800",
+   "cards": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 7,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "2026-09-21T08:58:52-04:00 JOB lane=1 card=1 B2_hhar_cov0.5",
    "alerts": []
   },
   {
@@ -594,11 +618,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 2,
+    "done": 4,
     "total": 0,
     "unit": "步"
    },
-   "detail": "GATE lane=A weights_present 2026-09-21T15:38:17+08:00",
+   "detail": "SCORED base 1.0 rc=0 base__minerva__chat__t1.0__n128__lim272__seed2 lane=A 2026-09-21T18:49:34+08:00",
    "alerts": []
   },
   {
@@ -612,11 +636,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 2,
+    "done": 4,
     "total": 0,
     "unit": "步"
    },
-   "detail": "GATE lane=B weights_present 2026-09-21T16:20:27+08:00",
+   "detail": "SCORED rlvr 1.0 rc=0 rlvr__minerva__chat__t1.0__n128__lim272__seed2 lane=B 2026-09-21T20:18:04+08:00",
    "alerts": []
   },
   {
@@ -648,11 +672,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 0,
+    "done": 2,
     "total": 0,
     "unit": "步"
    },
-   "detail": "GATE lane=E weights_present 2026-09-21T15:28:11+08:00",
+   "detail": "SCORED rlvr 0.8 rc=0 rlvr__minerva__chat__t0.8__n128__lim272__seed2 lane=E 2026-09-21T19:22:52+08:00",
    "alerts": []
   },
   {
@@ -667,11 +691,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 22,
+    "done": 38,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T16:12:14 FULL HuggingFaceTB/SmolLM2-135M mod_arith rc=0 wall=24.0s cards=6",
+   "detail": "2026-09-21T21:27:30 FULL HuggingFaceTB/SmolLM2-360M gsm8k rc=0 wall=1559.3s cards=6",
    "alerts": []
   },
   {
@@ -685,11 +709,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 24,
+    "done": 38,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T16:22:22 FULL HuggingFaceTB/SmolLM2-135M humaneval rc=0 wall=405.0s cards=1",
+   "detail": "2026-09-21T21:27:32 FULL EleutherAI/pythia-410m-deduped mmlu_other rc=0 wall=104.8s cards=1",
    "alerts": []
   },
   {
@@ -699,13 +723,13 @@
    "box": "A800",
    "cards": [],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T04:15:46 FAIL Qwen/Qwen2.5-72B ChunkedEncodingError(ProtocolError('Connection broken: IncompleteRea",
+   "detail": "2026-09-21T06:51:40 ALL_DONE",
    "alerts": []
   },
   {
@@ -774,8 +798,7 @@
   }
  ],
  "alerts": [
-  "UI-TARS 二次抽样（3090 卡 0/1 TP2 m2w test_domain；android 09-21 03:37 CST 已落地） 失败：[m2w] 2026-09-21T16:22:24+08:00 FAILED cell=m2w_test_domain stage=s1 rc=1 wall=156s",
-  "UI-TARS 二次抽样（3090 卡 0/1 TP2 m2w test_domain；android 09-21 03:37 CST 已落地）: [m2w] 2026-09-21T16:22:24+08:00 FAILED cell=m2w_test_domain stage=s1 rc=1 wall=156s"
+  "4090-jm 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 29.8
+ "collect_s": 358.7
 }
