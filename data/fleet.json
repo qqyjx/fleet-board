@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 06:29 LA",
+ "generated_at": "2026-09-21 06:45 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,14 +10,14 @@
      "idx": 0,
      "mem_used": 16123,
      "mem_total": 81920,
-     "util": 28,
+     "util": 15,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 1147,
+     "mem_used": 16157,
      "mem_total": 81920,
-     "util": 15,
+     "util": 32,
      "owner": "ours"
     },
     {
@@ -31,7 +31,7 @@
      "idx": 3,
      "mem_used": 16128,
      "mem_total": 81920,
-     "util": 15,
+     "util": 8,
      "owner": "ours"
     }
    ]
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 23148,
      "mem_total": 24576,
-     "util": 39,
+     "util": 99,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 23146,
      "mem_total": 24576,
-     "util": 0,
+     "util": 99,
      "owner": "ours"
     },
     {
@@ -85,9 +85,9 @@
     },
     {
      "idx": 6,
-     "mem_used": 2620,
+     "mem_used": 24080,
      "mem_total": 24576,
-     "util": 38,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47035,
      "mem_total": 49140,
-     "util": 82,
+     "util": 100,
      "owner": "other"
     }
    ]
@@ -176,9 +176,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 3866,
+     "mem_used": 5040,
      "mem_total": 49140,
-     "util": 0,
+     "util": 37,
      "owner": "ours"
     }
    ]
@@ -192,14 +192,14 @@
      "idx": 0,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 94,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 95,
+     "util": 77,
      "owner": "ours"
     },
     {
@@ -213,7 +213,7 @@
      "idx": 3,
      "mem_used": 44035,
      "mem_total": 49140,
-     "util": 88,
+     "util": 96,
      "owner": "ours"
     }
    ]
@@ -600,11 +600,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 7,
+    "done": 8,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T08:58:52-04:00 JOB lane=1 card=1 B2_hhar_cov0.5",
+   "detail": "2026-09-21T09:43:43-04:00 END lane=2 B3_E5_wisdm rc=0",
    "alerts": []
   },
   {
@@ -695,7 +695,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T21:27:30 FULL HuggingFaceTB/SmolLM2-360M gsm8k rc=0 wall=1559.3s cards=6",
+   "detail": "2026-09-21T21:38:44 FULL HuggingFaceTB/SmolLM2-360M humaneval rc=0 wall=674.1s cards=6",
    "alerts": []
   },
   {
@@ -713,7 +713,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T21:27:32 FULL EleutherAI/pythia-410m-deduped mmlu_other rc=0 wall=104.8s cards=1",
+   "detail": "2026-09-21T21:44:44 FULL EleutherAI/pythia-410m-deduped hellaswag rc=0 wall=101.1s cards=1",
    "alerts": []
   },
   {
@@ -800,5 +800,5 @@
  "alerts": [
   "4090-jm 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 358.7
+ "collect_s": 353.9
 }
