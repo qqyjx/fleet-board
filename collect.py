@@ -164,17 +164,21 @@ STATUS_JOBS = [
     ("A800", "/data0/xyf/www2027-1/logs/eval_matrix_t0_corrected.out", "WWW2027-1", "修正版六臂 T0 评测（30 作业，四卡；完了自动接 S* → outcome T1 → 噪声底）", [0, 1, 2, 3]),
     ("A800", "/data0/xyf/www2027-1/logs/after_t0_corrected.log", "WWW2027-1", "修正版六臂：T0 评测 30 作业 → S* → outcome T1 → 噪声底（post_matrix_eval corrected）", [0, 1, 2, 3]),
     ("A800", "/data0/xyf/imwut_B_status", "IMWUT2027-1", "ORAL_GAP B1 max-q 门控 / B2 覆盖率扫 / B3 seeds 45-46（四道，排在 WWW 链后）", [0, 1, 2, 3]),
+    ("194-yyd", "/data/yyd/iclr9_ladder_seed2_status_laneA", "ICLR2027-9", "14B 阶梯 seed 2 base 臂（Amendment 3；同机 seed-only 底；6 格，0.6/1.0 先）", [0]),
+    ("194-yyd", "/data/yyd/iclr9_ladder_seed2_status_laneB", "ICLR2027-9", "14B 阶梯 seed 2 rlvr 臂（Amendment 3；6 格）", [1]),
+    ("3090", "/data/xyf/science/logs/smoke.log", "Science", "Phase-Trans 计时 smoke（8 题/模型，跟随 26 个模型的 pin 下载；只记秒数，指标隔离未读）", [6, 7]),
 ]
 def status_job(host, path, repo, title, cards):
     out = ssh(host, f"tail -n 40 {path} 2>/dev/null")
     if not out or not out.strip(): return None
     lines = [l for l in out.strip().splitlines() if l.strip()]
     last = lines[-1]
-    n_done = sum(1 for l in lines if l.startswith("SCORED") or " END " in l and ("rc=0" in l or "greedy=" in l) or l.startswith("END ") and "rc=0" in l)
+    n_done = sum(1 for l in lines if l.startswith("SCORED") or " END " in l and ("rc=0" in l or "greedy=" in l) or l.startswith("END ") and "rc=0" in l
+                 or (" wall=" in l and " rc=0 " in l))
     # NOTE/RELAUNCH lines are annotations and may quote a failure; only real status lines count
     fails = [l for l in lines if ("FAILED" in l or "ABORT" in l) and not l.startswith(("NOTE", "RELAUNCH", "LANEB_DEFERRED"))]
     status = "running"
-    if "CHAIN_DONE" in last or last.startswith(("DONE", "ORCH_DONE")) or "ALL_DONE" in last: status = "done"
+    if "CHAIN_DONE" in last or last.startswith(("DONE", "ORCH_DONE")) or "ALL_DONE" in last or "SMOKE_DONE" in last: status = "done"
     elif fails and (fails[-1] == last): status = "failed"
     return {"id": os.path.basename(path), "repo": repo, "title": title, "box": host, "cards": cards, "kind": "gen",
             "status": status, "progress": {"done": n_done, "total": 0, "unit": "步"}, "detail": last[:110],
