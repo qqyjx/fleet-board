@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 21:38 LA",
+ "generated_at": "2026-09-21 00:23 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,14 +10,14 @@
      "idx": 0,
      "mem_used": 68773,
      "mem_total": 81920,
-     "util": 88,
+     "util": 56,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68773,
      "mem_total": 81920,
-     "util": 42,
+     "util": 51,
      "owner": "ours"
     },
     {
@@ -31,7 +31,7 @@
      "idx": 3,
      "mem_used": 68774,
      "mem_total": 81920,
-     "util": 79,
+     "util": 55,
      "owner": "ours"
     }
    ]
@@ -45,7 +45,7 @@
      "idx": 0,
      "mem_used": 22550,
      "mem_total": 24576,
-     "util": 100,
+     "util": 99,
      "owner": "ours"
     },
     {
@@ -85,7 +85,7 @@
     },
     {
      "idx": 6,
-     "mem_used": 404,
+     "mem_used": 0,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
@@ -179,7 +179,7 @@
      "mem_used": 2731,
      "mem_total": 49140,
      "util": 0,
-     "owner": "other"
+     "owner": "ours"
     }
    ]
   },
@@ -190,24 +190,24 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 44251,
+     "mem_used": 15,
      "mem_total": 49140,
-     "util": 90,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 44035,
+     "mem_used": 44251,
      "mem_total": 49140,
      "util": 89,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 15,
+     "mem_used": 44033,
      "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
+     "util": 84,
+     "owner": "ours"
     },
     {
      "idx": 3,
@@ -556,13 +556,13 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "[2026-09-21T00:28:22-04:00] card 2: process-envonly-seed2-full@25 t0 -> /data0/xyf/www2027-1/results/eval/proc",
+   "detail": "[2026-09-21T03:19:31-04:00] card 0: dense-null-envonly-seed2-full@125 t0 -> /data0/xyf/www2027-1/results/eval/",
    "alerts": []
   },
   {
    "id": "iclr9_ladder_seed2_status_laneA",
    "repo": "ICLR2027-9",
-   "title": "14B 阶梯 seed 2 base 臂（Amendment 3；同机 seed-only 底；6 格，0.6/1.0 先）",
+   "title": "14B 阶梯 seed 2 base 臂 lane A（T 0.6 → 1.0 0.2 0.8；09-21 00:20 LA 拆成四道）",
    "box": "194-yyd",
    "cards": [
     0
@@ -574,13 +574,13 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "GATE lane=A weights_present 2026-09-21T12:17:12+08:00",
+   "detail": "DRIVER_STOPPED lane=A pid=3107624 resplit_to_four_lanes 2026-09-21T15:18:05+08:00",
    "alerts": []
   },
   {
    "id": "iclr9_ladder_seed2_status_laneB",
    "repo": "ICLR2027-9",
-   "title": "14B 阶梯 seed 2 rlvr 臂（Amendment 3；6 格）",
+   "title": "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）",
    "box": "194-yyd",
    "cards": [
     1
@@ -592,17 +592,16 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "GATE lane=B weights_present 2026-09-21T12:27:12+08:00",
+   "detail": "DRIVER_STOPPED lane=B pid=3125964 resplit_to_four_lanes 2026-09-21T15:18:06+08:00",
    "alerts": []
   },
   {
-   "id": "smoke.log",
-   "repo": "Science",
-   "title": "Phase-Trans 计时 smoke（8 题/模型，跟随 26 个模型的 pin 下载；只记秒数，指标隔离未读）",
-   "box": "3090",
+   "id": "iclr9_ladder_seed2_status_laneD",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）",
+   "box": "194-yyd",
    "cards": [
-    6,
-    7
+    2
    ],
    "kind": "gen",
    "status": "running",
@@ -611,7 +610,60 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T12:37:24 EleutherAI/pythia-70m-deduped arithmetic_2da rc=1 wall=84.7s cards=6",
+   "detail": "GATE lane=D weights_present 2026-09-21T15:18:11+08:00",
+   "alerts": []
+  },
+  {
+   "id": "smoke.log",
+   "repo": "Science",
+   "title": "Phase-Trans 计时 smoke（8 题/模型，跟随 30 个 ≤14B 模型的 pin 下载；只记秒数，指标隔离未读）",
+   "box": "3090",
+   "cards": [
+    6,
+    7
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 28,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "2026-09-21T14:54:37 Qwen/Qwen2.5-1.5B gsm8k rc=0 wall=43.2s cards=6",
+   "alerts": []
+  },
+  {
+   "id": "smoke.log",
+   "repo": "Science",
+   "title": "Phase-Trans 计时 smoke（≤4B 子集 20 模型，跟随下载；公司上行 ≈3 MB/s）",
+   "box": "new105",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 14,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "2026-09-21T15:21:06 HuggingFaceTB/SmolLM2-135M gsm8k rc=0 wall=41.7s cards=1",
+   "alerts": []
+  },
+  {
+   "id": "dl_models.log",
+   "repo": "Science",
+   "title": "Phase-Trans A800 腿：Qwen2.5-32B/72B + OPT-30b/66b pin 下载（≈400 GB，4.7 MB/s；只占盘不占卡）",
+   "box": "A800",
+   "cards": [],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "2026-09-21T03:00:22 FAIL Qwen/Qwen2.5-32B ChunkedEncodingError(ProtocolError('Connection broken: IncompleteRea",
    "alerts": []
   },
   {
@@ -680,5 +732,5 @@
   }
  ],
  "alerts": [],
- "collect_s": 26.6
+ "collect_s": 11.4
 }
