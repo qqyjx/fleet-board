@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 06:45 LA",
+ "generated_at": "2026-09-21 07:02 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,28 +10,28 @@
      "idx": 0,
      "mem_used": 16123,
      "mem_total": 81920,
-     "util": 15,
+     "util": 14,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 16157,
+     "mem_used": 16159,
      "mem_total": 81920,
-     "util": 32,
+     "util": 16,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 1225,
+     "mem_used": 24,
      "mem_total": 81920,
-     "util": 15,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 16128,
+     "mem_used": 25,
      "mem_total": 81920,
-     "util": 8,
+     "util": 0,
      "owner": "ours"
     }
    ]
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 23148,
      "mem_total": 24576,
-     "util": 99,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 23146,
      "mem_total": 24576,
-     "util": 99,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -85,7 +85,7 @@
     },
     {
      "idx": 6,
-     "mem_used": 24080,
+     "mem_used": 18202,
      "mem_total": 24576,
      "util": 100,
      "owner": "ours"
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47035,
      "mem_total": 49140,
-     "util": 100,
+     "util": 0,
      "owner": "other"
     }
    ]
@@ -176,9 +176,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 5040,
+     "mem_used": 4274,
      "mem_total": 49140,
-     "util": 37,
+     "util": 18,
      "owner": "ours"
     }
    ]
@@ -192,28 +192,28 @@
      "idx": 0,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 0,
+     "util": 92,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 77,
+     "util": 97,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 44251,
      "mem_total": 49140,
-     "util": 92,
+     "util": 91,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 44035,
      "mem_total": 49140,
-     "util": 96,
+     "util": 89,
      "owner": "ours"
     }
    ]
@@ -221,8 +221,24 @@
   {
    "name": "4090-jm",
    "label": "4090-jm ×2 (48 GB, 实验室 .176; 他人共用, 空时才上)",
-   "reachable": false,
-   "cards": []
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 11090,
+     "mem_total": 49140,
+     "util": -1,
+     "error": "[N/A]",
+     "owner": "other"
+    },
+    {
+     "idx": 1,
+     "mem_used": 36504,
+     "mem_total": 49140,
+     "util": 96,
+     "owner": "other"
+    }
+   ]
   }
  ],
  "jobs": [
@@ -600,11 +616,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 8,
+    "done": 9,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T09:43:43-04:00 END lane=2 B3_E5_wisdm rc=0",
+   "detail": "2026-09-21T09:45:33-04:00 END lane=3 B3_E4_core rc=0",
    "alerts": []
   },
   {
@@ -695,7 +711,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T21:38:44 FULL HuggingFaceTB/SmolLM2-360M humaneval rc=0 wall=674.1s cards=6",
+   "detail": "2026-09-21T21:57:48 FULL HuggingFaceTB/SmolLM2-360M mmlu_other rc=0 wall=136.3s cards=6",
    "alerts": []
   },
   {
@@ -713,7 +729,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T21:44:44 FULL EleutherAI/pythia-410m-deduped hellaswag rc=0 wall=101.1s cards=1",
+   "detail": "2026-09-21T21:53:14 FULL Qwen/Qwen2.5-0.5B mod_arith rc=0 wall=24.8s cards=1",
    "alerts": []
   },
   {
@@ -797,8 +813,6 @@
    }
   }
  ],
- "alerts": [
-  "4090-jm 本轮采集失败：该机任务状态为上次快照，不作数"
- ],
- "collect_s": 353.9
+ "alerts": [],
+ "collect_s": 171.9
 }
