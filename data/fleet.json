@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 01:41 LA",
+ "generated_at": "2026-09-22 01:51 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,28 +10,28 @@
      "idx": 0,
      "mem_used": 29489,
      "mem_total": 81920,
-     "util": 90,
+     "util": 86,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68701,
      "mem_total": 81920,
-     "util": 49,
+     "util": 44,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72081,
      "mem_total": 81920,
-     "util": 53,
+     "util": 52,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 63804,
      "mem_total": 81920,
-     "util": 99,
+     "util": 98,
      "owner": "ours"
     }
    ]
@@ -50,9 +50,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 7622,
+     "mem_used": 3822,
      "mem_total": 24576,
-     "util": 0,
+     "util": 29,
      "owner": "ours"
     },
     {
@@ -87,7 +87,7 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 25,
+     "util": 18,
      "owner": "ours"
     },
     {
@@ -734,7 +734,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T16:39:33 FULL allenai/OLMo-2-1124-7B mbpp_all964 rc=1 wall=147.7s cards=0,1",
+   "detail": "2026-09-22T16:49:39 FULL allenai/OLMo-2-1124-7B bigbench_modified_arithmetic_generate_until rc=1 wall=138.6s c",
    "alerts": []
   },
   {
@@ -843,5 +843,5 @@
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
  ],
- "collect_s": 59.5
+ "collect_s": 63.3
 }
