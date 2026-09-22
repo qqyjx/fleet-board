@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 00:26 LA",
+ "generated_at": "2026-09-22 00:33 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,21 +10,21 @@
      "idx": 0,
      "mem_used": 29489,
      "mem_total": 81920,
-     "util": 94,
+     "util": 91,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68701,
      "mem_total": 81920,
-     "util": 40,
+     "util": 46,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72081,
      "mem_total": 81920,
-     "util": 46,
+     "util": 53,
      "owner": "ours"
     },
     {
@@ -43,14 +43,14 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 21322,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 17162,
+     "mem_used": 0,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 28,
+     "util": 27,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 39,
+     "util": 34,
      "owner": "ours"
     }
    ]
@@ -134,9 +134,9 @@
     },
     {
      "idx": 4,
-     "mem_used": 47302,
+     "mem_used": 45043,
      "mem_total": 49140,
-     "util": 90,
+     "util": 84,
      "owner": "other"
     },
     {
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 4164,
      "mem_total": 49140,
-     "util": 18,
+     "util": 17,
      "owner": "ours"
     }
    ]
@@ -212,7 +212,7 @@
     },
     {
      "idx": 3,
-     "mem_used": 15,
+     "mem_used": 16,
      "mem_total": 49140,
      "util": 0,
      "owner": "free"
@@ -234,9 +234,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 8241,
+     "mem_used": 9443,
      "mem_total": 49140,
-     "util": 0,
+     "util": 46,
      "owner": "ours"
     }
    ]
@@ -710,11 +710,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 39,
+    "done": 15,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T15:21:44 FULL facebook/opt-13b hellaswag rc=0 wall=1590.5s cards=0,1",
+   "detail": "2026-09-22T15:32:46 FULL Qwen/Qwen3-14B-Base arithmetic_2dm_local rc=1 wall=15.7s cards=0,1",
    "alerts": []
   },
   {
@@ -838,5 +838,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
  ],
- "collect_s": 404.9
+ "collect_s": 189.9
 }
