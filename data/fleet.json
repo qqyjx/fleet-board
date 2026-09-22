@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 19:51 LA",
+ "generated_at": "2026-09-21 20:01 LA",
  "boxes": [
   {
    "name": "A800",
@@ -15,16 +15,16 @@
     },
     {
      "idx": 1,
-     "mem_used": 68783,
+     "mem_used": 69963,
      "mem_total": 81920,
-     "util": 48,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 72143,
+     "mem_used": 73163,
      "mem_total": 81920,
-     "util": 43,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 17726,
+     "mem_used": 24044,
      "mem_total": 24576,
-     "util": 49,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 16844,
+     "mem_used": 12264,
      "mem_total": 24576,
-     "util": 48,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 25,
+     "util": 27,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 36,
+     "util": 35,
      "owner": "ours"
     }
    ]
@@ -106,7 +106,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 30459,
+     "mem_used": 30367,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47035,
      "mem_total": 49140,
-     "util": 0,
+     "util": 72,
      "owner": "other"
     }
    ]
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 4162,
      "mem_total": 49140,
-     "util": 17,
+     "util": 18,
      "owner": "ours"
     }
    ]
@@ -234,9 +234,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 37296,
+     "mem_used": 23288,
      "mem_total": 49140,
-     "util": 39,
+     "util": 92,
      "owner": "other"
     }
    ]
@@ -714,7 +714,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T10:25:29 FULL facebook/opt-13b humaneval rc=0 wall=1869.2s cards=0,1",
+   "detail": "2026-09-22T10:57:30 FULL facebook/opt-13b mbpp_all964 rc=0 wall=1920.7s cards=0,1",
    "alerts": []
   },
   {
@@ -820,5 +820,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
  ],
- "collect_s": 89.0
+ "collect_s": 76.8
 }
