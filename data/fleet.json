@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 01:51 LA",
+ "generated_at": "2026-09-22 02:00 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,30 +8,30 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 29489,
+     "mem_used": 29341,
      "mem_total": 81920,
-     "util": 86,
+     "util": 96,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68701,
      "mem_total": 81920,
-     "util": 44,
+     "util": 49,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72081,
      "mem_total": 81920,
-     "util": 52,
+     "util": 49,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 63804,
      "mem_total": 81920,
-     "util": 98,
+     "util": 99,
      "owner": "ours"
     }
    ]
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 6842,
+     "mem_used": 23584,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 3822,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 29,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 18,
+     "util": 25,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 35,
+     "util": 36,
      "owner": "ours"
     }
    ]
@@ -730,11 +730,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 9,
+    "done": 11,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T16:49:39 FULL allenai/OLMo-2-1124-7B bigbench_modified_arithmetic_generate_until rc=1 wall=138.6s c",
+   "detail": "2026-09-22T16:58:22 SMOKE allenai/OLMo-2-1124-7B gsm8k rc=0 wall=119.7s cards=0",
    "alerts": []
   },
   {
@@ -843,5 +843,5 @@
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
  ],
- "collect_s": 63.3
+ "collect_s": 51.9
 }
