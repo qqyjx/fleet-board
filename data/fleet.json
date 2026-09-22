@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 00:33 LA",
+ "generated_at": "2026-09-22 00:45 LA",
  "boxes": [
   {
    "name": "A800",
@@ -17,14 +17,14 @@
      "idx": 1,
      "mem_used": 68701,
      "mem_total": 81920,
-     "util": 46,
+     "util": 48,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72081,
      "mem_total": 81920,
-     "util": 53,
+     "util": 44,
      "owner": "ours"
     },
     {
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 0,
+     "mem_used": 6842,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 0,
+     "mem_used": 6622,
      "mem_total": 24576,
-     "util": 0,
+     "util": 5,
      "owner": "ours"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 27,
+     "util": 24,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 34,
+     "util": 35,
      "owner": "ours"
     }
    ]
@@ -134,10 +134,10 @@
     },
     {
      "idx": 4,
-     "mem_used": 45043,
+     "mem_used": 731,
      "mem_total": 49140,
-     "util": 84,
-     "owner": "other"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 5,
@@ -234,9 +234,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 9443,
+     "mem_used": 9783,
      "mem_total": 49140,
-     "util": 46,
+     "util": 41,
      "owner": "ours"
     }
    ]
@@ -710,11 +710,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 15,
+    "done": 4,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T15:32:46 FULL Qwen/Qwen3-14B-Base arithmetic_2dm_local rc=1 wall=15.7s cards=0,1",
+   "detail": "2026-09-22T15:44:56 FULL allenai/OLMo-2-1124-7B arithmetic_4da_local rc=0 wall=42.3s cards=0,1",
    "alerts": []
   },
   {
@@ -746,11 +746,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 13,
+    "done": 17,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T15:23:53 FULL EleutherAI/pythia-1.4b-deduped mmlu_other rc=0 wall=178.2s cards=GPU-d2c40c78-fa5f-69",
+   "detail": "2026-09-22T15:44:27 FULL EleutherAI/pythia-1.4b-deduped bigbench_parsinlu_qa_multiple_choice rc=0 wall=57.9s c",
    "alerts": []
   },
   {
@@ -838,5 +838,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
  ],
- "collect_s": 189.9
+ "collect_s": 309.4
 }
