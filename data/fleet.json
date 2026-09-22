@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 01:34 LA",
+ "generated_at": "2026-09-22 01:41 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,14 +10,14 @@
      "idx": 0,
      "mem_used": 29489,
      "mem_total": 81920,
-     "util": 96,
+     "util": 90,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68701,
      "mem_total": 81920,
-     "util": 47,
+     "util": 49,
      "owner": "ours"
     },
     {
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 13660,
+     "mem_used": 6842,
      "mem_total": 24576,
-     "util": 94,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 14760,
+     "mem_used": 7622,
      "mem_total": 24576,
-     "util": 10,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -87,7 +87,7 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 28,
+     "util": 25,
      "owner": "ours"
     },
     {
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47035,
      "mem_total": 49140,
-     "util": 88,
+     "util": 0,
      "owner": "other"
     }
    ]
@@ -222,24 +222,8 @@
   {
    "name": "4090-jm",
    "label": "4090-jm ×2 (48 GB, 实验室 .176; 共用即上; 卡 0 待 root reset)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 11090,
-     "mem_total": 49140,
-     "util": -1,
-     "error": "[N/A]",
-     "owner": "other"
-    },
-    {
-     "idx": 1,
-     "mem_used": 10843,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "ours"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   }
  ],
  "jobs": [
@@ -750,7 +734,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T16:31:49 MODEL_DONE allenai/OLMo-2-1124-7B ok=8/17",
+   "detail": "2026-09-22T16:39:33 FULL allenai/OLMo-2-1124-7B mbpp_all964 rc=1 wall=147.7s cards=0,1",
    "alerts": []
   },
   {
@@ -769,24 +753,6 @@
     "unit": "步"
    },
    "detail": "2026-09-22T00:38:38 FULL Qwen/Qwen2.5-0.5B mmlu_other rc=0 wall=169.2s cards=1",
-   "alerts": []
-  },
-  {
-   "id": "science-4090-jm",
-   "repo": "Science",
-   "title": "Phase-Trans 盲态全量评测（1.4B–8B 段 9 模型 × 17 任务；box-floor 行 pythia-1.4b 先跑；卡 0 GPU requires reset，只用卡 1）",
-   "box": "4090-jm",
-   "cards": [
-    1
-   ],
-   "kind": "gen",
-   "status": "running",
-   "progress": {
-    "done": 31,
-    "total": 0,
-    "unit": "步"
-   },
-   "detail": "2026-09-22T16:31:49 FULL EleutherAI/pythia-2.8b-deduped mmlu_humanities rc=0 wall=181.5s cards=GPU-d2c40c78-fa",
    "alerts": []
   },
   {
@@ -871,10 +837,11 @@
   }
  ],
  "alerts": [
+  "4090-jm 本轮采集失败：该机任务状态为上次快照，不作数",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
  ],
- "collect_s": 253.9
+ "collect_s": 59.5
 }
