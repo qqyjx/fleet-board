@@ -178,6 +178,7 @@ STATUS_JOBS = [
     ("194-yyd", "/data/yyd/iclr9_ladder_seed2_status_laneE", "ICLR2027-9", "14B 阶梯 seed 2 rlvr 臂 lane E（T 0.8 1.2）", [3]),
     ("3090", "/data/xyf/science/logs/full_eval.log", "Science", "Phase-Trans 盲态全量评测（≤14B 30 模型 × 17 任务，跟随 pin 下载；指标隔离在 _blind/ 未读，只记 rc/秒）", [6, 7]),
     ("new105", "/home/xyf/science/logs/full_eval.log", "Science", "Phase-Trans 盲态全量评测（≤4B 子集 20 模型 × 17 任务；box-floor 行）", [1]),
+    ("4090-jm", "/home/yxy/science/logs/full_eval.log", "Science", "Phase-Trans 盲态全量评测（1.4B–8B 段 9 模型 × 17 任务；box-floor 行 pythia-1.4b 先跑；卡 0 GPU requires reset，只用卡 1）", [1]),
     ("A800", "/data0/xyf/science/logs/dl_models.log", "Science", "Phase-Trans A800 腿：Qwen2.5-32B/72B + OPT-30b/66b pin 下载（≈400 GB，4.7 MB/s；只占盘不占卡）", []),
 ]
 def status_job(host, path, repo, title, cards):
