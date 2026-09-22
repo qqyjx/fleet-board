@@ -176,6 +176,8 @@ STATUS_JOBS = [
     ("194-yyd", "/data/yyd/iclr9_ladder_seed2_status_laneB", "ICLR2027-9", "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）", [1]),
     ("194-yyd", "/data/yyd/iclr9_ladder_seed2_status_laneD", "ICLR2027-9", "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）", [2]),
     ("194-yyd", "/data/yyd/iclr9_ladder_seed2_status_laneE", "ICLR2027-9", "14B 阶梯 seed 2 rlvr 臂 lane E（T 0.8 1.2）", [3]),
+    ("fuxin", "/data/xyf/iclr9_ladder_seed2_fuxin_status_laneF", "ICLR2027-9", "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6）", [6]),
+    ("fuxin", "/data/xyf/iclr9_ladder_seed2_fuxin_status_laneG", "ICLR2027-9", "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）", []),
     ("3090", "/data/xyf/science/logs/full_eval.log", "Science", "Phase-Trans 盲态全量评测（≤14B 30 模型 × 17 任务，跟随 pin 下载；指标隔离在 _blind/ 未读，只记 rc/秒）", [6, 7]),
     ("new105", "/home/xyf/science/logs/full_eval.log", "Science", "Phase-Trans 盲态全量评测（≤4B 子集 20 模型 × 17 任务；box-floor 行）", [1]),
     ("4090-jm", "/home/yxy/science/logs/full_eval.log", "Science", "Phase-Trans 盲态全量评测（1.4B–8B 段 9 模型 × 17 任务；box-floor 行 pythia-1.4b 先跑；卡 0 GPU requires reset，只用卡 1）", [1]),
@@ -193,7 +195,10 @@ def status_job(host, path, repo, title, cards):
     status = "running"
     if "CHAIN_DONE" in last or last.startswith(("DONE", "ORCH_DONE")) or "ALL_DONE" in last or "SMOKE_DONE" in last or "FULL_DONE" in last: status = "done"
     elif fails and (fails[-1] == last): status = "failed"
-    return {"id": os.path.basename(path), "repo": repo, "title": title, "box": host, "cards": cards, "kind": "gen",
+    elif last.startswith("DRIVER_STOPPED"): status = "failed"; fails = [last]
+    jid = os.path.basename(path)
+    if jid == "full_eval.log": jid = f"science-{host}"  # three boxes share the basename; history.jsonl keys by id
+    return {"id": jid, "repo": repo, "title": title, "box": host, "cards": cards, "kind": "gen",
             "status": status, "progress": {"done": n_done, "total": 0, "unit": "步"}, "detail": last[:110],
             "alerts": [f[:110] for f in fails[-1:]] if status == "failed" else []}
 
@@ -203,7 +208,7 @@ def main():
     boxes, jobs, alerts = [], [], []
     for name, label in (("A800", "A800 ×4 (80 GB)"), ("3090", "3090 ×8 (24 GB, .110)"),
                         ("fuxin", "fuxin 4090 ×8 (48 GB, 公司)"), ("new105", "new105 4090D ×2 (48 GB, 公司)"), ("194-yyd", "194 4090D ×4 (48 GB, 公司)"),
-                        ("4090-jm", "4090-jm ×2 (48 GB, 实验室 .176; 他人共用, 空时才上)")):
+                        ("4090-jm", "4090-jm ×2 (48 GB, 实验室 .176; 共用即上; 卡 0 待 root reset)")):
         cards = gpus(name)
         boxes.append({"name": name, "label": label, "reachable": cards is not None, "cards": cards or []})
     j = stage7(curves);  jobs.append(j) if j else alerts.append("A800 stage7 状态不可读")

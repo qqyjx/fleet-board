@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 00:45 LA",
+ "generated_at": "2026-09-22 00:53 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,21 +10,21 @@
      "idx": 0,
      "mem_used": 29489,
      "mem_total": 81920,
-     "util": 91,
+     "util": 92,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68701,
      "mem_total": 81920,
-     "util": 48,
+     "util": 45,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72081,
      "mem_total": 81920,
-     "util": 44,
+     "util": 48,
      "owner": "ours"
     },
     {
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 6842,
+     "mem_used": 0,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 6622,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 5,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 24,
+     "util": 28,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 35,
+     "util": 36,
      "owner": "ours"
     }
    ]
@@ -148,16 +148,16 @@
     },
     {
      "idx": 6,
-     "mem_used": 18,
+     "mem_used": 44113,
      "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
+     "util": 91,
+     "owner": "other"
     },
     {
      "idx": 7,
      "mem_used": 47035,
      "mem_total": 49140,
-     "util": 0,
+     "util": 100,
      "owner": "other"
     }
    ]
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 4164,
      "mem_total": 49140,
-     "util": 17,
+     "util": 18,
      "owner": "ours"
     }
    ]
@@ -208,7 +208,7 @@
      "mem_total": 49140,
      "util": -1,
      "error": "[N/A]",
-     "owner": "ours"
+     "owner": "other"
     },
     {
      "idx": 3,
@@ -221,7 +221,7 @@
   },
   {
    "name": "4090-jm",
-   "label": "4090-jm ×2 (48 GB, 实验室 .176; 他人共用, 空时才上)",
+   "label": "4090-jm ×2 (48 GB, 实验室 .176; 共用即上; 卡 0 待 root reset)",
    "reachable": true,
    "cards": [
     {
@@ -234,9 +234,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 9783,
+     "mem_used": 8241,
      "mem_total": 49140,
-     "util": 41,
+     "util": 0,
      "owner": "ours"
     }
    ]
@@ -671,14 +671,16 @@
     2
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "failed",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "KILLED_BY_SCHEDULER lane=D base 1.2 pid=3821610 chain=3821591 reason=log_stale_3h_gpu2_telemetry_NA_cuinit_fai",
-   "alerts": []
+   "detail": "DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
+   "alerts": [
+    "DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
+   ]
   },
   {
    "id": "iclr9_ladder_seed2_status_laneE",
@@ -699,7 +701,27 @@
    "alerts": []
   },
   {
-   "id": "full_eval.log",
+   "id": "iclr9_ladder_seed2_fuxin_status_laneF",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6）",
+   "box": "fuxin",
+   "cards": [
+    6
+   ],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "ABORT lane=F base 1.2 2026-09-22T15:50:26+08:00",
+   "alerts": [
+    "ABORT lane=F base 1.2 2026-09-22T15:50:26+08:00"
+   ]
+  },
+  {
+   "id": "science-3090",
    "repo": "Science",
    "title": "Phase-Trans 盲态全量评测（≤14B 30 模型 × 17 任务，跟随 pin 下载；指标隔离在 _blind/ 未读，只记 rc/秒）",
    "box": "3090",
@@ -710,15 +732,15 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 4,
+    "done": 6,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T15:44:56 FULL allenai/OLMo-2-1124-7B arithmetic_4da_local rc=0 wall=42.3s cards=0,1",
+   "detail": "2026-09-22T15:51:21 FULL allenai/OLMo-2-1124-7B humaneval rc=1 wall=158.9s cards=0,1",
    "alerts": []
   },
   {
-   "id": "full_eval.log",
+   "id": "science-new105",
    "repo": "Science",
    "title": "Phase-Trans 盲态全量评测（≤4B 子集 20 模型 × 17 任务；box-floor 行）",
    "box": "new105",
@@ -736,7 +758,7 @@
    "alerts": []
   },
   {
-   "id": "full_eval.log",
+   "id": "science-4090-jm",
    "repo": "Science",
    "title": "Phase-Trans 盲态全量评测（1.4B–8B 段 9 模型 × 17 任务；box-floor 行 pythia-1.4b 先跑；卡 0 GPU requires reset，只用卡 1）",
    "box": "4090-jm",
@@ -746,11 +768,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 17,
+    "done": 26,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T15:44:27 FULL EleutherAI/pythia-1.4b-deduped bigbench_parsinlu_qa_multiple_choice rc=0 wall=57.9s c",
+   "detail": "2026-09-22T15:52:40 FULL EleutherAI/pythia-2.8b-deduped mod_arith rc=0 wall=25.8s cards=GPU-d2c40c78-fa5f-695c",
    "alerts": []
   },
   {
@@ -836,7 +858,11 @@
  ],
  "alerts": [
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
-  "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
+  "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
+  "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
+  "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
+  "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6） 失败：ABORT lane=F base 1.2 2026-09-22T15:50:26+08:00",
+  "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6）: ABORT lane=F base 1.2 2026-09-22T15:50:26+08:00"
  ],
- "collect_s": 309.4
+ "collect_s": 491.3
 }
