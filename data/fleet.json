@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 23:00 LA",
+ "generated_at": "2026-09-21 23:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 28725,
+     "mem_used": 28785,
      "mem_total": 81920,
      "util": 96,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 68461,
+     "mem_used": 68701,
      "mem_total": 81920,
-     "util": 45,
+     "util": 44,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 71819,
+     "mem_used": 72081,
      "mem_total": 81920,
      "util": 53,
      "owner": "ours"
@@ -45,7 +45,7 @@
      "idx": 0,
      "mem_used": 13246,
      "mem_total": 24576,
-     "util": 48,
+     "util": 49,
      "owner": "ours"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 26,
+     "util": 29,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 33,
+     "util": 38,
      "owner": "ours"
     }
    ]
@@ -136,7 +136,7 @@
      "idx": 4,
      "mem_used": 45043,
      "mem_total": 49140,
-     "util": 95,
+     "util": 91,
      "owner": "other"
     },
     {
@@ -236,7 +236,7 @@
      "idx": 1,
      "mem_used": 12411,
      "mem_total": 49140,
-     "util": 35,
+     "util": 34,
      "owner": "other"
     }
    ]
@@ -820,5 +820,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
  ],
- "collect_s": 40.8
+ "collect_s": 39.8
 }
