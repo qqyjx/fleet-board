@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 20:01 LA",
+ "generated_at": "2026-09-21 20:12 LA",
  "boxes": [
   {
    "name": "A800",
@@ -15,16 +15,16 @@
     },
     {
      "idx": 1,
-     "mem_used": 69963,
+     "mem_used": 69967,
      "mem_total": 81920,
-     "util": 0,
+     "util": 42,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 73163,
+     "mem_used": 73265,
      "mem_total": 81920,
-     "util": 100,
+     "util": 55,
      "owner": "ours"
     },
     {
@@ -43,14 +43,14 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 24044,
+     "mem_used": 22884,
      "mem_total": 24576,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 12264,
+     "mem_used": 18042,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 27,
+     "util": 29,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 35,
+     "util": 34,
      "owner": "ours"
     }
    ]
@@ -108,7 +108,7 @@
      "idx": 0,
      "mem_used": 30367,
      "mem_total": 49140,
-     "util": 0,
+     "util": 93,
      "owner": "other"
     },
     {
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47035,
      "mem_total": 49140,
-     "util": 72,
+     "util": 56,
      "owner": "other"
     }
    ]
@@ -234,9 +234,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 23288,
+     "mem_used": 12257,
      "mem_total": 49140,
-     "util": 92,
+     "util": 36,
      "owner": "other"
     }
    ]
@@ -714,7 +714,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T10:57:30 FULL facebook/opt-13b mbpp_all964 rc=0 wall=1920.7s cards=0,1",
+   "detail": "2026-09-22T11:03:57 FULL facebook/opt-13b mmlu_stem rc=0 wall=387.0s cards=0,1",
    "alerts": []
   },
   {
@@ -820,5 +820,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
  ],
- "collect_s": 76.8
+ "collect_s": 129.9
 }
