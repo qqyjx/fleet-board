@@ -1,11 +1,40 @@
 {
- "generated_at": "2026-09-22 00:06 LA",
+ "generated_at": "2026-09-22 00:12 LA",
  "boxes": [
   {
    "name": "A800",
    "label": "A800 ×4 (80 GB)",
-   "reachable": false,
-   "cards": []
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 29489,
+     "mem_total": 81920,
+     "util": 94,
+     "owner": "ours"
+    },
+    {
+     "idx": 1,
+     "mem_used": 68701,
+     "mem_total": 81920,
+     "util": 45,
+     "owner": "ours"
+    },
+    {
+     "idx": 2,
+     "mem_used": 72081,
+     "mem_total": 81920,
+     "util": 54,
+     "owner": "ours"
+    },
+    {
+     "idx": 3,
+     "mem_used": 63784,
+     "mem_total": 81920,
+     "util": 99,
+     "owner": "ours"
+    }
+   ]
   },
   {
    "name": "3090",
@@ -16,14 +45,14 @@
      "idx": 0,
      "mem_used": 21322,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 17162,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -58,14 +87,14 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 29,
+     "util": 28,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 34,
+     "util": 33,
      "owner": "ours"
     }
    ]
@@ -107,7 +136,7 @@
      "idx": 4,
      "mem_used": 47302,
      "mem_total": 49140,
-     "util": 98,
+     "util": 84,
      "owner": "other"
     },
     {
@@ -205,9 +234,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 47141,
+     "mem_used": 33185,
      "mem_total": 49140,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     }
    ]
@@ -544,13 +573,13 @@
     3
    ],
    "kind": "gen",
-   "status": "stale",
+   "status": "running",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "A800 本轮未采集到；上次状态：[eval_matrix] pass=t0 finished 2026-09-21T06:51:18-04:00",
+   "detail": "[eval_matrix] pass=t0 finished 2026-09-21T06:51:18-04:00",
    "alerts": []
   },
   {
@@ -565,13 +594,13 @@
     3
    ],
    "kind": "gen",
-   "status": "stale",
+   "status": "running",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "A800 本轮未采集到；上次状态：2026-09-21T06:53:04-04:00 AFTER-T0 post_matrix_eval VERSION=corrected rc=2",
+   "detail": "2026-09-21T06:53:04-04:00 AFTER-T0 post_matrix_eval VERSION=corrected rc=2",
    "alerts": []
   },
   {
@@ -586,13 +615,13 @@
     3
    ],
    "kind": "gen",
-   "status": "stale",
+   "status": "running",
    "progress": {
     "done": 15,
     "total": 0,
     "unit": "步"
    },
-   "detail": "A800 本轮未采集到；上次状态：2026-09-21T15:09:15-04:00 DONE all lanes",
+   "detail": "2026-09-21T15:09:15-04:00 DONE all lanes",
    "alerts": []
   },
   {
@@ -806,9 +835,8 @@
   }
  ],
  "alerts": [
-  "A800 本轮采集失败：该机任务状态为上次快照，不作数",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
  ],
- "collect_s": 415.8
+ "collect_s": 134.4
 }
