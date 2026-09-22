@@ -16,14 +16,14 @@
      "idx": 0,
      "mem_used": 21322,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 17162,
      "mem_total": 24576,
-     "util": 85,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -65,7 +65,7 @@
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 33,
+     "util": 34,
      "owner": "ours"
     }
    ]
@@ -107,7 +107,7 @@
      "idx": 4,
      "mem_used": 47302,
      "mem_total": 49140,
-     "util": 96,
+     "util": 98,
      "owner": "other"
     },
     {
@@ -810,5 +810,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
  ],
- "collect_s": 401.2
+ "collect_s": 415.8
 }
