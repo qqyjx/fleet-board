@@ -1,40 +1,11 @@
 {
- "generated_at": "2026-09-22 00:54 LA",
+ "generated_at": "2026-09-22 01:11 LA",
  "boxes": [
   {
    "name": "A800",
    "label": "A800 ×4 (80 GB)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 29489,
-     "mem_total": 81920,
-     "util": 100,
-     "owner": "ours"
-    },
-    {
-     "idx": 1,
-     "mem_used": 68701,
-     "mem_total": 81920,
-     "util": 51,
-     "owner": "ours"
-    },
-    {
-     "idx": 2,
-     "mem_used": 72081,
-     "mem_total": 81920,
-     "util": 46,
-     "owner": "ours"
-    },
-    {
-     "idx": 3,
-     "mem_used": 63784,
-     "mem_total": 81920,
-     "util": 99,
-     "owner": "ours"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   },
   {
    "name": "3090",
@@ -43,14 +14,14 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 24082,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 8136,
+     "mem_used": 0,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
@@ -87,14 +58,14 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 27,
+     "util": 24,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 38,
+     "util": 34,
      "owner": "ours"
     }
    ]
@@ -106,7 +77,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 30479,
+     "mem_used": 30559,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
@@ -134,10 +105,10 @@
     },
     {
      "idx": 4,
-     "mem_used": 731,
+     "mem_used": 28667,
      "mem_total": 49140,
      "util": 0,
-     "owner": "free"
+     "owner": "other"
     },
     {
      "idx": 5,
@@ -148,16 +119,16 @@
     },
     {
      "idx": 6,
-     "mem_used": 44331,
+     "mem_used": 18,
      "mem_total": 49140,
-     "util": 95,
-     "owner": "other"
+     "util": 0,
+     "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 47035,
      "mem_total": 49140,
-     "util": 100,
+     "util": 0,
      "owner": "other"
     }
    ]
@@ -234,9 +205,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 20923,
+     "mem_used": 38465,
      "mem_total": 49140,
-     "util": 93,
+     "util": 100,
      "owner": "ours"
     }
    ]
@@ -573,34 +544,13 @@
     3
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "stale",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "[eval_matrix] pass=t0 finished 2026-09-21T06:51:18-04:00",
-   "alerts": []
-  },
-  {
-   "id": "after_t0_corrected.log",
-   "repo": "WWW2027-1",
-   "title": "修正版六臂：T0 评测 30 作业 → S* → outcome T1 → 噪声底（post_matrix_eval corrected）",
-   "box": "A800",
-   "cards": [
-    0,
-    1,
-    2,
-    3
-   ],
-   "kind": "gen",
-   "status": "running",
-   "progress": {
-    "done": 0,
-    "total": 0,
-    "unit": "步"
-   },
-   "detail": "2026-09-21T06:53:04-04:00 AFTER-T0 post_matrix_eval VERSION=corrected rc=2",
+   "detail": "A800 本轮未采集到；上次状态：[eval_matrix] pass=t0 finished 2026-09-21T06:51:18-04:00",
    "alerts": []
   },
   {
@@ -615,13 +565,13 @@
     3
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "stale",
    "progress": {
     "done": 15,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T15:09:15-04:00 DONE all lanes",
+   "detail": "A800 本轮未采集到；上次状态：2026-09-21T15:09:15-04:00 DONE all lanes",
    "alerts": []
   },
   {
@@ -709,16 +659,30 @@
     6
    ],
    "kind": "gen",
-   "status": "failed",
+   "status": "running",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "ABORT lane=F base 1.2 2026-09-22T15:50:26+08:00",
-   "alerts": [
-    "ABORT lane=F base 1.2 2026-09-22T15:50:26+08:00"
-   ]
+   "detail": "NOTE lane=F base 1.2 on card 6 also killed_by_root 15:50 CST rc=137 wall_s=446; not relaunched 2026-09-22T15:5",
+   "alerts": []
+  },
+  {
+   "id": "iclr9_ladder_seed2_fuxin_status_laneG",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）",
+   "box": "fuxin",
+   "cards": [],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "NOTE lane=G waiter stopped by us 2026-09-22T15:54:38+08:00: root(2.0.1.168) SIGKILLed lane F twice within 15 m",
+   "alerts": []
   },
   {
    "id": "science-3090",
@@ -732,11 +696,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 6,
+    "done": 7,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T15:54:00 FULL allenai/OLMo-2-1124-7B mbpp_all964 rc=1 wall=158.8s cards=0,1",
+   "detail": "2026-09-22T16:08:46 FULL allenai/OLMo-2-1124-7B bigbench_modified_arithmetic_generate_until rc=1 wall=153.7s c",
    "alerts": []
   },
   {
@@ -768,27 +732,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 26,
+    "done": 27,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T15:52:40 FULL EleutherAI/pythia-2.8b-deduped mod_arith rc=0 wall=25.8s cards=GPU-d2c40c78-fa5f-695c",
-   "alerts": []
-  },
-  {
-   "id": "dl_models.log",
-   "repo": "Science",
-   "title": "Phase-Trans A800 腿：Qwen2.5-32B/72B + OPT-30b/66b pin 下载（≈400 GB，4.7 MB/s；只占盘不占卡）",
-   "box": "A800",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 0,
-    "total": 0,
-    "unit": "步"
-   },
-   "detail": "2026-09-22T00:55:26 ALL_DONE",
+   "detail": "2026-09-22T16:09:05 FULL EleutherAI/pythia-2.8b-deduped gsm8k rc=0 wall=984.5s cards=GPU-d2c40c78-fa5f-695c-5a",
    "alerts": []
   },
   {
@@ -857,12 +805,11 @@
   }
  ],
  "alerts": [
+  "A800 本轮采集失败：该机任务状态为上次快照，不作数",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
-  "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
-  "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6） 失败：ABORT lane=F base 1.2 2026-09-22T15:50:26+08:00",
-  "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6）: ABORT lane=F base 1.2 2026-09-22T15:50:26+08:00"
+  "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
  ],
- "collect_s": 293.6
+ "collect_s": 715.2
 }
