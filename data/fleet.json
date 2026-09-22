@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 12:50 LA",
+ "generated_at": "2026-09-22 13:00 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,21 +10,21 @@
      "idx": 0,
      "mem_used": 29305,
      "mem_total": 81920,
-     "util": 96,
+     "util": 90,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68725,
      "mem_total": 81920,
-     "util": 45,
+     "util": 43,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72101,
      "mem_total": 81920,
-     "util": 44,
+     "util": 50,
      "owner": "ours"
     },
     {
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 13336,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 25,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 24226,
+     "mem_used": 8452,
      "mem_total": 24576,
-     "util": 87,
+     "util": 45,
      "owner": "ours"
     },
     {
@@ -73,7 +73,7 @@
      "idx": 4,
      "mem_used": 22134,
      "mem_total": 24576,
-     "util": 93,
+     "util": 92,
      "owner": "other"
     },
     {
@@ -87,15 +87,15 @@
      "idx": 6,
      "mem_used": 1326,
      "mem_total": 24576,
-     "util": 25,
-     "owner": "ours"
+     "util": 24,
+     "owner": "free"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 37,
-     "owner": "ours"
+     "util": 36,
+     "owner": "other"
     }
    ]
   },
@@ -728,13 +728,13 @@
     7
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
-    "done": 3,
+    "done": 4,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-23T02:33:05 FULL Qwen/Qwen3-14B-Base bigbench_parsinlu_qa_multiple_choice rc=1 wall=35.0s cards=0,1",
+   "detail": "2026-09-23T03:56:17 FULL_DONE",
    "alerts": []
   },
   {
@@ -843,5 +843,5 @@
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
  ],
- "collect_s": 36.6
+ "collect_s": 35.3
 }
