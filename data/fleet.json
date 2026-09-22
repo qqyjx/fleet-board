@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 18:23 LA",
+ "generated_at": "2026-09-21 19:51 LA",
  "boxes": [
   {
    "name": "A800",
@@ -15,21 +15,21 @@
     },
     {
      "idx": 1,
-     "mem_used": 69187,
+     "mem_used": 68783,
      "mem_total": 81920,
-     "util": 68,
+     "util": 48,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 72527,
+     "mem_used": 72143,
      "mem_total": 81920,
-     "util": 0,
+     "util": 43,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 63782,
+     "mem_used": 63784,
      "mem_total": 81920,
      "util": 99,
      "owner": "ours"
@@ -45,12 +45,12 @@
      "idx": 0,
      "mem_used": 17726,
      "mem_total": 24576,
-     "util": 48,
+     "util": 49,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 16904,
+     "mem_used": 16844,
      "mem_total": 24576,
      "util": 48,
      "owner": "ours"
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 22,
+     "util": 25,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 33,
+     "util": 36,
      "owner": "ours"
     }
    ]
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 4162,
      "mem_total": 49140,
-     "util": 19,
+     "util": 17,
      "owner": "ours"
     }
    ]
@@ -234,9 +234,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 5190,
+     "mem_used": 37296,
      "mem_total": 49140,
-     "util": 0,
+     "util": 39,
      "owner": "other"
     }
    ]
@@ -710,11 +710,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 37,
+    "done": 38,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T08:28:51 FULL facebook/opt-13b mod_arith rc=0 wall=46.5s cards=0,1",
+   "detail": "2026-09-22T10:25:29 FULL facebook/opt-13b humaneval rc=0 wall=1869.2s cards=0,1",
    "alerts": []
   },
   {
@@ -742,13 +742,13 @@
    "box": "A800",
    "cards": [],
    "kind": "gen",
-   "status": "done",
+   "status": "running",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T19:34:34 ALL_DONE",
+   "detail": "2026-09-21T22:33:15 START 1 repos, only='allenai/OLMo-2-1124-13B' max_gb=1000000000.0 HF_HOME=/data0/xyf/hf_ca",
    "alerts": []
   },
   {
@@ -820,5 +820,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
  ],
- "collect_s": 30.4
+ "collect_s": 89.0
 }
