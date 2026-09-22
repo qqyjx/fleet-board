@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 03:00 LA",
+ "generated_at": "2026-09-22 03:08 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,7 +10,7 @@
      "idx": 0,
      "mem_used": 28797,
      "mem_total": 81920,
-     "util": 78,
+     "util": 70,
      "owner": "ours"
     },
     {
@@ -24,7 +24,7 @@
      "idx": 2,
      "mem_used": 72081,
      "mem_total": 81920,
-     "util": 49,
+     "util": 53,
      "owner": "ours"
     },
     {
@@ -43,9 +43,9 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 16744,
+     "mem_used": 23624,
      "mem_total": 24576,
-     "util": 67,
+     "util": 96,
      "owner": "ours"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 28,
+     "util": 25,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 35,
+     "util": 34,
      "owner": "ours"
     }
    ]
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47035,
      "mem_total": 49140,
-     "util": 85,
+     "util": 54,
      "owner": "other"
     }
    ]
@@ -730,11 +730,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 11,
+    "done": 12,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T16:58:22 SMOKE allenai/OLMo-2-1124-7B gsm8k rc=0 wall=119.7s cards=0",
+   "detail": "2026-09-22T18:06:41 FULL allenai/OLMo-2-1124-7B gsm8k rc=0 wall=4098.8s cards=0",
    "alerts": []
   },
   {
@@ -843,5 +843,5 @@
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
  ],
- "collect_s": 55.2
+ "collect_s": 47.0
 }
