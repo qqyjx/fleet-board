@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 12:24 LA",
+ "generated_at": "2026-09-21 18:23 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 78373,
-     "mem_total": 81920,
-     "util": 99,
-     "owner": "ours"
-    },
-    {
-     "idx": 1,
-     "mem_used": 24,
+     "mem_used": 25,
      "mem_total": 81920,
      "util": 0,
      "owner": "ours"
     },
     {
+     "idx": 1,
+     "mem_used": 69187,
+     "mem_total": 81920,
+     "util": 68,
+     "owner": "ours"
+    },
+    {
      "idx": 2,
-     "mem_used": 24,
+     "mem_used": 72527,
      "mem_total": 81920,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 64130,
+     "mem_used": 63782,
      "mem_total": 81920,
      "util": 99,
      "owner": "ours"
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 20764,
+     "mem_used": 17726,
      "mem_total": 24576,
-     "util": 42,
+     "util": 48,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 20664,
+     "mem_used": 16904,
      "mem_total": 24576,
-     "util": 49,
+     "util": 48,
      "owner": "ours"
     },
     {
@@ -85,14 +85,14 @@
     },
     {
      "idx": 6,
-     "mem_used": 1554,
+     "mem_used": 1324,
      "mem_total": 24576,
-     "util": 0,
+     "util": 22,
      "owner": "ours"
     },
     {
      "idx": 7,
-     "mem_used": 3580,
+     "mem_used": 3438,
      "mem_total": 24576,
      "util": 33,
      "owner": "ours"
@@ -127,9 +127,9 @@
     },
     {
      "idx": 3,
-     "mem_used": 7885,
+     "mem_used": 1597,
      "mem_total": 49140,
-     "util": 28,
+     "util": 0,
      "owner": "other"
     },
     {
@@ -176,9 +176,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 29934,
+     "mem_used": 4162,
      "mem_total": 49140,
-     "util": 18,
+     "util": 19,
      "owner": "ours"
     }
    ]
@@ -710,11 +710,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 36,
+    "done": 37,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T03:05:14 FULL_START cards=7 tasks=17",
+   "detail": "2026-09-22T08:28:51 FULL facebook/opt-13b mod_arith rc=0 wall=46.5s cards=0,1",
    "alerts": []
   },
   {
@@ -742,13 +742,13 @@
    "box": "A800",
    "cards": [],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T12:59:21 SKIP Qwen/Qwen2.5-32B 1818d35814b8319459f4bd55ed1ac8709630f003",
+   "detail": "2026-09-21T19:34:34 ALL_DONE",
    "alerts": []
   },
   {
@@ -820,5 +820,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
  ],
- "collect_s": 61.5
+ "collect_s": 30.4
 }
