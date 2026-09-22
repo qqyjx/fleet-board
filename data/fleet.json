@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 01:21 LA",
+ "generated_at": "2026-09-22 01:34 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,26 +10,26 @@
      "idx": 0,
      "mem_used": 29489,
      "mem_total": 81920,
-     "util": 92,
+     "util": 96,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68701,
      "mem_total": 81920,
-     "util": 44,
+     "util": 47,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72081,
      "mem_total": 81920,
-     "util": 48,
+     "util": 53,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 63802,
+     "mem_used": 63804,
      "mem_total": 81920,
      "util": 99,
      "owner": "ours"
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 12460,
+     "mem_used": 13660,
      "mem_total": 24576,
-     "util": 36,
+     "util": 94,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 12060,
+     "mem_used": 14760,
      "mem_total": 24576,
-     "util": 72,
+     "util": 10,
      "owner": "ours"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 26,
+     "util": 28,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 38,
+     "util": 35,
      "owner": "ours"
     }
    ]
@@ -134,10 +134,10 @@
     },
     {
      "idx": 4,
-     "mem_used": 28667,
+     "mem_used": 731,
      "mem_total": 49140,
      "util": 0,
-     "owner": "other"
+     "owner": "free"
     },
     {
      "idx": 5,
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47035,
      "mem_total": 49140,
-     "util": 0,
+     "util": 88,
      "owner": "other"
     }
    ]
@@ -234,9 +234,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 38465,
+     "mem_used": 10843,
      "mem_total": 49140,
-     "util": 90,
+     "util": 0,
      "owner": "ours"
     }
    ]
@@ -746,11 +746,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 7,
+    "done": 9,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T16:12:01 FULL allenai/OLMo-2-1124-7B bigbench_parsinlu_qa_multiple_choice rc=1 wall=53.0s cards=0,1",
+   "detail": "2026-09-22T16:31:49 MODEL_DONE allenai/OLMo-2-1124-7B ok=8/17",
    "alerts": []
   },
   {
@@ -782,11 +782,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 28,
+    "done": 31,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T16:14:35 FULL EleutherAI/pythia-2.8b-deduped humaneval rc=0 wall=330.2s cards=GPU-d2c40c78-fa5f-695",
+   "detail": "2026-09-22T16:31:49 FULL EleutherAI/pythia-2.8b-deduped mmlu_humanities rc=0 wall=181.5s cards=GPU-d2c40c78-fa",
    "alerts": []
   },
   {
@@ -876,5 +876,5 @@
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
  ],
- "collect_s": 105.5
+ "collect_s": 253.9
 }
