@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 21:20 LA",
+ "generated_at": "2026-09-21 21:31 LA",
  "boxes": [
   {
    "name": "A800",
@@ -17,14 +17,14 @@
      "idx": 1,
      "mem_used": 69967,
      "mem_total": 81920,
-     "util": 47,
+     "util": 51,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 73265,
      "mem_total": 81920,
-     "util": 53,
+     "util": 46,
      "owner": "ours"
     },
     {
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 13228,
      "mem_total": 24576,
-     "util": 48,
+     "util": 49,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 12766,
      "mem_total": 24576,
-     "util": 48,
+     "util": 45,
      "owner": "ours"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 27,
+     "util": 25,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 35,
+     "util": 38,
      "owner": "ours"
     }
    ]
@@ -748,7 +748,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T00:01:32 START 1 repos, only='Qwen/Qwen2.5-14B' max_gb=1000000000.0 HF_HOME=/data0/xyf/hf_cache",
+   "detail": "2026-09-22T00:22:41 START 1 repos, only='Qwen/Qwen2.5-14B' max_gb=1000000000.0 HF_HOME=/data0/xyf/hf_cache",
    "alerts": []
   },
   {
@@ -820,5 +820,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
  ],
- "collect_s": 19.3
+ "collect_s": 81.4
 }
