@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 08:39 LA",
+ "generated_at": "2026-09-22 08:41 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,14 +10,14 @@
      "idx": 0,
      "mem_used": 29305,
      "mem_total": 81920,
-     "util": 86,
+     "util": 88,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68703,
      "mem_total": 81920,
-     "util": 49,
+     "util": 44,
      "owner": "ours"
     },
     {
@@ -45,7 +45,7 @@
      "idx": 0,
      "mem_used": 14538,
      "mem_total": 24576,
-     "util": 77,
+     "util": 78,
      "owner": "ours"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 26,
+     "util": 28,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 36,
+     "util": 35,
      "owner": "ours"
     }
    ]
@@ -843,5 +843,5 @@
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
  ],
- "collect_s": 61.8
+ "collect_s": 63.5
 }
