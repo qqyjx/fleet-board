@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 10:00 LA",
+ "generated_at": "2026-09-22 10:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,21 +10,21 @@
      "idx": 0,
      "mem_used": 29305,
      "mem_total": 81920,
-     "util": 82,
+     "util": 86,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 68719,
+     "mem_used": 68721,
      "mem_total": 81920,
-     "util": 44,
+     "util": 50,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72101,
      "mem_total": 81920,
-     "util": 53,
+     "util": 47,
      "owner": "ours"
     },
     {
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 14538,
+     "mem_used": 14658,
      "mem_total": 24576,
-     "util": 73,
+     "util": 77,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 8544,
      "mem_total": 24576,
-     "util": 52,
+     "util": 55,
      "owner": "ours"
     },
     {
@@ -71,10 +71,10 @@
     },
     {
      "idx": 4,
-     "mem_used": 22082,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 92,
-     "owner": "other"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 5,
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1326,
      "mem_total": 24576,
-     "util": 24,
+     "util": 27,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 36,
+     "util": 32,
      "owner": "ours"
     }
    ]
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47035,
      "mem_total": 49140,
-     "util": 92,
+     "util": 84,
      "owner": "other"
     }
    ]
@@ -730,11 +730,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 19,
+    "done": 20,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T23:48:48 FULL Qwen/Qwen3-4B-Base mod_arith rc=0 wall=31.0s cards=1",
+   "detail": "2026-09-23T01:02:19 FULL allenai/OLMo-2-1124-7B bigbench_modified_arithmetic_generate_until rc=0 wall=10899.2s",
    "alerts": []
   },
   {
@@ -843,5 +843,5 @@
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
  ],
- "collect_s": 43.5
+ "collect_s": 38.2
 }
