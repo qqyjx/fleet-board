@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 02:20 LA",
+ "generated_at": "2026-09-22 02:30 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,21 +10,21 @@
      "idx": 0,
      "mem_used": 30127,
      "mem_total": 81920,
-     "util": 89,
+     "util": 88,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68701,
      "mem_total": 81920,
-     "util": 46,
+     "util": 49,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72081,
      "mem_total": 81920,
-     "util": 48,
+     "util": 53,
      "owner": "ours"
     },
     {
@@ -45,7 +45,7 @@
      "idx": 0,
      "mem_used": 16744,
      "mem_total": 24576,
-     "util": 70,
+     "util": 71,
      "owner": "ours"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 25,
+     "util": 26,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 33,
+     "util": 39,
      "owner": "ours"
     }
    ]
@@ -106,7 +106,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 30599,
+     "mem_used": 30639,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
@@ -136,7 +136,7 @@
      "idx": 4,
      "mem_used": 28667,
      "mem_total": 49140,
-     "util": 98,
+     "util": 0,
      "owner": "other"
     },
     {
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 4164,
      "mem_total": 49140,
-     "util": 18,
+     "util": 17,
      "owner": "ours"
     }
    ]
@@ -843,5 +843,5 @@
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
  ],
- "collect_s": 49.3
+ "collect_s": 47.8
 }
