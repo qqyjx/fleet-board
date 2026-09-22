@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 04:00 LA",
+ "generated_at": "2026-09-22 04:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,7 +10,7 @@
      "idx": 0,
      "mem_used": 29285,
      "mem_total": 81920,
-     "util": 78,
+     "util": 79,
      "owner": "ours"
     },
     {
@@ -24,7 +24,7 @@
      "idx": 2,
      "mem_used": 72081,
      "mem_total": 81920,
-     "util": 48,
+     "util": 56,
      "owner": "ours"
     },
     {
@@ -43,9 +43,9 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 17684,
+     "mem_used": 22382,
      "mem_total": 24576,
-     "util": 85,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -94,7 +94,7 @@
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 38,
+     "util": 36,
      "owner": "ours"
     }
    ]
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 4164,
      "mem_total": 49140,
-     "util": 18,
+     "util": 17,
      "owner": "ours"
     }
    ]
@@ -730,11 +730,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 13,
+    "done": 14,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T18:40:50 FULL allenai/OLMo-2-1124-7B humaneval rc=0 wall=2048.6s cards=0",
+   "detail": "2026-09-22T19:05:09 FULL allenai/OLMo-2-1124-7B mbpp_all964 rc=0 wall=1459.4s cards=0",
    "alerts": []
   },
   {
@@ -843,5 +843,5 @@
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
  ],
- "collect_s": 48.9
+ "collect_s": 50.6
 }
