@@ -1,40 +1,11 @@
 {
- "generated_at": "2026-09-22 00:02 LA",
+ "generated_at": "2026-09-22 00:06 LA",
  "boxes": [
   {
    "name": "A800",
    "label": "A800 ×4 (80 GB)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 36803,
-     "mem_total": 81920,
-     "util": 100,
-     "owner": "ours"
-    },
-    {
-     "idx": 1,
-     "mem_used": 68701,
-     "mem_total": 81920,
-     "util": 44,
-     "owner": "ours"
-    },
-    {
-     "idx": 2,
-     "mem_used": 72081,
-     "mem_total": 81920,
-     "util": 52,
-     "owner": "ours"
-    },
-    {
-     "idx": 3,
-     "mem_used": 63784,
-     "mem_total": 81920,
-     "util": 99,
-     "owner": "ours"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   },
   {
    "name": "3090",
@@ -43,16 +14,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 21962,
+     "mem_used": 21322,
      "mem_total": 24576,
-     "util": 58,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 17502,
+     "mem_used": 17162,
      "mem_total": 24576,
-     "util": 45,
+     "util": 85,
      "owner": "ours"
     },
     {
@@ -136,7 +107,7 @@
      "idx": 4,
      "mem_used": 47302,
      "mem_total": 49140,
-     "util": 92,
+     "util": 96,
      "owner": "other"
     },
     {
@@ -234,7 +205,7 @@
     },
     {
      "idx": 1,
-     "mem_used": 48143,
+     "mem_used": 47141,
      "mem_total": 49140,
      "util": 100,
      "owner": "ours"
@@ -573,13 +544,13 @@
     3
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "stale",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "[eval_matrix] pass=t0 finished 2026-09-21T06:51:18-04:00",
+   "detail": "A800 本轮未采集到；上次状态：[eval_matrix] pass=t0 finished 2026-09-21T06:51:18-04:00",
    "alerts": []
   },
   {
@@ -594,13 +565,13 @@
     3
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "stale",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T06:53:04-04:00 AFTER-T0 post_matrix_eval VERSION=corrected rc=2",
+   "detail": "A800 本轮未采集到；上次状态：2026-09-21T06:53:04-04:00 AFTER-T0 post_matrix_eval VERSION=corrected rc=2",
    "alerts": []
   },
   {
@@ -615,13 +586,13 @@
     3
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "stale",
    "progress": {
     "done": 15,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-21T15:09:15-04:00 DONE all lanes",
+   "detail": "A800 本轮未采集到；上次状态：2026-09-21T15:09:15-04:00 DONE all lanes",
    "alerts": []
   },
   {
@@ -746,11 +717,27 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 8,
+    "done": 9,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T14:59:33 FULL EleutherAI/pythia-1.4b-deduped gsm8k rc=0 wall=583.2s cards=GPU-d2c40c78-fa5f-695c-5a",
+   "detail": "2026-09-22T15:04:18 FULL EleutherAI/pythia-1.4b-deduped humaneval rc=0 wall=285.3s cards=GPU-d2c40c78-fa5f-695",
+   "alerts": []
+  },
+  {
+   "id": "dl_models.log",
+   "repo": "Science",
+   "title": "Phase-Trans A800 腿：Qwen2.5-32B/72B + OPT-30b/66b pin 下载（≈400 GB，4.7 MB/s；只占盘不占卡）",
+   "box": "A800",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "2026-09-22T00:55:26 ALL_DONE",
    "alerts": []
   },
   {
@@ -819,8 +806,9 @@
   }
  ],
  "alerts": [
+  "A800 本轮采集失败：该机任务状态为上次快照，不作数",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
  ],
- "collect_s": 721.7
+ "collect_s": 401.2
 }
