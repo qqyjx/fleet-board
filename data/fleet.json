@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 21:51 LA",
+ "generated_at": "2026-09-21 22:00 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,23 +8,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 47387,
+     "mem_used": 40789,
      "mem_total": 81920,
-     "util": 97,
+     "util": 94,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 78543,
+     "mem_used": 78403,
      "mem_total": 81920,
-     "util": 93,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 77885,
+     "mem_used": 78185,
      "mem_total": 81920,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 13228,
      "mem_total": 24576,
-     "util": 49,
+     "util": 48,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 12766,
      "mem_total": 24576,
-     "util": 49,
+     "util": 47,
      "owner": "ours"
     },
     {
@@ -94,7 +94,7 @@
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 36,
+     "util": 34,
      "owner": "ours"
     }
    ]
@@ -169,7 +169,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 40281,
+     "mem_used": 40279,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 4162,
      "mem_total": 49140,
-     "util": 18,
+     "util": 17,
      "owner": "ours"
     }
    ]
@@ -236,7 +236,7 @@
      "idx": 1,
      "mem_used": 12259,
      "mem_total": 49140,
-     "util": 21,
+     "util": 34,
      "owner": "other"
     }
    ]
@@ -742,13 +742,13 @@
    "box": "A800",
    "cards": [],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T00:22:41 START 1 repos, only='Qwen/Qwen2.5-14B' max_gb=1000000000.0 HF_HOME=/data0/xyf/hf_cache",
+   "detail": "2026-09-22T00:55:26 ALL_DONE",
    "alerts": []
   },
   {
@@ -820,5 +820,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
  ],
- "collect_s": 69.2
+ "collect_s": 28.6
 }
