@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 23:47 LA",
+ "generated_at": "2026-09-22 00:02 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,9 +8,9 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 25,
+     "mem_used": 36803,
      "mem_total": 81920,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -24,14 +24,14 @@
      "idx": 2,
      "mem_used": 72081,
      "mem_total": 81920,
-     "util": 45,
+     "util": 52,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 63784,
      "mem_total": 81920,
-     "util": 98,
+     "util": 99,
      "owner": "ours"
     }
    ]
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 13706,
+     "mem_used": 21962,
      "mem_total": 24576,
-     "util": 47,
+     "util": 58,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 13184,
+     "mem_used": 17502,
      "mem_total": 24576,
-     "util": 49,
+     "util": 45,
      "owner": "ours"
     },
     {
@@ -87,15 +87,15 @@
      "idx": 6,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 26,
-     "owner": "free"
+     "util": 29,
+     "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
      "util": 33,
-     "owner": "other"
+     "owner": "ours"
     }
    ]
   },
@@ -136,7 +136,7 @@
      "idx": 4,
      "mem_used": 47302,
      "mem_total": 49140,
-     "util": 85,
+     "util": 92,
      "owner": "other"
     },
     {
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 4162,
      "mem_total": 49140,
-     "util": 17,
+     "util": 18,
      "owner": "ours"
     }
    ]
@@ -234,9 +234,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 5150,
+     "mem_used": 48143,
      "mem_total": 49140,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     }
    ]
@@ -701,6 +701,25 @@
   {
    "id": "full_eval.log",
    "repo": "Science",
+   "title": "Phase-Trans 盲态全量评测（≤14B 30 模型 × 17 任务，跟随 pin 下载；指标隔离在 _blind/ 未读，只记 rc/秒）",
+   "box": "3090",
+   "cards": [
+    6,
+    7
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 39,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "2026-09-22T14:55:14 FULL facebook/opt-13b bigbench_parsinlu_qa_multiple_choice rc=0 wall=476.3s cards=0,1",
+   "alerts": []
+  },
+  {
+   "id": "full_eval.log",
+   "repo": "Science",
    "title": "Phase-Trans 盲态全量评测（≤4B 子集 20 模型 × 17 任务；box-floor 行）",
    "box": "new105",
    "cards": [
@@ -727,27 +746,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 1,
+    "done": 8,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-22T14:46:44 SMOKE EleutherAI/pythia-1.4b-deduped arithmetic_2da_local rc=0 wall=21.5s cards=GPU-d2c40c",
-   "alerts": []
-  },
-  {
-   "id": "dl_models.log",
-   "repo": "Science",
-   "title": "Phase-Trans A800 腿：Qwen2.5-32B/72B + OPT-30b/66b pin 下载（≈400 GB，4.7 MB/s；只占盘不占卡）",
-   "box": "A800",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 0,
-    "total": 0,
-    "unit": "步"
-   },
-   "detail": "2026-09-22T00:55:26 ALL_DONE",
+   "detail": "2026-09-22T14:59:33 FULL EleutherAI/pythia-1.4b-deduped gsm8k rc=0 wall=583.2s cards=GPU-d2c40c78-fa5f-695c-5a",
    "alerts": []
   },
   {
@@ -819,5 +822,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
  ],
- "collect_s": 377.3
+ "collect_s": 721.7
 }
