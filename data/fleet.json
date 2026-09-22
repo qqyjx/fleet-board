@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 11:30 LA",
+ "generated_at": "2026-09-22 11:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,21 +10,21 @@
      "idx": 0,
      "mem_used": 29305,
      "mem_total": 81920,
-     "util": 95,
+     "util": 93,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68725,
      "mem_total": 81920,
-     "util": 51,
+     "util": 43,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72101,
      "mem_total": 81920,
-     "util": 46,
+     "util": 45,
      "owner": "ours"
     },
     {
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 13220,
+     "mem_used": 13332,
      "mem_total": 24576,
-     "util": 26,
+     "util": 24,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 24170,
+     "mem_used": 24222,
      "mem_total": 24576,
-     "util": 88,
+     "util": 84,
      "owner": "ours"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1326,
      "mem_total": 24576,
-     "util": 25,
+     "util": 28,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3438,
      "mem_total": 24576,
-     "util": 35,
+     "util": 33,
      "owner": "ours"
     }
    ]
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 4164,
      "mem_total": 49140,
-     "util": 20,
+     "util": 18,
      "owner": "ours"
     }
    ]
@@ -734,7 +734,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-23T02:26:56 FULL Qwen/Qwen3-14B-Base bigbench_modified_arithmetic_generate_until rc=1 wall=150.9s card",
+   "detail": "2026-09-23T02:33:05 FULL Qwen/Qwen3-14B-Base bigbench_parsinlu_qa_multiple_choice rc=1 wall=35.0s cards=0,1",
    "alerts": []
   },
   {
