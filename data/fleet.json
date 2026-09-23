@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 19:40 LA",
+ "generated_at": "2026-09-22 19:50 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,21 +10,21 @@
      "idx": 0,
      "mem_used": 29305,
      "mem_total": 81920,
-     "util": 93,
+     "util": 90,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68725,
      "mem_total": 81920,
-     "util": 52,
+     "util": 44,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72103,
      "mem_total": 81920,
-     "util": 47,
+     "util": 48,
      "owner": "ours"
     },
     {
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 15324,
+     "mem_used": 15810,
      "mem_total": 24576,
-     "util": 73,
+     "util": 89,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 8454,
      "mem_total": 24576,
-     "util": 48,
+     "util": 49,
      "owner": "ours"
     },
     {
@@ -94,7 +94,7 @@
      "idx": 7,
      "mem_used": 3440,
      "mem_total": 24576,
-     "util": 37,
+     "util": 33,
      "owner": "ours"
     }
    ]
@@ -134,7 +134,7 @@
     },
     {
      "idx": 4,
-     "mem_used": 731,
+     "mem_used": 1121,
      "mem_total": 49140,
      "util": 0,
      "owner": "free"
@@ -148,16 +148,16 @@
     },
     {
      "idx": 6,
-     "mem_used": 18,
+     "mem_used": 44331,
      "mem_total": 49140,
-     "util": 0,
+     "util": 97,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 47009,
      "mem_total": 49140,
-     "util": 63,
+     "util": 82,
      "owner": "other"
     }
    ]
@@ -169,7 +169,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 40283,
+     "mem_used": 40281,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 4164,
      "mem_total": 49140,
-     "util": 18,
+     "util": 19,
      "owner": "ours"
     }
    ]
@@ -699,7 +699,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "NOTE lane=F base 1.2 on card 6 also killed_by_root 15:50 CST rc=137 wall_s=446; not relaunched 2026-09-22T15:5",
+   "detail": "GATE lane=F weights_present 2026-09-23T10:44:55+08:00",
    "alerts": []
   },
   {
@@ -730,11 +730,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 11,
+    "done": 13,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-23T08:59:30 FULL Qwen/Qwen2.5-7B mod_arith rc=0 wall=37.0s cards=0",
+   "detail": "2026-09-23T10:47:58 FULL Qwen/Qwen2.5-7B humaneval rc=0 wall=399.7s cards=0",
    "alerts": []
   },
   {
@@ -843,5 +843,5 @@
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
  ],
- "collect_s": 49.5
+ "collect_s": 51.8
 }
