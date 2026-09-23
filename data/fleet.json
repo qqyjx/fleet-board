@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-23 00:30 LA",
+ "generated_at": "2026-09-23 00:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,28 +10,28 @@
      "idx": 0,
      "mem_used": 29305,
      "mem_total": 81920,
-     "util": 64,
+     "util": 96,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68725,
      "mem_total": 81920,
-     "util": 34,
+     "util": 44,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72103,
      "mem_total": 81920,
-     "util": 28,
+     "util": 44,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 63806,
      "mem_total": 81920,
-     "util": 98,
+     "util": 99,
      "owner": "ours"
     }
    ]
@@ -43,16 +43,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 0,
+     "mem_used": 15092,
      "mem_total": 24576,
-     "util": 0,
+     "util": 67,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 8454,
      "mem_total": 24576,
-     "util": 54,
+     "util": 55,
      "owner": "ours"
     },
     {
@@ -73,7 +73,7 @@
      "idx": 4,
      "mem_used": 22650,
      "mem_total": 24576,
-     "util": 93,
+     "util": 94,
      "owner": "other"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1326,
      "mem_total": 24576,
-     "util": 23,
+     "util": 25,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3440,
      "mem_total": 24576,
-     "util": 38,
+     "util": 36,
      "owner": "ours"
     }
    ]
@@ -122,7 +122,7 @@
      "idx": 2,
      "mem_used": 25847,
      "mem_total": 49140,
-     "util": 0,
+     "util": 97,
      "owner": "other"
     },
     {
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47551,
      "mem_total": 49140,
-     "util": 95,
+     "util": 90,
      "owner": "other"
     }
    ]
@@ -851,5 +851,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 48.6
+ "collect_s": 44.3
 }
