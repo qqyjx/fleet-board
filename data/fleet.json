@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 23:00 LA",
+ "generated_at": "2026-09-22 23:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,28 +10,28 @@
      "idx": 0,
      "mem_used": 29305,
      "mem_total": 81920,
-     "util": 97,
+     "util": 85,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68725,
      "mem_total": 81920,
-     "util": 49,
+     "util": 50,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72103,
      "mem_total": 81920,
-     "util": 44,
+     "util": 47,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 63806,
      "mem_total": 81920,
-     "util": 99,
+     "util": 98,
      "owner": "ours"
     }
    ]
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 15076,
      "mem_total": 24576,
-     "util": 65,
+     "util": 80,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 8454,
      "mem_total": 24576,
-     "util": 55,
+     "util": 49,
      "owner": "ours"
     },
     {
@@ -71,10 +71,10 @@
     },
     {
      "idx": 4,
-     "mem_used": 0,
+     "mem_used": 22512,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 94,
+     "owner": "other"
     },
     {
      "idx": 5,
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1326,
      "mem_total": 24576,
-     "util": 26,
+     "util": 28,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3440,
      "mem_total": 24576,
-     "util": 34,
+     "util": 39,
      "owner": "ours"
     }
    ]
@@ -129,14 +129,14 @@
      "idx": 3,
      "mem_used": 45911,
      "mem_total": 49140,
-     "util": 88,
+     "util": 97,
      "owner": "other"
     },
     {
      "idx": 4,
      "mem_used": 45043,
      "mem_total": 49140,
-     "util": 94,
+     "util": 100,
      "owner": "other"
     },
     {
@@ -150,7 +150,7 @@
      "idx": 6,
      "mem_used": 44331,
      "mem_total": 49140,
-     "util": 87,
+     "util": 93,
      "owner": "ours"
     },
     {
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 4252,
      "mem_total": 49140,
-     "util": 18,
+     "util": 19,
      "owner": "ours"
     }
    ]
@@ -190,14 +190,14 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 33,
+     "mem_used": 51,
      "mem_total": 49140,
      "util": 0,
      "owner": "free"
     },
     {
      "idx": 1,
-     "mem_used": 17,
+     "mem_used": 18,
      "mem_total": 49140,
      "util": 0,
      "owner": "free"
@@ -212,7 +212,7 @@
     },
     {
      "idx": 3,
-     "mem_used": 18,
+     "mem_used": 19,
      "mem_total": 49140,
      "util": 0,
      "owner": "free"
@@ -843,5 +843,5 @@
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
  ],
- "collect_s": 38.7
+ "collect_s": 37.4
 }
