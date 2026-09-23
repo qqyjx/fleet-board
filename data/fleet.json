@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 19:50 LA",
+ "generated_at": "2026-09-22 20:01 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,7 +10,7 @@
      "idx": 0,
      "mem_used": 29305,
      "mem_total": 81920,
-     "util": 90,
+     "util": 84,
      "owner": "ours"
     },
     {
@@ -24,7 +24,7 @@
      "idx": 2,
      "mem_used": 72103,
      "mem_total": 81920,
-     "util": 48,
+     "util": 44,
      "owner": "ours"
     },
     {
@@ -43,9 +43,9 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 15810,
+     "mem_used": 15812,
      "mem_total": 24576,
-     "util": 89,
+     "util": 93,
      "owner": "ours"
     },
     {
@@ -73,7 +73,7 @@
      "idx": 4,
      "mem_used": 22606,
      "mem_total": 24576,
-     "util": 94,
+     "util": 93,
      "owner": "other"
     },
     {
@@ -94,7 +94,7 @@
      "idx": 7,
      "mem_used": 3440,
      "mem_total": 24576,
-     "util": 33,
+     "util": 37,
      "owner": "ours"
     }
    ]
@@ -127,17 +127,17 @@
     },
     {
      "idx": 3,
-     "mem_used": 1597,
+     "mem_used": 45695,
      "mem_total": 49140,
-     "util": 0,
+     "util": 79,
      "owner": "other"
     },
     {
      "idx": 4,
-     "mem_used": 1121,
+     "mem_used": 45043,
      "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
+     "util": 94,
+     "owner": "other"
     },
     {
      "idx": 5,
@@ -150,14 +150,14 @@
      "idx": 6,
      "mem_used": 44331,
      "mem_total": 49140,
-     "util": 97,
+     "util": 92,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 47009,
      "mem_total": 49140,
-     "util": 82,
+     "util": 100,
      "owner": "other"
     }
    ]
@@ -169,14 +169,14 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 40281,
+     "mem_used": 40283,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 4164,
+     "mem_used": 4252,
      "mem_total": 49140,
      "util": 19,
      "owner": "ours"
@@ -715,7 +715,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "NOTE lane=G waiter stopped by us 2026-09-22T15:54:38+08:00: root(2.0.1.168) SIGKILLed lane F twice within 15 m",
+   "detail": "GATE lane=G weights_present 2026-09-23T10:54:55+08:00",
    "alerts": []
   },
   {
@@ -843,5 +843,5 @@
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
  ],
- "collect_s": 51.8
+ "collect_s": 71.7
 }
