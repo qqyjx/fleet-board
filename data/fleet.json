@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 21:40 LA",
+ "generated_at": "2026-09-22 21:50 LA",
  "boxes": [
   {
    "name": "A800",
@@ -17,21 +17,21 @@
      "idx": 1,
      "mem_used": 68725,
      "mem_total": 81920,
-     "util": 42,
+     "util": 55,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72103,
      "mem_total": 81920,
-     "util": 49,
+     "util": 54,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 63806,
      "mem_total": 81920,
-     "util": 100,
+     "util": 99,
      "owner": "ours"
     }
    ]
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 15076,
      "mem_total": 24576,
-     "util": 95,
+     "util": 89,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 8454,
      "mem_total": 24576,
-     "util": 56,
+     "util": 51,
      "owner": "ours"
     },
     {
@@ -94,7 +94,7 @@
      "idx": 7,
      "mem_used": 3440,
      "mem_total": 24576,
-     "util": 36,
+     "util": 37,
      "owner": "ours"
     }
    ]
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47551,
      "mem_total": 49140,
-     "util": 100,
+     "util": 90,
      "owner": "other"
     }
    ]
@@ -851,5 +851,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T11:51:29+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T11:51:29+08:00"
  ],
- "collect_s": 53.3
+ "collect_s": 57.0
 }
