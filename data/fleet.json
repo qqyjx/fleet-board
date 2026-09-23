@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 23:31 LA",
+ "generated_at": "2026-09-22 23:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,14 +10,14 @@
      "idx": 0,
      "mem_used": 29305,
      "mem_total": 81920,
-     "util": 83,
+     "util": 94,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68725,
      "mem_total": 81920,
-     "util": 43,
+     "util": 41,
      "owner": "ours"
     },
     {
@@ -31,7 +31,7 @@
      "idx": 3,
      "mem_used": 63806,
      "mem_total": 81920,
-     "util": 99,
+     "util": 98,
      "owner": "ours"
     }
    ]
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 15076,
      "mem_total": 24576,
-     "util": 86,
+     "util": 94,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 8454,
      "mem_total": 24576,
-     "util": 39,
+     "util": 38,
      "owner": "ours"
     },
     {
@@ -73,7 +73,7 @@
      "idx": 4,
      "mem_used": 22650,
      "mem_total": 24576,
-     "util": 95,
+     "util": 94,
      "owner": "other"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 1326,
      "mem_total": 24576,
-     "util": 22,
+     "util": 24,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3440,
      "mem_total": 24576,
-     "util": 36,
+     "util": 37,
      "owner": "ours"
     }
    ]
@@ -120,24 +120,24 @@
     },
     {
      "idx": 2,
-     "mem_used": 25847,
+     "mem_used": 26300,
+     "mem_total": 49140,
+     "util": 5,
+     "owner": "other"
+    },
+    {
+     "idx": 3,
+     "mem_used": 1597,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
     },
     {
-     "idx": 3,
-     "mem_used": 45911,
-     "mem_total": 49140,
-     "util": 95,
-     "owner": "other"
-    },
-    {
      "idx": 4,
-     "mem_used": 45043,
+     "mem_used": 731,
      "mem_total": 49140,
-     "util": 93,
-     "owner": "other"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 5,
@@ -148,16 +148,16 @@
     },
     {
      "idx": 6,
-     "mem_used": 44331,
+     "mem_used": 18,
      "mem_total": 49140,
-     "util": 91,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 7,
      "mem_used": 47551,
      "mem_total": 49140,
-     "util": 94,
+     "util": 69,
      "owner": "other"
     }
    ]
@@ -190,14 +190,14 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 51,
+     "mem_used": 33,
      "mem_total": 49140,
      "util": 0,
      "owner": "free"
     },
     {
      "idx": 1,
-     "mem_used": 18,
+     "mem_used": 17,
      "mem_total": 49140,
      "util": 0,
      "owner": "free"
@@ -212,7 +212,7 @@
     },
     {
      "idx": 3,
-     "mem_used": 19,
+     "mem_used": 18,
      "mem_total": 49140,
      "util": 0,
      "owner": "free"
@@ -693,14 +693,16 @@
     6
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "failed",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "GATE lane=F weights_present 2026-09-23T13:10:35+08:00",
-   "alerts": []
+   "detail": "ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00",
+   "alerts": [
+    "ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00"
+   ]
   },
   {
    "id": "iclr9_ladder_seed2_fuxin_status_laneG",
@@ -709,14 +711,16 @@
    "box": "fuxin",
    "cards": [],
    "kind": "gen",
-   "status": "running",
+   "status": "failed",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
-   "detail": "GATE lane=G weights_present 2026-09-23T13:20:35+08:00",
-   "alerts": []
+   "detail": "ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
+   "alerts": [
+    "ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
+   ]
   },
   {
    "id": "science-3090",
@@ -841,7 +845,11 @@
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
-  "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
+  "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
+  "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6） 失败：ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00",
+  "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6）: ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00",
+  "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
+  "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 45.3
+ "collect_s": 41.3
 }
