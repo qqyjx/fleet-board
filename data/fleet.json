@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-24 03:30 LA",
+ "generated_at": "2026-09-24 05:02 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,21 +10,21 @@
      "idx": 0,
      "mem_used": 29307,
      "mem_total": 81920,
-     "util": 97,
+     "util": 86,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68725,
      "mem_total": 81920,
-     "util": 48,
+     "util": 53,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72105,
      "mem_total": 81920,
-     "util": 45,
+     "util": 54,
      "owner": "ours"
     },
     {
@@ -43,23 +43,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 15096,
+     "mem_used": 16584,
      "mem_total": 24576,
-     "util": 85,
+     "util": 70,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 8458,
      "mem_total": 24576,
-     "util": 42,
+     "util": 49,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 22614,
      "mem_total": 24576,
-     "util": 91,
+     "util": 92,
      "owner": "other"
     },
     {
@@ -73,28 +73,28 @@
      "idx": 4,
      "mem_used": 22662,
      "mem_total": 24576,
-     "util": 92,
+     "util": 93,
      "owner": "other"
     },
     {
      "idx": 5,
      "mem_used": 22646,
      "mem_total": 24576,
-     "util": 92,
+     "util": 93,
      "owner": "other"
     },
     {
      "idx": 6,
      "mem_used": 1326,
      "mem_total": 24576,
-     "util": 25,
+     "util": 26,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3440,
      "mem_total": 24576,
-     "util": 33,
+     "util": 36,
      "owner": "ours"
     }
    ]
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 4252,
      "mem_total": 49140,
-     "util": 18,
+     "util": 19,
      "owner": "ours"
     }
    ]
@@ -734,11 +734,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 19,
+    "done": 28,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-24T17:29:35 FULL Qwen/Qwen2.5-7B bigbench_modified_arithmetic_generate_until rc=0 wall=93578.7s cards=",
+   "detail": "2026-09-24T19:00:24 FULL Qwen/Qwen3-8B-Base mod_arith rc=0 wall=40.1s cards=0",
    "alerts": []
   },
   {
@@ -851,5 +851,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 53.8
+ "collect_s": 135.1
 }
