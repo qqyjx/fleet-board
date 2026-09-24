@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-24 14:40 LA",
+ "generated_at": "2026-09-24 14:50 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,28 +10,28 @@
      "idx": 0,
      "mem_used": 29307,
      "mem_total": 81920,
-     "util": 93,
+     "util": 94,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 68725,
      "mem_total": 81920,
-     "util": 42,
+     "util": 50,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72105,
      "mem_total": 81920,
-     "util": 46,
+     "util": 51,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 63806,
      "mem_total": 81920,
-     "util": 100,
+     "util": 99,
      "owner": "ours"
     }
    ]
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 16394,
      "mem_total": 24576,
-     "util": 62,
+     "util": 76,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 8456,
      "mem_total": 24576,
-     "util": 42,
+     "util": 51,
      "owner": "ours"
     },
     {
@@ -66,7 +66,7 @@
      "idx": 3,
      "mem_used": 22800,
      "mem_total": 24576,
-     "util": 90,
+     "util": 92,
      "owner": "other"
     },
     {
@@ -80,21 +80,21 @@
      "idx": 5,
      "mem_used": 22646,
      "mem_total": 24576,
-     "util": 92,
+     "util": 93,
      "owner": "other"
     },
     {
      "idx": 6,
      "mem_used": 1326,
      "mem_total": 24576,
-     "util": 26,
+     "util": 27,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3440,
      "mem_total": 24576,
-     "util": 34,
+     "util": 37,
      "owner": "ours"
     }
    ]
@@ -176,9 +176,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 6610,
+     "mem_used": 5894,
      "mem_total": 49140,
-     "util": 51,
+     "util": 0,
      "owner": "ours"
     }
    ]
@@ -228,7 +228,7 @@
      "idx": 0,
      "mem_used": 6593,
      "mem_total": 49140,
-     "util": 33,
+     "util": 34,
      "owner": "other"
     }
    ]
@@ -760,11 +760,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 12,
+    "done": 24,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-25T05:37:12 FULL EleutherAI/pythia-1b-deduped bigbench_word_unscrambling_generate_until rc=0 wall=356.",
+   "detail": "2026-09-25T05:49:44 FULL facebook/opt-1.3b mod_arith rc=0 wall=23.9s cards=1",
    "alerts": []
   },
   {
@@ -876,5 +876,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 18.6
+ "collect_s": 19.7
 }
