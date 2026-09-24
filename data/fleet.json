@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-24 08:10 LA",
+ "generated_at": "2026-09-24 08:20 LA",
  "boxes": [
   {
    "name": "A800",
@@ -17,14 +17,14 @@
      "idx": 1,
      "mem_used": 68725,
      "mem_total": 81920,
-     "util": 39,
+     "util": 52,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72105,
      "mem_total": 81920,
-     "util": 57,
+     "util": 45,
      "owner": "ours"
     },
     {
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 16394,
      "mem_total": 24576,
-     "util": 73,
+     "util": 70,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 8452,
      "mem_total": 24576,
-     "util": 38,
+     "util": 53,
      "owner": "ours"
     },
     {
@@ -80,21 +80,21 @@
      "idx": 5,
      "mem_used": 22646,
      "mem_total": 24576,
-     "util": 92,
+     "util": 89,
      "owner": "other"
     },
     {
      "idx": 6,
      "mem_used": 1326,
      "mem_total": 24576,
-     "util": 27,
+     "util": 26,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 3440,
      "mem_total": 24576,
-     "util": 34,
+     "util": 37,
      "owner": "ours"
     }
    ]
@@ -222,8 +222,16 @@
   {
    "name": "4090-jm",
    "label": "4090-jm ×2 (48 GB, 实验室 .176; 共用即上; 卡 0 待 root reset)",
-   "reachable": false,
-   "cards": []
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 45787,
+     "mem_total": 49140,
+     "util": 98,
+     "owner": "other"
+    }
+   ]
   }
  ],
  "jobs": [
@@ -760,6 +768,24 @@
    "alerts": []
   },
   {
+   "id": "science-4090-jm",
+   "repo": "Science",
+   "title": "Phase-Trans 盲态全量评测（1.4B–8B 段 9 模型 × 17 任务；box-floor 行 pythia-1.4b 先跑；卡 0 GPU requires reset，只用卡 1）",
+   "box": "4090-jm",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 27,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "2026-09-24T23:18:26 FULL_START cards=GPU-d2c40c78-fa5f-695c-5ac2-bdfb52533f20 tasks=17",
+   "alerts": []
+  },
+  {
    "id": "dl_models.log",
    "repo": "Science",
    "title": "Phase-Trans A800 腿：Qwen2.5-32B/72B + OPT-30b/66b pin 下载（≈400 GB，4.7 MB/s；只占盘不占卡）",
@@ -841,7 +867,6 @@
   }
  ],
  "alerts": [
-  "4090-jm 本轮采集失败：该机任务状态为上次快照，不作数",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
@@ -851,5 +876,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 52.1
+ "collect_s": 31.0
 }
