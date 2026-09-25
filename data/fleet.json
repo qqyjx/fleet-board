@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 06:30 LA",
+ "generated_at": "2026-09-25 06:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -17,21 +17,21 @@
      "idx": 1,
      "mem_used": 71073,
      "mem_total": 81920,
-     "util": 56,
+     "util": 61,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 69969,
      "mem_total": 81920,
-     "util": 51,
+     "util": 40,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 69528,
      "mem_total": 81920,
-     "util": 100,
+     "util": 99,
      "owner": "ours"
     }
    ]
@@ -45,56 +45,56 @@
      "idx": 0,
      "mem_used": 18682,
      "mem_total": 24576,
-     "util": 97,
+     "util": 72,
      "owner": "other"
     },
     {
      "idx": 1,
      "mem_used": 12964,
      "mem_total": 24576,
-     "util": 98,
+     "util": 70,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 7982,
+     "mem_used": 23002,
      "mem_total": 24576,
-     "util": 47,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 7902,
+     "mem_used": 21202,
      "mem_total": 24576,
-     "util": 44,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 4,
-     "mem_used": 21402,
+     "mem_used": 22322,
      "mem_total": 24576,
-     "util": 50,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 5,
-     "mem_used": 14062,
+     "mem_used": 14302,
      "mem_total": 24576,
-     "util": 45,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 5926,
      "mem_total": 24576,
-     "util": 36,
+     "util": 53,
      "owner": "other"
     },
     {
      "idx": 7,
      "mem_used": 8244,
      "mem_total": 24576,
-     "util": 94,
+     "util": 96,
      "owner": "other"
     }
    ]
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 10866,
      "mem_total": 49140,
-     "util": 56,
+     "util": 76,
      "owner": "ours"
     }
    ]
@@ -724,11 +724,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 37,
+    "done": 34,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-25T21:26:38 FULL_START cards=4,5 tasks=6",
+   "detail": "2026-09-25T21:37:48 FULL facebook/opt-6.7b gsm8k_goldll rc=0 wall=670.3s cards=4,5",
    "alerts": []
   },
   {
@@ -879,5 +879,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 26.9
+ "collect_s": 24.0
 }
