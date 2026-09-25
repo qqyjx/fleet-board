@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 16:40 LA",
+ "generated_at": "2026-09-25 16:50 LA",
  "boxes": [
   {
    "name": "A800",
@@ -15,16 +15,16 @@
     },
     {
      "idx": 1,
-     "mem_used": 64333,
+     "mem_used": 64397,
      "mem_total": 81920,
-     "util": 56,
+     "util": 53,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 63409,
+     "mem_used": 63473,
      "mem_total": 81920,
-     "util": 42,
+     "util": 53,
      "owner": "ours"
     },
     {
@@ -875,5 +875,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 14.8
+ "collect_s": 14.7
 }
