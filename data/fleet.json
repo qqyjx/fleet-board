@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 06:50 LA",
+ "generated_at": "2026-09-25 07:00 LA",
  "boxes": [
   {
    "name": "A800",
@@ -17,21 +17,21 @@
      "idx": 1,
      "mem_used": 71073,
      "mem_total": 81920,
-     "util": 61,
+     "util": 48,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 69969,
      "mem_total": 81920,
-     "util": 37,
+     "util": 53,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 69528,
      "mem_total": 81920,
-     "util": 99,
+     "util": 100,
      "owner": "ours"
     }
    ]
@@ -52,49 +52,49 @@
      "idx": 1,
      "mem_used": 12964,
      "mem_total": 24576,
-     "util": 90,
-     "owner": "ours"
+     "util": 96,
+     "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 23540,
+     "mem_used": 6642,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 24160,
+     "mem_used": 1342,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 4,
-     "mem_used": 16480,
+     "mem_used": 24162,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 5,
-     "mem_used": 14280,
+     "mem_used": 23764,
      "mem_total": 24576,
-     "util": 2,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 5926,
      "mem_total": 24576,
-     "util": 33,
+     "util": 94,
      "owner": "other"
     },
     {
      "idx": 7,
      "mem_used": 8244,
      "mem_total": 24576,
-     "util": 95,
+     "util": 94,
      "owner": "other"
     }
    ]
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 10866,
      "mem_total": 49140,
-     "util": 92,
+     "util": 41,
      "owner": "ours"
     }
    ]
@@ -715,7 +715,6 @@
    "title": "Phase-Trans 盲态全量评测（≤14B 30 模型 × 17 任务，跟随 pin 下载；指标隔离在 _blind/ 未读，只记 rc/秒）",
    "box": "3090",
    "cards": [
-    1,
     2,
     3,
     4,
@@ -724,11 +723,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 32,
+    "done": 28,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-25T21:49:31 FULL_START cards=2,3 tasks=6",
+   "detail": "2026-09-25T21:59:01 MODEL_DONE EleutherAI/pythia-6.9b-deduped ok=6/6",
    "alerts": []
   },
   {
@@ -879,5 +878,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 24.5
+ "collect_s": 26.9
 }
