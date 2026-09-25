@@ -96,7 +96,7 @@ def stage7(curves):
             "cards": [] if qdone else [0, 1, 2, 3], "kind": "train",
             "status": "done" if qdone else ("running" if running else "unknown"),
             "progress": {"done": max(0, min(done, total_arms)), "total": total_arms, "unit": "臂"},
-            "detail": ("训练队列 QUEUE DONE 09-20 10:08 LA；评测链见下行" if qdone else f"当前臂 {running}") + (f"，step {[a for a in arms if a['arm']==running][0]['steps']}/{FULL}" if running and any(a['arm']==running for a in arms) else ""),
+            "detail": ("训练队列 QUEUE DONE 09-20 10:08 LA；T0 评测 09-21 完，S*/T1/噪声底 09-23 手动跑完" if qdone else f"当前臂 {running}") + (f"，step {[a for a in arms if a['arm']==running][0]['steps']}/{FULL}" if running and any(a['arm']==running for a in arms) else ""),
             "arms": arms}
 
 # ---------------- 3090: ICLR2027-9 ladder ----------------
@@ -170,7 +170,6 @@ def b7tp2():
 STATUS_JOBS = [
     ("3090", "/data/xyf/iclr2_uitars_seed1_status", "ICLR2027-2", "UI-TARS 二次抽样（3090 卡 0/1 TP2 m2w test_domain；android 09-21 03:37 CST 已落地）", [0, 1]),
     ("A800", "/data0/xyf/www2027-1/logs/eval_matrix_t0_corrected.out", "WWW2027-1", "修正版六臂 T0 评测（30 作业，四卡；完了自动接 S* → outcome T1 → 噪声底）", [0, 1, 2, 3]),
-    ("A800", "/data0/xyf/www2027-1/logs/after_t0_corrected.log", "WWW2027-1", "修正版六臂：T0 评测 30 作业 → S* → outcome T1 → 噪声底（post_matrix_eval corrected）", [0, 1, 2, 3]),
     ("A800", "/data0/xyf/imwut_B_status", "IMWUT2027-1", "ORAL_GAP B1 max-q 门控 / B2 覆盖率扫 / B3 seeds 45-46（四道，排在 WWW 链后）", [0, 1, 2, 3]),
     ("194-yyd", "/data/yyd/iclr9_ladder_seed2_status_laneA", "ICLR2027-9", "14B 阶梯 seed 2 base 臂 lane A（T 0.6 → 1.0 0.2 0.8；09-21 00:20 LA 拆成四道）", [0]),
     ("194-yyd", "/data/yyd/iclr9_ladder_seed2_status_laneB", "ICLR2027-9", "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）", [1]),
@@ -194,8 +193,11 @@ def status_job(host, path, repo, title, cards):
     # NOTE/RELAUNCH lines are annotations and may quote a failure; only real status lines count
     fails = [l for l in lines if ("FAILED" in l or "ABORT" in l) and not l.startswith(("NOTE", "RELAUNCH", "LANEB_DEFERRED", "DRIVER_STOPPED"))]
     status = "running"
-    if "CHAIN_DONE" in last or last.startswith(("DONE", "ORCH_DONE")) or "ALL_DONE" in last or "SMOKE_DONE" in last or "FULL_DONE" in last: status = "done"
+    # 2026-09-25: terminal lines may carry a timestamp or lane prefix ("[m2w] ... DONE lane=", "... DONE all lanes"),
+    # so match DONE as a word anywhere; a non-zero rc on the last line is a failure, not "running"
+    if "CHAIN_DONE" in last or re.search(r"\b(DONE|finished)\b", last) or "ALL_DONE" in last or "SMOKE_DONE" in last or "FULL_DONE" in last: status = "done"
     elif fails and (fails[-1] == last): status = "failed"
+    elif re.search(r"\brc=[1-9]\d*\b", last) and not last.startswith(("NOTE", "RELAUNCH")): status = "failed"; fails = [last]
     elif last.startswith("DRIVER_STOPPED"): status = "failed"; fails = [last]
     jid = os.path.basename(path)
     if jid == "full_eval.log":

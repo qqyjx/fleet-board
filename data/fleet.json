@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 05:10 LA",
+ "generated_at": "2026-09-25 05:20 LA",
  "boxes": [
   {
    "name": "A800",
@@ -17,21 +17,21 @@
      "idx": 1,
      "mem_used": 71073,
      "mem_total": 81920,
-     "util": 49,
+     "util": 38,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 69969,
      "mem_total": 81920,
-     "util": 47,
+     "util": 56,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 69528,
      "mem_total": 81920,
-     "util": 100,
+     "util": 99,
      "owner": "ours"
     }
    ]
@@ -45,7 +45,7 @@
      "idx": 0,
      "mem_used": 18682,
      "mem_total": 24576,
-     "util": 97,
+     "util": 93,
      "owner": "ours"
     },
     {
@@ -59,21 +59,21 @@
      "idx": 2,
      "mem_used": 7464,
      "mem_total": 24576,
-     "util": 38,
+     "util": 39,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 7504,
      "mem_total": 24576,
-     "util": 39,
+     "util": 37,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 7464,
      "mem_total": 24576,
-     "util": 39,
+     "util": 41,
      "owner": "ours"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 5926,
      "mem_total": 24576,
-     "util": 36,
+     "util": 84,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 8244,
      "mem_total": 24576,
-     "util": 95,
+     "util": 96,
      "owner": "ours"
     }
    ]
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 48095,
      "mem_total": 49140,
-     "util": 82,
+     "util": 0,
      "owner": "other"
     }
    ]
@@ -176,9 +176,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 10828,
+     "mem_used": 10830,
      "mem_total": 49140,
-     "util": 40,
+     "util": 82,
      "owner": "ours"
     }
    ]
@@ -248,7 +248,7 @@
     "total": 6,
     "unit": "臂"
    },
-   "detail": "训练队列 QUEUE DONE 09-20 10:08 LA；评测链见下行",
+   "detail": "训练队列 QUEUE DONE 09-20 10:08 LA；T0 评测 09-21 完，S*/T1/噪声底 09-23 手动跑完",
    "arms": [
     {
      "arm": "dense-null-envonly-seed3-full",
@@ -544,7 +544,7 @@
     1
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
     "done": 4,
     "total": 0,
@@ -565,34 +565,13 @@
     3
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
     "done": 0,
     "total": 0,
     "unit": "步"
    },
    "detail": "[eval_matrix] pass=t0 finished 2026-09-21T06:51:18-04:00",
-   "alerts": []
-  },
-  {
-   "id": "after_t0_corrected.log",
-   "repo": "WWW2027-1",
-   "title": "修正版六臂：T0 评测 30 作业 → S* → outcome T1 → 噪声底（post_matrix_eval corrected）",
-   "box": "A800",
-   "cards": [
-    0,
-    1,
-    2,
-    3
-   ],
-   "kind": "gen",
-   "status": "running",
-   "progress": {
-    "done": 0,
-    "total": 0,
-    "unit": "步"
-   },
-   "detail": "2026-09-21T06:53:04-04:00 AFTER-T0 post_matrix_eval VERSION=corrected rc=2",
    "alerts": []
   },
   {
@@ -607,7 +586,7 @@
     3
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
     "done": 15,
     "total": 0,
@@ -903,5 +882,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 31.6
+ "collect_s": 35.7
 }
