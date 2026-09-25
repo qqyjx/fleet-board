@@ -181,6 +181,7 @@ STATUS_JOBS = [
     ("3090", "/data/xyf/science/logs/full_eval.log", "Science", "Phase-Trans 盲态全量评测（≤14B 30 模型 × 17 任务，跟随 pin 下载；指标隔离在 _blind/ 未读，只记 rc/秒）", [6, 7]),
     ("new105", "/home/xyf/science/logs/full_eval.log", "Science", "Phase-Trans 盲态全量评测（≤4B 子集 20 模型 × 17 任务；box-floor 行）", [1]),
     ("4090-jm", "/home/yxy/science/logs/full_eval.log", "Science", "Phase-Trans 盲态全量评测（1.4B–8B 段 9 模型；09-24 21:00 LA 按用户指示撤下，yxy 在用；九模型清单待另派机器）", [1]),
+    ("A800", "/data0/xyf/science/logs/full_eval.log", "Science", "Phase-Trans A800 腿评测：Qwen2.5-32B（卡 3）/72B+OPT-66b（卡 1,2）/14B+OLMo-13B（卡 0）；只记 rc/秒", []),
     ("A800", "/data0/xyf/science/logs/dl_models.log", "Science", "Phase-Trans A800 腿：Qwen2.5-32B/72B + OPT-30b/66b pin 下载（≈400 GB，4.7 MB/s；只占盘不占卡）", []),
 ]
 def status_job(host, path, repo, title, cards):
@@ -197,7 +198,12 @@ def status_job(host, path, repo, title, cards):
     elif fails and (fails[-1] == last): status = "failed"
     elif last.startswith("DRIVER_STOPPED"): status = "failed"; fails = [last]
     jid = os.path.basename(path)
-    if jid == "full_eval.log": jid = f"science-{host}"  # three boxes share the basename; history.jsonl keys by id
+    if jid == "full_eval.log":
+        jid = f"science-{host}"  # three boxes share the basename; history.jsonl keys by id
+        # consumers come and go per card set; the card list is the union of every cards=... in the
+        # recent tail (FULL_START/SMOKE/FULL lines), not the static list (2026-09-25: 3090 grew 6,7 -> 0..7)
+        seen = {int(c) for l in lines for c in re.findall(r"cards=([0-9,]+)", l)[-1:] for c in c.split(",") if c.isdigit()}
+        if seen: cards = sorted(seen)
     return {"id": jid, "repo": repo, "title": title, "box": host, "cards": cards, "kind": "gen",
             "status": status, "progress": {"done": n_done, "total": 0, "unit": "步"}, "detail": last[:110],
             "alerts": [f[:110] for f in fails[-1:]] if status == "failed" else []}

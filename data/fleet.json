@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 00:40 LA",
+ "generated_at": "2026-09-25 00:45 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,7 +10,7 @@
      "idx": 0,
      "mem_used": 29307,
      "mem_total": 81920,
-     "util": 91,
+     "util": 97,
      "owner": "ours"
     },
     {
@@ -24,7 +24,7 @@
      "idx": 2,
      "mem_used": 72105,
      "mem_total": 81920,
-     "util": 42,
+     "util": 52,
      "owner": "ours"
     },
     {
@@ -45,49 +45,49 @@
      "idx": 0,
      "mem_used": 16394,
      "mem_total": 24576,
-     "util": 66,
+     "util": 72,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 8456,
      "mem_total": 24576,
-     "util": 45,
+     "util": 52,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 0,
+     "mem_used": 13882,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 34,
+     "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 0,
+     "mem_used": 16002,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 46,
+     "owner": "ours"
     },
     {
      "idx": 4,
-     "mem_used": 12742,
+     "mem_used": 15942,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
+     "util": 37,
+     "owner": "ours"
     },
     {
      "idx": 5,
-     "mem_used": 11482,
+     "mem_used": 17240,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
+     "util": 41,
+     "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 2102,
      "mem_total": 24576,
-     "util": 30,
+     "util": 28,
      "owner": "ours"
     },
     {
@@ -157,7 +157,7 @@
      "idx": 7,
      "mem_used": 47551,
      "mem_total": 49140,
-     "util": 0,
+     "util": 90,
      "owner": "other"
     }
    ]
@@ -176,9 +176,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 4614,
+     "mem_used": 5028,
      "mem_total": 49140,
-     "util": 0,
+     "util": 20,
      "owner": "ours"
     }
    ]
@@ -226,9 +226,9 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 22455,
+     "mem_used": 22533,
      "mem_total": 49140,
-     "util": 88,
+     "util": 89,
      "owner": "other"
     }
    ]
@@ -736,17 +736,21 @@
    "title": "Phase-Trans 盲态全量评测（≤14B 30 模型 × 17 任务，跟随 pin 下载；指标隔离在 _blind/ 未读，只记 rc/秒）",
    "box": "3090",
    "cards": [
+    2,
+    3,
+    4,
+    5,
     6,
     7
    ],
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 34,
+    "done": 35,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-25T15:39:52 FULL Qwen/Qwen2.5-14B arithmetic_4da_local rc=0 wall=64.8s cards=2,3",
+   "detail": "2026-09-25T15:41:45 FULL Qwen/Qwen2.5-14B mod_arith rc=0 wall=53.7s cards=2,3",
    "alerts": []
   },
   {
@@ -783,6 +787,27 @@
     "unit": "步"
    },
    "detail": "2026-09-25T04:45:29 FULL Qwen/Qwen2.5-3B bigbench_word_unscrambling_generate_until rc=0 wall=8538.8s cards=GPU",
+   "alerts": []
+  },
+  {
+   "id": "science-A800",
+   "repo": "Science",
+   "title": "Phase-Trans A800 腿评测：Qwen2.5-32B（卡 3）/72B+OPT-66b（卡 1,2）/14B+OLMo-13B（卡 0）；只记 rc/秒",
+   "box": "A800",
+   "cards": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 39,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "2026-09-22T12:48:35 FULL Qwen/Qwen2.5-72B bigbench_word_unscrambling_generate_until rc=0 wall=41472.4s cards=1",
    "alerts": []
   },
   {
@@ -876,5 +901,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 28.5
+ "collect_s": 27.0
 }
