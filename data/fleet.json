@@ -17,14 +17,14 @@
      "idx": 1,
      "mem_used": 68725,
      "mem_total": 81920,
-     "util": 46,
+     "util": 43,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 72105,
      "mem_total": 81920,
-     "util": 55,
+     "util": 46,
      "owner": "ours"
     },
     {
@@ -45,56 +45,56 @@
      "idx": 0,
      "mem_used": 16394,
      "mem_total": 24576,
-     "util": 69,
+     "util": 71,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 8456,
      "mem_total": 24576,
-     "util": 49,
+     "util": 51,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 13302,
+     "mem_used": 11142,
      "mem_total": 24576,
-     "util": 0,
+     "util": 5,
      "owner": "other"
     },
     {
      "idx": 3,
-     "mem_used": 7882,
-     "mem_total": 24576,
-     "util": 1,
-     "owner": "other"
-    },
-    {
-     "idx": 4,
-     "mem_used": 5022,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 5,
      "mem_used": 260,
      "mem_total": 24576,
      "util": 0,
      "owner": "free"
     },
     {
+     "idx": 4,
+     "mem_used": 15702,
+     "mem_total": 24576,
+     "util": 71,
+     "owner": "other"
+    },
+    {
+     "idx": 5,
+     "mem_used": 17102,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "other"
+    },
+    {
      "idx": 6,
      "mem_used": 2102,
      "mem_total": 24576,
-     "util": 27,
+     "util": 28,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 4362,
      "mem_total": 24576,
-     "util": 48,
+     "util": 32,
      "owner": "ours"
     }
    ]
@@ -102,65 +102,8 @@
   {
    "name": "fuxin",
    "label": "fuxin 4090 ×8 (48 GB, 公司)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 30689,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 1,
-     "mem_used": 43335,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 2,
-     "mem_used": 25847,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 3,
-     "mem_used": 1597,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 4,
-     "mem_used": 731,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 5,
-     "mem_used": 23287,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 6,
-     "mem_used": 18,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 7,
-     "mem_used": 47551,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   },
   {
    "name": "new105",
@@ -178,7 +121,7 @@
      "idx": 1,
      "mem_used": 4780,
      "mem_total": 49140,
-     "util": 18,
+     "util": 19,
      "owner": "ours"
     }
    ]
@@ -226,9 +169,9 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 22413,
+     "mem_used": 22455,
      "mem_total": 49140,
-     "util": 88,
+     "util": 89,
      "owner": "other"
     }
    ]
@@ -520,6 +463,21 @@
    "alerts": []
   },
   {
+   "id": "iclr3-b7tp2",
+   "repo": "ICLR2027-3",
+   "title": "B7-TP2 72B-AWQ 第四规模点（194 双卡）",
+   "box": "194-yyd",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 0,
+    "total": 6294,
+    "unit": "题"
+   },
+   "detail": "已关闭(门禁不过,PREREG_B7_72B outcome) END b7tp2 40 2026-09-18T10:41:28+08:00"
+  },
+  {
    "id": "iclr2_uitars_seed1_status",
    "repo": "ICLR2027-2",
    "title": "UI-TARS 二次抽样（3090 卡 0/1 TP2 m2w test_domain；android 09-21 03:37 CST 已落地）",
@@ -602,6 +560,64 @@
    "alerts": []
   },
   {
+   "id": "iclr9_ladder_seed2_status_laneA",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 base 臂 lane A（T 0.6 → 1.0 0.2 0.8；09-21 00:20 LA 拆成四道）",
+   "box": "194-yyd",
+   "cards": [
+    0
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 8,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "CHAIN_DONE lane=A 2026-09-22T01:24:37+08:00",
+   "alerts": []
+  },
+  {
+   "id": "iclr9_ladder_seed2_status_laneB",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）",
+   "box": "194-yyd",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 6,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
+   "alerts": [
+    "ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
+   ]
+  },
+  {
+   "id": "iclr9_ladder_seed2_status_laneD",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）",
+   "box": "194-yyd",
+   "cards": [
+    2
+   ],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
+   "alerts": [
+    "DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
+   ]
+  },
+  {
    "id": "iclr9_ladder_seed2_status_laneE",
    "repo": "ICLR2027-9",
    "title": "14B 阶梯 seed 2 rlvr 臂 lane E（T 0.8 1.2）",
@@ -618,6 +634,26 @@
    },
    "detail": "CHAIN_DONE lane=E 2026-09-21T23:18:52+08:00",
    "alerts": []
+  },
+  {
+   "id": "iclr9_ladder_seed2_fuxin_status_laneF",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6）",
+   "box": "fuxin",
+   "cards": [
+    6
+   ],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00",
+   "alerts": [
+    "ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00"
+   ]
   },
   {
    "id": "iclr9_ladder_seed2_fuxin_status_laneG",
@@ -774,8 +810,15 @@
   }
  ],
  "alerts": [
+  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
+  "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
+  "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
+  "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
+  "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
+  "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6） 失败：ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00",
+  "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6）: ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 307.0
+ "collect_s": 79.9
 }
