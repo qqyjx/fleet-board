@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 07:00 LA",
+ "generated_at": "2026-09-25 07:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -17,21 +17,21 @@
      "idx": 1,
      "mem_used": 71073,
      "mem_total": 81920,
-     "util": 48,
+     "util": 45,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 69969,
      "mem_total": 81920,
-     "util": 53,
+     "util": 37,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 69528,
      "mem_total": 81920,
-     "util": 100,
+     "util": 99,
      "owner": "ours"
     }
    ]
@@ -45,33 +45,33 @@
      "idx": 0,
      "mem_used": 18682,
      "mem_total": 24576,
-     "util": 97,
+     "util": 96,
      "owner": "other"
     },
     {
      "idx": 1,
      "mem_used": 12964,
      "mem_total": 24576,
-     "util": 96,
+     "util": 97,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 6642,
+     "mem_used": 23102,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 1342,
+     "mem_used": 15344,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 4,
-     "mem_used": 24162,
+     "mem_used": 23902,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 5926,
      "mem_total": 24576,
-     "util": 94,
+     "util": 91,
      "owner": "other"
     },
     {
      "idx": 7,
      "mem_used": 8244,
      "mem_total": 24576,
-     "util": 94,
+     "util": 96,
      "owner": "other"
     }
    ]
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 10866,
      "mem_total": 49140,
-     "util": 41,
+     "util": 60,
      "owner": "ours"
     }
    ]
@@ -727,7 +727,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-25T21:59:01 MODEL_DONE EleutherAI/pythia-6.9b-deduped ok=6/6",
+   "detail": "2026-09-25T22:08:53 FULL EleutherAI/pythia-12b-deduped humaneval_goldll rc=0 wall=77.8s cards=4,5 batch=7",
    "alerts": []
   },
   {
@@ -878,5 +878,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 26.9
+ "collect_s": 27.3
 }
