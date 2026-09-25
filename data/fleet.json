@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 05:50 LA",
+ "generated_at": "2026-09-25 06:00 LA",
  "boxes": [
   {
    "name": "A800",
@@ -17,14 +17,14 @@
      "idx": 1,
      "mem_used": 71073,
      "mem_total": 81920,
-     "util": 60,
+     "util": 42,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 69969,
      "mem_total": 81920,
-     "util": 44,
+     "util": 60,
      "owner": "ours"
     },
     {
@@ -45,7 +45,7 @@
      "idx": 0,
      "mem_used": 18682,
      "mem_total": 24576,
-     "util": 97,
+     "util": 86,
      "owner": "ours"
     },
     {
@@ -59,42 +59,42 @@
      "idx": 2,
      "mem_used": 7644,
      "mem_total": 24576,
-     "util": 31,
+     "util": 38,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 7562,
      "mem_total": 24576,
-     "util": 33,
+     "util": 38,
      "owner": "ours"
     },
     {
      "idx": 4,
-     "mem_used": 7624,
+     "mem_used": 8264,
      "mem_total": 24576,
-     "util": 49,
+     "util": 39,
      "owner": "ours"
     },
     {
      "idx": 5,
-     "mem_used": 7122,
+     "mem_used": 7742,
      "mem_total": 24576,
-     "util": 46,
+     "util": 39,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 5926,
      "mem_total": 24576,
-     "util": 96,
+     "util": 78,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 8244,
      "mem_total": 24576,
-     "util": 96,
+     "util": 89,
      "owner": "ours"
     }
    ]
@@ -178,7 +178,7 @@
      "idx": 1,
      "mem_used": 10830,
      "mem_total": 49140,
-     "util": 79,
+     "util": 68,
      "owner": "ours"
     }
    ]
@@ -731,7 +731,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-25T20:40:09 FULL EleutherAI/pythia-6.9b-deduped bigbench_word_unscrambling_generate_until rc=0 wall=28",
+   "detail": "2026-09-25T20:56:29 FULL facebook/opt-6.7b bigbench_modified_arithmetic_generate_until rc=0 wall=1007.6s cards",
    "alerts": []
   },
   {
@@ -882,5 +882,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 33.8
+ "collect_s": 27.0
 }
