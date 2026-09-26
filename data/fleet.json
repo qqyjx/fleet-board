@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-26 07:22 LA",
+ "generated_at": "2026-09-26 07:30 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,21 +10,21 @@
      "idx": 0,
      "mem_used": 36087,
      "mem_total": 81920,
-     "util": 98,
+     "util": 96,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 73147,
      "mem_total": 81920,
-     "util": 56,
+     "util": 51,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 76245,
      "mem_total": 81920,
-     "util": 63,
+     "util": 48,
      "owner": "ours"
     },
     {
@@ -43,9 +43,9 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 15902,
+     "mem_used": 21184,
      "mem_total": 24576,
-     "util": 0,
+     "util": 99,
      "owner": "ours"
     },
     {
@@ -57,10 +57,10 @@
     },
     {
      "idx": 2,
-     "mem_used": 0,
+     "mem_used": 6026,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 3,
+     "owner": "other"
     },
     {
      "idx": 3,
@@ -148,9 +148,9 @@
     },
     {
      "idx": 6,
-     "mem_used": 4899,
+     "mem_used": 7815,
      "mem_total": 49140,
-     "util": 16,
+     "util": 20,
      "owner": "other"
     },
     {
@@ -722,11 +722,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 27,
+    "done": 25,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-26T22:19:32 FULL Qwen/Qwen3-8B-Base hellaswag rc=0 wall=1383.6s cards=0 batch=2",
+   "detail": "2026-09-26T22:26:56 FULL_START cards=0 tasks=6",
    "alerts": []
   },
   {
@@ -877,5 +877,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 158.0
+ "collect_s": 24.8
 }
