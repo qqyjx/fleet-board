@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 23:10 LA",
+ "generated_at": "2026-09-25 23:20 LA",
  "boxes": [
   {
    "name": "A800",
@@ -17,14 +17,14 @@
      "idx": 1,
      "mem_used": 65109,
      "mem_total": 81920,
-     "util": 50,
+     "util": 57,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 63569,
      "mem_total": 81920,
-     "util": 61,
+     "util": 47,
      "owner": "ours"
     },
     {
@@ -45,15 +45,15 @@
      "idx": 0,
      "mem_used": 18682,
      "mem_total": 24576,
-     "util": 82,
+     "util": 98,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 8784,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 98,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 2,
@@ -88,14 +88,14 @@
      "mem_used": 0,
      "mem_total": 24576,
      "util": 0,
-     "owner": "ours"
+     "owner": "free"
     },
     {
      "idx": 7,
      "mem_used": 0,
      "mem_total": 24576,
      "util": 0,
-     "owner": "ours"
+     "owner": "free"
     }
    ]
   },
@@ -106,9 +106,9 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 35664,
+     "mem_used": 30689,
      "mem_total": 49140,
-     "util": 31,
+     "util": 0,
      "owner": "other"
     },
     {
@@ -120,16 +120,16 @@
     },
     {
      "idx": 2,
-     "mem_used": 30788,
+     "mem_used": 25847,
      "mem_total": 49140,
-     "util": 25,
+     "util": 0,
      "owner": "other"
     },
     {
      "idx": 3,
-     "mem_used": 11745,
+     "mem_used": 1597,
      "mem_total": 49140,
-     "util": 31,
+     "util": 0,
      "owner": "other"
     },
     {
@@ -141,23 +141,23 @@
     },
     {
      "idx": 5,
-     "mem_used": 43126,
+     "mem_used": 28204,
      "mem_total": 49140,
-     "util": 34,
+     "util": 26,
      "owner": "other"
     },
     {
      "idx": 6,
-     "mem_used": 19241,
+     "mem_used": 18,
      "mem_total": 49140,
-     "util": 30,
-     "owner": "other"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 7,
      "mem_used": 48095,
      "mem_total": 49140,
-     "util": 82,
+     "util": 100,
      "owner": "other"
     }
    ]
@@ -716,17 +716,16 @@
    "box": "3090",
    "cards": [
     1,
-    6,
-    7
+    6
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
-    "done": 27,
+    "done": 25,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-26T14:09:23 FULL Qwen/Qwen3-4B-Base bigbench_word_unscrambling_goldll rc=0 wall=142.6s cards=1 batch=3",
+   "detail": "2026-09-26T14:14:55 FULL_DONE",
    "alerts": []
   },
   {
@@ -877,5 +876,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 22.9
+ "collect_s": 21.9
 }
