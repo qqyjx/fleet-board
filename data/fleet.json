@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-26 13:30 LA",
+ "generated_at": "2026-09-26 13:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,23 +8,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 70049,
+     "mem_used": 69929,
      "mem_total": 81920,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 68689,
+     "mem_used": 68509,
      "mem_total": 81920,
-     "util": 2,
+     "util": 10,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 65469,
      "mem_total": 81920,
-     "util": 65,
+     "util": 29,
      "owner": "ours"
     },
     {
@@ -52,7 +52,7 @@
      "idx": 1,
      "mem_used": 20398,
      "mem_total": 24576,
-     "util": 71,
+     "util": 93,
      "owner": "other"
     },
     {
@@ -66,35 +66,35 @@
      "idx": 3,
      "mem_used": 4496,
      "mem_total": 24576,
-     "util": 53,
+     "util": 15,
      "owner": "other"
     },
     {
      "idx": 4,
      "mem_used": 4496,
      "mem_total": 24576,
-     "util": 17,
+     "util": 46,
      "owner": "other"
     },
     {
      "idx": 5,
      "mem_used": 4496,
      "mem_total": 24576,
-     "util": 37,
+     "util": 21,
      "owner": "other"
     },
     {
      "idx": 6,
      "mem_used": 20398,
      "mem_total": 24576,
-     "util": 78,
+     "util": 96,
      "owner": "other"
     },
     {
      "idx": 7,
      "mem_used": 20398,
      "mem_total": 24576,
-     "util": 92,
+     "util": 81,
      "owner": "other"
     }
    ]
@@ -778,11 +778,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 28,
+    "done": 29,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-26T16:25:39 MODEL_DONE allenai/OLMo-2-1124-13B ok=6/6",
+   "detail": "2026-09-26T16:39:08 FULL facebook/opt-30b humaneval_goldll rc=0 wall=119.5s cards=0 batch=4",
    "alerts": []
   },
   {
@@ -876,5 +876,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 24.3
+ "collect_s": 21.1
 }
