@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 21:30 LA",
+ "generated_at": "2026-09-25 21:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,21 +10,21 @@
      "idx": 0,
      "mem_used": 35567,
      "mem_total": 81920,
-     "util": 98,
+     "util": 97,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 64373,
      "mem_total": 81920,
-     "util": 54,
+     "util": 52,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 63529,
      "mem_total": 81920,
-     "util": 49,
+     "util": 43,
      "owner": "ours"
     },
     {
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 18682,
      "mem_total": 24576,
-     "util": 97,
+     "util": 96,
      "owner": "other"
     },
     {
      "idx": 1,
      "mem_used": 12964,
      "mem_total": 24576,
-     "util": 98,
+     "util": 97,
      "owner": "other"
     },
     {
@@ -108,7 +108,7 @@
      "idx": 0,
      "mem_used": 35834,
      "mem_total": 49140,
-     "util": 29,
+     "util": 34,
      "owner": "other"
     },
     {
@@ -122,35 +122,35 @@
      "idx": 2,
      "mem_used": 30992,
      "mem_total": 49140,
-     "util": 46,
+     "util": 35,
      "owner": "other"
     },
     {
      "idx": 3,
-     "mem_used": 6817,
+     "mem_used": 1597,
      "mem_total": 49140,
-     "util": 32,
+     "util": 0,
      "owner": "other"
     },
     {
      "idx": 4,
-     "mem_used": 731,
+     "mem_used": 5501,
      "mem_total": 49140,
      "util": 0,
-     "owner": "free"
+     "owner": "other"
     },
     {
      "idx": 5,
-     "mem_used": 28208,
+     "mem_used": 23287,
      "mem_total": 49140,
-     "util": 32,
+     "util": 0,
      "owner": "other"
     },
     {
      "idx": 6,
-     "mem_used": 4955,
+     "mem_used": 5237,
      "mem_total": 49140,
-     "util": 33,
+     "util": 35,
      "owner": "other"
     },
     {
@@ -876,5 +876,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 47.1
+ "collect_s": 21.5
 }
