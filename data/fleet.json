@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 23:20 LA",
+ "generated_at": "2026-09-25 23:30 LA",
  "boxes": [
   {
    "name": "A800",
@@ -15,23 +15,23 @@
     },
     {
      "idx": 1,
-     "mem_used": 65109,
+     "mem_used": 4969,
      "mem_total": 81920,
-     "util": 57,
+     "util": 1,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 63569,
+     "mem_used": 447,
      "mem_total": 81920,
-     "util": 47,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 69568,
      "mem_total": 81920,
-     "util": 99,
+     "util": 98,
      "owner": "ours"
     }
    ]
@@ -106,9 +106,9 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 30689,
+     "mem_used": 35588,
      "mem_total": 49140,
-     "util": 0,
+     "util": 30,
      "owner": "other"
     },
     {
@@ -120,16 +120,16 @@
     },
     {
      "idx": 2,
-     "mem_used": 25847,
+     "mem_used": 30766,
      "mem_total": 49140,
-     "util": 0,
+     "util": 31,
      "owner": "other"
     },
     {
      "idx": 3,
-     "mem_used": 1597,
+     "mem_used": 6705,
      "mem_total": 49140,
-     "util": 0,
+     "util": 30,
      "owner": "other"
     },
     {
@@ -141,23 +141,23 @@
     },
     {
      "idx": 5,
-     "mem_used": 28204,
+     "mem_used": 23287,
      "mem_total": 49140,
-     "util": 26,
+     "util": 0,
      "owner": "other"
     },
     {
      "idx": 6,
-     "mem_used": 18,
+     "mem_used": 5113,
      "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
+     "util": 28,
+     "owner": "other"
     },
     {
      "idx": 7,
      "mem_used": 48095,
      "mem_total": 49140,
-     "util": 100,
+     "util": 83,
      "owner": "other"
     }
    ]
@@ -778,11 +778,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 35,
+    "done": 34,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-26T01:40:43 FULL facebook/opt-66b bigbench_parsinlu_qa_multiple_choice rc=0 wall=549.2s cards=1,2 batc",
+   "detail": "2026-09-26T02:29:43 MODEL_DONE facebook/opt-66b ok=17/17",
    "alerts": []
   },
   {
@@ -876,5 +876,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 21.9
+ "collect_s": 24.1
 }
