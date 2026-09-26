@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-26 12:00 LA",
+ "generated_at": "2026-09-26 12:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 37247,
+     "mem_used": 7589,
      "mem_total": 81920,
-     "util": 98,
+     "util": 2,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 68129,
+     "mem_used": 76345,
      "mem_total": 81920,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 36069,
+     "mem_used": 75267,
      "mem_total": 81920,
-     "util": 1,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 70162,
+     "mem_used": 70166,
      "mem_total": 81920,
      "util": 99,
      "owner": "ours"
@@ -52,49 +52,49 @@
      "idx": 1,
      "mem_used": 20398,
      "mem_total": 24576,
-     "util": 80,
+     "util": 53,
      "owner": "other"
     },
     {
      "idx": 2,
      "mem_used": 20398,
      "mem_total": 24576,
-     "util": 66,
+     "util": 57,
      "owner": "other"
     },
     {
      "idx": 3,
-     "mem_used": 16714,
+     "mem_used": 4504,
      "mem_total": 24576,
-     "util": 27,
+     "util": 11,
      "owner": "other"
     },
     {
      "idx": 4,
-     "mem_used": 4504,
+     "mem_used": 16196,
      "mem_total": 24576,
-     "util": 19,
+     "util": 25,
      "owner": "other"
     },
     {
      "idx": 5,
      "mem_used": 4504,
      "mem_total": 24576,
-     "util": 41,
+     "util": 28,
      "owner": "other"
     },
     {
      "idx": 6,
      "mem_used": 20398,
      "mem_total": 24576,
-     "util": 93,
+     "util": 84,
      "owner": "other"
     },
     {
      "idx": 7,
      "mem_used": 20398,
      "mem_total": 24576,
-     "util": 90,
+     "util": 81,
      "owner": "other"
     }
    ]
@@ -783,7 +783,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-26T14:56:48 MODEL_DONE facebook/opt-66b ok=4/6",
+   "detail": "2026-09-26T15:09:18 FULL Qwen/Qwen2.5-14B bigbench_international_phonetic_alphabet_transliterate_generate_unti",
    "alerts": []
   },
   {
@@ -877,5 +877,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 27.1
+ "collect_s": 21.8
 }
