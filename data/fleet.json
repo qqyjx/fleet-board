@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 19:20 LA",
+ "generated_at": "2026-09-25 19:30 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,21 +10,21 @@
      "idx": 0,
      "mem_used": 35567,
      "mem_total": 81920,
-     "util": 97,
+     "util": 93,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 64373,
      "mem_total": 81920,
-     "util": 51,
+     "util": 46,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 63469,
      "mem_total": 81920,
-     "util": 55,
+     "util": 54,
      "owner": "ours"
     },
     {
@@ -45,7 +45,7 @@
      "idx": 0,
      "mem_used": 18682,
      "mem_total": 24576,
-     "util": 96,
+     "util": 75,
      "owner": "other"
     },
     {
@@ -85,9 +85,9 @@
     },
     {
      "idx": 6,
-     "mem_used": 4200,
+     "mem_used": 13944,
      "mem_total": 24576,
-     "util": 94,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -721,11 +721,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 34,
+    "done": 31,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-26T10:19:24 FULL allenai/OLMo-2-0425-1B hellaswag rc=0 wall=253.4s cards=6 batch=7",
+   "detail": "2026-09-26T10:28:36 MODEL_DONE Qwen/Qwen3-0.6B-Base ok=6/6",
    "alerts": []
   },
   {
@@ -876,5 +876,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 18.1
+ "collect_s": 18.3
 }
