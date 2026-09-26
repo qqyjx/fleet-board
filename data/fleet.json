@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 21:50 LA",
+ "generated_at": "2026-09-25 22:00 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,21 +10,21 @@
      "idx": 0,
      "mem_used": 35567,
      "mem_total": 81920,
-     "util": 97,
+     "util": 99,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 65113,
      "mem_total": 81920,
-     "util": 47,
+     "util": 56,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 64149,
      "mem_total": 81920,
-     "util": 52,
+     "util": 54,
      "owner": "ours"
     },
     {
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 18682,
      "mem_total": 24576,
-     "util": 76,
+     "util": 98,
      "owner": "other"
     },
     {
      "idx": 1,
      "mem_used": 12964,
      "mem_total": 24576,
-     "util": 97,
+     "util": 98,
      "owner": "other"
     },
     {
@@ -106,9 +106,9 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 30689,
+     "mem_used": 35592,
      "mem_total": 49140,
-     "util": 0,
+     "util": 26,
      "owner": "other"
     },
     {
@@ -120,30 +120,30 @@
     },
     {
      "idx": 2,
-     "mem_used": 25847,
+     "mem_used": 31026,
      "mem_total": 49140,
-     "util": 0,
+     "util": 30,
      "owner": "other"
     },
     {
      "idx": 3,
-     "mem_used": 7295,
+     "mem_used": 1597,
      "mem_total": 49140,
-     "util": 80,
+     "util": 0,
      "owner": "other"
     },
     {
      "idx": 4,
-     "mem_used": 5501,
+     "mem_used": 731,
      "mem_total": 49140,
      "util": 0,
-     "owner": "other"
+     "owner": "free"
     },
     {
      "idx": 5,
-     "mem_used": 23287,
+     "mem_used": 28374,
      "mem_total": 49140,
-     "util": 0,
+     "util": 26,
      "owner": "other"
     },
     {
@@ -876,5 +876,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 22.3
+ "collect_s": 23.6
 }
