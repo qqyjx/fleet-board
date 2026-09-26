@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-26 02:36 LA",
+ "generated_at": "2026-09-26 02:45 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,8 +10,65 @@
   {
    "name": "3090",
    "label": "3090 ×8 (24 GB, .110)",
-   "reachable": false,
-   "cards": []
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 18682,
+     "mem_total": 24576,
+     "util": 97,
+     "owner": "ours"
+    },
+    {
+     "idx": 1,
+     "mem_used": 0,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "ours"
+    },
+    {
+     "idx": 2,
+     "mem_used": 0,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 3,
+     "mem_used": 0,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 4,
+     "mem_used": 0,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 5,
+     "mem_used": 0,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 6,
+     "mem_used": 0,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "ours"
+    },
+    {
+     "idx": 7,
+     "mem_used": 0,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "ours"
+    }
+   ]
   },
   {
    "name": "fuxin",
@@ -22,14 +79,59 @@
   {
    "name": "new105",
    "label": "new105 4090D ×2 (48 GB, 公司)",
-   "reachable": false,
-   "cards": []
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 40281,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 1,
+     "mem_used": 2819,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    }
+   ]
   },
   {
    "name": "194-yyd",
    "label": "194 4090D ×4 (48 GB, 公司)",
-   "reachable": false,
-   "cards": []
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 15,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 1,
+     "mem_used": 15,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 2,
+     "mem_used": 44252,
+     "mem_total": 49140,
+     "util": -1,
+     "error": "[N/A]",
+     "owner": "other"
+    },
+    {
+     "idx": 3,
+     "mem_used": 17,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "free"
+    }
+   ]
   },
   {
    "name": "4090-jm",
@@ -51,25 +153,317 @@
     7
    ],
    "kind": "gen",
-   "status": "stale",
+   "status": "running",
    "progress": {
-    "done": 0,
+    "done": 4,
     "total": 12,
     "unit": "run"
    },
-   "detail": "3090 本轮未采集到；上次状态：等待下一对",
-   "runs": [],
+   "detail": "等待下一对",
+   "runs": [
+    {
+     "arm": "base",
+     "T": 0.8,
+     "wall_h": 5.4
+    },
+    {
+     "arm": "rlvr",
+     "T": 0.8,
+     "wall_h": 6.96
+    },
+    {
+     "arm": "base",
+     "T": 1.2,
+     "wall_h": 13.19
+    },
+    {
+     "arm": "rlvr",
+     "T": 1.2,
+     "wall_h": 7.02
+    }
+   ],
    "alerts": []
+  },
+  {
+   "id": "iclr3-b7tp2",
+   "repo": "ICLR2027-3",
+   "title": "B7-TP2 72B-AWQ 第四规模点（194 双卡）",
+   "box": "194-yyd",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 0,
+    "total": 6294,
+    "unit": "题"
+   },
+   "detail": "已关闭(门禁不过,PREREG_B7_72B outcome) END b7tp2 40 2026-09-18T10:41:28+08:00"
+  },
+  {
+   "id": "iclr9_ladder_seed2_status_laneA",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 base 臂 lane A（T 0.6 → 1.0 0.2 0.8；09-21 00:20 LA 拆成四道）",
+   "box": "194-yyd",
+   "cards": [
+    0
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 8,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "CHAIN_DONE lane=A 2026-09-22T01:24:37+08:00",
+   "alerts": []
+  },
+  {
+   "id": "iclr9_ladder_seed2_status_laneB",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）",
+   "box": "194-yyd",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 6,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
+   "alerts": [
+    "ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
+   ]
+  },
+  {
+   "id": "iclr9_ladder_seed2_status_laneD",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）",
+   "box": "194-yyd",
+   "cards": [
+    2
+   ],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
+   "alerts": [
+    "DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
+   ]
+  },
+  {
+   "id": "iclr9_ladder_seed2_status_laneE",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 rlvr 臂 lane E（T 0.8 1.2）",
+   "box": "194-yyd",
+   "cards": [
+    3
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 4,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "CHAIN_DONE lane=E 2026-09-21T23:18:52+08:00",
+   "alerts": []
+  },
+  {
+   "id": "iclr9_ladder_seed2_fuxin_status_laneF",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6）",
+   "box": "fuxin",
+   "cards": [
+    6
+   ],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00",
+   "alerts": [
+    "ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00"
+   ]
+  },
+  {
+   "id": "iclr9_ladder_seed2_fuxin_status_laneG",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）",
+   "box": "fuxin",
+   "cards": [],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
+   "alerts": [
+    "ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
+   ]
+  },
+  {
+   "id": "science-new105",
+   "repo": "Science",
+   "title": "Phase-Trans 盲态全量评测（≤4B 子集 20 模型 × 17 任务；box-floor 行）",
+   "box": "new105",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 34,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "2026-09-26T11:59:10 FULL_DONE",
+   "alerts": []
+  },
+  {
+   "id": "science-4090-jm",
+   "repo": "Science",
+   "title": "Phase-Trans 盲态全量评测（1.4B–8B 段 9 模型；09-24 21:00 LA 按用户指示撤下，yxy 在用；九模型清单待另派机器）",
+   "box": "4090-jm",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "stale",
+   "progress": {
+    "done": 27,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "4090-jm 本轮未采集到；上次状态：2026-09-25T04:45:29 FULL Qwen/Qwen2.5-3B bigbench_word_unscrambling_generate_unt",
+   "alerts": []
+  },
+  {
+   "id": "science-A800",
+   "repo": "Science",
+   "title": "Phase-Trans A800 腿评测：Qwen2.5-32B（卡 3）/72B+OPT-66b（卡 1,2）/14B+OLMo-13B（卡 0）；只记 rc/秒",
+   "box": "A800",
+   "cards": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "kind": "gen",
+   "status": "stale",
+   "progress": {
+    "done": 34,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "A800 本轮未采集到；上次状态：2026-09-26T02:29:43 MODEL_DONE facebook/opt-66b ok=17/17",
+   "alerts": []
+  },
+  {
+   "id": "dl_models.log",
+   "repo": "Science",
+   "title": "Phase-Trans A800 腿：Qwen2.5-32B/72B + OPT-30b/66b pin 下载（≈400 GB，4.7 MB/s；只占盘不占卡）",
+   "box": "A800",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "2026-09-25T02:18:08 ALL_DONE",
+   "alerts": []
+  },
+  {
+   "id": "chronocheck_32b-awq_critic_fuxin_194_status",
+   "repo": "ICLR2027-6",
+   "title": "CRITIC@32B-AWQ（194 续跑）",
+   "box": "194-yyd",
+   "cards": [
+    0
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 887,
+    "total": 887,
+    "unit": "行"
+   },
+   "detail": "DONE 2026-09-18T05:27:37+08:00 rc=0 wall_h=3.3092 critic_rows=887",
+   "per_arm": {
+    "critic": 887
+   }
+  },
+  {
+   "id": "chronocheck_llama8b_critic_fuxin_194_status",
+   "repo": "ICLR2027-6",
+   "title": "CRITIC@Llama-3.1-8B（194 续跑）",
+   "box": "194-yyd",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 887,
+    "total": 887,
+    "unit": "行"
+   },
+   "detail": "DONE 2026-09-18T06:56:11+08:00 rc=0 wall_h=4.7853 critic_rows=887",
+   "per_arm": {
+    "critic": 887
+   }
+  },
+  {
+   "id": "chronocheck_chatts14b_status",
+   "repo": "ICLR2027-6",
+   "title": "ChatTS-14B 五臂",
+   "box": "new105",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 4435,
+    "total": 4435,
+    "unit": "行"
+   },
+   "detail": "DONE 2026-09-17T16:02:51+08:00 mode=full rc=0 wall_h=5.5558",
+   "per_arm": {
+    "zero_shot": 887,
+    "cot": 887,
+    "chronocheck": 887,
+    "certify_abstain": 887,
+    "repair_gated": 887
+   }
   }
  ],
  "alerts": [
   "A800 stage7 状态不可读",
-  "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
-  "3090 本轮采集失败：该机任务状态为上次快照，不作数",
   "4090-jm 本轮采集失败：该机任务状态为上次快照，不作数",
   "A800 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
-  "new105 本轮采集失败：该机任务状态为上次快照，不作数"
+  "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
+  "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
+  "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
+  "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
+  "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6） 失败：ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00",
+  "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6）: ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00",
+  "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
+  "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 380.5
+ "collect_s": 321.7
 }
