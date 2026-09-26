@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 19:00 LA",
+ "generated_at": "2026-09-25 19:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -52,7 +52,7 @@
      "idx": 1,
      "mem_used": 12964,
      "mem_total": 24576,
-     "util": 98,
+     "util": 97,
      "owner": "other"
     },
     {
@@ -87,14 +87,14 @@
      "idx": 6,
      "mem_used": 3622,
      "mem_total": 24576,
-     "util": 35,
+     "util": 43,
      "owner": "ours"
     },
     {
      "idx": 7,
-     "mem_used": 5584,
+     "mem_used": 13222,
      "mem_total": 24576,
-     "util": 0,
+     "util": 99,
      "owner": "ours"
     }
    ]
@@ -725,7 +725,7 @@
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-26T09:59:01 MODEL_DONE HuggingFaceTB/SmolLM2-1.7B ok=6/6",
+   "detail": "2026-09-26T10:10:08 FULL EleutherAI/pythia-1.4b-deduped gsm8k_goldll rc=0 wall=147.2s cards=7 batch=9",
    "alerts": []
   },
   {
