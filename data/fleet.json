@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-26 07:42 LA",
+ "generated_at": "2026-09-26 07:53 LA",
  "boxes": [
   {
    "name": "A800",
@@ -17,21 +17,21 @@
      "idx": 1,
      "mem_used": 73147,
      "mem_total": 81920,
-     "util": 42,
+     "util": 47,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 76245,
      "mem_total": 81920,
-     "util": 33,
+     "util": 50,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 69568,
      "mem_total": 81920,
-     "util": 98,
+     "util": 99,
      "owner": "ours"
     }
    ]
@@ -43,23 +43,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 23002,
+     "mem_used": 16170,
      "mem_total": 24576,
-     "util": 100,
-     "owner": "ours"
+     "util": 98,
+     "owner": "other"
     },
     {
      "idx": 1,
      "mem_used": 0,
      "mem_total": 24576,
      "util": 0,
-     "owner": "ours"
+     "owner": "free"
     },
     {
      "idx": 2,
-     "mem_used": 20130,
+     "mem_used": 24024,
      "mem_total": 24576,
-     "util": 97,
+     "util": 100,
      "owner": "other"
     },
     {
@@ -88,7 +88,7 @@
      "mem_used": 0,
      "mem_total": 24576,
      "util": 0,
-     "owner": "ours"
+     "owner": "free"
     },
     {
      "idx": 7,
@@ -235,6 +235,212 @@
   }
  ],
  "jobs": [
+  {
+   "id": "www-stage7",
+   "repo": "WWW2027-1",
+   "title": "stage7 六臂修正版 GRPO",
+   "box": "A800",
+   "cards": [],
+   "kind": "train",
+   "status": "done",
+   "progress": {
+    "done": 6,
+    "total": 6,
+    "unit": "臂"
+   },
+   "detail": "训练队列 QUEUE DONE 09-20 10:08 LA；T0 评测 09-21 完，S*/T1/噪声底 09-23 手动跑完",
+   "arms": [
+    {
+     "arm": "dense-null-envonly-seed3-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "reward": 0.0,
+      "resp_len": 295.0
+     },
+     "tier": "stage7"
+    },
+    {
+     "arm": "dense-null-envonly-seed2-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.296,
+      "entropy": 0.391,
+      "pg_loss": 0.016,
+      "reward": 0.544,
+      "resp_len": 1215.627
+     },
+     "tier": "stage7"
+    },
+    {
+     "arm": "dense-null-envonly-seed1-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.325,
+      "entropy": 0.419,
+      "pg_loss": -0.017,
+      "reward": 0.48,
+      "resp_len": 1144.621
+     },
+     "tier": "stage7"
+    },
+    {
+     "arm": "process-envonly-seed3-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.882,
+      "entropy": 0.654,
+      "pg_loss": 52514.3,
+      "reward": 0.149,
+      "resp_len": 1063.381
+     },
+     "tier": "stage7"
+    },
+    {
+     "arm": "process-envonly-seed2-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.414,
+      "entropy": 1.23,
+      "pg_loss": 0.082,
+      "reward": 0.566,
+      "resp_len": 1206.404
+     },
+     "tier": "stage7"
+    },
+    {
+     "arm": "process-envonly-seed1-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.56,
+      "entropy": 2.463,
+      "pg_loss": 0.069,
+      "reward": 0.453,
+      "resp_len": 1232.04
+     },
+     "tier": "stage7"
+    },
+    {
+     "arm": "dense-null-seed3-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 6.502,
+      "entropy": 0.029,
+      "pg_loss": 0.0,
+      "reward": 0.0,
+      "resp_len": 994.035
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "dense-null-seed2-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.13,
+      "entropy": 0.328,
+      "pg_loss": 0.014,
+      "reward": 9.837,
+      "resp_len": 1206.923
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "dense-null-seed1-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "reward": 0.0,
+      "resp_len": 295.0
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "outcome-seed3-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.476,
+      "entropy": 1.629,
+      "pg_loss": 0.085,
+      "reward": 0.394,
+      "resp_len": 812.275
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "process-seed3-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.283,
+      "entropy": 0.739,
+      "pg_loss": -0.04,
+      "reward": 1.625,
+      "resp_len": 1524.748
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "process-seed2-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.321,
+      "entropy": 0.509,
+      "pg_loss": -0.026,
+      "reward": 0.851,
+      "resp_len": 1400.787
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "outcome-seed2-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.574,
+      "entropy": 2.001,
+      "pg_loss": 0.01,
+      "reward": 0.323,
+      "resp_len": 1019.246
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "process-seed1-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.652,
+      "entropy": 2.346,
+      "pg_loss": -0.126,
+      "reward": 0.205,
+      "resp_len": 1371.379
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "outcome-seed1-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.655,
+      "entropy": 1.682,
+      "pg_loss": 0.015,
+      "reward": 0.385,
+      "resp_len": 881.046
+     },
+     "tier": "T0"
+    }
+   ]
+  },
   {
    "id": "iclr9-ladder",
    "repo": "ICLR2027-9",
@@ -514,13 +720,13 @@
     6
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
-    "done": 25,
+    "done": 24,
     "total": 0,
     "unit": "步"
    },
-   "detail": "2026-09-26T22:39:00 FULL Qwen/Qwen3-8B-Base humaneval_goldll rc=0 wall=44.5s cards=0 batch=2",
+   "detail": "2026-09-26T22:52:55 FULL_DONE",
    "alerts": []
   },
   {
@@ -662,7 +868,6 @@
   }
  ],
  "alerts": [
-  "A800 stage7 状态不可读",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
   "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
@@ -672,5 +877,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 121.1
+ "collect_s": 233.3
 }
