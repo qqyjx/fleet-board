@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 06:20 LA",
+ "generated_at": "2026-09-27 06:32 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39518,
+     "mem_used": 31618,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39518,
+     "mem_used": 31618,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39494,
+     "mem_used": 31594,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -43,59 +43,59 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 14204,
+     "mem_used": 14244,
      "mem_total": 24576,
-     "util": 90,
+     "util": 91,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 14604,
-     "mem_total": 24576,
-     "util": 74,
-     "owner": "ours"
-    },
-    {
-     "idx": 2,
-     "mem_used": 0,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 3,
-     "mem_used": 0,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 4,
-     "mem_used": 0,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 5,
-     "mem_used": 0,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 6,
-     "mem_used": 14340,
+     "mem_used": 14804,
      "mem_total": 24576,
      "util": 75,
      "owner": "ours"
     },
     {
-     "idx": 7,
-     "mem_used": 0,
+     "idx": 2,
+     "mem_used": 14298,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 70,
+     "owner": "ours"
+    },
+    {
+     "idx": 3,
+     "mem_used": 14298,
+     "mem_total": 24576,
+     "util": 68,
+     "owner": "ours"
+    },
+    {
+     "idx": 4,
+     "mem_used": 14298,
+     "mem_total": 24576,
+     "util": 71,
+     "owner": "ours"
+    },
+    {
+     "idx": 5,
+     "mem_used": 14840,
+     "mem_total": 24576,
+     "util": 61,
+     "owner": "ours"
+    },
+    {
+     "idx": 6,
+     "mem_used": 14340,
+     "mem_total": 24576,
+     "util": 74,
+     "owner": "ours"
+    },
+    {
+     "idx": 7,
+     "mem_used": 14840,
+     "mem_total": 24576,
+     "util": 59,
+     "owner": "ours"
     }
    ]
   },
@@ -134,9 +134,9 @@
     },
     {
      "idx": 4,
-     "mem_used": 731,
+     "mem_used": 28667,
      "mem_total": 49140,
-     "util": 0,
+     "util": 97,
      "owner": "other"
     },
     {
@@ -290,7 +290,7 @@
     "total": 30,
     "unit": "步"
    },
-   "detail": "2026-09-27T21:18:37+08:00 card5 job qwen_noinv_s1 failed; next",
+   "detail": "2026-09-27T21:20:37+08:00 card5 start dump_camco_pai_s1",
    "alerts": []
   },
   {
@@ -302,11 +302,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 164,
+    "done": 172,
     "total": 242,
     "unit": "包"
    },
-   "detail": "K400 train 164/242 包 233G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
+   "detail": "K400 train 172/242 包 240G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
    "alerts": []
   },
   {
@@ -327,7 +327,7 @@
   }
  ],
  "alerts": [
-  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T21:18:37+08:00 card5 job qwen_noinv_s1 failed; next"
+  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T21:20:37+08:00 card5 start dump_camco_pai_s1"
  ],
- "collect_s": 18.8
+ "collect_s": 138.6
 }
