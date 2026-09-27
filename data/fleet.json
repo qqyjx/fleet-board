@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 07:51 LA",
+ "generated_at": "2026-09-27 08:00 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,23 +8,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39418,
+     "mem_used": 39718,
      "mem_total": 81920,
-     "util": 93,
+     "util": 90,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39418,
+     "mem_used": 39718,
      "mem_total": 81920,
-     "util": 89,
+     "util": 85,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39394,
+     "mem_used": 39694,
      "mem_total": 81920,
-     "util": 70,
+     "util": 100,
      "owner": "other"
     },
     {
@@ -43,58 +43,58 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 17240,
+     "mem_used": 17254,
      "mem_total": 24576,
-     "util": 77,
+     "util": 63,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 14804,
+     "mem_used": 17254,
      "mem_total": 24576,
-     "util": 78,
+     "util": 50,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 17254,
      "mem_total": 24576,
-     "util": 68,
+     "util": 65,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 17256,
      "mem_total": 24576,
-     "util": 67,
+     "util": 78,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 17256,
      "mem_total": 24576,
-     "util": 64,
+     "util": 66,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 58,
+     "util": 62,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 62,
+     "util": 64,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 63,
+     "util": 61,
      "owner": "ours"
     }
    ]
@@ -222,8 +222,16 @@
   {
    "name": "4090-jm",
    "label": "4090-jm ×1 (24 GB, 实验室 .176; yxy 在用, 不上)",
-   "reachable": false,
-   "cards": []
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 15,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "free"
+    }
+   ]
   }
  ],
  "jobs": [
@@ -277,11 +285,11 @@
    "kind": "gen",
    "status": "failed",
    "progress": {
-    "done": 8,
+    "done": 12,
     "total": 30,
     "unit": "步"
    },
-   "detail": "2026-09-27T21:58:42+08:00 card3 start dump_qwen_full_s2",
+   "detail": "2026-09-27T22:54:45+08:00 card1 start dump_qwen_noinv_s1",
    "alerts": []
   },
   {
@@ -293,11 +301,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 206,
+    "done": 211,
     "total": 242,
     "unit": "包"
    },
-   "detail": "K400 train 206/242 包 291G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
+   "detail": "K400 train 211/242 包 297G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
    "alerts": []
   },
   {
@@ -318,8 +326,7 @@
   }
  ],
  "alerts": [
-  "4090-jm 本轮采集失败：该机任务状态为上次快照，不作数",
-  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T21:58:42+08:00 card3 start dump_qwen_full_s2"
+  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T22:54:45+08:00 card1 start dump_qwen_noinv_s1"
  ],
- "collect_s": 71.0
+ "collect_s": 18.6
 }
