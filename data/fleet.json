@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 09:50 LA",
+ "generated_at": "2026-09-27 10:00 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,23 +8,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31756,
+     "mem_used": 31498,
      "mem_total": 81920,
-     "util": 100,
+     "util": 85,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31756,
+     "mem_used": 31498,
      "mem_total": 81920,
-     "util": 100,
+     "util": 99,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31732,
+     "mem_used": 31474,
      "mem_total": 81920,
-     "util": 100,
+     "util": 68,
      "owner": "other"
     },
     {
@@ -52,14 +52,14 @@
      "idx": 1,
      "mem_used": 17256,
      "mem_total": 24576,
-     "util": 58,
+     "util": 60,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 13046,
+     "mem_used": 6518,
      "mem_total": 24576,
-     "util": 99,
+     "util": 73,
      "owner": "ours"
     },
     {
@@ -71,30 +71,30 @@
     },
     {
      "idx": 4,
-     "mem_used": 13032,
+     "mem_used": 6518,
      "mem_total": 24576,
-     "util": 97,
+     "util": 75,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 13046,
      "mem_total": 24576,
-     "util": 99,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 6,
-     "mem_used": 6518,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 72,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 7,
      "mem_used": 17256,
      "mem_total": 24576,
-     "util": 61,
+     "util": 65,
      "owner": "ours"
     }
    ]
@@ -228,7 +228,7 @@
      "idx": 0,
      "mem_used": 22533,
      "mem_total": 49140,
-     "util": 88,
+     "util": 87,
      "owner": "other"
     }
    ]
@@ -333,16 +333,16 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 601,
+    "done": 640,
     "total": 660,
     "unit": "run"
    },
-   "detail": "P1 562/600 · P3 39/60 · P2 无模型臂 500 行（CPU 已跑完）；7 个分片在跑",
+   "detail": "P1 593/600 · P3 47/60 · P2 无模型臂 500 行（CPU 已跑完）；4 个分片在跑",
    "alerts": []
   }
  ],
  "alerts": [
   "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-28T00:44:18+08:00 card0 worker exit (nothing left)"
  ],
- "collect_s": 10.2
+ "collect_s": 24.8
 }
