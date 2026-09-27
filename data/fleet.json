@@ -1,40 +1,11 @@
 {
- "generated_at": "2026-09-27 06:32 LA",
+ "generated_at": "2026-09-27 06:41 LA",
  "boxes": [
   {
    "name": "A800",
    "label": "A800 ×4 (80 GB; 09-27 起借 xdx 到 09-29，GPU 不上)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 31618,
-     "mem_total": 81920,
-     "util": 100,
-     "owner": "other"
-    },
-    {
-     "idx": 1,
-     "mem_used": 31618,
-     "mem_total": 81920,
-     "util": 100,
-     "owner": "other"
-    },
-    {
-     "idx": 2,
-     "mem_used": 31594,
-     "mem_total": 81920,
-     "util": 100,
-     "owner": "other"
-    },
-    {
-     "idx": 3,
-     "mem_used": 13,
-     "mem_total": 81920,
-     "util": 0,
-     "owner": "free"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   },
   {
    "name": "3090",
@@ -45,56 +16,56 @@
      "idx": 0,
      "mem_used": 14244,
      "mem_total": 24576,
-     "util": 91,
+     "util": 72,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 14804,
      "mem_total": 24576,
-     "util": 75,
+     "util": 61,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 14298,
      "mem_total": 24576,
-     "util": 70,
+     "util": 56,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 14298,
      "mem_total": 24576,
-     "util": 68,
+     "util": 55,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 14298,
      "mem_total": 24576,
-     "util": 71,
+     "util": 58,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 61,
+     "util": 49,
      "owner": "ours"
     },
     {
      "idx": 6,
-     "mem_used": 14340,
+     "mem_used": 14840,
      "mem_total": 24576,
-     "util": 74,
+     "util": 49,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 59,
+     "util": 48,
      "owner": "ours"
     }
    ]
@@ -136,7 +107,7 @@
      "idx": 4,
      "mem_used": 28667,
      "mem_total": 49140,
-     "util": 97,
+     "util": 0,
      "owner": "other"
     },
     {
@@ -256,17 +227,15 @@
    "repo": "AAAI2027-4",
    "title": "CaMCo E4 数据规模 400/800/1500（24 个 CHAIR）",
    "box": "3090",
-   "cards": [
-    6
-   ],
+   "cards": [],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
-    "done": 23,
+    "done": 24,
     "total": 24,
     "unit": "文件"
    },
-   "detail": "2026-09-27T20:36:19+08:00 [jobs] card6 start chair_mix800_ep1_seed0",
+   "detail": "2026-09-27T21:33:29+08:00 [jobs] card6 JOBS_DONE mix800:0",
    "alerts": []
   },
   {
@@ -281,6 +250,7 @@
     3,
     4,
     5,
+    6,
     7
    ],
    "kind": "gen",
@@ -290,7 +260,7 @@
     "total": 30,
     "unit": "步"
    },
-   "detail": "2026-09-27T21:20:37+08:00 card5 start dump_camco_pai_s1",
+   "detail": "2026-09-27T21:33:39+08:00 card6 start dump_camco_pai_s2",
    "alerts": []
   },
   {
@@ -302,11 +272,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 172,
+    "done": 174,
     "total": 242,
     "unit": "包"
    },
-   "detail": "K400 train 172/242 包 240G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
+   "detail": "K400 train 174/242 包 246G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
    "alerts": []
   },
   {
@@ -327,7 +297,8 @@
   }
  ],
  "alerts": [
-  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T21:20:37+08:00 card5 start dump_camco_pai_s1"
+  "A800 本轮采集失败：该机任务状态为上次快照，不作数",
+  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T21:33:39+08:00 card6 start dump_camco_pai_s2"
  ],
- "collect_s": 138.6
+ "collect_s": 87.0
 }
