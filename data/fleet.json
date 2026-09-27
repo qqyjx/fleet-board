@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 16:00 LA",
+ "generated_at": "2026-09-27 16:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -250,5 +250,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-28T01:15:14+08:00 card7 worker exit (nothing left)"
  ],
- "collect_s": 28.2
+ "collect_s": 29.5
 }
