@@ -7,7 +7,8 @@ import json, os, re, subprocess, time, datetime as dt, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent
 DATA = ROOT / "data"
 DATA.mkdir(exist_ok=True)
-LA = dt.timezone(dt.timedelta(hours=-7))
+from zoneinfo import ZoneInfo
+LA = ZoneInfo("America/Los_Angeles")   # was a fixed UTC-7, wrong after the November DST change
 
 def ssh(host, cmd, t=40):
     try:
@@ -183,6 +184,90 @@ STATUS_JOBS = [
     ("A800", "/data0/xyf/science/logs/full_eval.log", "Science", "Phase-Trans A800 腿评测：Qwen2.5-32B（卡 3）/72B+OPT-66b（卡 1,2）/14B+OLMo-13B（卡 0）；只记 rc/秒", []),
     ("A800", "/data0/xyf/science/logs/dl_models.log", "Science", "Phase-Trans A800 腿：Qwen2.5-32B/72B + OPT-30b/66b pin 下载（≈400 GB，4.7 MB/s；只占盘不占卡）", []),
 ]
+
+# ---------------- card ownership by process account (2026-09-27) ----------------
+# fleet_scan.py was fixed on 09-26 to attribute by the account that owns the process; the board still
+# called a card "ours" only when a registered job listed it, so our unregistered chains showed as "other".
+OUR_USERS = {"A800": {"xyf"}, "3090": {"xyf"}, "new105": {"xyf"}, "fuxin": {"xyf"}, "194-yyd": {"yyd"}, "4090-jm": set()}
+
+def card_users(host):
+    out = ssh(host, "nvidia-smi --query-gpu=index,uuid --format=csv,noheader; echo ---; "
+                    "nvidia-smi --query-compute-apps=gpu_uuid,pid --format=csv,noheader; echo ---; ps -eo pid=,user=")
+    if not out or out.count("---") < 2: return {}
+    a, b, c = out.split("---", 2)
+    idx = {}
+    for l in a.strip().splitlines():
+        try: i, u = [x.strip() for x in l.split(",")]; idx[u] = int(i)
+        except ValueError: pass
+    user = {}
+    for l in c.strip().splitlines():
+        f = l.split()
+        if len(f) == 2 and f[0].isdigit(): user[f[0]] = f[1]
+    res = {}
+    for l in b.strip().splitlines():
+        try: u, pid = [x.strip() for x in l.split(",")]
+        except ValueError: continue
+        if u in idx and pid.isdigit(): res.setdefault(idx[u], set()).add(user.get(pid, "?"))
+    return res
+
+# ---------------- current work (2026-09-27) ----------------
+def camco_jobs():
+    h, W = "3090", "/data/xyf/scratch/camco"
+    cmd = (f"cd {W}; "
+           "echo E3 $(grep -acE '\\[final\\] card[0-9] done score_' e3/logs/e3.log) $(ps -eo args | grep -cE '^bash chain_card[0-9](_v2)?.sh') $(grep -ac FAIL e3/logs/e3.log); "
+           "echo E4 $(ls AAAI2027-4/results/e4/chair_*.json 2>/dev/null | wc -l) $(ps -eo args | grep -cE '^bash (experiments/camco/)?run_e4_3090.sh') $(grep -ac FAIL e4/logs/e4.log); "
+           "echo E4LAST $(tail -n 1 e4/logs/e4.log | cut -c1-110); "
+           "echo V2 $(ls v2/state/*.done 2>/dev/null | wc -l) $(ps -eo args | grep -cE '^bash run_v2_3090.sh') $(grep -ac FAIL v2/logs/v2.log 2>/dev/null); "
+           "echo V2CARDS $(grep -aoE 'card[0-9] start' v2/logs/v2.log 2>/dev/null | tail -n 16 | sort -u | tr -dc '0-9 '); "
+           "echo V2LAST $(tail -n 1 v2/logs/v2.log 2>/dev/null | cut -c1-110)")
+    out = ssh(h, cmd)
+    if not out: return []
+    kv = {l.split(" ", 1)[0]: (l.split(" ", 1)[1] if " " in l else "") for l in out.strip().splitlines()}
+    jobs = []
+    try:
+        d, ch, fl = (int(x) for x in kv.get("E3", "0 0 0").split()[:3])
+        jobs.append({"id": "camco-e3", "repo": "AAAI2027-4", "title": "CaMCo E3 梯度范数归一化 λ（9 个终格）", "box": h, "cards": [],
+                     "kind": "gen", "status": "running" if ch else "done", "progress": {"done": d, "total": 9, "unit": "格"},
+                     "detail": "09-27 读出：主判据 FAIL（Qwen2-VL CHAIR_s +4.04 pp，描述变长所致待 E7 确认）" if not ch else "终格训练/评测中", "alerts": []})
+    except ValueError: pass
+    try:
+        n, run, fl = (int(x) for x in kv.get("E4", "0 0 0").split()[:3])
+        jobs.append({"id": "camco-e4", "repo": "AAAI2027-4", "title": "CaMCo E4 数据规模 400/800/1500（24 个 CHAIR）", "box": h,
+                     "cards": [6] if run else [], "kind": "gen", "status": "failed" if fl else ("running" if run or n < 24 else "done"),
+                     "progress": {"done": n, "total": 24, "unit": "文件"}, "detail": kv.get("E4LAST", "")[:110], "alerts": []})
+    except ValueError: pass
+    try:
+        dn, run, fl = (int(x or 0) for x in (kv.get("V2", "0 0 0").split() + ["0", "0", "0"])[:3])
+        if dn or run:
+            cards = sorted({int(c) for c in kv.get("V2CARDS", "").split() if c.isdigit()})
+            jobs.append({"id": "camco-v2", "repo": "AAAI2027-4", "title": "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集）", "box": h,
+                         "cards": cards if run else [], "kind": "gen", "status": "failed" if fl else ("running" if run else "done"),
+                         "progress": {"done": dn, "total": 30, "unit": "步"}, "detail": kv.get("V2LAST", "")[:110], "alerts": []})
+    except ValueError: pass
+    return jobs
+
+def cvpr3_job():
+    h, D = "3090", "/data/xyf/CVPR2027-1/data/k400_train_targz"
+    out = ssh(h, f"echo $(ls {D}/part_*.tar.gz 2>/dev/null | wc -l) $(ls {D}/download.done 2>/dev/null | wc -l) "
+                 f"$(ps -eo args | grep -c '^aria2c -i k400') $(ps -eo args | grep -c '^bash scripts/chain_adapt.sh') $(du -sh {D} | cut -f1)")
+    if not out: return None
+    try: n, done, aria, chain, size = out.split()[:5]
+    except ValueError: return None
+    st = "running" if (aria != "0" or chain != "0") else "done"
+    det = f"K400 train {n}/242 包 {size}，" + ("下载中；" if aria != "0" else "下载完；") + ("chain_adapt 挂着（下载完 + 八卡空后自动开跑）" if chain != "0" else "chain_adapt 未在跑")
+    return {"id": "cvpr3-adapt", "repo": "CVPR2027-1", "title": "CVPR-3 P-3-5 适配腿（K400 下载 → 6 run → 36 评测）", "box": h, "cards": [],
+            "kind": "gen", "status": st, "progress": {"done": int(n), "total": 242, "unit": "包"}, "detail": det, "alerts": []}
+
+def pheromones_job():
+    h, R = "A800", "/data0/xyf/AAAI2027-7/results/resubmit"
+    out = ssh(h, f"for e in e1 e2 e3 e1ra; do printf '%s ' $(cat {R}/${{e}}_runs.jsonl 2>/dev/null | wc -l); done; ps -eo args | grep -cE 'run_e(1ra)?.py'")
+    if not out: return None
+    try: e1, e2, e3, e1ra, run = (int(x) for x in out.split()[:5])
+    except ValueError: return None
+    return {"id": "pheromones-resubmit", "repo": "AAAI2027-7", "title": "Pheromones 转投实验 E1–E4 + E1-RA（A800 CPU，GPU 隐藏）", "box": h, "cards": [],
+            "kind": "gen", "status": "running" if run > 1 else "done", "progress": {"done": e1 + e2 + e3 + e1ra, "total": 1890, "unit": "run"},
+            "detail": f"E1 {e1}/450 · E2 {e2}/540 · E3 {e3}/270 · E1-RA {e1ra}/630；09-27 已读出，转大修（REVISION_V2）", "alerts": []}
+
 def status_job(host, path, repo, title, cards):
     out = ssh(host, f"tail -n 40 {path} 2>/dev/null")
     if not out or not out.strip(): return None
@@ -214,29 +299,43 @@ def main():
     t0 = time.time()
     curves = json.loads((DATA / "curves.json").read_text()) if (DATA / "curves.json").exists() else {}
     boxes, jobs, alerts = [], [], []
-    for name, label in (("A800", "A800 ×4 (80 GB)"), ("3090", "3090 ×8 (24 GB, .110)"),
+    for name, label in (("A800", "A800 ×4 (80 GB; 09-27 起借 xdx 到 09-29，GPU 不上)"), ("3090", "3090 ×8 (24 GB, .110)"),
                         ("fuxin", "fuxin 4090 ×8 (48 GB, 公司)"), ("new105", "new105 4090D ×2 (48 GB, 公司)"), ("194-yyd", "194 4090D ×4 (48 GB, 公司)"),
                         ("4090-jm", "4090-jm ×1 (24 GB, 实验室 .176; yxy 在用, 不上)")):
         cards = gpus(name)
         boxes.append({"name": name, "label": label, "reachable": cards is not None, "cards": cards or []})
-    j = stage7(curves);  jobs.append(j) if j else alerts.append("A800 stage7 状态不可读")
-    j = ladder();        jobs.append(j) if j else alerts.append("3090 阶梯状态不可读")
-    j = b7tp2();         jobs.append(j) if j else None
-    for args in STATUS_JOBS:
-        j = status_job(*args)
+    jobs.extend(camco_jobs())
+    for fn in (cvpr3_job, pheromones_job):
+        j = fn()
         if j: jobs.append(j)
-    R = "/data/xyf/ICLR2027-6/experiments/chronocheck/results/main"
-    # fuxin CRITIC originals (rc=137 on 09-17) were resumed and completed on 194; the 194 rows below are the record
-    for args in (("194-yyd", "/data/yyd/chronocheck_32b-awq_critic_fuxin_194_status", "/data/yyd/ICLR2027-6/experiments/chronocheck/results/main/32b-awq_critic_fuxin", "CRITIC@32B-AWQ（194 续跑）", [0], 887, ["critic"]),
-                 ("194-yyd", "/data/yyd/chronocheck_llama8b_critic_fuxin_194_status", "/data/yyd/ICLR2027-6/experiments/chronocheck/results/main/llama8b_critic_fuxin", "CRITIC@Llama-3.1-8B（194 续跑）", [1], 887, ["critic"]),
-                 ("new105", "/home/xyf/logs/chronocheck_chatts14b_status", "/home/xyf/ICLR2027-6/experiments/chronocheck/results/main/chatts14b", "ChatTS-14B 五臂", [1], 887, ["zero_shot", "cot", "chronocheck", "certify_abstain", "repair_gated"])):
-        j = chrono(*args)
-        if j: jobs.append(j)
+    # 2026-09-27: the jobs below all finished before 09-26 (WWW stage7, ICLR ladders, Science legs, ChronoCheck);
+    # they are kept in the code and shown only with FLEET_LEGACY=1 so the board lists current work
+    LEGACY = os.environ.get("FLEET_LEGACY") == "1"
+    if LEGACY:
+        j = stage7(curves);  jobs.append(j) if j else alerts.append("A800 stage7 状态不可读")
+        j = ladder();        jobs.append(j) if j else alerts.append("3090 阶梯状态不可读")
+        j = b7tp2();         jobs.append(j) if j else None
+        for args in STATUS_JOBS:
+            j = status_job(*args)
+            if j: jobs.append(j)
+    if LEGACY:
+        R = "/data/xyf/ICLR2027-6/experiments/chronocheck/results/main"
+        # fuxin CRITIC originals (rc=137 on 09-17) were resumed and completed on 194; the 194 rows below are the record
+        for args in (("194-yyd", "/data/yyd/chronocheck_32b-awq_critic_fuxin_194_status", "/data/yyd/ICLR2027-6/experiments/chronocheck/results/main/32b-awq_critic_fuxin", "CRITIC@32B-AWQ（194 续跑）", [0], 887, ["critic"]),
+                     ("194-yyd", "/data/yyd/chronocheck_llama8b_critic_fuxin_194_status", "/data/yyd/ICLR2027-6/experiments/chronocheck/results/main/llama8b_critic_fuxin", "CRITIC@Llama-3.1-8B（194 续跑）", [1], 887, ["critic"]),
+                     ("new105", "/home/xyf/logs/chronocheck_chatts14b_status", "/home/xyf/ICLR2027-6/experiments/chronocheck/results/main/chatts14b", "ChatTS-14B 五臂", [1], 887, ["zero_shot", "cot", "chronocheck", "certify_abstain", "repair_gated"])):
+            j = chrono(*args)
+            if j: jobs.append(j)
     # ownership: a card is "ours" if a running job lists it
     ours = {(j["box"], c) for j in jobs if j["status"] == "running" for c in j["cards"]}
     for b in boxes:
+        users = card_users(b["name"]) if b["reachable"] else {}
+        mine = OUR_USERS.get(b["name"], set())
         for c in b["cards"]:
-            c["owner"] = "ours" if (b["name"], c["idx"]) in ours else ("other" if c["mem_used"] > 1500 else "free")
+            u = users.get(c["idx"], set())
+            if (b["name"], c["idx"]) in ours or (u & mine): c["owner"] = "ours"
+            elif u or c["mem_used"] > 1500: c["owner"] = "other"
+            else: c["owner"] = "free"
     # a box that did not answer this round cannot vouch for its jobs: mark them stale instead of
     # carrying the last known status forward (2026-09-20: unreachable boxes kept showing "running")
     down = {b["name"] for b in boxes if not b["reachable"]}
