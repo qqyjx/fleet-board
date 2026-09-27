@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 07:30 LA",
+ "generated_at": "2026-09-27 07:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,23 +8,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39818,
+     "mem_used": 39518,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39818,
+     "mem_used": 39518,
      "mem_total": 81920,
-     "util": 85,
+     "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39794,
+     "mem_used": 39494,
      "mem_total": 81920,
-     "util": 85,
+     "util": 100,
      "owner": "other"
     },
     {
@@ -45,7 +45,7 @@
      "idx": 0,
      "mem_used": 17240,
      "mem_total": 24576,
-     "util": 80,
+     "util": 81,
      "owner": "ours"
     },
     {
@@ -59,14 +59,14 @@
      "idx": 2,
      "mem_used": 17254,
      "mem_total": 24576,
-     "util": 65,
+     "util": 68,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 17254,
+     "mem_used": 17256,
      "mem_total": 24576,
-     "util": 66,
+     "util": 67,
      "owner": "ours"
     },
     {
@@ -80,21 +80,21 @@
      "idx": 5,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 59,
+     "util": 58,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 64,
+     "util": 59,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 64,
+     "util": 62,
      "owner": "ours"
     }
    ]
@@ -301,11 +301,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 196,
+    "done": 202,
     "total": 242,
     "unit": "包"
    },
-   "detail": "K400 train 196/242 包 278G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
+   "detail": "K400 train 202/242 包 284G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
    "alerts": []
   },
   {
@@ -328,5 +328,5 @@
  "alerts": [
   "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T21:58:42+08:00 card3 start dump_qwen_full_s2"
  ],
- "collect_s": 34.9
+ "collect_s": 18.5
 }
