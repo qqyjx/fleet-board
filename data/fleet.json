@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 00:41 LA",
+ "generated_at": "2026-09-27 00:52 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 57022,
+     "mem_used": 39538,
      "mem_total": 81920,
-     "util": 60,
+     "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 57022,
+     "mem_used": 39538,
      "mem_total": 81920,
-     "util": 98,
+     "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 56998,
+     "mem_used": 39514,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -45,21 +45,21 @@
      "idx": 0,
      "mem_used": 17254,
      "mem_total": 24576,
-     "util": 65,
+     "util": 67,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 20398,
+     "mem_used": 14340,
      "mem_total": 24576,
-     "util": 56,
+     "util": 73,
      "owner": "other"
     },
     {
      "idx": 2,
      "mem_used": 14340,
      "mem_total": 24576,
-     "util": 54,
+     "util": 89,
      "owner": "other"
     },
     {
@@ -71,10 +71,10 @@
     },
     {
      "idx": 4,
-     "mem_used": 14278,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 71,
-     "owner": "other"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 5,
@@ -87,15 +87,15 @@
      "idx": 6,
      "mem_used": 0,
      "mem_total": 24576,
-     "util": 1,
+     "util": 0,
      "owner": "free"
     },
     {
      "idx": 7,
-     "mem_used": 14340,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 69,
-     "owner": "other"
+     "util": 0,
+     "owner": "free"
     }
    ]
   },
@@ -748,24 +748,6 @@
    "alerts": []
   },
   {
-   "id": "science-4090-jm",
-   "repo": "Science",
-   "title": "Phase-Trans 盲态全量评测（1.4B–8B 段 9 模型；09-24 21:00 LA 按用户指示撤下，yxy 在用；九模型清单待另派机器）",
-   "box": "4090-jm",
-   "cards": [
-    1
-   ],
-   "kind": "gen",
-   "status": "running",
-   "progress": {
-    "done": 27,
-    "total": 0,
-    "unit": "步"
-   },
-   "detail": "2026-09-25T04:45:29 FULL Qwen/Qwen2.5-3B bigbench_word_unscrambling_generate_until rc=0 wall=8538.8s cards=GPU",
-   "alerts": []
-  },
-  {
    "id": "science-A800",
    "repo": "Science",
    "title": "Phase-Trans A800 腿评测：Qwen2.5-32B（卡 3）/72B+OPT-66b（卡 1,2）/14B+OLMo-13B（卡 0）；只记 rc/秒",
@@ -877,5 +859,5 @@
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
   "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
  ],
- "collect_s": 65.7
+ "collect_s": 126.9
 }
