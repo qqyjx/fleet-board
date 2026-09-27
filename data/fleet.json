@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 06:50 LA",
+ "generated_at": "2026-09-27 07:00 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39458,
+     "mem_used": 39998,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39458,
+     "mem_used": 39998,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39434,
+     "mem_used": 39974,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -45,56 +45,56 @@
      "idx": 0,
      "mem_used": 17240,
      "mem_total": 24576,
-     "util": 67,
+     "util": 79,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 14804,
      "mem_total": 24576,
-     "util": 62,
+     "util": 56,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 14298,
+     "mem_used": 17250,
      "mem_total": 24576,
-     "util": 59,
+     "util": 64,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 14298,
+     "mem_used": 17244,
      "mem_total": 24576,
-     "util": 58,
+     "util": 68,
      "owner": "ours"
     },
     {
      "idx": 4,
-     "mem_used": 14298,
+     "mem_used": 17250,
      "mem_total": 24576,
-     "util": 84,
+     "util": 66,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 51,
+     "util": 61,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 51,
+     "util": 61,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 49,
+     "util": 63,
      "owner": "ours"
     }
    ]
@@ -285,11 +285,11 @@
    "kind": "gen",
    "status": "failed",
    "progress": {
-    "done": 2,
+    "done": 8,
     "total": 30,
     "unit": "步"
    },
-   "detail": "2026-09-27T21:45:06+08:00 card0 start dump_qwen_vanilla",
+   "detail": "2026-09-27T21:58:42+08:00 card3 start dump_qwen_full_s2",
    "alerts": []
   },
   {
@@ -301,11 +301,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 180,
+    "done": 184,
     "total": 242,
     "unit": "包"
    },
-   "detail": "K400 train 180/242 包 252G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
+   "detail": "K400 train 184/242 包 258G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
    "alerts": []
   },
   {
@@ -326,7 +326,7 @@
   }
  ],
  "alerts": [
-  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T21:45:06+08:00 card0 start dump_qwen_vanilla"
+  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T21:58:42+08:00 card3 start dump_qwen_full_s2"
  ],
- "collect_s": 19.6
+ "collect_s": 17.4
 }
