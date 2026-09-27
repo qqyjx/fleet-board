@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 09:20 LA",
+ "generated_at": "2026-09-27 09:30 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39698,
+     "mem_used": 39838,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39698,
+     "mem_used": 39838,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39674,
+     "mem_used": 39814,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -45,7 +45,7 @@
      "idx": 0,
      "mem_used": 17256,
      "mem_total": 24576,
-     "util": 64,
+     "util": 98,
      "owner": "ours"
     },
     {
@@ -57,44 +57,44 @@
     },
     {
      "idx": 2,
-     "mem_used": 6532,
+     "mem_used": 13046,
      "mem_total": 24576,
-     "util": 74,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 6532,
      "mem_total": 24576,
-     "util": 39,
+     "util": 53,
      "owner": "ours"
     },
     {
      "idx": 4,
-     "mem_used": 6518,
+     "mem_used": 13032,
      "mem_total": 24576,
-     "util": 28,
+     "util": 99,
      "owner": "ours"
     },
     {
      "idx": 5,
-     "mem_used": 6532,
+     "mem_used": 13046,
      "mem_total": 24576,
-     "util": 41,
+     "util": 97,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 6518,
      "mem_total": 24576,
-     "util": 73,
+     "util": 75,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 17256,
      "mem_total": 24576,
-     "util": 62,
+     "util": 70,
      "owner": "ours"
     }
    ]
@@ -226,9 +226,9 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 22455,
+     "mem_used": 22533,
      "mem_total": 49140,
-     "util": 89,
+     "util": 88,
      "owner": "other"
     }
    ]
@@ -328,5 +328,5 @@
  "alerts": [
   "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T23:55:54+08:00 card5 worker exit (nothing left)"
  ],
- "collect_s": 11.9
+ "collect_s": 14.3
 }
