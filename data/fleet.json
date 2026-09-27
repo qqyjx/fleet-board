@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 08:20 LA",
+ "generated_at": "2026-09-27 08:30 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39458,
+     "mem_used": 39658,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39458,
+     "mem_used": 39658,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39434,
+     "mem_used": 39634,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -45,57 +45,57 @@
      "idx": 0,
      "mem_used": 17254,
      "mem_total": 24576,
-     "util": 64,
+     "util": 58,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 17254,
      "mem_total": 24576,
-     "util": 49,
+     "util": 38,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 17254,
      "mem_total": 24576,
-     "util": 66,
+     "util": 54,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 17256,
      "mem_total": 24576,
-     "util": 67,
+     "util": 48,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 17256,
      "mem_total": 24576,
-     "util": 64,
+     "util": 48,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 58,
+     "util": 44,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 61,
+     "util": 46,
      "owner": "ours"
     },
     {
      "idx": 7,
-     "mem_used": 14840,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 63,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     }
    ]
   },
@@ -285,11 +285,11 @@
    "kind": "gen",
    "status": "failed",
    "progress": {
-    "done": 12,
+    "done": 14,
     "total": 30,
     "unit": "步"
    },
-   "detail": "2026-09-27T22:54:45+08:00 card1 start dump_qwen_noinv_s1",
+   "detail": "2026-09-27T23:29:58+08:00 card7 start dump_qwen_noinv_s2",
    "alerts": []
   },
   {
@@ -301,11 +301,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 220,
+    "done": 224,
     "total": 242,
     "unit": "包"
    },
-   "detail": "K400 train 220/242 包 310G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
+   "detail": "K400 train 224/242 包 316G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
    "alerts": []
   },
   {
@@ -326,7 +326,7 @@
   }
  ],
  "alerts": [
-  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T22:54:45+08:00 card1 start dump_qwen_noinv_s1"
+  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T23:29:58+08:00 card7 start dump_qwen_noinv_s2"
  ],
- "collect_s": 20.4
+ "collect_s": 20.7
 }
