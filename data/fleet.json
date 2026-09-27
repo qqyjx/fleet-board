@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 11:30 LA",
+ "generated_at": "2026-09-27 11:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,23 +8,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39578,
+     "mem_used": 40038,
      "mem_total": 81920,
-     "util": 100,
+     "util": 84,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39578,
+     "mem_used": 40038,
      "mem_total": 81920,
-     "util": 100,
+     "util": 85,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39554,
+     "mem_used": 40014,
      "mem_total": 81920,
-     "util": 100,
+     "util": 86,
      "owner": "other"
     },
     {
@@ -43,58 +43,58 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 11844,
+     "mem_used": 11850,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 11846,
+     "mem_used": 11850,
      "mem_total": 24576,
-     "util": 100,
+     "util": 10,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 11850,
      "mem_total": 24576,
-     "util": 100,
+     "util": 19,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 11844,
+     "mem_used": 11850,
      "mem_total": 24576,
-     "util": 0,
+     "util": 12,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 11850,
      "mem_total": 24576,
-     "util": 100,
+     "util": 1,
      "owner": "ours"
     },
     {
      "idx": 5,
-     "mem_used": 14190,
+     "mem_used": 14196,
      "mem_total": 24576,
-     "util": 100,
+     "util": 11,
      "owner": "ours"
     },
     {
      "idx": 6,
-     "mem_used": 11846,
+     "mem_used": 11850,
      "mem_total": 24576,
-     "util": 100,
+     "util": 8,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 12138,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     }
    ]
@@ -228,7 +228,7 @@
      "idx": 0,
      "mem_used": 22503,
      "mem_total": 49140,
-     "util": 88,
+     "util": 89,
      "owner": "other"
     }
    ]
@@ -335,5 +335,5 @@
  "alerts": [
   "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-28T01:15:14+08:00 card7 worker exit (nothing left)"
  ],
- "collect_s": 17.1
+ "collect_s": 19.4
 }
