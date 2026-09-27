@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 09:30 LA",
+ "generated_at": "2026-09-27 09:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39838,
+     "mem_used": 31396,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39838,
+     "mem_used": 31396,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39814,
+     "mem_used": 31372,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -45,29 +45,29 @@
      "idx": 0,
      "mem_used": 17256,
      "mem_total": 24576,
-     "util": 98,
+     "util": 57,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 17256,
      "mem_total": 24576,
-     "util": 61,
+     "util": 59,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 13046,
      "mem_total": 24576,
-     "util": 100,
+     "util": 98,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 6532,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 53,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 4,
@@ -80,21 +80,21 @@
      "idx": 5,
      "mem_used": 13046,
      "mem_total": 24576,
-     "util": 97,
+     "util": 98,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 6518,
      "mem_total": 24576,
-     "util": 75,
+     "util": 71,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 17256,
      "mem_total": 24576,
-     "util": 70,
+     "util": 62,
      "owner": "ours"
     }
    ]
@@ -323,10 +323,26 @@
    },
    "detail": "E1 450/450 · E2 540/540 · E3 270/270 · E1-RA 630/630；09-27 已读出，转大修（REVISION_V2）",
    "alerts": []
+  },
+  {
+   "id": "pheromones-v2",
+   "repo": "AAAI2027-7",
+   "title": "Pheromones 大修 P1 内容消融 / P3 委托曲线（3090 GPU，Qwen2.5-3B）",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 521,
+    "total": 660,
+    "unit": "run"
+   },
+   "detail": "P1 491/600 · P3 30/60 · P2 无模型臂 500 行（CPU 已跑完）；7 个分片在跑",
+   "alerts": []
   }
  ],
  "alerts": [
   "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T23:55:54+08:00 card5 worker exit (nothing left)"
  ],
- "collect_s": 14.3
+ "collect_s": 28.3
 }
