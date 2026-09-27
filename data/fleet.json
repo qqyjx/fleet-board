@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 15:00 LA",
+ "generated_at": "2026-09-27 15:13 LA",
  "boxes": [
   {
    "name": "A800",
@@ -45,57 +45,57 @@
      "idx": 0,
      "mem_used": 12322,
      "mem_total": 24576,
-     "util": 10,
-     "owner": "ours"
+     "util": 100,
+     "owner": "other"
     },
     {
      "idx": 1,
      "mem_used": 12324,
      "mem_total": 24576,
-     "util": 73,
-     "owner": "ours"
+     "util": 100,
+     "owner": "other"
     },
     {
      "idx": 2,
      "mem_used": 12324,
      "mem_total": 24576,
-     "util": 51,
-     "owner": "ours"
+     "util": 100,
+     "owner": "other"
     },
     {
      "idx": 3,
      "mem_used": 12326,
      "mem_total": 24576,
-     "util": 100,
-     "owner": "ours"
+     "util": 0,
+     "owner": "other"
     },
     {
      "idx": 4,
      "mem_used": 12326,
      "mem_total": 24576,
-     "util": 75,
-     "owner": "ours"
+     "util": 100,
+     "owner": "other"
     },
     {
      "idx": 5,
      "mem_used": 14672,
      "mem_total": 24576,
-     "util": 72,
-     "owner": "ours"
+     "util": 0,
+     "owner": "other"
     },
     {
      "idx": 6,
      "mem_used": 12324,
      "mem_total": 24576,
-     "util": 11,
-     "owner": "ours"
+     "util": 0,
+     "owner": "other"
     },
     {
      "idx": 7,
      "mem_used": 12614,
      "mem_total": 24576,
-     "util": 69,
-     "owner": "ours"
+     "util": 0,
+     "owner": "other"
     }
    ]
   },
@@ -149,70 +149,6 @@
  ],
  "jobs": [
   {
-   "id": "camco-e3",
-   "repo": "AAAI2027-4",
-   "title": "CaMCo E3 梯度范数归一化 λ（9 个终格）",
-   "box": "3090",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 9,
-    "total": 9,
-    "unit": "格"
-   },
-   "detail": "09-27 读出：主判据 FAIL（Qwen2-VL CHAIR_s +4.04 pp，描述变长所致待 E7 确认）",
-   "alerts": []
-  },
-  {
-   "id": "camco-e4",
-   "repo": "AAAI2027-4",
-   "title": "CaMCo E4 数据规模 400/800/1500（24 个 CHAIR）",
-   "box": "3090",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 24,
-    "total": 24,
-    "unit": "文件"
-   },
-   "detail": "2026-09-27T21:33:29+08:00 [jobs] card6 JOBS_DONE mix800:0",
-   "alerts": []
-  },
-  {
-   "id": "camco-v2",
-   "repo": "AAAI2027-4",
-   "title": "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集）",
-   "box": "3090",
-   "cards": [],
-   "kind": "gen",
-   "status": "failed",
-   "progress": {
-    "done": 38,
-    "total": 30,
-    "unit": "步"
-   },
-   "detail": "2026-09-28T01:15:14+08:00 card7 worker exit (nothing left)",
-   "alerts": []
-  },
-  {
-   "id": "cvpr3-adapt",
-   "repo": "CVPR2027-1",
-   "title": "CVPR-3 P-3-5 适配腿（K400 下载 → 6 run → 36 评测）",
-   "box": "3090",
-   "cards": [],
-   "kind": "gen",
-   "status": "running",
-   "progress": {
-    "done": 242,
-    "total": 242,
-    "unit": "包"
-   },
-   "detail": "K400 train 242/242 包 345G，下载完；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
-   "alerts": []
-  },
-  {
    "id": "pheromones-resubmit",
    "repo": "AAAI2027-7",
    "title": "Pheromones 转投实验 E1–E4 + E1-RA（A800 CPU，GPU 隐藏）",
@@ -227,28 +163,11 @@
    },
    "detail": "E1 450/450 · E2 540/540 · E3 270/270 · E1-RA 630/630；09-27 已读出，转大修（REVISION_V2）",
    "alerts": []
-  },
-  {
-   "id": "pheromones-v2",
-   "repo": "AAAI2027-7",
-   "title": "Pheromones 大修 P1 内容消融 / P3 委托曲线（3090 GPU，Qwen2.5-3B）",
-   "box": "3090",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 660,
-    "total": 660,
-    "unit": "run"
-   },
-   "detail": "P1 600/600 · P3 60/60 · P2 无模型臂 500 行（CPU 已跑完）；0 个分片在跑",
-   "alerts": []
   }
  ],
  "alerts": [
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
-  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
-  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-28T01:15:14+08:00 card7 worker exit (nothing left)"
+  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 34.5
+ "collect_s": 223.8
 }
