@@ -268,6 +268,19 @@ def pheromones_job():
             "kind": "gen", "status": "running" if run > 1 else "done", "progress": {"done": e1 + e2 + e3 + e1ra, "total": 1890, "unit": "run"},
             "detail": f"E1 {e1}/450 · E2 {e2}/540 · E3 {e3}/270 · E1-RA {e1ra}/630；09-27 已读出，转大修（REVISION_V2）", "alerts": []}
 
+def pheromones_v2_job():
+    # 2026-09-27: V2 major revision on the 3090 GPUs (REVISION_V2.md P1/P3; P2's model-free arms ran on the CPU)
+    h, R = "3090", "/data/xyf/scratch/pheromones/results/v2"
+    out = ssh(h, f"for e in p1 p2 p3; do printf '%s ' $(cat {R}/${{e}}_runs.jsonl 2>/dev/null | wc -l); done; "
+                 f"printf '%s ' $(pgrep -fc '^/data/xyf/envs/gavel-3090/bin/python experiments/v2/run_v2.py'); grep -c FAIL {R}/p_launch.log")
+    if not out: return None
+    try: p1, p2, p3, run, fail = (int(x) for x in out.split()[:5])
+    except ValueError: return None
+    return {"id": "pheromones-v2", "repo": "AAAI2027-7", "title": "Pheromones 大修 P1 内容消融 / P3 委托曲线（3090 GPU，Qwen2.5-3B）", "box": h, "cards": [],
+            "kind": "gen", "status": "running" if run > 0 else "done", "progress": {"done": p1 + p3, "total": 660, "unit": "run"},
+            "detail": f"P1 {p1}/600 · P3 {p3}/60 · P2 无模型臂 {p2} 行（CPU 已跑完）；{run} 个分片在跑",
+            "alerts": [f"p_launch.log 有 {fail} 行 FAIL"] if fail else []}
+
 def status_job(host, path, repo, title, cards):
     out = ssh(host, f"tail -n 40 {path} 2>/dev/null")
     if not out or not out.strip(): return None
@@ -305,7 +318,7 @@ def main():
         cards = gpus(name)
         boxes.append({"name": name, "label": label, "reachable": cards is not None, "cards": cards or []})
     jobs.extend(camco_jobs())
-    for fn in (cvpr3_job, pheromones_job):
+    for fn in (cvpr3_job, pheromones_job, pheromones_v2_job):
         j = fn()
         if j: jobs.append(j)
     # 2026-09-27: the jobs below all finished before 09-26 (WWW stage7, ICLR ladders, Science legs, ChronoCheck);
