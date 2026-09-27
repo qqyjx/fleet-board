@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-26 22:30 LA",
+ "generated_at": "2026-09-26 22:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,7 +8,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 22950,
+     "mem_used": 23210,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -31,7 +31,7 @@
      "idx": 3,
      "mem_used": 23210,
      "mem_total": 81920,
-     "util": 98,
+     "util": 100,
      "owner": "other"
     }
    ]
@@ -45,56 +45,56 @@
      "idx": 0,
      "mem_used": 14340,
      "mem_total": 24576,
-     "util": 67,
+     "util": 68,
      "owner": "other"
     },
     {
      "idx": 1,
      "mem_used": 14340,
      "mem_total": 24576,
-     "util": 73,
+     "util": 74,
      "owner": "other"
     },
     {
      "idx": 2,
      "mem_used": 14340,
      "mem_total": 24576,
-     "util": 70,
+     "util": 73,
      "owner": "other"
     },
     {
      "idx": 3,
      "mem_used": 11742,
      "mem_total": 24576,
-     "util": 100,
+     "util": 97,
      "owner": "other"
     },
     {
      "idx": 4,
-     "mem_used": 6440,
+     "mem_used": 14298,
      "mem_total": 24576,
-     "util": 38,
+     "util": 70,
      "owner": "other"
     },
     {
      "idx": 5,
      "mem_used": 17254,
      "mem_total": 24576,
-     "util": 67,
+     "util": 68,
      "owner": "other"
     },
     {
      "idx": 6,
-     "mem_used": 20398,
+     "mem_used": 14340,
      "mem_total": 24576,
-     "util": 93,
+     "util": 73,
      "owner": "other"
     },
     {
      "idx": 7,
      "mem_used": 20398,
      "mem_total": 24576,
-     "util": 92,
+     "util": 93,
      "owner": "other"
     }
    ]
