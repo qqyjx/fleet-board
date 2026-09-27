@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 14:10 LA",
+ "generated_at": "2026-09-27 14:20 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,16 +8,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 24836,
+     "mem_used": 29256,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 29254,
+     "mem_used": 29236,
      "mem_total": 81920,
-     "util": 45,
+     "util": 100,
      "owner": "other"
     },
     {
@@ -43,42 +43,42 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 11850,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "ours"
-    },
-    {
-     "idx": 1,
-     "mem_used": 11850,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "ours"
-    },
-    {
-     "idx": 2,
      "mem_used": 12322,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
+     "idx": 1,
+     "mem_used": 12322,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "ours"
+    },
+    {
+     "idx": 2,
+     "mem_used": 12324,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "ours"
+    },
+    {
      "idx": 3,
-     "mem_used": 11850,
+     "mem_used": 12322,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 4,
-     "mem_used": 11850,
+     "mem_used": 12324,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 5,
-     "mem_used": 14196,
+     "mem_used": 14668,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
@@ -92,7 +92,7 @@
     },
     {
      "idx": 7,
-     "mem_used": 12138,
+     "mem_used": 12612,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
@@ -250,5 +250,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-28T01:15:14+08:00 card7 worker exit (nothing left)"
  ],
- "collect_s": 36.5
+ "collect_s": 33.9
 }
