@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 07:10 LA",
+ "generated_at": "2026-09-27 07:20 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,23 +8,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39938,
+     "mem_used": 39278,
      "mem_total": 81920,
-     "util": 96,
+     "util": 99,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39938,
+     "mem_used": 39278,
      "mem_total": 81920,
-     "util": 100,
+     "util": 82,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39914,
+     "mem_used": 39254,
      "mem_total": 81920,
-     "util": 100,
+     "util": 89,
      "owner": "other"
     },
     {
@@ -45,28 +45,28 @@
      "idx": 0,
      "mem_used": 17240,
      "mem_total": 24576,
-     "util": 80,
+     "util": 82,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 14804,
      "mem_total": 24576,
-     "util": 55,
+     "util": 76,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 17250,
      "mem_total": 24576,
-     "util": 65,
+     "util": 66,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 17252,
+     "mem_used": 17254,
      "mem_total": 24576,
-     "util": 65,
+     "util": 67,
      "owner": "ours"
     },
     {
@@ -80,21 +80,21 @@
      "idx": 5,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 61,
+     "util": 60,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 63,
+     "util": 60,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 14840,
      "mem_total": 24576,
-     "util": 65,
+     "util": 62,
      "owner": "ours"
     }
    ]
@@ -301,11 +301,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 188,
+    "done": 193,
     "total": 242,
     "unit": "包"
    },
-   "detail": "K400 train 188/242 包 265G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
+   "detail": "K400 train 193/242 包 271G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
    "alerts": []
   },
   {
@@ -328,5 +328,5 @@
  "alerts": [
   "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T21:58:42+08:00 card3 start dump_qwen_full_s2"
  ],
- "collect_s": 23.6
+ "collect_s": 19.1
 }
