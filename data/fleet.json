@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 08:51 LA",
+ "generated_at": "2026-09-27 09:02 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,23 +8,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31256,
+     "mem_used": 39438,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31256,
+     "mem_used": 39438,
      "mem_total": 81920,
-     "util": 86,
+     "util": 91,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31232,
+     "mem_used": 39414,
      "mem_total": 81920,
-     "util": 100,
+     "util": 92,
      "owner": "other"
     },
     {
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 17256,
      "mem_total": 24576,
-     "util": 66,
+     "util": 68,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 17256,
      "mem_total": 24576,
-     "util": 71,
+     "util": 53,
      "owner": "ours"
     },
     {
@@ -71,17 +71,17 @@
     },
     {
      "idx": 4,
-     "mem_used": 17256,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 67,
-     "owner": "other"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 5,
-     "mem_used": 14840,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 61,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 6,
@@ -92,9 +92,9 @@
     },
     {
      "idx": 7,
-     "mem_used": 17252,
+     "mem_used": 17254,
      "mem_total": 24576,
-     "util": 67,
+     "util": 69,
      "owner": "ours"
     }
    ]
@@ -226,7 +226,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 22425,
+     "mem_used": 22503,
      "mem_total": 49140,
      "util": 88,
      "owner": "other"
@@ -278,17 +278,18 @@
     2,
     3,
     4,
+    5,
     6,
     7
    ],
    "kind": "gen",
    "status": "failed",
    "progress": {
-    "done": 20,
+    "done": 24,
     "total": 30,
     "unit": "步"
    },
-   "detail": "2026-09-27T23:48:49+08:00 card2 worker exit (nothing left)",
+   "detail": "2026-09-27T23:55:54+08:00 card5 worker exit (nothing left)",
    "alerts": []
   },
   {
@@ -300,16 +301,32 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 234,
+    "done": 237,
     "total": 242,
     "unit": "包"
    },
-   "detail": "K400 train 234/242 包 329G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
+   "detail": "K400 train 237/242 包 335G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
+   "alerts": []
+  },
+  {
+   "id": "pheromones-resubmit",
+   "repo": "AAAI2027-7",
+   "title": "Pheromones 转投实验 E1–E4 + E1-RA（A800 CPU，GPU 隐藏）",
+   "box": "A800",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 1890,
+    "total": 1890,
+    "unit": "run"
+   },
+   "detail": "E1 450/450 · E2 540/540 · E3 270/270 · E1-RA 630/630；09-27 已读出，转大修（REVISION_V2）",
    "alerts": []
   }
  ],
  "alerts": [
-  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T23:48:49+08:00 card2 worker exit (nothing left)"
+  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-27T23:55:54+08:00 card5 worker exit (nothing left)"
  ],
- "collect_s": 98.2
+ "collect_s": 118.6
 }
