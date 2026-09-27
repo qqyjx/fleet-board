@@ -1,28 +1,28 @@
 {
- "generated_at": "2026-09-27 06:14 LA",
+ "generated_at": "2026-09-27 06:17 LA",
  "boxes": [
   {
    "name": "A800",
-   "label": "A800 ×4 (80 GB; 09-27 起借 xdx 到 09-29，GPU 不上)",
+   "label": "A800 ×4 (80 GB)",
    "reachable": true,
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39538,
+     "mem_used": 39618,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39538,
+     "mem_used": 39618,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39514,
+     "mem_used": 39594,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -87,8 +87,8 @@
      "idx": 6,
      "mem_used": 14340,
      "mem_total": 24576,
-     "util": 72,
-     "owner": "ours"
+     "util": 75,
+     "owner": "other"
     },
     {
      "idx": 7,
@@ -137,7 +137,7 @@
      "mem_used": 731,
      "mem_total": 49140,
      "util": 0,
-     "owner": "other"
+     "owner": "free"
     },
     {
      "idx": 5,
@@ -236,72 +236,646 @@
  ],
  "jobs": [
   {
-   "id": "camco-e3",
-   "repo": "AAAI2027-4",
-   "title": "CaMCo E3 梯度范数归一化 λ（9 个终格）",
+   "id": "www-stage7",
+   "repo": "WWW2027-1",
+   "title": "stage7 六臂修正版 GRPO",
+   "box": "A800",
+   "cards": [],
+   "kind": "train",
+   "status": "done",
+   "progress": {
+    "done": 6,
+    "total": 6,
+    "unit": "臂"
+   },
+   "detail": "训练队列 QUEUE DONE 09-20 10:08 LA；T0 评测 09-21 完，S*/T1/噪声底 09-23 手动跑完",
+   "arms": [
+    {
+     "arm": "dense-null-envonly-seed3-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "reward": 0.0,
+      "resp_len": 295.0
+     },
+     "tier": "stage7"
+    },
+    {
+     "arm": "dense-null-envonly-seed2-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.296,
+      "entropy": 0.391,
+      "pg_loss": 0.016,
+      "reward": 0.544,
+      "resp_len": 1215.627
+     },
+     "tier": "stage7"
+    },
+    {
+     "arm": "dense-null-envonly-seed1-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.325,
+      "entropy": 0.419,
+      "pg_loss": -0.017,
+      "reward": 0.48,
+      "resp_len": 1144.621
+     },
+     "tier": "stage7"
+    },
+    {
+     "arm": "process-envonly-seed3-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.882,
+      "entropy": 0.654,
+      "pg_loss": 52514.3,
+      "reward": 0.149,
+      "resp_len": 1063.381
+     },
+     "tier": "stage7"
+    },
+    {
+     "arm": "process-envonly-seed2-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.414,
+      "entropy": 1.23,
+      "pg_loss": 0.082,
+      "reward": 0.566,
+      "resp_len": 1206.404
+     },
+     "tier": "stage7"
+    },
+    {
+     "arm": "process-envonly-seed1-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.56,
+      "entropy": 2.463,
+      "pg_loss": 0.069,
+      "reward": 0.453,
+      "resp_len": 1232.04
+     },
+     "tier": "stage7"
+    },
+    {
+     "arm": "dense-null-seed3-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 6.502,
+      "entropy": 0.029,
+      "pg_loss": 0.0,
+      "reward": 0.0,
+      "resp_len": 994.035
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "dense-null-seed2-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.13,
+      "entropy": 0.328,
+      "pg_loss": 0.014,
+      "reward": 9.837,
+      "resp_len": 1206.923
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "dense-null-seed1-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "reward": 0.0,
+      "resp_len": 295.0
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "outcome-seed3-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.476,
+      "entropy": 1.629,
+      "pg_loss": 0.085,
+      "reward": 0.394,
+      "resp_len": 812.275
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "process-seed3-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.283,
+      "entropy": 0.739,
+      "pg_loss": -0.04,
+      "reward": 1.625,
+      "resp_len": 1524.748
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "process-seed2-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.321,
+      "entropy": 0.509,
+      "pg_loss": -0.026,
+      "reward": 0.851,
+      "resp_len": 1400.787
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "outcome-seed2-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.574,
+      "entropy": 2.001,
+      "pg_loss": 0.01,
+      "reward": 0.323,
+      "resp_len": 1019.246
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "process-seed1-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.652,
+      "entropy": 2.346,
+      "pg_loss": -0.126,
+      "reward": 0.205,
+      "resp_len": 1371.379
+     },
+     "tier": "T0"
+    },
+    {
+     "arm": "outcome-seed1-full",
+     "steps": 149,
+     "last": {
+      "step": 149,
+      "kl": 0.655,
+      "entropy": 1.682,
+      "pg_loss": 0.015,
+      "reward": 0.385,
+      "resp_len": 881.046
+     },
+     "tier": "T0"
+    }
+   ]
+  },
+  {
+   "id": "iclr9-ladder",
+   "repo": "ICLR2027-9",
+   "title": "14B 温度阶梯（TP2，两路）",
    "box": "3090",
    "cards": [],
    "kind": "gen",
    "status": "done",
    "progress": {
-    "done": 9,
-    "total": 9,
-    "unit": "格"
+    "done": 12,
+    "total": 12,
+    "unit": "run"
    },
-   "detail": "09-27 读出：主判据 FAIL（Qwen2-VL CHAIR_s +4.04 pp，描述变长所致待 E7 确认）",
+   "detail": "等待下一对",
+   "runs": [
+    {
+     "arm": "base",
+     "T": 0.2,
+     "wall_h": 6.46
+    },
+    {
+     "arm": "rlvr",
+     "T": 0.2,
+     "wall_h": 7.11
+    },
+    {
+     "arm": "base",
+     "T": 0.4,
+     "wall_h": 5.94
+    },
+    {
+     "arm": "rlvr",
+     "T": 0.4,
+     "wall_h": 7.02
+    },
+    {
+     "arm": "base",
+     "T": 0.6,
+     "wall_h": 5.59
+    },
+    {
+     "arm": "rlvr",
+     "T": 0.6,
+     "wall_h": 6.95
+    },
+    {
+     "arm": "base",
+     "T": 0.8,
+     "wall_h": 5.4
+    },
+    {
+     "arm": "rlvr",
+     "T": 0.8,
+     "wall_h": 6.96
+    },
+    {
+     "arm": "base",
+     "T": 1.0,
+     "wall_h": 5.61
+    },
+    {
+     "arm": "rlvr",
+     "T": 1.0,
+     "wall_h": 7.07
+    },
+    {
+     "arm": "base",
+     "T": 1.2,
+     "wall_h": 13.19
+    },
+    {
+     "arm": "rlvr",
+     "T": 1.2,
+     "wall_h": 7.02
+    }
+   ],
    "alerts": []
   },
   {
-   "id": "camco-e4",
-   "repo": "AAAI2027-4",
-   "title": "CaMCo E4 数据规模 400/800/1500（24 个 CHAIR）",
+   "id": "iclr3-b7tp2",
+   "repo": "ICLR2027-3",
+   "title": "B7-TP2 72B-AWQ 第四规模点（194 双卡）",
+   "box": "194-yyd",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 0,
+    "total": 6294,
+    "unit": "题"
+   },
+   "detail": "已关闭(门禁不过,PREREG_B7_72B outcome) END b7tp2 40 2026-09-18T10:41:28+08:00"
+  },
+  {
+   "id": "iclr2_uitars_seed1_status",
+   "repo": "ICLR2027-2",
+   "title": "UI-TARS 二次抽样（3090 卡 0/1 TP2 m2w test_domain；android 09-21 03:37 CST 已落地）",
    "box": "3090",
+   "cards": [
+    0,
+    1
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 4,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "[m2w] 2026-09-22T02:51:02+08:00 DONE lane=m2w wall=35906s",
+   "alerts": []
+  },
+  {
+   "id": "eval_matrix_t0_corrected.out",
+   "repo": "WWW2027-1",
+   "title": "修正版六臂 T0 评测（30 作业，四卡；完了自动接 S* → outcome T1 → 噪声底）",
+   "box": "A800",
+   "cards": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "[eval_matrix] pass=t0 finished 2026-09-21T06:51:18-04:00",
+   "alerts": []
+  },
+  {
+   "id": "imwut_B_status",
+   "repo": "IMWUT2027-1",
+   "title": "ORAL_GAP B1 max-q 门控 / B2 覆盖率扫 / B3 seeds 45-46（四道，排在 WWW 链后）",
+   "box": "A800",
+   "cards": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 15,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "2026-09-21T15:09:15-04:00 DONE all lanes",
+   "alerts": []
+  },
+  {
+   "id": "iclr9_ladder_seed2_status_laneA",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 base 臂 lane A（T 0.6 → 1.0 0.2 0.8；09-21 00:20 LA 拆成四道）",
+   "box": "194-yyd",
+   "cards": [
+    0
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 8,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "CHAIN_DONE lane=A 2026-09-22T01:24:37+08:00",
+   "alerts": []
+  },
+  {
+   "id": "iclr9_ladder_seed2_status_laneB",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）",
+   "box": "194-yyd",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 6,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
+   "alerts": [
+    "ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00"
+   ]
+  },
+  {
+   "id": "iclr9_ladder_seed2_status_laneD",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）",
+   "box": "194-yyd",
+   "cards": [
+    2
+   ],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
+   "alerts": [
+    "DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin"
+   ]
+  },
+  {
+   "id": "iclr9_ladder_seed2_status_laneE",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 rlvr 臂 lane E（T 0.8 1.2）",
+   "box": "194-yyd",
+   "cards": [
+    3
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 4,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "CHAIN_DONE lane=E 2026-09-21T23:18:52+08:00",
+   "alerts": []
+  },
+  {
+   "id": "iclr9_ladder_seed2_fuxin_status_laneF",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6）",
+   "box": "fuxin",
    "cards": [
     6
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "failed",
    "progress": {
-    "done": 23,
-    "total": 24,
-    "unit": "文件"
+    "done": 0,
+    "total": 0,
+    "unit": "步"
    },
-   "detail": "2026-09-27T20:36:19+08:00 [jobs] card6 start chair_mix800_ep1_seed0",
+   "detail": "ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00",
+   "alerts": [
+    "ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00"
+   ]
+  },
+  {
+   "id": "iclr9_ladder_seed2_fuxin_status_laneG",
+   "repo": "ICLR2027-9",
+   "title": "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）",
+   "box": "fuxin",
+   "cards": [],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 0,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
+   "alerts": [
+    "ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
+   ]
+  },
+  {
+   "id": "science-3090",
+   "repo": "Science",
+   "title": "Phase-Trans 盲态全量评测（≤14B 30 模型 × 17 任务，跟随 pin 下载；指标隔离在 _blind/ 未读，只记 rc/秒）",
+   "box": "3090",
+   "cards": [
+    0,
+    1,
+    6
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 22,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "2026-09-26T22:54:59 FULL_DONE",
    "alerts": []
   },
   {
-   "id": "cvpr3-adapt",
-   "repo": "CVPR2027-1",
-   "title": "CVPR-3 P-3-5 适配腿（K400 下载 → 6 run → 36 评测）",
-   "box": "3090",
-   "cards": [],
+   "id": "science-new105",
+   "repo": "Science",
+   "title": "Phase-Trans 盲态全量评测（≤4B 子集 20 模型 × 17 任务；box-floor 行）",
+   "box": "new105",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 34,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "2026-09-26T11:59:10 FULL_DONE",
+   "alerts": []
+  },
+  {
+   "id": "science-4090-jm",
+   "repo": "Science",
+   "title": "Phase-Trans 盲态全量评测（1.4B–8B 段 9 模型；09-24 21:00 LA 按用户指示撤下，yxy 在用；九模型清单待另派机器）",
+   "box": "4090-jm",
+   "cards": [
+    1
+   ],
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 164,
-    "total": 242,
-    "unit": "包"
+    "done": 27,
+    "total": 0,
+    "unit": "步"
    },
-   "detail": "K400 train 164/242 包 229G，下载中；chain_adapt 挂着（下载完 + 八卡空后自动开跑）",
+   "detail": "2026-09-25T04:45:29 FULL Qwen/Qwen2.5-3B bigbench_word_unscrambling_generate_until rc=0 wall=8538.8s cards=GPU",
    "alerts": []
   },
   {
-   "id": "pheromones-resubmit",
-   "repo": "AAAI2027-7",
-   "title": "Pheromones 转投实验 E1–E4 + E1-RA（A800 CPU，GPU 隐藏）",
+   "id": "science-A800",
+   "repo": "Science",
+   "title": "Phase-Trans A800 腿评测：Qwen2.5-32B（卡 3）/72B+OPT-66b（卡 1,2）/14B+OLMo-13B（卡 0）；只记 rc/秒",
+   "box": "A800",
+   "cards": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 26,
+    "total": 0,
+    "unit": "步"
+   },
+   "detail": "2026-09-26T18:11:24 FULL_DONE",
+   "alerts": []
+  },
+  {
+   "id": "dl_models.log",
+   "repo": "Science",
+   "title": "Phase-Trans A800 腿：Qwen2.5-32B/72B + OPT-30b/66b pin 下载（≈400 GB，4.7 MB/s；只占盘不占卡）",
    "box": "A800",
    "cards": [],
    "kind": "gen",
    "status": "done",
    "progress": {
-    "done": 1890,
-    "total": 1890,
-    "unit": "run"
+    "done": 0,
+    "total": 0,
+    "unit": "步"
    },
-   "detail": "E1 450/450 · E2 540/540 · E3 270/270 · E1-RA 630/630；09-27 已读出，转大修（REVISION_V2）",
+   "detail": "2026-09-25T02:18:08 ALL_DONE",
    "alerts": []
+  },
+  {
+   "id": "chronocheck_32b-awq_critic_fuxin_194_status",
+   "repo": "ICLR2027-6",
+   "title": "CRITIC@32B-AWQ（194 续跑）",
+   "box": "194-yyd",
+   "cards": [
+    0
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 887,
+    "total": 887,
+    "unit": "行"
+   },
+   "detail": "DONE 2026-09-18T05:27:37+08:00 rc=0 wall_h=3.3092 critic_rows=887",
+   "per_arm": {
+    "critic": 887
+   }
+  },
+  {
+   "id": "chronocheck_llama8b_critic_fuxin_194_status",
+   "repo": "ICLR2027-6",
+   "title": "CRITIC@Llama-3.1-8B（194 续跑）",
+   "box": "194-yyd",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 887,
+    "total": 887,
+    "unit": "行"
+   },
+   "detail": "DONE 2026-09-18T06:56:11+08:00 rc=0 wall_h=4.7853 critic_rows=887",
+   "per_arm": {
+    "critic": 887
+   }
+  },
+  {
+   "id": "chronocheck_chatts14b_status",
+   "repo": "ICLR2027-6",
+   "title": "ChatTS-14B 五臂",
+   "box": "new105",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 4435,
+    "total": 4435,
+    "unit": "行"
+   },
+   "detail": "DONE 2026-09-17T16:02:51+08:00 mode=full rc=0 wall_h=5.5558",
+   "per_arm": {
+    "zero_shot": 887,
+    "cot": 887,
+    "chronocheck": 887,
+    "certify_abstain": 887,
+    "repair_gated": 887
+   }
   }
  ],
- "alerts": [],
- "collect_s": 92.5
+ "alerts": [
+  "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4） 失败：ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
+  "14B 阶梯 seed 2 rlvr 臂 lane B（T 0.6 → 1.0 0.2 0.4）: ABORT lane=B rlvr 0.4 2026-09-22T00:13:06+08:00",
+  "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4） 失败：DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
+  "14B 阶梯 seed 2 base 臂 lane D（T 1.2 0.4）: DRIVER_STOPPED lane=D cuInit_fails_all_cards(CUDA driver initialization failed; 44 GB ghost on card 2) awaitin",
+  "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6） 失败：ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00",
+  "14B 阶梯 seed 2 base 臂 lane F（fuxin；T 0.4 于 09-22 00:36 LA 被 root 杀掉不重发；T 1.2 在卡 6）: ABORT lane=F base 0.4 2026-09-23T14:35:30+08:00",
+  "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4） 失败：ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00",
+  "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）: ABORT lane=G rlvr 0.4 2026-09-23T14:35:07+08:00"
+ ],
+ "collect_s": 421.0
 }
