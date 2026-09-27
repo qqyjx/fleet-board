@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 10:00 LA",
+ "generated_at": "2026-09-27 10:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,23 +8,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31498,
+     "mem_used": 39518,
      "mem_total": 81920,
-     "util": 85,
+     "util": 89,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31498,
+     "mem_used": 39518,
      "mem_total": 81920,
-     "util": 99,
+     "util": 86,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31474,
+     "mem_used": 39494,
      "mem_total": 81920,
-     "util": 68,
+     "util": 93,
      "owner": "other"
     },
     {
@@ -50,16 +50,16 @@
     },
     {
      "idx": 1,
-     "mem_used": 17256,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 60,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 2,
      "mem_used": 6518,
      "mem_total": 24576,
-     "util": 73,
+     "util": 76,
      "owner": "ours"
     },
     {
@@ -78,9 +78,9 @@
     },
     {
      "idx": 5,
-     "mem_used": 13046,
+     "mem_used": 6518,
      "mem_total": 24576,
-     "util": 100,
+     "util": 77,
      "owner": "ours"
     },
     {
@@ -228,7 +228,7 @@
      "idx": 0,
      "mem_used": 22533,
      "mem_total": 49140,
-     "util": 87,
+     "util": 88,
      "owner": "other"
     }
    ]
@@ -285,11 +285,11 @@
    "kind": "gen",
    "status": "failed",
    "progress": {
-    "done": 26,
+    "done": 28,
     "total": 30,
     "unit": "步"
    },
-   "detail": "2026-09-28T00:44:18+08:00 card0 worker exit (nothing left)",
+   "detail": "2026-09-28T01:05:43+08:00 card1 worker exit (nothing left)",
    "alerts": []
   },
   {
@@ -333,16 +333,16 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 640,
+    "done": 654,
     "total": 660,
     "unit": "run"
    },
-   "detail": "P1 593/600 · P3 47/60 · P2 无模型臂 500 行（CPU 已跑完）；4 个分片在跑",
+   "detail": "P1 600/600 · P3 54/60 · P2 无模型臂 500 行（CPU 已跑完）；3 个分片在跑",
    "alerts": []
   }
  ],
  "alerts": [
-  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-28T00:44:18+08:00 card0 worker exit (nothing left)"
+  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-28T01:05:43+08:00 card1 worker exit (nothing left)"
  ],
- "collect_s": 24.8
+ "collect_s": 17.6
 }
