@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 13:20 LA",
+ "generated_at": "2026-09-27 13:30 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39798,
+     "mem_used": 39558,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39798,
+     "mem_used": 39558,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39774,
+     "mem_used": 39534,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -45,28 +45,28 @@
      "idx": 0,
      "mem_used": 11850,
      "mem_total": 24576,
-     "util": 100,
+     "util": 57,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 11850,
      "mem_total": 24576,
-     "util": 100,
+     "util": 61,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 11850,
      "mem_total": 24576,
-     "util": 100,
+     "util": 66,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 11850,
      "mem_total": 24576,
-     "util": 100,
+     "util": 92,
      "owner": "ours"
     },
     {
@@ -102,65 +102,8 @@
   {
    "name": "fuxin",
    "label": "fuxin 4090 ×8 (48 GB, 公司)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 30717,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 1,
-     "mem_used": 43335,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 2,
-     "mem_used": 25847,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 3,
-     "mem_used": 1597,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 4,
-     "mem_used": 731,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 5,
-     "mem_used": 23287,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 6,
-     "mem_used": 18,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 7,
-     "mem_used": 48095,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   },
   {
    "name": "new105",
@@ -186,38 +129,8 @@
   {
    "name": "194-yyd",
    "label": "194 4090D ×4 (48 GB, 公司)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 15,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 1,
-     "mem_used": 15,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
-    },
-    {
-     "idx": 2,
-     "mem_used": 44252,
-     "mem_total": 49140,
-     "util": -1,
-     "error": "[N/A]",
-     "owner": "other"
-    },
-    {
-     "idx": 3,
-     "mem_used": 17,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   },
   {
    "name": "4090-jm",
@@ -333,7 +246,9 @@
   }
  ],
  "alerts": [
+  "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
+  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-28T01:15:14+08:00 card7 worker exit (nothing left)"
  ],
- "collect_s": 15.3
+ "collect_s": 32.9
 }
