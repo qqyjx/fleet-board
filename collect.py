@@ -319,9 +319,39 @@ def pheromones_v3_job():
     try: rows, run = int(l[0]), int(l[1])
     except (ValueError, IndexError): return None
     return {"id": "pheromones-v3", "repo": "AAAI2027-7", "title": "Pheromones V3 相对方向信息素：7B 评测 600 局（new105 卡 1）", "box": h,
-            "cards": [1] if run else [], "kind": "gen", "status": "running" if run else ("done" if rows >= 600 else "failed"),
-            "progress": {"done": rows, "total": 600, "unit": "局"}, "detail": (l[2] if len(l) > 2 else "")[:110],
-            "alerts": [] if run or rows >= 600 else ["评测进程不在但未满 600 局"]}
+            "cards": [], "kind": "gen", "status": "done",
+            "progress": {"done": 600, "total": 600, "unit": "局"}, "detail": "09-27 23:39 LA 读出：V3-P1/P2 均 FAIL，走路线 B（REVISION_V3.md）",
+            "alerts": []}
+
+def pheromones_d1_job():
+    # 2026-09-28: D1 (STAY removed) on new105 card 1, REVISION_V3.md; the chain holds /home/xyf/.gpu1_d1.lock while it runs
+    h, R = "new105", "/home/xyf/AAAI2027-7/results/v3"
+    out = ssh(h, f"grep -c '\"arm\": \"rel.*_ns\"' {R}/v3_runs.jsonl; (test -f /home/xyf/.gpu1_d1.lock && kill -0 $(cat /home/xyf/.gpu1_d1.lock) 2>/dev/null) && echo up || echo down; tail -n 1 {R}/d1.log")
+    if not out: return None
+    l = out.strip().splitlines()
+    try: rows, up = int(l[0]), l[1] == "up"
+    except (ValueError, IndexError): return None
+    last = l[2] if len(l) > 2 else ""
+    stop = "STOP" in last or "FAIL" in last
+    return {"id": "pheromones-d1", "repo": "AAAI2027-7", "title": "Pheromones D1 禁 STAY 诊断：G4 解码门 + 7B 400 局（new105 卡 1）", "box": h,
+            "cards": [1] if up else [], "kind": "gen", "status": "running" if up else ("done" if rows >= 400 else ("failed" if stop else "pending")),
+            "progress": {"done": rows, "total": 400, "unit": "局"}, "detail": last[:110], "alerts": [last[:110]] if stop else []}
+
+def dcas_e1_job():
+    # 2026-09-28: DCAS E1 on new105 card 1 (PREREG_E1 placement amendment): setup retry -> gate (waits for the D1 lock) -> two workers,
+    # 9 dumps then 18 judge runs
+    h, R = "new105", "/home/xyf/AAAI2027-1/results/e1"
+    out = ssh(h, f"ls {R}/state/*.done 2>/dev/null | wc -l; ls {R}/state/*.fail 2>/dev/null | wc -l; pgrep -u xyf -fc 'run_e1_new105.sh|e1_gate_new105.sh|dcas_e1_setup'; tail -n 1 {R}/logs/e1.log 2>/dev/null || tail -n 1 {R}/logs/gate.log")
+    if not out: return None
+    l = out.strip().splitlines()
+    try: done, fail, procs = int(l[0]), int(l[1]), int(l[2])
+    except (ValueError, IndexError): return None
+    last = l[3] if len(l) > 3 else ""
+    status = "failed" if fail or ("STOP" in last and not procs) else ("done" if done >= 27 else ("running" if procs else "pending"))
+    if procs and "STOP" in last: last = "装环境重试中（hf-mirror 的 xet 返回 401，改普通 HTTP 重下 Qwen）；之后门控等 D1 释放卡 1"
+    return {"id": "dcas-e1", "repo": "AAAI2027-1", "title": "DCAS E1：9 个 dump + 18 个判分（new105 卡 1，装环境后接 D1）", "box": h,
+            "cards": [1] if status == "running" and "worker" in last + "dump judge" else [], "kind": "gen", "status": status,
+            "progress": {"done": done, "total": 27, "unit": "步"}, "detail": last[:110], "alerts": [last[:110]] if status == "failed" else []}
 
 def status_job(host, path, repo, title, cards):
     out = ssh(host, f"tail -n 40 {path} 2>/dev/null")
@@ -360,7 +390,7 @@ def main():
         cards = gpus(name)
         boxes.append({"name": name, "label": label, "reachable": cards is not None, "cards": cards or []})
     jobs.extend(camco_jobs())
-    for fn in (cvpr3_job, science32b_job, pheromones_v3_job, pheromones_v2_job, pheromones_job):
+    for fn in (cvpr3_job, science32b_job, pheromones_d1_job, dcas_e1_job, pheromones_v3_job, pheromones_v2_job, pheromones_job):
         j = fn()
         if j: jobs.append(j)
     # 2026-09-27: the jobs below all finished before 09-26 (WWW stage7, ICLR ladders, Science legs, ChronoCheck);
