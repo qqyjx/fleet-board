@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 01:40 LA",
+ "generated_at": "2026-09-28 01:50 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,23 +8,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31456,
+     "mem_used": 39478,
      "mem_total": 81920,
-     "util": 100,
+     "util": 98,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31456,
+     "mem_used": 39478,
      "mem_total": 81920,
-     "util": 100,
+     "util": 98,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31432,
+     "mem_used": 39454,
      "mem_total": 81920,
-     "util": 100,
+     "util": 98,
      "owner": "other"
     },
     {
@@ -45,21 +45,21 @@
      "idx": 0,
      "mem_used": 12310,
      "mem_total": 24576,
-     "util": 100,
+     "util": 38,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 100,
+     "util": 34,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 100,
+     "util": 37,
      "owner": "ours"
     },
     {
@@ -73,28 +73,28 @@
      "idx": 4,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 14658,
      "mem_total": 24576,
-     "util": 100,
+     "util": 5,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 12322,
      "mem_total": 24576,
-     "util": 100,
+     "util": 64,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 12596,
      "mem_total": 24576,
-     "util": 100,
+     "util": 36,
      "owner": "ours"
     }
    ]
@@ -209,7 +209,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 2750/5511 步,约 183 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
+   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 2950/5511 步,约 169 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
    "alerts": []
   },
   {
@@ -317,5 +317,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 25.9
+ "collect_s": 24.7
 }
