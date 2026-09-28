@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 15:30 LA",
+ "generated_at": "2026-09-28 15:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,38 +8,38 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 40158,
+     "mem_used": 39378,
      "mem_total": 81920,
-     "util": 100,
+     "util": 93,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 40158,
+     "mem_used": 39378,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 40134,
+     "mem_used": 39354,
      "mem_total": 81920,
-     "util": 100,
+     "util": 76,
      "owner": "other"
     },
     {
      "idx": 3,
      "mem_used": 69557,
      "mem_total": 81920,
-     "util": 93,
+     "util": 97,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 55.96,
+    "load": 55.87,
     "mem_total": 503,
-    "mem_avail": 214
+    "mem_avail": 374
    }
   },
   {
@@ -79,14 +79,14 @@
      "idx": 4,
      "mem_used": 12322,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 12320,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -106,9 +106,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 170.41,
+    "load": 165.08,
     "mem_total": 125,
-    "mem_avail": 35
+    "mem_avail": 36
    }
   },
   {
@@ -140,9 +140,9 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 3.02,
+    "load": 3.22,
     "mem_total": 188,
-    "mem_avail": 167
+    "mem_avail": 166
    }
   },
   {
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.2,
+    "load": 0.21,
     "mem_total": 251,
     "mem_avail": 233
    }
@@ -235,7 +235,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 3/6 已完成;当前 ctrl_seed1 第 4400/5511 步,约 69 分钟;链日志:[2026-09-29 01:43:57] START train ctrl_seed1",
+   "detail": "训练 run 3/6 已完成;当前 ctrl_seed1 第 4600/5511 步,约 56 分钟;链日志:[2026-09-29 01:43:57] START train ctrl_seed1",
    "alerts": []
   },
   {
@@ -262,15 +262,15 @@
    "title": "对照实验批 cpu-ctrl-1（A800 CPU，7 组 × 4 种子，GPU 已屏蔽）",
    "box": "A800",
    "cards": [],
-   "cpu": "CPU 29 核",
+   "cpu": "CPU 28 核",
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 10,
+    "done": 11,
     "total": 28,
     "unit": "格"
    },
-   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 191 分钟，约 09-29 05:47 LA 跑完",
+   "detail": "4 个进程 · 约 28 核 · 09-28 05:23 LA 起跑 · 每格均 185 分钟，约 09-29 04:46 LA 跑完",
    "alerts": []
   },
   {
@@ -394,5 +394,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 30.7
+ "collect_s": 30.9
 }
