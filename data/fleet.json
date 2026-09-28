@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 21:20 LA",
+ "generated_at": "2026-09-27 21:30 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31456,
+     "mem_used": 31576,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31456,
+     "mem_used": 31576,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31432,
+     "mem_used": 31552,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -45,56 +45,56 @@
      "idx": 0,
      "mem_used": 11846,
      "mem_total": 24576,
-     "util": 16,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 11846,
      "mem_total": 24576,
-     "util": 15,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 11846,
      "mem_total": 24576,
-     "util": 14,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 11846,
      "mem_total": 24576,
-     "util": 14,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 11858,
      "mem_total": 24576,
-     "util": 13,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 11858,
      "mem_total": 24576,
-     "util": 16,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 15832,
      "mem_total": 24576,
-     "util": 32,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 11846,
      "mem_total": 24576,
-     "util": 9,
+     "util": 0,
      "owner": "ours"
     }
    ]
@@ -139,10 +139,10 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 15,
+     "mem_used": 16759,
      "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
+     "util": 25,
+     "owner": "other"
     }
    ]
   }
@@ -209,7 +209,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 0/6 已完成;当前 multi_seed0 第 4600/5511 步,约 10 分钟;链日志:[2026-09-28 11:26:57] START train multi_seed0",
+   "detail": "训练 run 0/6 已完成;当前 multi_seed0 第 4800/5511 步,约 9 分钟;链日志:[2026-09-28 11:26:57] START train multi_seed0",
    "alerts": []
   },
   {
@@ -250,5 +250,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-28T01:15:14+08:00 card7 worker exit (nothing left)"
  ],
- "collect_s": 29.2
+ "collect_s": 32.4
 }
