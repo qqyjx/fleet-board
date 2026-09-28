@@ -217,7 +217,9 @@ def camco_jobs():
            "echo E3 $(grep -acE '\\[final\\] card[0-9] done score_' e3/logs/e3.log) $(ps -eo args | grep -cE '^bash chain_card[0-9](_v2)?.sh') $(grep -ac FAIL e3/logs/e3.log); "
            "echo E4 $(ls AAAI2027-4/results/e4/chair_*.json 2>/dev/null | wc -l) $(ps -eo args | grep -cE '^bash (experiments/camco/)?run_e4_3090.sh') $(grep -ac FAIL e4/logs/e4.log); "
            "echo E4LAST $(tail -n 1 e4/logs/e4.log | cut -c1-110); "
-           "echo V2 $(ls v2/state/*.done 2>/dev/null | wc -l) $(ps -eo args | grep -cE '^bash run_v2_3090.sh') $(grep -ac FAIL v2/logs/v2.log 2>/dev/null); "
+           "echo V2 $(ls v2/state/score_*.done 2>/dev/null | wc -l) $(ps -eo args | grep -cE '^bash run_v2_3090.sh') "
+           "$(for x in $(grep -aoE 'FAIL [a-z0-9_]+' v2/logs/v2.log 2>/dev/null | cut -d' ' -f2 | sort -u); do [ -e v2/state/$x.done ] || echo $x; done | wc -l) "
+           "$(ls -d v2/state/claim_* 2>/dev/null | wc -l); "
            "echo V2CARDS $(grep -aoE 'card[0-9] start' v2/logs/v2.log 2>/dev/null | tail -n 16 | sort -u | tr -dc '0-9 '); "
            "echo V2LAST $(tail -n 1 v2/logs/v2.log 2>/dev/null | cut -c1-110)")
     out = ssh(h, cmd)
@@ -237,12 +239,13 @@ def camco_jobs():
                      "progress": {"done": n, "total": 24, "unit": "文件"}, "detail": kv.get("E4LAST", "")[:110], "alerts": []})
     except ValueError: pass
     try:
-        dn, run, fl = (int(x or 0) for x in (kv.get("V2", "0 0 0").split() + ["0", "0", "0"])[:3])
+        dn, run, fl, tot = (int(x or 0) for x in (kv.get("V2", "0 0 0 0").split() + ["0", "0", "0", "0"])[:4])
         if dn or run:
             cards = sorted({int(c) for c in kv.get("V2CARDS", "").split() if c.isdigit()})
-            jobs.append({"id": "camco-v2", "repo": "AAAI2027-4", "title": "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集）", "box": h,
+            jobs.append({"id": "camco-v2", "repo": "AAAI2027-4", "title": "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E6-A1（官方 PAI）/ E7（Qwen 控长度留出集）", "box": h,
                          "cards": cards if run else [], "kind": "gen", "status": "failed" if fl else ("running" if run else "done"),
-                         "progress": {"done": dn, "total": 30, "unit": "步"}, "detail": kv.get("V2LAST", "")[:110], "alerts": []})
+                         "progress": {"done": dn, "total": tot or dn, "unit": "格"},
+                         "detail": "E6/E6-A1/E7 已读出（均 FAIL，见 REVISION_V2.md）" if not run and not fl else kv.get("V2LAST", "")[:110], "alerts": []})
     except ValueError: pass
     return jobs
 
@@ -291,6 +294,35 @@ def pheromones_v2_job():
             "detail": f"P1 {p1}/600 · P3 {p3}/60 · P2 无模型臂 {p2} 行（CPU 已跑完）；{run} 个分片在跑",
             "alerts": [f"p_launch.log 有 {fail} 行 FAIL"] if fail else []}
 
+def science32b_job():
+    # 2026-09-27 20:53 LA: the user approved A800 card 3 for the deferred Qwen2.5-32B arithmetic cell; the chain appends to
+    # full_eval.log (A800 clock is US Eastern). Read only the lines after the last FULL_START.
+    h = "A800"
+    out = ssh(h, "tac /data0/xyf/science/logs/full_eval.log | sed '/FULL_START/q' | tac")
+    if not out: return None
+    lines = [l for l in out.strip().splitlines() if l.strip()]
+    ok = sum(1 for l in lines if l.split()[1:2] == ["FULL"] and " rc=0 " in l + " ")
+    bad = [l for l in lines if re.search(r"\brc=[1-9]", l)]
+    fin = any("FULL_DONE" in l for l in lines[1:])
+    status = "failed" if bad else ("done" if fin else "running")
+    return {"id": "science-a800-32b", "repo": "Science", "title": "Phase-Trans 延期格：Qwen2.5-32B arithmetic（A800 卡 3，用户 09-27 批）", "box": h,
+            "cards": [] if status == "done" else [3], "kind": "gen", "status": status, "progress": {"done": ok, "total": 1, "unit": "格"},
+            "detail": ("盲态：只记 rc/秒，指标在 _blind/ 未读；上次同格 29.7 h 到 2911/6000。" if status == "running" else "") + lines[-1][:80],
+            "alerts": [b[:110] for b in bad[-1:]]}
+
+def pheromones_v3_job():
+    # 2026-09-27: V3 relative-direction pheromones, 7B fp16 eval on new105 card 1 (REVISION_V3.md; machine change recorded there)
+    h, R = "new105", "/home/xyf/AAAI2027-7/results/v3"
+    out = ssh(h, f"wc -l < {R}/v3_runs.jsonl; ps -eo args | grep -c '^[p].*run_v3.py'; tail -n 1 {R}/eval.log")
+    if not out: return None
+    l = out.strip().splitlines()
+    try: rows, run = int(l[0]), int(l[1])
+    except (ValueError, IndexError): return None
+    return {"id": "pheromones-v3", "repo": "AAAI2027-7", "title": "Pheromones V3 相对方向信息素：7B 评测 600 局（new105 卡 1）", "box": h,
+            "cards": [1] if run else [], "kind": "gen", "status": "running" if run else ("done" if rows >= 600 else "failed"),
+            "progress": {"done": rows, "total": 600, "unit": "局"}, "detail": (l[2] if len(l) > 2 else "")[:110],
+            "alerts": [] if run or rows >= 600 else ["评测进程不在但未满 600 局"]}
+
 def status_job(host, path, repo, title, cards):
     out = ssh(host, f"tail -n 40 {path} 2>/dev/null")
     if not out or not out.strip(): return None
@@ -322,13 +354,13 @@ def main():
     t0 = time.time()
     curves = json.loads((DATA / "curves.json").read_text()) if (DATA / "curves.json").exists() else {}
     boxes, jobs, alerts = [], [], []
-    for name, label in (("A800", "A800 ×4 (80 GB; 09-27 起借 xdx 到 09-29，GPU 不上)"), ("3090", "3090 ×8 (24 GB, .110)"),
+    for name, label in (("A800", "A800 ×4 (80 GB; 卡 0–2 借 xdx 到 09-29；卡 3 09-27 20:53 LA 起跑 Science 32B)"), ("3090", "3090 ×8 (24 GB, .110)"),
                         ("fuxin", "fuxin 4090 ×8 (48 GB, 公司)"), ("new105", "new105 4090D ×2 (48 GB, 公司)"), ("194-yyd", "194 4090D ×4 (48 GB, 公司)"),
                         ("4090-jm", "4090-jm ×1 (24 GB, 实验室 .176; yxy 在用, 不上)")):
         cards = gpus(name)
         boxes.append({"name": name, "label": label, "reachable": cards is not None, "cards": cards or []})
     jobs.extend(camco_jobs())
-    for fn in (cvpr3_job, pheromones_job, pheromones_v2_job):
+    for fn in (cvpr3_job, science32b_job, pheromones_v3_job, pheromones_v2_job, pheromones_job):
         j = fn()
         if j: jobs.append(j)
     # 2026-09-27: the jobs below all finished before 09-26 (WWW stage7, ICLR ladders, Science legs, ChronoCheck);
