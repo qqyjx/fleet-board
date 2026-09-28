@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 05:30 LA",
+ "generated_at": "2026-09-28 05:31 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,23 +8,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31376,
+     "mem_used": 31696,
      "mem_total": 81920,
-     "util": 69,
+     "util": 78,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31376,
+     "mem_used": 31696,
      "mem_total": 81920,
-     "util": 69,
+     "util": 88,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31352,
+     "mem_used": 31672,
      "mem_total": 81920,
-     "util": 74,
+     "util": 100,
      "owner": "other"
     },
     {
@@ -45,56 +45,56 @@
      "idx": 0,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 34,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 5,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 14186,
      "mem_total": 24576,
-     "util": 100,
+     "util": 12,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 4,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 4,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 11848,
      "mem_total": 24576,
-     "util": 100,
+     "util": 14,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 74,
      "owner": "ours"
     }
    ]
@@ -121,7 +121,7 @@
      "idx": 1,
      "mem_used": 18062,
      "mem_total": 49140,
-     "util": 59,
+     "util": 71,
      "owner": "ours"
     }
    ]
@@ -317,5 +317,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 30.1
+ "collect_s": 28.3
 }
