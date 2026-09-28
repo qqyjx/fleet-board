@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 08:51 LA",
+ "generated_at": "2026-09-28 09:01 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39458,
+     "mem_used": 39578,
      "mem_total": 81920,
-     "util": 100,
+     "util": 79,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39458,
+     "mem_used": 39578,
      "mem_total": 81920,
-     "util": 100,
+     "util": 84,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39434,
+     "mem_used": 39554,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -37,9 +37,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 44.85,
+    "load": 40.88,
     "mem_total": 503,
-    "mem_avail": 326
+    "mem_avail": 363
    }
   },
   {
@@ -51,14 +51,14 @@
      "idx": 0,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 100,
+     "util": 5,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 100,
+     "util": 15,
      "owner": "ours"
     },
     {
@@ -72,41 +72,41 @@
      "idx": 3,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 100,
+     "util": 49,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 12320,
      "mem_total": 24576,
-     "util": 100,
+     "util": 37,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 12320,
      "mem_total": 24576,
-     "util": 100,
+     "util": 29,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 12322,
      "mem_total": 24576,
-     "util": 100,
+     "util": 11,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 100,
+     "util": 2,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 185.96,
+    "load": 179.2,
     "mem_total": 125,
     "mem_avail": 37
    }
@@ -121,9 +121,29 @@
   {
    "name": "new105",
    "label": "new105 4090D ×2 (48 GB, 公司)",
-   "reachable": false,
-   "cards": [],
-   "sys": null
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 40283,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 1,
+     "mem_used": 16214,
+     "mem_total": 49140,
+     "util": 99,
+     "owner": "ours"
+    }
+   ],
+   "sys": {
+    "cores": 112,
+    "load": 3.18,
+    "mem_total": 188,
+    "mem_avail": 167
+   }
   },
   {
    "name": "194-yyd",
@@ -139,17 +159,17 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 15,
+     "mem_used": 12741,
      "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
+     "util": 19,
+     "owner": "other"
     }
    ],
    "sys": {
     "cores": 48,
-    "load": 0.13,
+    "load": 1.28,
     "mem_total": 251,
-    "mem_avail": 230
+    "mem_avail": 229
    }
   }
  ],
@@ -215,7 +235,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 2/6 已完成;当前 multi_seed1 第 3700/5511 步,约 112 分钟;链日志:[2026-09-28 19:46:11] START train multi_seed1",
+   "detail": "训练 run 2/6 已完成;当前 multi_seed1 第 3900/5511 步,约 99 分钟;链日志:[2026-09-28 19:46:11] START train multi_seed1",
    "alerts": []
   },
   {
@@ -242,15 +262,15 @@
    "title": "对照实验批 cpu-ctrl-1（A800 CPU，7 组 × 4 种子，GPU 已屏蔽）",
    "box": "A800",
    "cards": [],
-   "cpu": "CPU 30 核",
+   "cpu": "CPU 26 核",
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 3,
+    "done": 4,
     "total": 28,
     "unit": "格"
    },
-   "detail": "4 个进程 · 约 30 核 · 09-28 05:23 LA 起跑 · 每格均 120 分钟，约 09-28 21:20 LA 跑完",
+   "detail": "4 个进程 · 约 26 核 · 09-28 05:23 LA 起跑 · 每格均 113 分钟，约 09-28 20:18 LA 跑完",
    "alerts": []
   },
   {
@@ -295,13 +315,13 @@
     1
    ],
    "kind": "gen",
-   "status": "stale",
+   "status": "running",
    "progress": {
     "done": 3,
     "total": 27,
     "unit": "步"
    },
-   "detail": "new105 本轮未采集到；上次状态：2026-09-28T23:14:43+08:00 card1b start dump_3b_s1",
+   "detail": "2026-09-28T23:14:43+08:00 card1b start dump_3b_s1",
    "alerts": []
   },
   {
@@ -355,8 +375,7 @@
  ],
  "alerts": [
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
-  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
-  "new105 本轮采集失败：该机任务状态为上次快照，不作数"
+  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 90.5
+ "collect_s": 73.8
 }
