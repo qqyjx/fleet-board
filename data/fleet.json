@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 00:10 LA",
+ "generated_at": "2026-09-28 00:20 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31596,
+     "mem_used": 39318,
      "mem_total": 81920,
-     "util": 84,
+     "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31596,
+     "mem_used": 39318,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31572,
+     "mem_used": 39294,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -52,7 +52,7 @@
      "idx": 1,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -73,7 +73,7 @@
      "idx": 4,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -119,9 +119,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 34116,
+     "mem_used": 34254,
      "mem_total": 49140,
-     "util": 45,
+     "util": 67,
      "owner": "ours"
     }
    ]
@@ -139,10 +139,10 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 22533,
+     "mem_used": 15,
      "mem_total": 49140,
      "util": 0,
-     "owner": "other"
+     "owner": "free"
     }
    ]
   }
@@ -209,7 +209,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 1500/5511 步,约 253 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
+   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 1650/5511 步,约 244 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
    "alerts": []
   },
   {
@@ -241,11 +241,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 15,
+    "done": 166,
     "total": 400,
     "unit": "局"
    },
-   "detail": "random8 cuda visible: False",
+   "detail": "2026-09-28T15:14:50+08:00 random8 done: rows=200",
    "alerts": []
   },
   {
@@ -317,5 +317,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 27.3
+ "collect_s": 25.1
 }
