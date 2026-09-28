@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 19:40 LA",
+ "generated_at": "2026-09-27 19:53 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31298,
+     "mem_used": 31776,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31298,
+     "mem_used": 31776,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31274,
+     "mem_used": 31752,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -197,22 +197,6 @@
    "alerts": []
   },
   {
-   "id": "cvpr3-adapt",
-   "repo": "CVPR2027-1",
-   "title": "CVPR-3 P-3-5 适配腿（K400 下载 → 6 run → 36 评测）",
-   "box": "3090",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 242,
-    "total": 242,
-    "unit": "包"
-   },
-   "detail": "K400 train 242/242 包 345G，下载完；chain_adapt 未在跑",
-   "alerts": []
-  },
-  {
    "id": "pheromones-resubmit",
    "repo": "AAAI2027-7",
    "title": "Pheromones 转投实验 E1–E4 + E1-RA（A800 CPU，GPU 隐藏）",
@@ -227,22 +211,6 @@
    },
    "detail": "E1 450/450 · E2 540/540 · E3 270/270 · E1-RA 630/630；09-27 已读出，转大修（REVISION_V2）",
    "alerts": []
-  },
-  {
-   "id": "pheromones-v2",
-   "repo": "AAAI2027-7",
-   "title": "Pheromones 大修 P1 内容消融 / P3 委托曲线（3090 GPU，Qwen2.5-3B）",
-   "box": "3090",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 660,
-    "total": 660,
-    "unit": "run"
-   },
-   "detail": "P1 600/600 · P3 60/60 · P2 无模型臂 500 行（CPU 已跑完）；0 个分片在跑",
-   "alerts": []
   }
  ],
  "alerts": [
@@ -250,5 +218,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-28T01:15:14+08:00 card7 worker exit (nothing left)"
  ],
- "collect_s": 53.2
+ "collect_s": 186.7
 }

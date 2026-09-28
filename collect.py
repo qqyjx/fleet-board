@@ -247,16 +247,26 @@ def camco_jobs():
     return jobs
 
 def cvpr3_job():
-    h, D = "3090", "/data/xyf/CVPR2027-1/data/k400_train_targz"
-    out = ssh(h, f"echo $(ls {D}/part_*.tar.gz 2>/dev/null | wc -l) $(ls {D}/download.done 2>/dev/null | wc -l) "
-                 f"$(ps -eo args | grep -c '^aria2c -i k400') $(ps -eo args | grep -c '^bash scripts/chain_adapt.sh') $(du -sh {D} | cut -f1)")
+    # 2026-09-27: after the K400 download the chain trains six runs (8-card DDP) and then 36 evals; show the chain's last
+    # log line and the current run's step and ETA from its training log.
+    h, R = "3090", "/data/xyf/CVPR2027-1"
+    out = ssh(h, f"tail -1 {R}/logs/adapt_chain.log; ls -t {R}/logs/adapt_train_*.log 2>/dev/null | head -1; "
+                 f"f=$(ls -t {R}/logs/adapt_train_*.log 2>/dev/null | head -1); [ -n \"$f\" ] && tail -c 600 $f | tr '\\r' '\\n' | grep step | tail -1; "
+                 f"echo @alive=$(pgrep -fc '^bash scripts/(chain_adapt|chain_resume_supervisor).sh'); ls {R}/stage/adapt/train_*.done 2>/dev/null | wc -l")
     if not out: return None
-    try: n, done, aria, chain, size = out.split()[:5]
-    except ValueError: return None
-    st = "running" if (aria != "0" or chain != "0") else "done"
-    det = f"K400 train {n}/242 包 {size}，" + ("下载中；" if aria != "0" else "下载完；") + ("chain_adapt 挂着（下载完 + 八卡空后自动开跑）" if chain != "0" else "chain_adapt 未在跑")
-    return {"id": "cvpr3-adapt", "repo": "CVPR2027-1", "title": "CVPR-3 P-3-5 适配腿（K400 下载 → 6 run → 36 评测）", "box": h, "cards": [],
-            "kind": "gen", "status": st, "progress": {"done": int(n), "total": 242, "unit": "包"}, "detail": det, "alerts": []}
+    lines = out.strip().splitlines()
+    alive = next((l.split("=", 1)[1] for l in lines if l.startswith("@alive=")), "0")
+    ndone = int(lines[-1]) if lines[-1].strip().isdigit() else 0
+    last = lines[0].strip() if lines else ""
+    step = next((l for l in lines if " step " in l), "")
+    m = re.search(r"step (\d+)/(\d+).*eta (\d+) min", step)
+    run = next((l.rsplit("adapt_train_", 1)[1].replace(".log", "") for l in lines if "adapt_train_" in l), "")
+    det = f"训练 run {ndone}/6 已完成;当前 {run}" + (f" 第 {m.group(1)}/{m.group(2)} 步,约 {m.group(3)} 分钟" if m else "") + f";链日志:{last[-80:]}"
+    return {"id": "cvpr3-adapt", "repo": "CVPR2027-1", "title": "CVPR-3 P-3-5 适配腿(6 个 8 卡训练 run → 36 评测)", "box": h,
+            "cards": [], "kind": "gen", "status": "running" if alive != "0" else "done",
+            "progress": {"done": ndone, "total": 6, "unit": "run"}, "detail": det,
+            "alerts": [] if alive != "0" or ndone == 6 else ["链与监护脚本都不在跑"]}
+
 
 def pheromones_job():
     h, R = "A800", "/data0/xyf/AAAI2027-7/results/resubmit"
