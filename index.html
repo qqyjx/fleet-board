@@ -10,7 +10,7 @@
 <script>try{if(localStorage.getItem('fb-theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
 <style>
 :root{
-  --bg:#0B0F16; --panel:#111823; --sunk:#0E141D; --ink:#E6EBF2; --ink2:#A2ADBC; --ink3:#6E7A8C; --line:#1D2633; --line2:#2A3545;
+  --bg:#0B0F16; --panel:#111823; --sunk:#0E141D; --ink:#E6EBF2; --ink2:#A2ADBC; --ink3:#8592A5; --line:#1D2633; --line2:#2A3545;
   --ours:#4CC6E8; --ours-bg:#0E2833; --other:#5B6778; --other-bg:#1A212C; --free:#3DD68C; --free-bg:#0F2A1F;
   --warn:#F0AE55; --warn-bg:#2B2012; --bad:#F2687A; --bad-bg:#33161C;
   --s1:#4CC6E8; --s2:#F0AE55; --s3:#3DD68C; --s4:#A78BFA; --s5:#F472B6; --s6:#7DD3FC; --muted:#3A4555;
@@ -18,7 +18,7 @@
   color-scheme:dark;
 }
 :root[data-theme="light"]{
-  --bg:#F5F7FA; --panel:#FFFFFF; --sunk:#EEF1F5; --ink:#0D1421; --ink2:#4A5568; --ink3:#7D8898; --line:#E1E6ED; --line2:#CFD6E0;
+  --bg:#F5F7FA; --panel:#FFFFFF; --sunk:#EEF1F5; --ink:#0D1421; --ink2:#4A5568; --ink3:#5F6B7D; --line:#E1E6ED; --line2:#CFD6E0;
   --ours:#0A7C9E; --ours-bg:#E6F4F8; --other:#9AA4B2; --other-bg:#EEF1F5; --free:#138A55; --free-bg:#E3F4EB;
   --warn:#B0620C; --warn-bg:#FCF0DF; --bad:#C42F45; --bad-bg:#FBE5E8;
   --s1:#0A7C9E; --s2:#D9822B; --s3:#2E9B6A; --s4:#7C5CD6; --s5:#CC3F7A; --s6:#2B8FD6; --muted:#C3CAD4;
@@ -30,7 +30,10 @@ body{padding:0 16px 40px;max-width:1360px;margin:0 auto}
 .mono{font-family:var(--mono)}
 a{color:var(--ours)}
 
-header{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:16px 0 14px;border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin:0 -16px;padding:11px 16px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px)}
+nav{display:flex;gap:16px;margin-left:8px;font:12px var(--mono)}
+nav a{color:var(--ink3);text-decoration:none} nav a:hover{color:var(--ink)} nav a b{font-weight:400;color:var(--ours);margin-right:5px}
+section{scroll-margin-top:56px}
 .brand{display:flex;align-items:center;gap:9px;font:500 15px var(--mono);letter-spacing:.2px}
 .brand i{width:9px;height:9px;background:var(--ours)}
 .live{display:flex;align-items:center;gap:8px;font:12px var(--mono);color:var(--ink2)}
@@ -40,6 +43,7 @@ header{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:16px
 .theme{margin-left:auto;font:12px var(--mono);color:var(--ink2);background:none;border:1px solid var(--line2);border-radius:4px;padding:4px 10px;cursor:pointer}
 .theme:hover{color:var(--ink);border-color:var(--ink3)}
 
+.cap{display:flex;height:4px;gap:2px;margin-top:8px}.cap i{display:block;height:100%;border-radius:2px}
 .kpis{display:grid;grid-template-columns:repeat(5,1fr);margin-top:16px;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
 .kpi{padding:12px 16px}
 .kpi+.kpi{border-left:1px solid var(--line)}
@@ -71,7 +75,9 @@ h2::after{content:"";flex:1;height:1px;background:var(--line)}
 .gpu.ours .ub i{background:var(--ours)} .gpu.free .ub i{background:var(--free)}
 .gpu .gm{color:var(--ink3);font-size:10px}
 .gpu.err .gh span{color:var(--bad)}
-.unreach{margin-top:10px;padding:10px;border:1px dashed var(--line2);border-radius:3px;color:var(--ink3);font:12px var(--mono);text-align:center}
+.unreach{margin-top:8px;color:var(--bad);font:12px var(--mono)}
+.box.off{background:transparent;border-style:dashed}
+.box.off .name b{color:var(--ink2)}
 .sys{display:grid;grid-template-columns:auto 1fr auto;gap:3px 8px;align-items:center;margin-top:10px;font:11px var(--mono);color:var(--ink3)}
 .sys .sb{height:3px;background:var(--line);border-radius:2px;overflow:hidden}
 .sys .sb i{display:block;height:100%;background:var(--ink3)}
@@ -84,7 +90,11 @@ table{width:100%;border-collapse:collapse}
 th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 th{font:11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);font-weight:400;background:var(--sunk)}
 tr:last-child td{border-bottom:0}
-tr.done td{opacity:.62}
+tr.done td{color:var(--ink2)} tr.done b{font-weight:400}
+table:not(.show-done) tr.done{display:none}
+tr.grp td{padding:7px 12px;background:var(--sunk);font:12px var(--mono);color:var(--ink2);cursor:pointer;user-select:none}
+tr.grp td:hover{color:var(--ink)} tr.grp .ar{display:inline-block;width:14px;color:var(--ours)}
+table.show-done tr.grp .ar{transform:rotate(90deg)}
 .pill{display:inline-flex;align-items:center;gap:6px;padding:1px 7px;border-radius:3px;font:11px var(--mono);border:1px solid;white-space:nowrap}
 .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
 .pill.running{color:var(--ours);border-color:var(--ours);background:var(--ours-bg)}
@@ -99,15 +109,18 @@ tr.done td{opacity:.62}
 .where{font:12px var(--mono);color:var(--ink2);white-space:nowrap}
 .repo{font:11px var(--mono);color:var(--ink3);margin-top:2px}
 .detail{color:var(--ink2);font-size:12px}
+td b{font-weight:500}
 
 .alerts{display:flex;flex-direction:column;gap:6px}
-.alert{background:var(--bad-bg);color:var(--bad);border:1px solid var(--line);border-left:2px solid var(--bad);padding:7px 10px;border-radius:3px;font:12px var(--mono);word-break:break-all}
-.alert.ok{background:var(--free-bg);color:var(--free);border-left-color:var(--free)}
+.alert{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-left:2px solid var(--bad);padding:7px 10px;border-radius:3px;font:12px var(--mono);word-break:break-all}
+.alert.ok{color:var(--free);border-left-color:var(--free)}
 
 .charts{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 .chart{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px 12px 6px}
+.clegend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:0 0 10px;font:11px var(--mono);color:var(--ink2)}
+.clegend i{display:inline-block;width:10px;height:3px;margin-right:6px;vertical-align:3px}
 .chart h3{margin:0 0 4px;font:12px var(--mono);font-weight:400;color:var(--ink2)}
-.chart .c{position:relative;height:230px}
+.chart .c{position:relative;height:200px}
 .ladder{display:grid;grid-template-columns:auto repeat(6,1fr);gap:4px;font:12px var(--mono);max-width:600px}
 .ladder div{padding:6px 4px;text-align:center;border-radius:3px;background:var(--sunk);border:1px solid var(--line);color:var(--ink3)}
 .ladder .h{background:none;border-color:transparent;color:var(--ink3);font-size:11px}
@@ -116,30 +129,44 @@ tr.done td{opacity:.62}
 .foot{margin-top:28px;padding-top:12px;border-top:1px solid var(--line);color:var(--ink3);font:11px var(--mono)}
 @media (max-width:720px){ .kpis{grid-template-columns:repeat(3,1fr)} .kpi:nth-child(4){border-left:0} .kpi:nth-child(n+4){border-top:1px solid var(--line)} }
 @media (max-width:480px){ .kpis{grid-template-columns:1fr 1fr} .kpi:nth-child(odd){border-left:0} .kpi:nth-child(4){border-left:1px solid var(--line)} .kpi:nth-child(n+3){border-top:1px solid var(--line)} .chart .c{height:170px} .grid{grid-template-columns:1fr} }
+@media (max-width:720px){
+  nav{display:none}
+  .tw{border:0;background:none;overflow:visible}
+  table,tbody{display:block} thead{display:none}
+  tr:not(.grp){display:grid;grid-template-columns:1fr auto;gap:5px 10px;padding:10px 12px;margin-bottom:8px;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+  tr:not(.grp) td{display:block;padding:0;border:0}
+  tr td:nth-child(1){grid-column:1;grid-row:1} tr td:nth-child(3){grid-column:2;grid-row:1}
+  tr td:nth-child(2){grid-column:1/-1;grid-row:2} tr td:nth-child(4){grid-column:1/-1;grid-row:3} tr td:nth-child(5){grid-column:1/-1;grid-row:4}
+  tr.grp{display:block;margin-bottom:8px} tr.grp td{display:block;border:1px solid var(--line);border-radius:6px}
+  .bar{min-width:0}
+}
 </style>
 </head>
 <body>
 <header>
   <div class="brand"><i></i>fleet-board</div>
   <div class="live" id="live"><span class="dot"></span><span id="stamp">加载中…</span></div>
+  <nav><a href="#s1"><b>01</b>卡</a><a href="#s2"><b>02</b>作业</a><a href="#s3"><b>03</b>曲线</a><a href="#s4"><b>04</b>告警</a></nav>
   <button class="theme" id="theme" type="button">light</button>
 </header>
 
 <div class="kpis" id="kpis"></div>
+<div class="cap" id="cap" title="卡占用比例"></div>
 
-<section>
+<section id="s1">
   <h2><span class="ix">01</span>卡占用</h2>
   <div class="grid" id="boxes"></div>
   <div class="legend"><span><i style="background:var(--ours)"></i>我们的作业</span><span><i style="background:var(--other)"></i>他人占用</span><span><i style="background:var(--free)"></i>空闲</span><span>条 = 利用率 · 下行 = 显存已用 / 总量</span></div>
 </section>
 
-<section>
+<section id="s2">
   <h2><span class="ix">02</span>作业</h2>
   <div class="tw"><table id="jobs"><thead><tr><th>作业</th><th>机器 / 卡</th><th>状态</th><th>进度</th><th>当前</th></tr></thead><tbody></tbody></table></div>
 </section>
 
-<section>
+<section id="s3">
   <h2><span class="ix">03</span>WWW stage7 训练曲线（GRPO，六臂修正版；灰线为 T0 三十格旧臂）</h2>
+  <div class="clegend" id="clegend"></div>
   <div class="charts">
     <div class="chart"><h3>reward mean</h3><div class="c"><canvas id="c_reward"></canvas></div></div>
     <div class="chart"><h3>response length (tokens)</h3><div class="c"><canvas id="c_resp"></canvas></div></div>
@@ -148,7 +175,7 @@ tr.done td{opacity:.62}
   </div>
 </section>
 
-<section>
+<section id="s4">
   <h2><span class="ix">04</span>告警</h2>
   <div class="alerts" id="alerts"></div>
 </section>
@@ -184,17 +211,23 @@ function render(f,curves){
   const running=f.jobs.filter(j=>j.status==='running').length;
   $('#kpis').innerHTML=[['ours','我们的卡',ours],['free','空闲',free],['','他人占用',other],['','在跑作业',running],[f.alerts.length?'bad':'','告警',f.alerts.length]]
     .map(([c,l,v])=>`<div class="kpi ${c}"><div class="v">${v}</div><div class="l">${l}</div></div>`).join('');
-  $('#boxes').innerHTML=f.boxes.map(b=>{
+  const tot=ours+free+other||1;
+  $('#cap').innerHTML=[['--ours',ours],['--other',other],['--free',free]].map(([c,n])=>`<i style="flex:${n};background:var(${c})"></i>`).join('');
+  const bx=f.boxes.map((b,i)=>[b,i]).sort((a,b)=>(!a[0].reachable-!b[0].reachable)||a[1]-b[1]).map(x=>x[0]);
+  $('#boxes').innerHTML=bx.map(b=>{
     const cards=b.cards.map(c=>{const err=c.util<0, u=err?0:c.util;
       return `<div class="gpu ${c.owner}${err?' err':''}"><div class="gh"><b>${c.idx}</b><span>${err?'ERR':u+'%'}</span></div><div class="ub"><i style="width:${u}%"></i></div><div class="gm">${Math.round(c.mem_used/1024)}${c.mem_total?'/'+Math.round(c.mem_total/1024):''}G</div></div>`;}).join('');
     const s=b.sys, load=s?Math.min(100,100*s.load/s.cores):0, mem=s?100*(s.mem_total-s.mem_avail)/s.mem_total:0;
-    return `<div class="box"><div class="name"><b>${b.name}</b><span class="st ${b.reachable?'up':'down'}">${b.reachable?'online':'不可达'}</span></div><div class="lab">${b.label}</div>`+
-      (b.reachable?`<div class="gpus">${cards}</div>`:`<div class="unreach">本轮采集失败</div>`)+
+    return `<div class="box${b.reachable?'':' off'}"><div class="name"><b>${b.name}</b><span class="st ${b.reachable?'up':'down'}">${b.reachable?'online':'不可达'}</span></div><div class="lab">${b.label}</div>`+
+      (b.reachable?`<div class="gpus">${cards}</div>`:`<div class="unreach">本轮采集失败 · 沿用上次快照</div>`)+
       (s?`<div class="sys"><span>CPU</span><div class="sb${load>85?' hot':''}"><i style="width:${load}%"></i></div><span>${s.load.toFixed(0)} / ${s.cores} 核</span><span>RAM</span><div class="sb${mem>85?' hot':''}"><i style="width:${mem}%"></i></div><span>可用 ${s.mem_avail} / ${s.mem_total} G</span></div>`:'')+`</div>`;}).join('');
   const jobs=f.jobs.map((j,i)=>[j,i]).sort((a,b)=>((ORDER[a[0].status]??1)-(ORDER[b[0].status]??1))||a[1]-b[1]).map(x=>x[0]);
-  $('#jobs tbody').innerHTML=jobs.map(j=>{const p=j.progress; const pct=p&&p.total?Math.min(100,100*p.done/p.total):0;
+  const nd=jobs.filter(j=>j.status==='done').length, firstDone=jobs.findIndex(j=>j.status==='done');
+  const jrow=j=>{const p=j.progress; const pct=p&&p.total?Math.min(100,100*p.done/p.total):0;
     return `<tr class="${j.status}"><td><b>${j.title}</b><div class="repo">${j.repo}</div></td><td class="where">${j.box}${j.cards.length?' / 卡 '+j.cards.join(','):j.cpu?' / '+j.cpu:''}</td><td><span class="pill ${j.status}">${j.status}</span></td>
-    <td><span class="num">${p?p.done+' / '+p.total+' '+p.unit:''}</span><div class="bar ${j.status}"><i style="width:${pct}%"></i></div></td><td class="detail">${j.detail||''}</td></tr>`;}).join('');
+    <td><span class="num">${p?p.done+' / '+p.total+' '+p.unit:''}</span><div class="bar ${j.status}"><i style="width:${pct}%"></i></div></td><td class="detail">${j.detail||''}</td></tr>`;};
+  $('#jobs tbody').innerHTML=jobs.map((j,i)=>(i===firstDone&&nd?`<tr class="grp" id="grp"><td colspan="5"><span class="ar">▸</span>已完成 ${nd} 项 · 点击${$('#jobs').classList.contains('show-done')?'收起':'展开'}</td></tr>`:'')+jrow(j)).join('');
+  const g=$('#grp'); if(g) g.onclick=()=>{$('#jobs').classList.toggle('show-done'); render(...last);};
   $('#alerts').innerHTML=f.alerts.length?f.alerts.map(a=>`<div class="alert">${a}</div>`).join(''):`<div class="alert ok">无告警</div>`;
   // ladder grid
   const lad=f.jobs.find(j=>j.id==='iclr9-ladder');
@@ -212,8 +245,9 @@ function render(f,curves){
       const main=n.includes('envonly'); const col=main?css(SERIES[ci++%SERIES.length]):css('--muted');
       ds.push({label:main?n.replace('-full','').replace('-envonly','').replace('seed','s'):n.replace('-full',''),main,data:pts,borderColor:col,backgroundColor:col,borderWidth:main?2:1,pointRadius:0,tension:.2,order:main?0:1});});
     if(charts[id])charts[id].destroy();
+    if(id==='c_reward') $('#clegend').innerHTML=ds.filter(d=>d.main).map(d=>`<span><i style="background:${d.borderColor}"></i>${d.label}</span>`).join('')+`<span><i style="background:var(--muted)"></i>T0 旧臂</span>`;
     charts[id]=new Chart($('#'+id),{type:'line',data:{datasets:ds},options:{animation:false,parsing:false,responsive:true,maintainAspectRatio:false,
-      interaction:{mode:'nearest',intersect:false},plugins:{legend:{display:true,position:'bottom',labels:{boxWidth:8,boxHeight:8,padding:8,font:{family:css('--mono'),size:10},color:css('--ink2'),filter:(i,d)=>d.datasets[i.datasetIndex].main}}},
+      interaction:{mode:'nearest',intersect:false},plugins:{legend:{display:false}},
       scales:{x:{type:'linear',title:{display:true,text:'step',color:css('--ink3')},ticks:tick,grid:{color:css('--line')},border:{color:css('--line2')}},y:{ticks:tick,grid:{color:css('--line')},border:{color:css('--line2')}}}}});};
   mk('c_reward','reward'); mk('c_resp','resp_len'); mk('c_ent','entropy'); mk('c_kl','kl');
 }
