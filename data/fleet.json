@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 19:00 LA",
+ "generated_at": "2026-09-27 19:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -52,7 +52,7 @@
      "idx": 1,
      "mem_used": 12326,
      "mem_total": 24576,
-     "util": 57,
+     "util": 90,
      "owner": "ours"
     },
     {
@@ -80,7 +80,7 @@
      "idx": 5,
      "mem_used": 14672,
      "mem_total": 24576,
-     "util": 100,
+     "util": 96,
      "owner": "ours"
     },
     {
@@ -139,9 +139,9 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 21275,
+     "mem_used": 22503,
      "mem_total": 49140,
-     "util": 53,
+     "util": 90,
      "owner": "other"
     }
    ]
@@ -227,22 +227,6 @@
    },
    "detail": "E1 450/450 · E2 540/540 · E3 270/270 · E1-RA 630/630；09-27 已读出，转大修（REVISION_V2）",
    "alerts": []
-  },
-  {
-   "id": "pheromones-v2",
-   "repo": "AAAI2027-7",
-   "title": "Pheromones 大修 P1 内容消融 / P3 委托曲线（3090 GPU，Qwen2.5-3B）",
-   "box": "3090",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 660,
-    "total": 660,
-    "unit": "run"
-   },
-   "detail": "P1 600/600 · P3 60/60 · P2 无模型臂 500 行（CPU 已跑完）；0 个分片在跑",
-   "alerts": []
   }
  ],
  "alerts": [
@@ -250,5 +234,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-28T01:15:14+08:00 card7 worker exit (nothing left)"
  ],
- "collect_s": 28.4
+ "collect_s": 31.1
 }
