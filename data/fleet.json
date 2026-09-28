@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 12:20 LA",
+ "generated_at": "2026-09-28 12:30 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39358,
+     "mem_used": 31976,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39358,
+     "mem_used": 31976,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39334,
+     "mem_used": 31952,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -31,15 +31,15 @@
      "idx": 3,
      "mem_used": 69557,
      "mem_total": 81920,
-     "util": 97,
+     "util": 99,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 52.95,
+    "load": 50.23,
     "mem_total": 503,
-    "mem_avail": 312
+    "mem_avail": 309
    }
   },
   {
@@ -58,7 +58,7 @@
      "idx": 1,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -72,7 +72,7 @@
      "idx": 3,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -106,9 +106,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 167.4,
+    "load": 161.35,
     "mem_total": 125,
-    "mem_avail": 33
+    "mem_avail": 32
    }
   },
   {
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 3.26,
+    "load": 3.18,
     "mem_total": 188,
     "mem_avail": 167
    }
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.04,
+    "load": 0.4,
     "mem_total": 251,
     "mem_avail": 230
    }
@@ -235,7 +235,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 3/6 已完成;当前 ctrl_seed1 第 1450/5511 步,约 233 分钟;链日志:[2026-09-29 01:43:57] START train ctrl_seed1",
+   "detail": "训练 run 3/6 已完成;当前 ctrl_seed1 第 1600/5511 步,约 225 分钟;链日志:[2026-09-29 01:43:57] START train ctrl_seed1",
    "alerts": []
   },
   {
@@ -270,7 +270,7 @@
     "total": 28,
     "unit": "格"
    },
-   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 140 分钟，约 09-29 01:11 LA 跑完",
+   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 140 分钟，约 09-29 01:21 LA 跑完",
    "alerts": []
   },
   {
@@ -283,11 +283,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 20,
+    "done": 23,
     "total": 36,
     "unit": "格"
    },
-   "detail": "2 个进程 · 约 14 核 · 网格 20/36 格",
+   "detail": "2 个进程 · 约 14 核 · 网格 23/36 格",
    "alerts": []
   },
   {
@@ -394,5 +394,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 33.8
+ "collect_s": 38.0
 }
