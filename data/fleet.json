@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 06:00 LA",
+ "generated_at": "2026-09-28 06:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39478,
+     "mem_used": 39298,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39478,
+     "mem_used": 39298,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39454,
+     "mem_used": 39274,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -37,9 +37,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 35.29,
+    "load": 33.99,
     "mem_total": 503,
-    "mem_avail": 295
+    "mem_avail": 340
    }
   },
   {
@@ -51,14 +51,14 @@
      "idx": 0,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -86,7 +86,7 @@
      "idx": 5,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -106,9 +106,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 195.14,
+    "load": 188.41,
     "mem_total": 125,
-    "mem_avail": 31
+    "mem_avail": 30
    }
   },
   {
@@ -132,15 +132,15 @@
     },
     {
      "idx": 1,
-     "mem_used": 18064,
+     "mem_used": 18084,
      "mem_total": 49140,
-     "util": 64,
+     "util": 71,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 112,
-    "load": 2.41,
+    "load": 2.31,
     "mem_total": 188,
     "mem_avail": 168
    }
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.22,
+    "load": 0.18,
     "mem_total": 251,
     "mem_avail": 233
    }
@@ -235,7 +235,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 2/6 已完成;当前 multi_seed1 第 1100/5511 步,约 241 分钟;链日志:[2026-09-28 19:46:11] START train multi_seed1",
+   "detail": "训练 run 2/6 已完成;当前 multi_seed1 第 1300/5511 步,约 230 分钟;链日志:[2026-09-28 19:46:11] START train multi_seed1",
    "alerts": []
   },
   {
@@ -360,5 +360,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 31.6
+ "collect_s": 30.9
 }
