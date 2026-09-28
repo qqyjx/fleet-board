@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 00:30 LA",
+ "generated_at": "2026-09-28 00:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39318,
+     "mem_used": 39478,
      "mem_total": 81920,
-     "util": 99,
+     "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39318,
+     "mem_used": 39478,
      "mem_total": 81920,
-     "util": 98,
+     "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39294,
+     "mem_used": 39454,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -31,7 +31,7 @@
      "idx": 3,
      "mem_used": 69517,
      "mem_total": 81920,
-     "util": 99,
+     "util": 98,
      "owner": "ours"
     }
    ]
@@ -43,58 +43,58 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 11836,
+     "mem_used": 12310,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 11836,
+     "mem_used": 12308,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 11836,
+     "mem_used": 12308,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 11838,
+     "mem_used": 12310,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 4,
-     "mem_used": 11836,
+     "mem_used": 12308,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 5,
-     "mem_used": 14186,
+     "mem_used": 14658,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 6,
-     "mem_used": 11838,
+     "mem_used": 12310,
      "mem_total": 24576,
-     "util": 82,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 7,
-     "mem_used": 12124,
+     "mem_used": 12596,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     }
    ]
@@ -121,7 +121,7 @@
      "idx": 1,
      "mem_used": 34254,
      "mem_total": 49140,
-     "util": 96,
+     "util": 82,
      "owner": "ours"
     }
    ]
@@ -209,7 +209,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 1800/5511 步,约 233 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
+   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
    "alerts": []
   },
   {
@@ -241,7 +241,7 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 229,
+    "done": 282,
     "total": 400,
     "unit": "局"
    },
@@ -317,5 +317,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 25.3
+ "collect_s": 26.0
 }
