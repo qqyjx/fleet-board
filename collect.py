@@ -354,6 +354,38 @@ def dcas_e1_job():
             "cards": [1] if status == "running" else [], "kind": "gen", "status": status,
             "progress": {"done": done, "total": 27, "unit": "步"}, "detail": last[:110], "alerts": [last[:110]] if status == "failed" else []}
 
+def cpu_ctrl_job():
+    # 2026-09-28: a private CPU batch on A800 (28 tasks, 4 workers x 8 cores, GPUs hidden). Read through the neutral link
+    # ~/fleet_jobs/cpu-ctrl-1; count markers and processes only, never task logs or result files (they hold metrics)
+    h = "A800"
+    out = ssh(h, "D=~/fleet_jobs/cpu-ctrl-1; R=$(readlink -f $D/../..); P=$D/progress.log; "
+                 "wc -l < $D/tasks.txt; ls $D/*.json 2>/dev/null | wc -l; grep -cE ' END .* rc=[1-9]' $P; grep -c ALL_DONE $P; "
+                 "date -d \"$(head -1 $P | cut -c1-19)\" +%s; date +%s; "
+                 "pids=$(for p in $(pgrep -u xyf python); do [ \"$(readlink /proc/$p/cwd)\" = \"$R\" ] && echo $p; done); "
+                 "echo $pids | wc -w; [ -n \"$pids\" ] && ps -o %cpu= -p $(echo $pids | tr ' ' ,) | awk '{s+=$1} END {print int(s/100+0.5)}' || echo 0")
+    if not out: return None
+    try: total, done, bad, fin, t0, now, procs, cores = (int(x) for x in out.split()[:8])
+    except ValueError: return None
+    status = "failed" if bad else ("done" if fin else ("running" if procs else "failed"))
+    start = dt.datetime.fromtimestamp(t0, LA).strftime("%m-%d %H:%M LA")
+    if status == "running":
+        eta = (" · 按已完成格外推 " + dt.datetime.fromtimestamp(now + (now - t0) / done * (total - done), LA).strftime("%m-%d %H:%M LA") + " 跑完") if done else " · 首格未完成，暂无 ETA"
+        detail = f"{procs} 个进程 · 约 {cores} 核 · {start} 起跑{eta}"
+    else:
+        detail = f"{start} 起跑 · " + ("全部完成" if status == "done" else (f"{bad} 格 rc≠0" if bad else "进程已退出但没有 ALL_DONE"))
+    return {"id": "cpu-ctrl-1", "repo": "private", "title": "对照实验批 cpu-ctrl-1（A800 CPU，7 组 × 4 种子，GPU 已屏蔽）", "box": h,
+            "cards": [], "cpu": f"CPU {cores} 核" if procs else "CPU", "kind": "gen", "status": status,
+            "progress": {"done": done, "total": total, "unit": "格"}, "detail": detail, "alerts": [detail] if status == "failed" else []}
+
+def sysload(host):
+    # CPU side of each box, so GPU cards and CPU batches sit in one scheduling view (user 2026-09-28)
+    out = ssh(host, "nproc; cut -d' ' -f1 /proc/loadavg; free -g | awk '/^Mem:/{print $2, $7}'")
+    try:
+        cores, load, mt, ma = out.split()[:4]
+        return {"cores": int(cores), "load": float(load), "mem_total": int(mt), "mem_avail": int(ma)}
+    except (AttributeError, ValueError):
+        return None
+
 def status_job(host, path, repo, title, cards):
     out = ssh(host, f"tail -n 40 {path} 2>/dev/null")
     if not out or not out.strip(): return None
@@ -389,9 +421,10 @@ def main():
                         ("fuxin", "fuxin 4090 ×8 (48 GB, 公司)"), ("new105", "new105 4090D ×2 (48 GB, 公司)"), ("194-yyd", "194 4090D ×4 (48 GB, 公司)"),
                         ("4090-jm", "4090-jm ×1 (24 GB, 实验室 .176; yxy 在用, 不上)")):
         cards = gpus(name)
-        boxes.append({"name": name, "label": label, "reachable": cards is not None, "cards": cards or []})
+        boxes.append({"name": name, "label": label, "reachable": cards is not None, "cards": cards or [],
+                      "sys": sysload(name) if cards is not None else None})
     jobs.extend(camco_jobs())
-    for fn in (cvpr3_job, science32b_job, pheromones_d1_job, dcas_e1_job, pheromones_v3_job, pheromones_v2_job, pheromones_job):
+    for fn in (cvpr3_job, science32b_job, cpu_ctrl_job, pheromones_d1_job, dcas_e1_job, pheromones_v3_job, pheromones_v2_job, pheromones_job):
         j = fn()
         if j: jobs.append(j)
     # 2026-09-27: the jobs below all finished before 09-26 (WWW stage7, ICLR ladders, Science legs, ChronoCheck);

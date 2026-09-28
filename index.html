@@ -47,6 +47,7 @@ h2{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
 .card.free{background:var(--free-bg);color:var(--free);border-color:var(--free)}
 .card small{display:block;font-size:10px;opacity:.85}
 .unreach{color:var(--bad);font:12px var(--mono)}
+.sys{margin-top:6px;font:11px var(--mono);color:var(--ink3)}
 .legend{display:flex;gap:14px;font:11px var(--mono);color:var(--ink3);margin-top:8px}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
 table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden}
@@ -140,9 +141,9 @@ function render(f,curves){
   const running=f.jobs.filter(j=>j.status==='running').length;
   $('#kpis').innerHTML=`<span>我们的卡 <b>${ours}</b></span><span>空闲 <b>${free}</b></span><span>在跑作业 <b>${running}</b></span><span>告警 <b>${f.alerts.length}</b></span>`;
   $('#boxes').innerHTML=f.boxes.map(b=>`<div class="box"><div class="name"><b>${b.name}</b><span>${b.label}</span></div>`+
-    (b.reachable?`<div class="cards">${b.cards.map(c=>`<div class="card ${c.owner}">${c.idx}<small>${Math.round(c.mem_used/1024)}G·${c.util<0?'ERR':c.util+'%'}</small></div>`).join('')}</div>`:`<div class="unreach">不可达</div>`)+`</div>`).join('');
+    (b.reachable?`<div class="cards">${b.cards.map(c=>`<div class="card ${c.owner}">${c.idx}<small>${Math.round(c.mem_used/1024)}G·${c.util<0?'ERR':c.util+'%'}</small></div>`).join('')}</div>`:`<div class="unreach">不可达</div>`)+(b.sys?`<div class="sys">CPU 负载 ${b.sys.load.toFixed(0)} / ${b.sys.cores} 核 · 内存可用 ${b.sys.mem_avail} / ${b.sys.mem_total} G</div>`:'')+`</div>`).join('');
   $('#jobs tbody').innerHTML=f.jobs.map(j=>{const p=j.progress; const pct=p&&p.total?Math.min(100,100*p.done/p.total):0;
-    return `<tr><td><b>${j.title}</b><div class="detail">${j.repo}</div></td><td class="mono">${j.box} / ${j.cards.join(',')}</td><td><span class="pill ${j.status}">${j.status}</span></td>
+    return `<tr><td><b>${j.title}</b><div class="detail">${j.repo}</div></td><td class="mono">${j.box} / ${j.cards.length?j.cards.join(','):(j.cpu||'')}</td><td><span class="pill ${j.status}">${j.status}</span></td>
     <td><span class="num">${p?p.done+' / '+p.total+' '+p.unit:''}</span><div class="bar ${j.status}"><i style="width:${pct}%"></i></div></td><td class="detail">${j.detail||''}</td></tr>`;}).join('');
   $('#alerts').innerHTML=f.alerts.length?f.alerts.map(a=>`<div class="alert">${a}</div>`).join(''):`<div class="alert ok">无告警</div>`;
   // ladder grid
