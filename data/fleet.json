@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 05:39 LA",
+ "generated_at": "2026-09-28 05:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,23 +8,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39278,
+     "mem_used": 31436,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39278,
+     "mem_used": 31436,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39254,
+     "mem_used": 31412,
      "mem_total": 81920,
-     "util": 100,
+     "util": 80,
      "owner": "other"
     },
     {
@@ -37,9 +37,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 34.52,
+    "load": 35.14,
     "mem_total": 503,
-    "mem_avail": 325
+    "mem_avail": 342
    }
   },
   {
@@ -51,7 +51,7 @@
      "idx": 0,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -106,9 +106,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 168.77,
+    "load": 184.17,
     "mem_total": 125,
-    "mem_avail": 33
+    "mem_avail": 31
    }
   },
   {
@@ -134,13 +134,13 @@
      "idx": 1,
      "mem_used": 18064,
      "mem_total": 49140,
-     "util": 71,
+     "util": 65,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 112,
-    "load": 2.31,
+    "load": 2.14,
     "mem_total": 188,
     "mem_avail": 168
    }
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.16,
+    "load": 0.17,
     "mem_total": 251,
     "mem_avail": 233
    }
@@ -235,7 +235,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 2/6 已完成;当前 multi_seed1 第 700/5511 步,约 264 分钟;链日志:[2026-09-28 19:46:11] START train multi_seed1",
+   "detail": "训练 run 2/6 已完成;当前 multi_seed1 第 750/5511 步,约 261 分钟;链日志:[2026-09-28 19:46:11] START train multi_seed1",
    "alerts": []
   },
   {
@@ -360,5 +360,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 30.8
+ "collect_s": 29.0
 }
