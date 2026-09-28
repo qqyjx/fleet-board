@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 20:11 LA",
+ "generated_at": "2026-09-27 20:20 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,23 +8,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31556,
+     "mem_used": 39598,
      "mem_total": 81920,
-     "util": 100,
+     "util": 63,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31556,
+     "mem_used": 39598,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31532,
+     "mem_used": 39574,
      "mem_total": 81920,
-     "util": 100,
+     "util": 65,
      "owner": "other"
     },
     {
@@ -39,8 +39,65 @@
   {
    "name": "3090",
    "label": "3090 ×8 (24 GB, .110)",
-   "reachable": false,
-   "cards": []
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 12322,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "ours"
+    },
+    {
+     "idx": 1,
+     "mem_used": 12326,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "ours"
+    },
+    {
+     "idx": 2,
+     "mem_used": 12326,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "ours"
+    },
+    {
+     "idx": 3,
+     "mem_used": 12328,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "ours"
+    },
+    {
+     "idx": 4,
+     "mem_used": 12326,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "ours"
+    },
+    {
+     "idx": 5,
+     "mem_used": 14672,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "ours"
+    },
+    {
+     "idx": 6,
+     "mem_used": 12336,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "ours"
+    },
+    {
+     "idx": 7,
+     "mem_used": 12616,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "ours"
+    }
+   ]
   },
   {
    "name": "fuxin",
@@ -82,15 +139,79 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 18155,
+     "mem_used": 22381,
      "mem_total": 49140,
-     "util": 40,
+     "util": 89,
      "owner": "other"
     }
    ]
   }
  ],
  "jobs": [
+  {
+   "id": "camco-e3",
+   "repo": "AAAI2027-4",
+   "title": "CaMCo E3 梯度范数归一化 λ（9 个终格）",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 9,
+    "total": 9,
+    "unit": "格"
+   },
+   "detail": "09-27 读出：主判据 FAIL（Qwen2-VL CHAIR_s +4.04 pp，描述变长所致待 E7 确认）",
+   "alerts": []
+  },
+  {
+   "id": "camco-e4",
+   "repo": "AAAI2027-4",
+   "title": "CaMCo E4 数据规模 400/800/1500（24 个 CHAIR）",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 24,
+    "total": 24,
+    "unit": "文件"
+   },
+   "detail": "2026-09-27T21:33:29+08:00 [jobs] card6 JOBS_DONE mix800:0",
+   "alerts": []
+  },
+  {
+   "id": "camco-v2",
+   "repo": "AAAI2027-4",
+   "title": "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集）",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 38,
+    "total": 30,
+    "unit": "步"
+   },
+   "detail": "2026-09-28T01:15:14+08:00 card7 worker exit (nothing left)",
+   "alerts": []
+  },
+  {
+   "id": "cvpr3-adapt",
+   "repo": "CVPR2027-1",
+   "title": "CVPR-3 P-3-5 适配腿(6 个 8 卡训练 run → 36 评测)",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 0,
+    "total": 6,
+    "unit": "run"
+   },
+   "detail": "训练 run 0/6 已完成;当前 multi_seed0;链日志:ISOR up: waiting for torchrun 1611313 (multi_seed0); later runs use --prefetch 1",
+   "alerts": []
+  },
   {
    "id": "pheromones-resubmit",
    "repo": "AAAI2027-7",
@@ -106,12 +227,28 @@
    },
    "detail": "E1 450/450 · E2 540/540 · E3 270/270 · E1-RA 630/630；09-27 已读出，转大修（REVISION_V2）",
    "alerts": []
+  },
+  {
+   "id": "pheromones-v2",
+   "repo": "AAAI2027-7",
+   "title": "Pheromones 大修 P1 内容消融 / P3 委托曲线（3090 GPU，Qwen2.5-3B）",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 660,
+    "total": 660,
+    "unit": "run"
+   },
+   "detail": "P1 600/600 · P3 60/60 · P2 无模型臂 500 行（CPU 已跑完）；0 个分片在跑",
+   "alerts": []
   }
  ],
  "alerts": [
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
-  "3090 本轮采集失败：该机任务状态为上次快照，不作数",
-  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
+  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
+  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-28T01:15:14+08:00 card7 worker exit (nothing left)"
  ],
- "collect_s": 64.2
+ "collect_s": 38.6
 }
