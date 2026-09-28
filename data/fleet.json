@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 19:53 LA",
+ "generated_at": "2026-09-27 20:01 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,23 +8,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31776,
+     "mem_used": 29094,
      "mem_total": 81920,
-     "util": 100,
+     "util": 9,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31776,
+     "mem_used": 29094,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31752,
+     "mem_used": 29070,
      "mem_total": 81920,
-     "util": 100,
+     "util": 18,
      "owner": "other"
     },
     {
@@ -39,65 +39,8 @@
   {
    "name": "3090",
    "label": "3090 ×8 (24 GB, .110)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 12322,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 1,
-     "mem_used": 12326,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 2,
-     "mem_used": 12324,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 3,
-     "mem_used": 12326,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 4,
-     "mem_used": 12326,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 5,
-     "mem_used": 14672,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 6,
-     "mem_used": 12336,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 7,
-     "mem_used": 12614,
-     "mem_total": 24576,
-     "util": 0,
-     "owner": "other"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   },
   {
    "name": "fuxin",
@@ -149,54 +92,6 @@
  ],
  "jobs": [
   {
-   "id": "camco-e3",
-   "repo": "AAAI2027-4",
-   "title": "CaMCo E3 梯度范数归一化 λ（9 个终格）",
-   "box": "3090",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 9,
-    "total": 9,
-    "unit": "格"
-   },
-   "detail": "09-27 读出：主判据 FAIL（Qwen2-VL CHAIR_s +4.04 pp，描述变长所致待 E7 确认）",
-   "alerts": []
-  },
-  {
-   "id": "camco-e4",
-   "repo": "AAAI2027-4",
-   "title": "CaMCo E4 数据规模 400/800/1500（24 个 CHAIR）",
-   "box": "3090",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 24,
-    "total": 24,
-    "unit": "文件"
-   },
-   "detail": "2026-09-27T21:33:29+08:00 [jobs] card6 JOBS_DONE mix800:0",
-   "alerts": []
-  },
-  {
-   "id": "camco-v2",
-   "repo": "AAAI2027-4",
-   "title": "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集）",
-   "box": "3090",
-   "cards": [],
-   "kind": "gen",
-   "status": "failed",
-   "progress": {
-    "done": 38,
-    "total": 30,
-    "unit": "步"
-   },
-   "detail": "2026-09-28T01:15:14+08:00 card7 worker exit (nothing left)",
-   "alerts": []
-  },
-  {
    "id": "pheromones-resubmit",
    "repo": "AAAI2027-7",
    "title": "Pheromones 转投实验 E1–E4 + E1-RA（A800 CPU，GPU 隐藏）",
@@ -215,8 +110,8 @@
  ],
  "alerts": [
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
-  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
-  "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-28T01:15:14+08:00 card7 worker exit (nothing left)"
+  "3090 本轮采集失败：该机任务状态为上次快照，不作数",
+  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 186.7
+ "collect_s": 64.0
 }
