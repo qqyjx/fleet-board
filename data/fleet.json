@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 01:10 LA",
+ "generated_at": "2026-09-28 01:20 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39178,
+     "mem_used": 31576,
      "mem_total": 81920,
-     "util": 95,
+     "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39178,
+     "mem_used": 31576,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39154,
+     "mem_used": 31552,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -66,7 +66,7 @@
      "idx": 3,
      "mem_used": 12310,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -119,10 +119,10 @@
     },
     {
      "idx": 1,
-     "mem_used": 2819,
+     "mem_used": 33306,
      "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
+     "util": 100,
+     "owner": "ours"
     }
    ]
   },
@@ -209,7 +209,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 2250/5511 步,约 222 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
+   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 2400/5511 步,约 210 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
    "alerts": []
   },
   {
@@ -235,9 +235,11 @@
    "repo": "AAAI2027-7",
    "title": "Pheromones D1 禁 STAY 诊断：G4 解码门 + 7B 400 局（new105 卡 1）",
    "box": "new105",
-   "cards": [],
+   "cards": [
+    1
+   ],
    "kind": "gen",
-   "status": "done",
+   "status": "running",
    "progress": {
     "done": 400,
     "total": 400,
@@ -259,7 +261,7 @@
     "total": 27,
     "unit": "步"
    },
-   "detail": "装环境重试中（hf-mirror 的 xet 返回 401，改普通 HTTP 重下 Qwen）；之后门控等 D1 释放卡 1",
+   "detail": "2026-09-28T16:16:27+08:00 early7b b start dump_7b_s1",
    "alerts": []
   },
   {
@@ -315,5 +317,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 25.2
+ "collect_s": 25.9
 }
