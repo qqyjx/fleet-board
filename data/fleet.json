@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31896,
+     "mem_used": 31596,
      "mem_total": 81920,
-     "util": 100,
+     "util": 84,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31896,
+     "mem_used": 31596,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31872,
+     "mem_used": 31572,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -45,56 +45,56 @@
      "idx": 0,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 57,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 58,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 46,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 11838,
      "mem_total": 24576,
-     "util": 12,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 12,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 14186,
      "mem_total": 24576,
-     "util": 12,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 11838,
      "mem_total": 24576,
-     "util": 81,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 12124,
      "mem_total": 24576,
-     "util": 53,
+     "util": 100,
      "owner": "ours"
     }
    ]
@@ -119,9 +119,9 @@
     },
     {
      "idx": 1,
-     "mem_used": 33978,
+     "mem_used": 34116,
      "mem_total": 49140,
-     "util": 76,
+     "util": 45,
      "owner": "ours"
     }
    ]
@@ -141,7 +141,7 @@
      "idx": 0,
      "mem_used": 22533,
      "mem_total": 49140,
-     "util": 68,
+     "util": 0,
      "owner": "other"
     }
    ]
@@ -209,7 +209,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 1450/5511 步,约 257 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
+   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 1500/5511 步,约 253 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
    "alerts": []
   },
   {
@@ -231,6 +231,40 @@
    "alerts": []
   },
   {
+   "id": "pheromones-d1",
+   "repo": "AAAI2027-7",
+   "title": "Pheromones D1 禁 STAY 诊断：G4 解码门 + 7B 400 局（new105 卡 1）",
+   "box": "new105",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 15,
+    "total": 400,
+    "unit": "局"
+   },
+   "detail": "random8 cuda visible: False",
+   "alerts": []
+  },
+  {
+   "id": "dcas-e1",
+   "repo": "AAAI2027-1",
+   "title": "DCAS E1：9 个 dump + 18 个判分（new105 卡 1，装环境后接 D1）",
+   "box": "new105",
+   "cards": [],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 0,
+    "total": 27,
+    "unit": "步"
+   },
+   "detail": "装环境重试中（hf-mirror 的 xet 返回 401，改普通 HTTP 重下 Qwen）；之后门控等 D1 释放卡 1",
+   "alerts": []
+  },
+  {
    "id": "pheromones-v3",
    "repo": "AAAI2027-7",
    "title": "Pheromones V3 相对方向信息素：7B 评测 600 局（new105 卡 1）",
@@ -239,11 +273,11 @@
    "kind": "gen",
    "status": "done",
    "progress": {
-    "done": 610,
+    "done": 600,
     "total": 600,
     "unit": "局"
    },
-   "detail": "2026-09-28T14:26:43+08:00 eval done: rows=600",
+   "detail": "09-27 23:39 LA 读出：V3-P1/P2 均 FAIL，走路线 B（REVISION_V3.md）",
    "alerts": []
   },
   {
@@ -283,5 +317,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 25.0
+ "collect_s": 27.3
 }
