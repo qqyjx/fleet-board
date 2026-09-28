@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 23:40 LA",
+ "generated_at": "2026-09-27 23:50 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39738,
+     "mem_used": 28976,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39738,
+     "mem_used": 28976,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39714,
+     "mem_used": 28952,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -52,7 +52,7 @@
      "idx": 1,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -73,7 +73,7 @@
      "idx": 4,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -87,7 +87,7 @@
      "idx": 6,
      "mem_used": 11838,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -112,7 +112,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 40283,
+     "mem_used": 40285,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
@@ -135,16 +135,8 @@
   {
    "name": "4090-jm",
    "label": "4090-jm ×1 (24 GB, 实验室 .176; yxy 在用, 不上)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 22533,
-     "mem_total": 49140,
-     "util": 87,
-     "owner": "other"
-    }
-   ]
+   "reachable": false,
+   "cards": []
   }
  ],
  "jobs": [
@@ -209,7 +201,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 1000/5511 步,约 289 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
+   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 1150/5511 步,约 279 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
    "alerts": []
   },
   {
@@ -281,7 +273,8 @@
  ],
  "alerts": [
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
+  "4090-jm 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 23.7
+ "collect_s": 23.2
 }
