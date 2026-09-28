@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 21:00 LA",
+ "generated_at": "2026-09-27 21:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31256,
+     "mem_used": 31316,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31256,
+     "mem_used": 31316,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31232,
+     "mem_used": 31292,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 3,
-     "mem_used": 67977,
+     "mem_used": 69517,
      "mem_total": 81920,
      "util": 99,
      "owner": "ours"
@@ -45,49 +45,49 @@
      "idx": 0,
      "mem_used": 11846,
      "mem_total": 24576,
-     "util": 100,
+     "util": 2,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 11846,
      "mem_total": 24576,
-     "util": 100,
+     "util": 5,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 11846,
      "mem_total": 24576,
-     "util": 100,
+     "util": 7,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 11846,
      "mem_total": 24576,
-     "util": 100,
+     "util": 13,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 11858,
      "mem_total": 24576,
-     "util": 0,
+     "util": 12,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 11858,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 15832,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -209,7 +209,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 0/6 已完成;当前 multi_seed0 第 4250/5511 步,约 10 分钟;链日志:[2026-09-28 11:26:57] START train multi_seed0",
+   "detail": "训练 run 0/6 已完成;当前 multi_seed0 第 4400/5511 步,约 10 分钟;链日志:[2026-09-28 11:26:57] START train multi_seed0",
    "alerts": []
   },
   {
@@ -250,5 +250,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CaMCo 大修 E6（CaMCo+PAI 叠加）/ E7（Qwen 控长度留出集） 失败：2026-09-28T01:15:14+08:00 card7 worker exit (nothing left)"
  ],
- "collect_s": 27.3
+ "collect_s": 27.8
 }
