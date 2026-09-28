@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 23:00 LA",
+ "generated_at": "2026-09-27 23:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39438,
+     "mem_used": 39618,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39438,
+     "mem_used": 39618,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39414,
+     "mem_used": 39594,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -45,56 +45,56 @@
      "idx": 0,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 19,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 0,
+     "util": 21,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 14,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 11838,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 14186,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 11838,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 12124,
      "mem_total": 24576,
-     "util": 100,
+     "util": 16,
      "owner": "ours"
     }
    ]
@@ -121,7 +121,7 @@
      "idx": 1,
      "mem_used": 33326,
      "mem_total": 49140,
-     "util": 94,
+     "util": 100,
      "owner": "ours"
     }
    ]
@@ -139,9 +139,9 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 22283,
+     "mem_used": 22455,
      "mem_total": 49140,
-     "util": 0,
+     "util": 16,
      "owner": "other"
     }
    ]
@@ -209,7 +209,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 350/5511 步,约 327 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
+   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 500/5511 步,约 326 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
    "alerts": []
   },
   {
