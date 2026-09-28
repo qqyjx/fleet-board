@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 00:20 LA",
+ "generated_at": "2026-09-28 00:30 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,14 +10,14 @@
      "idx": 0,
      "mem_used": 39318,
      "mem_total": 81920,
-     "util": 100,
+     "util": 99,
      "owner": "other"
     },
     {
      "idx": 1,
      "mem_used": 39318,
      "mem_total": 81920,
-     "util": 100,
+     "util": 98,
      "owner": "other"
     },
     {
@@ -52,14 +52,14 @@
      "idx": 1,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -80,14 +80,14 @@
      "idx": 5,
      "mem_used": 14186,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 11838,
      "mem_total": 24576,
-     "util": 100,
+     "util": 82,
      "owner": "ours"
     },
     {
@@ -121,7 +121,7 @@
      "idx": 1,
      "mem_used": 34254,
      "mem_total": 49140,
-     "util": 67,
+     "util": 96,
      "owner": "ours"
     }
    ]
@@ -209,7 +209,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 1650/5511 步,约 244 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
+   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 1800/5511 步,约 233 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
    "alerts": []
   },
   {
@@ -241,7 +241,7 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 166,
+    "done": 229,
     "total": 400,
     "unit": "局"
    },
@@ -317,5 +317,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 25.1
+ "collect_s": 25.3
 }
