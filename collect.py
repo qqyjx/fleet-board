@@ -381,24 +381,29 @@ def cpu_ctrl_job():
             "cards": [], "cpu": f"CPU {cores} 核" if procs else "CPU", "kind": "gen", "status": status,
             "progress": {"done": done, "total": total, "unit": "格"}, "detail": detail, "alerts": [detail] if status == "failed" else []}
 
-def cpu_ctrl2_job():
-    # 2026-09-28: second private CPU batch on A800 (36 grid tasks plus a few short jobs in the same run dir, GPUs hidden).
-    # Neutral link ~/fleet_jobs/cpu-ctrl-2 -> <run dir>/results/<grid>; counts markers and processes only
+def cpu_grid_job(jid, total, title):
+    # Private CPU grids on A800 (GPUs hidden). Neutral link ~/fleet_jobs/<jid> -> <run dir>/results/<grid>; counts markers
+    # and processes only. Several grids share one run dir, so a process belongs to a grid when its stdout log is inside it.
     h = "A800"
-    out = ssh(h, "D=~/fleet_jobs/cpu-ctrl-2; R=$(readlink -f $D/../..); ls $D/*.json 2>/dev/null | wc -l; "
+    out = ssh(h, f"D=$(readlink -f ~/fleet_jobs/{jid}); ls $D/*.json 2>/dev/null | wc -l; "
                  "cat $D/*.log 2>/dev/null | grep -c '^FAIL '; "
-                 "pids=$(for p in $(pgrep -u xyf python); do [ \"$(readlink /proc/$p/cwd)\" = \"$R\" ] && echo $p; done); "
+                 "pids=$(for p in $(pgrep -u xyf python); do case \"$(readlink /proc/$p/fd/1)\" in $D/*) echo $p;; esac; done); "
                  "echo $pids | wc -w; [ -n \"$pids\" ] && ps -o %cpu= -p $(echo $pids | tr ' ' ,) | awk '{s+=$1} END {print int(s/100+0.5)}' || echo 0")
     if not out: return None
     try: done, bad, procs, cores = (int(x) for x in out.split()[:4])
     except ValueError: return None
-    total = 36
     status = "failed" if bad else ("done" if done >= total and not procs else ("running" if procs else "pending"))
-    detail = (f"{procs} 个进程 · 约 {cores} 核 · 网格 {done}/{total} 格（同目录另有 3 个短任务）" if procs else
+    detail = (f"{procs} 个进程 · 约 {cores} 核 · 网格 {done}/{total} 格" if procs else
               ("全部完成" if status == "done" else (f"{bad} 格 FAIL" if bad else f"网格 {done}/{total}，等 A800 CPU 空出后续跑")))
-    return {"id": "cpu-ctrl-2", "repo": "private", "title": "对照实验批 cpu-ctrl-2（A800 CPU，36 格网格 + 3 个短任务，GPU 已屏蔽）", "box": h,
+    return {"id": jid, "repo": "private", "title": title, "box": h,
             "cards": [], "cpu": f"CPU {cores} 核" if procs else "CPU", "kind": "gen", "status": status,
             "progress": {"done": done, "total": total, "unit": "格"}, "detail": detail, "alerts": [detail] if status == "failed" else []}
+
+def cpu_ctrl2_job():
+    return cpu_grid_job("cpu-ctrl-2", 36, "对照实验批 cpu-ctrl-2（A800 CPU，36 格网格，GPU 已屏蔽）")
+
+def cpu_ctrl3_job():
+    return cpu_grid_job("cpu-ctrl-3", 24, "对照实验批 cpu-ctrl-3（A800 CPU，24 格网格，GPU 已屏蔽）")
 
 def sysload(host):
     # CPU side of each box, so GPU cards and CPU batches sit in one scheduling view (user 2026-09-28)
@@ -447,7 +452,7 @@ def main():
         boxes.append({"name": name, "label": label, "reachable": cards is not None, "cards": cards or [],
                       "sys": sysload(name) if cards is not None else None})
     jobs.extend(camco_jobs())
-    for fn in (cvpr3_job, science32b_job, cpu_ctrl_job, cpu_ctrl2_job, pheromones_d1_job, dcas_e1_job, pheromones_v3_job, pheromones_v2_job, pheromones_job):
+    for fn in (cvpr3_job, science32b_job, cpu_ctrl_job, cpu_ctrl2_job, cpu_ctrl3_job, pheromones_d1_job, dcas_e1_job, pheromones_v3_job, pheromones_v2_job, pheromones_job):
         j = fn()
         if j: jobs.append(j)
     # 2026-09-27: the jobs below all finished before 09-26 (WWW stage7, ICLR ladders, Science legs, ChronoCheck);
