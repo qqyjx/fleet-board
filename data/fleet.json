@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27 20:01 LA",
+ "generated_at": "2026-09-27 20:11 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,28 +8,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 29094,
+     "mem_used": 31556,
      "mem_total": 81920,
-     "util": 9,
+     "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 29094,
+     "mem_used": 31556,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 29070,
+     "mem_used": 31532,
      "mem_total": 81920,
-     "util": 18,
+     "util": 100,
      "owner": "other"
     },
     {
      "idx": 3,
-     "mem_used": 13,
+     "mem_used": 14,
      "mem_total": 81920,
      "util": 0,
      "owner": "free"
@@ -82,10 +82,10 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 15,
+     "mem_used": 18155,
      "mem_total": 49140,
-     "util": 0,
-     "owner": "free"
+     "util": 40,
+     "owner": "other"
     }
    ]
   }
@@ -113,5 +113,5 @@
   "3090 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 64.0
+ "collect_s": 64.2
 }
