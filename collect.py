@@ -334,7 +334,8 @@ def pheromones_d1_job():
     last = l[2] if len(l) > 2 else ""
     stop = "STOP" in last or "FAIL" in last
     return {"id": "pheromones-d1", "repo": "AAAI2027-7", "title": "Pheromones D1 禁 STAY 诊断：G4 解码门 + 7B 400 局（new105 卡 1）", "box": h,
-            "cards": [1] if up else [], "kind": "gen", "status": "running" if up else ("done" if rows >= 400 else ("failed" if stop else "pending")),
+            # the GPU-1 lock file is reused by the DCAS early-7B chain, so a held lock means D1 only while rows < 400
+            "cards": [1] if up and rows < 400 else [], "kind": "gen", "status": "done" if rows >= 400 else ("running" if up else ("failed" if stop else "pending")),
             "progress": {"done": rows, "total": 400, "unit": "局"}, "detail": last[:110], "alerts": [last[:110]] if stop else []}
 
 def dcas_e1_job():
@@ -350,7 +351,7 @@ def dcas_e1_job():
     status = "failed" if fail or ("STOP" in last and not procs) else ("done" if done >= 27 else ("running" if procs else "pending"))
     if procs and "STOP" in last: last = "装环境重试中（hf-mirror 的 xet 返回 401，改普通 HTTP 重下 Qwen）；之后门控等 D1 释放卡 1"
     return {"id": "dcas-e1", "repo": "AAAI2027-1", "title": "DCAS E1：9 个 dump + 18 个判分（new105 卡 1，装环境后接 D1）", "box": h,
-            "cards": [1] if status == "running" and "worker" in last + "dump judge" else [], "kind": "gen", "status": status,
+            "cards": [1] if status == "running" else [], "kind": "gen", "status": status,
             "progress": {"done": done, "total": 27, "unit": "步"}, "detail": last[:110], "alerts": [last[:110]] if status == "failed" else []}
 
 def status_job(host, path, repo, title, cards):

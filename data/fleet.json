@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 02:00 LA",
+ "generated_at": "2026-09-28 02:05 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31096,
+     "mem_used": 38998,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31096,
+     "mem_used": 38998,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31072,
+     "mem_used": 38974,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -31,7 +31,7 @@
      "idx": 3,
      "mem_used": 69517,
      "mem_total": 81920,
-     "util": 99,
+     "util": 100,
      "owner": "ours"
     }
    ]
@@ -45,14 +45,14 @@
      "idx": 0,
      "mem_used": 12310,
      "mem_total": 24576,
-     "util": 100,
+     "util": 94,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 100,
+     "util": 47,
      "owner": "ours"
     },
     {
@@ -66,28 +66,28 @@
      "idx": 3,
      "mem_used": 12310,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 100,
+     "util": 69,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 14658,
      "mem_total": 24576,
-     "util": 100,
+     "util": 1,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 12322,
      "mem_total": 24576,
-     "util": 99,
+     "util": 29,
      "owner": "ours"
     },
     {
@@ -209,7 +209,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 3100/5511 步,约 158 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
+   "detail": "训练 run 1/6 已完成;当前 ctrl_seed0 第 3200/5511 步,约 151 分钟;链日志:[2026-09-28 13:22:27] START train ctrl_seed0",
    "alerts": []
   },
   {
@@ -235,11 +235,9 @@
    "repo": "AAAI2027-7",
    "title": "Pheromones D1 禁 STAY 诊断：G4 解码门 + 7B 400 局（new105 卡 1）",
    "box": "new105",
-   "cards": [
-    1
-   ],
+   "cards": [],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
     "done": 400,
     "total": 400,
@@ -253,7 +251,9 @@
    "repo": "AAAI2027-1",
    "title": "DCAS E1：9 个 dump + 18 个判分（new105 卡 1，装环境后接 D1）",
    "box": "new105",
-   "cards": [],
+   "cards": [
+    1
+   ],
    "kind": "gen",
    "status": "running",
    "progress": {
@@ -317,5 +317,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 25.2
+ "collect_s": 24.9
 }
