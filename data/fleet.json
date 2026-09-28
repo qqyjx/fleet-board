@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 13:10 LA",
+ "generated_at": "2026-09-28 13:20 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39478,
+     "mem_used": 39318,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39478,
+     "mem_used": 39318,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39454,
+     "mem_used": 39294,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -31,15 +31,15 @@
      "idx": 3,
      "mem_used": 69557,
      "mem_total": 81920,
-     "util": 98,
+     "util": 97,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 55.84,
+    "load": 56.77,
     "mem_total": 503,
-    "mem_avail": 276
+    "mem_avail": 207
    }
   },
   {
@@ -51,7 +51,7 @@
      "idx": 0,
      "mem_used": 12310,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -65,14 +65,14 @@
      "idx": 2,
      "mem_used": 14658,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 100,
+     "util": 89,
      "owner": "ours"
     },
     {
@@ -93,7 +93,7 @@
      "idx": 6,
      "mem_used": 12322,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -106,9 +106,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 172.98,
+    "load": 187.68,
     "mem_total": 125,
-    "mem_avail": 33
+    "mem_avail": 32
    }
   },
   {
@@ -132,7 +132,7 @@
     },
     {
      "idx": 1,
-     "mem_used": 13888,
+     "mem_used": 13898,
      "mem_total": 49140,
      "util": 99,
      "owner": "ours"
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 3.05,
+    "load": 3.11,
     "mem_total": 188,
     "mem_avail": 167
    }
@@ -159,17 +159,17 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 11101,
+     "mem_used": 11103,
      "mem_total": 49140,
-     "util": 71,
+     "util": 0,
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 48,
-    "load": 14.52,
+    "load": 0.68,
     "mem_total": 251,
-    "mem_avail": 227
+    "mem_avail": 228
    }
   }
  ],
@@ -235,7 +235,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 3/6 已完成;当前 ctrl_seed1 第 2100/5511 步,约 215 分钟;链日志:[2026-09-29 01:43:57] START train ctrl_seed1",
+   "detail": "训练 run 3/6 已完成;当前 ctrl_seed1 第 2300/5511 步,约 200 分钟;链日志:[2026-09-29 01:43:57] START train ctrl_seed1",
    "alerts": []
   },
   {
@@ -262,7 +262,7 @@
    "title": "对照实验批 cpu-ctrl-1（A800 CPU，7 组 × 4 种子，GPU 已屏蔽）",
    "box": "A800",
    "cards": [],
-   "cpu": "CPU 23 核",
+   "cpu": "CPU 28 核",
    "kind": "gen",
    "status": "running",
    "progress": {
@@ -270,7 +270,7 @@
     "total": 28,
     "unit": "格"
    },
-   "detail": "4 个进程 · 约 23 核 · 09-28 05:23 LA 起跑 · 每格均 170 分钟，约 09-29 03:21 LA 跑完",
+   "detail": "4 个进程 · 约 28 核 · 09-28 05:23 LA 起跑 · 每格均 170 分钟，约 09-29 03:31 LA 跑完",
    "alerts": []
   },
   {
@@ -394,5 +394,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 33.3
+ "collect_s": 33.6
 }
