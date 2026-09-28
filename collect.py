@@ -362,18 +362,41 @@ def cpu_ctrl_job():
                  "wc -l < $D/tasks.txt; ls $D/*.json 2>/dev/null | wc -l; grep -cE ' END .* rc=[1-9]' $P; grep -c ALL_DONE $P; "
                  "date -d \"$(head -1 $P | cut -c1-19)\" +%s; date +%s; "
                  "pids=$(for p in $(pgrep -u xyf python); do [ \"$(readlink /proc/$p/cwd)\" = \"$R\" ] && echo $p; done); "
-                 "echo $pids | wc -w; [ -n \"$pids\" ] && ps -o %cpu= -p $(echo $pids | tr ' ' ,) | awk '{s+=$1} END {print int(s/100+0.5)}' || echo 0")
+                 "echo $pids | wc -w; ([ -n \"$pids\" ] && ps -o %cpu= -p $(echo $pids | tr ' ' ,) | awk '{s+=$1} END {print int(s/100+0.5)}') || echo 0; "
+                 # mean wall of finished tasks, from TAKE/END pairs
+                 "awk '{d=$1; gsub(/-/,\" \",d); t=$2; gsub(/:/,\" \",t); u=mktime(d\" \"t); "
+                 "if($4==\"TAKE\") s[$5\" \"$6]=u; else if($4==\"END\") {w+=u-s[$5\" \"$6]; n++}} END {print (n ? int(w/n) : 0)}' $P")
     if not out: return None
-    try: total, done, bad, fin, t0, now, procs, cores = (int(x) for x in out.split()[:8])
+    try: total, done, bad, fin, t0, now, procs, cores, wall = (int(x) for x in out.split()[:9])
     except ValueError: return None
     status = "failed" if bad else ("done" if fin else ("running" if procs else "failed"))
     start = dt.datetime.fromtimestamp(t0, LA).strftime("%m-%d %H:%M LA")
     if status == "running":
-        eta = (" · 按已完成格外推 " + dt.datetime.fromtimestamp(now + (now - t0) / done * (total - done), LA).strftime("%m-%d %H:%M LA") + " 跑完") if done else " · 首格未完成，暂无 ETA"
+        # remaining tasks x mean task wall / parallel workers; ignores the progress of tasks now running
+        eta = (" · 每格均 " + f"{wall / 60:.0f} 分钟，约 " + dt.datetime.fromtimestamp(now + (total - done) * wall / max(procs, 1), LA).strftime("%m-%d %H:%M LA") + " 跑完") if done and wall else " · 首格未完成，暂无 ETA"
         detail = f"{procs} 个进程 · 约 {cores} 核 · {start} 起跑{eta}"
     else:
         detail = f"{start} 起跑 · " + ("全部完成" if status == "done" else (f"{bad} 格 rc≠0" if bad else "进程已退出但没有 ALL_DONE"))
     return {"id": "cpu-ctrl-1", "repo": "private", "title": "对照实验批 cpu-ctrl-1（A800 CPU，7 组 × 4 种子，GPU 已屏蔽）", "box": h,
+            "cards": [], "cpu": f"CPU {cores} 核" if procs else "CPU", "kind": "gen", "status": status,
+            "progress": {"done": done, "total": total, "unit": "格"}, "detail": detail, "alerts": [detail] if status == "failed" else []}
+
+def cpu_ctrl2_job():
+    # 2026-09-28: second private CPU batch on A800 (36 grid tasks plus a few short jobs in the same run dir, GPUs hidden).
+    # Neutral link ~/fleet_jobs/cpu-ctrl-2 -> <run dir>/results/<grid>; counts markers and processes only
+    h = "A800"
+    out = ssh(h, "D=~/fleet_jobs/cpu-ctrl-2; R=$(readlink -f $D/../..); ls $D/*.json 2>/dev/null | wc -l; "
+                 "cat $D/*.log 2>/dev/null | grep -c '^FAIL '; "
+                 "pids=$(for p in $(pgrep -u xyf python); do [ \"$(readlink /proc/$p/cwd)\" = \"$R\" ] && echo $p; done); "
+                 "echo $pids | wc -w; [ -n \"$pids\" ] && ps -o %cpu= -p $(echo $pids | tr ' ' ,) | awk '{s+=$1} END {print int(s/100+0.5)}' || echo 0")
+    if not out: return None
+    try: done, bad, procs, cores = (int(x) for x in out.split()[:4])
+    except ValueError: return None
+    total = 36
+    status = "failed" if bad else ("done" if done >= total and not procs else ("running" if procs else "pending"))
+    detail = (f"{procs} 个进程 · 约 {cores} 核 · 网格 {done}/{total} 格（同目录另有 3 个短任务）" if procs else
+              ("全部完成" if status == "done" else (f"{bad} 格 FAIL" if bad else f"网格 {done}/{total}，等 A800 CPU 空出后续跑")))
+    return {"id": "cpu-ctrl-2", "repo": "private", "title": "对照实验批 cpu-ctrl-2（A800 CPU，36 格网格 + 3 个短任务，GPU 已屏蔽）", "box": h,
             "cards": [], "cpu": f"CPU {cores} 核" if procs else "CPU", "kind": "gen", "status": status,
             "progress": {"done": done, "total": total, "unit": "格"}, "detail": detail, "alerts": [detail] if status == "failed" else []}
 
@@ -424,7 +447,7 @@ def main():
         boxes.append({"name": name, "label": label, "reachable": cards is not None, "cards": cards or [],
                       "sys": sysload(name) if cards is not None else None})
     jobs.extend(camco_jobs())
-    for fn in (cvpr3_job, science32b_job, cpu_ctrl_job, pheromones_d1_job, dcas_e1_job, pheromones_v3_job, pheromones_v2_job, pheromones_job):
+    for fn in (cvpr3_job, science32b_job, cpu_ctrl_job, cpu_ctrl2_job, pheromones_d1_job, dcas_e1_job, pheromones_v3_job, pheromones_v2_job, pheromones_job):
         j = fn()
         if j: jobs.append(j)
     # 2026-09-27: the jobs below all finished before 09-26 (WWW stage7, ICLR ladders, Science legs, ChronoCheck);
