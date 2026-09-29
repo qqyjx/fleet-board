@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 22:40 LA",
+ "generated_at": "2026-09-28 22:50 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31496,
+     "mem_used": 39398,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31496,
+     "mem_used": 39398,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31472,
+     "mem_used": 39374,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -31,15 +31,15 @@
      "idx": 3,
      "mem_used": 69557,
      "mem_total": 81920,
-     "util": 97,
+     "util": 93,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 57.52,
+    "load": 56.8,
     "mem_total": 503,
-    "mem_avail": 318
+    "mem_avail": 252
    }
   },
   {
@@ -49,66 +49,66 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 1416,
+     "mem_used": 3280,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 1416,
+     "mem_used": 3280,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 1416,
+     "mem_used": 3280,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 1416,
+     "mem_used": 3280,
      "mem_total": 24576,
-     "util": 0,
+     "util": 3,
      "owner": "ours"
     },
     {
      "idx": 4,
-     "mem_used": 1416,
+     "mem_used": 3280,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 5,
-     "mem_used": 1416,
+     "mem_used": 3280,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 6,
-     "mem_used": 1416,
+     "mem_used": 3280,
      "mem_total": 24576,
-     "util": 0,
+     "util": 5,
      "owner": "ours"
     },
     {
      "idx": 7,
-     "mem_used": 1416,
+     "mem_used": 3280,
      "mem_total": 24576,
-     "util": 0,
+     "util": 50,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 98.48,
+    "load": 192.57,
     "mem_total": 125,
-    "mem_avail": 86
+    "mem_avail": 28
    }
   },
   {
@@ -125,7 +125,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 40285,
+     "mem_used": 40283,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
@@ -134,13 +134,13 @@
      "idx": 1,
      "mem_used": 18854,
      "mem_total": 49140,
-     "util": 95,
+     "util": 97,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 112,
-    "load": 2.34,
+    "load": 2.18,
     "mem_total": 188,
     "mem_avail": 168
    }
@@ -155,9 +155,22 @@
   {
    "name": "4090-jm",
    "label": "4090-jm ×1 (24 GB, 实验室 .176; yxy 在用, 不上)",
-   "reachable": false,
-   "cards": [],
-   "sys": null
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 22533,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    }
+   ],
+   "sys": {
+    "cores": 48,
+    "load": 3.93,
+    "mem_total": 251,
+    "mem_avail": 221
+   }
   }
  ],
  "jobs": [
@@ -249,15 +262,15 @@
    "title": "对照实验批 cpu-ctrl-1（A800 CPU，7 组 × 4 种子，GPU 已屏蔽）",
    "box": "A800",
    "cards": [],
-   "cpu": "CPU 29 核",
+   "cpu": "CPU 28 核",
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 21,
+    "done": 22,
     "total": 28,
     "unit": "格"
    },
-   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 183 分钟，约 09-29 04:00 LA 跑完",
+   "detail": "4 个进程 · 约 28 核 · 09-28 05:23 LA 起跑 · 每格均 180 分钟，约 09-29 03:20 LA 跑完",
    "alerts": []
   },
   {
@@ -287,11 +300,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 8,
+    "done": 9,
     "total": 24,
     "unit": "格"
    },
-   "detail": "1 个进程 · 约 7 核 · 网格 8/24 格",
+   "detail": "1 个进程 · 约 7 核 · 网格 9/24 格",
    "alerts": []
   },
   {
@@ -377,8 +390,7 @@
  ],
  "alerts": [
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
-  "4090-jm 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 44.3
+ "collect_s": 39.9
 }
