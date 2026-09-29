@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29 01:10 LA",
+ "generated_at": "2026-09-29 01:20 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,7 +8,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 24756,
+     "mem_used": 29176,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -22,7 +22,7 @@
     },
     {
      "idx": 2,
-     "mem_used": 29152,
+     "mem_used": 24612,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -31,15 +31,15 @@
      "idx": 3,
      "mem_used": 69557,
      "mem_total": 81920,
-     "util": 97,
+     "util": 99,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 56.21,
+    "load": 56.81,
     "mem_total": 503,
-    "mem_avail": 278
+    "mem_avail": 297
    }
   },
   {
@@ -51,28 +51,28 @@
      "idx": 0,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 12596,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 12596,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -106,9 +106,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 178.53,
+    "load": 177.07,
     "mem_total": 125,
-    "mem_avail": 34
+    "mem_avail": 36
    }
   },
   {
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.41,
+    "load": 1.23,
     "mem_total": 188,
     "mem_avail": 169
    }
@@ -159,7 +159,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 1929,
+     "mem_used": 1928,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.22,
+    "load": 0.47,
     "mem_total": 251,
     "mem_avail": 226
    }
@@ -235,7 +235,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 5/6 已完成;当前 ctrl_seed2 第 2200/5511 步,约 204 分钟;链日志:[2026-09-29 13:39:35] START train ctrl_seed2",
+   "detail": "训练 run 5/6 已完成;当前 ctrl_seed2 第 2400/5511 步,约 190 分钟;链日志:[2026-09-29 13:39:35] START train ctrl_seed2",
    "alerts": []
   },
   {
@@ -270,7 +270,7 @@
     "total": 28,
     "unit": "格"
    },
-   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 182 分钟，约 09-29 04:57 LA 跑完",
+   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 182 分钟，约 09-29 05:07 LA 跑完",
    "alerts": []
   },
   {
@@ -392,5 +392,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 28.0
+ "collect_s": 27.8
 }
