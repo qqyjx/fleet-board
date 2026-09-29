@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 21:53 LA",
+ "generated_at": "2026-09-28 22:00 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,23 +8,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39118,
+     "mem_used": 39658,
      "mem_total": 81920,
-     "util": 100,
+     "util": 68,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39118,
+     "mem_used": 39658,
      "mem_total": 81920,
-     "util": 100,
+     "util": 60,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39094,
+     "mem_used": 39634,
      "mem_total": 81920,
-     "util": 100,
+     "util": 30,
      "owner": "other"
     },
     {
@@ -37,9 +37,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 55.88,
+    "load": 57.07,
     "mem_total": 503,
-    "mem_avail": 297
+    "mem_avail": 288
    }
   },
   {
@@ -51,64 +51,64 @@
      "idx": 0,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 100,
+     "util": 35,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 0,
+     "util": 40,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 12596,
      "mem_total": 24576,
-     "util": 100,
+     "util": 8,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 12596,
      "mem_total": 24576,
-     "util": 0,
+     "util": 39,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 12320,
      "mem_total": 24576,
-     "util": 100,
+     "util": 41,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 12320,
      "mem_total": 24576,
-     "util": 100,
+     "util": 53,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 14660,
      "mem_total": 24576,
-     "util": 0,
+     "util": 26,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 12322,
      "mem_total": 24576,
-     "util": 100,
+     "util": 1,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 169.15,
+    "load": 190.48,
     "mem_total": 125,
-    "mem_avail": 35
+    "mem_avail": 34
    }
   },
   {
@@ -121,9 +121,29 @@
   {
    "name": "new105",
    "label": "new105 4090D ×2 (48 GB, 公司)",
-   "reachable": false,
-   "cards": [],
-   "sys": null
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 40283,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 1,
+     "mem_used": 19738,
+     "mem_total": 49140,
+     "util": 98,
+     "owner": "ours"
+    }
+   ],
+   "sys": {
+    "cores": 112,
+    "load": 2.29,
+    "mem_total": 188,
+    "mem_avail": 168
+   }
   },
   {
    "name": "194-yyd",
@@ -139,15 +159,15 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 22455,
+     "mem_used": 22533,
      "mem_total": 49140,
-     "util": 89,
+     "util": 0,
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 48,
-    "load": 11.55,
+    "load": 10.99,
     "mem_total": 251,
     "mem_avail": 223
    }
@@ -215,7 +235,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 4/6 已完成;当前 multi_seed2 第 4850/5511 步,约 40 分钟;链日志:[2026-09-29 07:42:52] START train multi_seed2",
+   "detail": "训练 run 4/6 已完成;当前 multi_seed2 第 5000/5511 步,约 31 分钟;链日志:[2026-09-29 07:42:52] START train multi_seed2",
    "alerts": []
   },
   {
@@ -250,7 +270,7 @@
     "total": 28,
     "unit": "格"
    },
-   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 186 分钟，约 09-29 04:48 LA 跑完",
+   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 186 分钟，约 09-29 04:58 LA 跑完",
    "alerts": []
   },
   {
@@ -288,6 +308,54 @@
    "alerts": []
   },
   {
+   "id": "pheromones-d1",
+   "repo": "AAAI2027-7",
+   "title": "Pheromones D1 禁 STAY 诊断：G4 解码门 + 7B 400 局（new105 卡 1）",
+   "box": "new105",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 400,
+    "total": 400,
+    "unit": "局"
+   },
+   "detail": "2026-09-28T16:07:47+08:00 D1 done: rel_ns=200 rel_randdir_ns=200 random8=200",
+   "alerts": []
+  },
+  {
+   "id": "dcas-e1",
+   "repo": "AAAI2027-1",
+   "title": "DCAS E1：9 个 dump + 18 个判分（new105 卡 1，装环境后接 D1）",
+   "box": "new105",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 27,
+    "total": 27,
+    "unit": "步"
+   },
+   "detail": "2026-09-29T10:34:42+08:00 card1b worker exit (nothing left)",
+   "alerts": []
+  },
+  {
+   "id": "pheromones-v3",
+   "repo": "AAAI2027-7",
+   "title": "Pheromones V3 相对方向信息素：7B 评测 600 局（new105 卡 1）",
+   "box": "new105",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 600,
+    "total": 600,
+    "unit": "局"
+   },
+   "detail": "09-27 23:39 LA 读出：V3-P1/P2 均 FAIL，走路线 B（REVISION_V3.md）",
+   "alerts": []
+  },
+  {
    "id": "pheromones-v2",
    "repo": "AAAI2027-7",
    "title": "Pheromones 大修 P1 内容消融 / P3 委托曲线（3090 GPU，Qwen2.5-3B）",
@@ -322,8 +390,7 @@
  ],
  "alerts": [
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
-  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
-  "new105 本轮采集失败：该机任务状态为上次快照，不作数"
+  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 189.4
+ "collect_s": 50.5
 }
