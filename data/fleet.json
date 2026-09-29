@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29 14:30 LA",
+ "generated_at": "2026-09-29 14:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -31,15 +31,15 @@
      "idx": 3,
      "mem_used": 69557,
      "mem_total": 81920,
-     "util": 97,
+     "util": 99,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 39.62,
+    "load": 38.85,
     "mem_total": 503,
-    "mem_avail": 351
+    "mem_avail": 305
    }
   },
   {
@@ -49,7 +49,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 23838,
+     "mem_used": 21024,
      "mem_total": 24576,
      "util": 99,
      "owner": "ours"
@@ -58,55 +58,55 @@
      "idx": 1,
      "mem_used": 21028,
      "mem_total": 24576,
-     "util": 23,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 22534,
+     "mem_used": 23972,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 21196,
+     "mem_used": 22690,
      "mem_total": 24576,
-     "util": 98,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 4,
-     "mem_used": 19770,
+     "mem_used": 21270,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 5,
-     "mem_used": 19750,
+     "mem_used": 21234,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 6,
-     "mem_used": 18308,
+     "mem_used": 19776,
      "mem_total": 24576,
-     "util": 0,
+     "util": 98,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 21028,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 31.58,
+    "load": 24.4,
     "mem_total": 125,
     "mem_avail": 104
    }
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 3.08,
+    "load": 3.13,
     "mem_total": 188,
     "mem_avail": 143
    }
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.69,
+    "load": 0.4,
     "mem_total": 251,
     "mem_avail": 229
    }
