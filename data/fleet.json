@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29 12:21 LA",
+ "generated_at": "2026-09-29 12:31 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,7 +10,7 @@
      "idx": 0,
      "mem_used": 40672,
      "mem_total": 81920,
-     "util": 67,
+     "util": 83,
      "owner": "other"
     },
     {
@@ -37,9 +37,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 40.52,
+    "load": 40.34,
     "mem_total": 503,
-    "mem_avail": 358
+    "mem_avail": 384
    }
   },
   {
@@ -56,17 +56,17 @@
     },
     {
      "idx": 1,
-     "mem_used": 16902,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 79,
-     "owner": "other"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 2,
-     "mem_used": 16902,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 9,
-     "owner": "other"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 3,
@@ -100,15 +100,15 @@
      "idx": 7,
      "mem_used": 0,
      "mem_total": 24576,
-     "util": 0,
+     "util": 1,
      "owner": "free"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 11.58,
+    "load": 4.54,
     "mem_total": 125,
-    "mem_avail": 115
+    "mem_avail": 118
    }
   },
   {
@@ -134,15 +134,15 @@
      "idx": 1,
      "mem_used": 17632,
      "mem_total": 49140,
-     "util": 77,
+     "util": 72,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 112,
-    "load": 4.13,
+    "load": 3.13,
     "mem_total": 188,
-    "mem_avail": 151
+    "mem_avail": 152
    }
   },
   {
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 13.64,
+    "load": 1.59,
     "mem_total": 251,
     "mem_avail": 227
    }
@@ -220,6 +220,22 @@
     "unit": "格"
    },
    "detail": "E6/E6-A1/E7 已读出（均 FAIL，见 REVISION_V2.md）",
+   "alerts": []
+  },
+  {
+   "id": "cvpr3-adapt",
+   "repo": "CVPR2027-1",
+   "title": "CVPR-3 P-3-5 适配腿(6 个 8 卡训练 run → 36 评测)",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 6,
+    "total": 6,
+    "unit": "run"
+   },
+   "detail": "训练 run 6/6 已完成;当前 ctrl_seed2;链日志:CHAIN_DONE",
    "alerts": []
   },
   {
@@ -376,5 +392,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 107.8
+ "collect_s": 69.4
 }
