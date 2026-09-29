@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 23:10 LA",
+ "generated_at": "2026-09-28 23:20 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31558,
+     "mem_used": 31496,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31558,
+     "mem_used": 31496,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31534,
+     "mem_used": 31472,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -37,9 +37,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 55.72,
+    "load": 57.9,
     "mem_total": 503,
-    "mem_avail": 301
+    "mem_avail": 270
    }
   },
   {
@@ -65,7 +65,7 @@
      "idx": 2,
      "mem_used": 12124,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -86,7 +86,7 @@
      "idx": 5,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -106,7 +106,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 161.44,
+    "load": 165.84,
     "mem_total": 125,
     "mem_avail": 34
    }
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.05,
+    "load": 1.1,
     "mem_total": 188,
     "mem_avail": 169
    }
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.12,
+    "load": 0.16,
     "mem_total": 251,
     "mem_avail": 230
    }
@@ -235,7 +235,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 5/6 已完成;当前 ctrl_seed2 第 300/5511 步,约 289 分钟;链日志:[2026-09-29 13:39:35] START train ctrl_seed2",
+   "detail": "训练 run 5/6 已完成;当前 ctrl_seed2 第 500/5511 步,约 277 分钟;链日志:[2026-09-29 13:39:35] START train ctrl_seed2",
    "alerts": []
   },
   {
@@ -270,7 +270,7 @@
     "total": 28,
     "unit": "格"
    },
-   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 180 分钟，约 09-29 03:40 LA 跑完",
+   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 180 分钟，约 09-29 03:50 LA 跑完",
    "alerts": []
   },
   {
@@ -392,5 +392,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 27.2
+ "collect_s": 26.2
 }
