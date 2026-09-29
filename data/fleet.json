@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29 06:20 LA",
+ "generated_at": "2026-09-29 06:30 LA",
  "boxes": [
   {
    "name": "A800",
@@ -37,9 +37,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 24.84,
+    "load": 25.3,
     "mem_total": 503,
-    "mem_avail": 402
+    "mem_avail": 385
    }
   },
   {
@@ -79,7 +79,7 @@
      "idx": 4,
      "mem_used": 1474,
      "mem_total": 24576,
-     "util": 0,
+     "util": 66,
      "owner": "ours"
     },
     {
@@ -98,7 +98,7 @@
     },
     {
      "idx": 7,
-     "mem_used": 1472,
+     "mem_used": 1474,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
@@ -106,9 +106,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 188.6,
+    "load": 187.0,
     "mem_total": 125,
-    "mem_avail": 63
+    "mem_avail": 62
    }
   },
   {
@@ -132,15 +132,15 @@
     },
     {
      "idx": 1,
-     "mem_used": 17752,
+     "mem_used": 3232,
      "mem_total": 49140,
-     "util": 79,
+     "util": 0,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 112,
-    "load": 2.19,
+    "load": 2.12,
     "mem_total": 188,
     "mem_avail": 163
    }
@@ -159,17 +159,17 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 15079,
+     "mem_used": 24291,
      "mem_total": 49140,
-     "util": 23,
+     "util": 89,
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 48,
-    "load": 1.35,
+    "load": 1.46,
     "mem_total": 251,
-    "mem_avail": 230
+    "mem_avail": 222
    }
   }
  ],
@@ -296,7 +296,7 @@
    "title": "对照实验批 cpu-ctrl-3（A800 CPU，24 格网格，GPU 已屏蔽）",
    "box": "A800",
    "cards": [],
-   "cpu": "CPU 14 核",
+   "cpu": "CPU 15 核",
    "kind": "gen",
    "status": "running",
    "progress": {
@@ -304,7 +304,7 @@
     "total": 24,
     "unit": "格"
    },
-   "detail": "2 个进程 · 约 14 核 · 网格 16/24 格",
+   "detail": "2 个进程 · 约 15 核 · 网格 16/24 格",
    "alerts": []
   },
   {
@@ -392,5 +392,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 42.8
+ "collect_s": 45.7
 }
