@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29 02:10 LA",
+ "generated_at": "2026-09-29 02:20 LA",
  "boxes": [
   {
    "name": "A800",
@@ -31,15 +31,15 @@
      "idx": 3,
      "mem_used": 69557,
      "mem_total": 81920,
-     "util": 100,
+     "util": 99,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 55.38,
+    "load": 53.65,
     "mem_total": 503,
-    "mem_avail": 291
+    "mem_avail": 254
    }
   },
   {
@@ -65,7 +65,7 @@
      "idx": 2,
      "mem_used": 12596,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -79,7 +79,7 @@
      "idx": 4,
      "mem_used": 12320,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -106,9 +106,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 178.18,
+    "load": 149.81,
     "mem_total": 125,
-    "mem_avail": 34
+    "mem_avail": 32
    }
   },
   {
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.17,
+    "load": 1.25,
     "mem_total": 188,
     "mem_avail": 169
    }
@@ -167,9 +167,9 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.61,
+    "load": 1.48,
     "mem_total": 251,
-    "mem_avail": 226
+    "mem_avail": 225
    }
   }
  ],
@@ -235,7 +235,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 5/6 已完成;当前 ctrl_seed2 第 3300/5511 步,约 132 分钟;链日志:[2026-09-29 13:39:35] START train ctrl_seed2",
+   "detail": "训练 run 5/6 已完成;当前 ctrl_seed2 第 3450/5511 步,约 123 分钟;链日志:[2026-09-29 13:39:35] START train ctrl_seed2",
    "alerts": []
   },
   {
@@ -270,7 +270,7 @@
     "total": 28,
     "unit": "格"
    },
-   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 184 分钟，约 09-29 05:13 LA 跑完",
+   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 184 分钟，约 09-29 05:23 LA 跑完",
    "alerts": []
   },
   {
@@ -392,5 +392,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 30.6
+ "collect_s": 28.4
 }
