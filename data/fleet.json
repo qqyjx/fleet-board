@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29 00:10 LA",
+ "generated_at": "2026-09-29 00:20 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 31336,
+     "mem_used": 31176,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 31336,
+     "mem_used": 31176,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 31312,
+     "mem_used": 31152,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -31,15 +31,15 @@
      "idx": 3,
      "mem_used": 69557,
      "mem_total": 81920,
-     "util": 98,
+     "util": 96,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 57.43,
+    "load": 56.48,
     "mem_total": 503,
-    "mem_avail": 314
+    "mem_avail": 295
    }
   },
   {
@@ -65,7 +65,7 @@
      "idx": 2,
      "mem_used": 12124,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -79,7 +79,7 @@
      "idx": 4,
      "mem_used": 11848,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -106,9 +106,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 167.42,
+    "load": 164.33,
     "mem_total": 125,
-    "mem_avail": 31
+    "mem_avail": 33
    }
   },
   {
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.15,
+    "load": 1.48,
     "mem_total": 188,
     "mem_avail": 169
    }
@@ -159,17 +159,17 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 21913,
+     "mem_used": 12607,
      "mem_total": 49140,
-     "util": 0,
+     "util": 12,
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 48,
-    "load": 1.74,
+    "load": 1.27,
     "mem_total": 251,
-    "mem_avail": 223
+    "mem_avail": 228
    }
   }
  ],
@@ -235,7 +235,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 5/6 已完成;当前 ctrl_seed2 第 1350/5511 步,约 233 分钟;链日志:[2026-09-29 13:39:35] START train ctrl_seed2",
+   "detail": "训练 run 5/6 已完成;当前 ctrl_seed2 第 1550/5511 步,约 222 分钟;链日志:[2026-09-29 13:39:35] START train ctrl_seed2",
    "alerts": []
   },
   {
@@ -270,7 +270,7 @@
     "total": 28,
     "unit": "格"
    },
-   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 180 分钟，约 09-29 04:40 LA 跑完",
+   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 180 分钟，约 09-29 04:50 LA 跑完",
    "alerts": []
   },
   {
@@ -392,5 +392,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 27.8
+ "collect_s": 30.3
 }
