@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29 02:50 LA",
+ "generated_at": "2026-09-29 03:00 LA",
  "boxes": [
   {
    "name": "A800",
@@ -37,9 +37,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 61.49,
+    "load": 42.57,
     "mem_total": 503,
-    "mem_avail": 362
+    "mem_avail": 377
    }
   },
   {
@@ -51,64 +51,64 @@
      "idx": 0,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 14,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 12596,
      "mem_total": 24576,
-     "util": 9,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 12596,
      "mem_total": 24576,
-     "util": 14,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 12320,
      "mem_total": 24576,
-     "util": 15,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 12320,
      "mem_total": 24576,
-     "util": 11,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 14660,
      "mem_total": 24576,
-     "util": 34,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 12322,
      "mem_total": 24576,
-     "util": 4,
+     "util": 100,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 165.09,
+    "load": 162.89,
     "mem_total": 125,
-    "mem_avail": 35
+    "mem_avail": 38
    }
   },
   {
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.21,
+    "load": 1.37,
     "mem_total": 188,
     "mem_avail": 169
    }
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.46,
+    "load": 0.61,
     "mem_total": 251,
     "mem_avail": 227
    }
@@ -235,7 +235,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 5/6 已完成;当前 ctrl_seed2 第 3800/5511 步,约 107 分钟;链日志:[2026-09-29 13:39:35] START train ctrl_seed2",
+   "detail": "训练 run 5/6 已完成;当前 ctrl_seed2 第 3950/5511 步,约 97 分钟;链日志:[2026-09-29 13:39:35] START train ctrl_seed2",
    "alerts": []
   },
   {
@@ -262,15 +262,15 @@
    "title": "对照实验批 cpu-ctrl-1（A800 CPU，7 组 × 4 种子，GPU 已屏蔽）",
    "box": "A800",
    "cards": [],
-   "cpu": "CPU 22 核",
+   "cpu": "CPU 15 核",
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 25,
+    "done": 26,
     "total": 28,
     "unit": "格"
    },
-   "detail": "3 个进程 · 约 22 核 · 09-28 05:23 LA 起跑 · 每格均 187 分钟，约 09-29 05:57 LA 跑完",
+   "detail": "2 个进程 · 约 15 核 · 09-28 05:23 LA 起跑 · 每格均 190 分钟，约 09-29 06:10 LA 跑完",
    "alerts": []
   },
   {
@@ -392,5 +392,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 29.0
+ "collect_s": 28.4
 }
