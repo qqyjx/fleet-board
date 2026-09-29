@@ -1,12 +1,46 @@
 {
- "generated_at": "2026-09-29 11:02 LA",
+ "generated_at": "2026-09-29 11:10 LA",
  "boxes": [
   {
    "name": "A800",
    "label": "A800 ×4 (80 GB; 卡 0–2 借 xdx 到 09-29；卡 3 09-27 20:53 LA 起跑 Science 32B)",
-   "reachable": false,
-   "cards": [],
-   "sys": null
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 13,
+     "mem_total": 81920,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 1,
+     "mem_used": 40642,
+     "mem_total": 81920,
+     "util": 43,
+     "owner": "other"
+    },
+    {
+     "idx": 2,
+     "mem_used": 13,
+     "mem_total": 81920,
+     "util": 0,
+     "owner": "free"
+    },
+    {
+     "idx": 3,
+     "mem_used": 69557,
+     "mem_total": 81920,
+     "util": 97,
+     "owner": "ours"
+    }
+   ],
+   "sys": {
+    "cores": 80,
+    "load": 48.16,
+    "mem_total": 503,
+    "mem_avail": 355
+   }
   },
   {
    "name": "3090",
@@ -17,64 +51,64 @@
      "idx": 0,
      "mem_used": 18496,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 18496,
      "mem_total": 24576,
-     "util": 0,
+     "util": 52,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 19062,
+     "mem_used": 18080,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 19488,
+     "mem_used": 19074,
+     "mem_total": 24576,
+     "util": 100,
+     "owner": "ours"
+    },
+    {
+     "idx": 4,
+     "mem_used": 19068,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
-     "idx": 4,
-     "mem_used": 19484,
-     "mem_total": 24576,
-     "util": 73,
-     "owner": "ours"
-    },
-    {
      "idx": 5,
-     "mem_used": 19478,
+     "mem_used": 18660,
      "mem_total": 24576,
-     "util": 81,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 6,
-     "mem_used": 19070,
+     "mem_used": 18658,
      "mem_total": 24576,
-     "util": 74,
+     "util": 2,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 18496,
      "mem_total": 24576,
-     "util": 0,
+     "util": 100,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 26.79,
+    "load": 22.6,
     "mem_total": 125,
-    "mem_avail": 102
+    "mem_avail": 104
    }
   },
   {
@@ -100,13 +134,13 @@
      "idx": 1,
      "mem_used": 17758,
      "mem_total": 49140,
-     "util": 68,
+     "util": 70,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 112,
-    "load": 14.02,
+    "load": 14.81,
     "mem_total": 188,
     "mem_avail": 162
    }
@@ -133,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.14,
+    "load": 0.44,
     "mem_total": 251,
     "mem_avail": 229
    }
@@ -205,6 +239,75 @@
    "alerts": []
   },
   {
+   "id": "science-a800-32b",
+   "repo": "Science",
+   "title": "Phase-Trans 延期格：Qwen2.5-32B arithmetic（A800 卡 3，用户 09-27 批）",
+   "box": "A800",
+   "cards": [
+    3
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 0,
+    "total": 1,
+    "unit": "格"
+   },
+   "detail": "盲态：只记 rc/秒，指标在 _blind/ 未读；上次同格 29.7 h 到 2911/6000。2026-09-27T23:53:06 FULL_START cards=3 tasks=17",
+   "alerts": []
+  },
+  {
+   "id": "cpu-ctrl-1",
+   "repo": "private",
+   "title": "对照实验批 cpu-ctrl-1（A800 CPU，7 组 × 4 种子，GPU 已屏蔽）",
+   "box": "A800",
+   "cards": [],
+   "cpu": "CPU",
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 28,
+    "total": 28,
+    "unit": "格"
+   },
+   "detail": "09-28 05:23 LA 起跑 · 全部完成",
+   "alerts": []
+  },
+  {
+   "id": "cpu-ctrl-2",
+   "repo": "private",
+   "title": "对照实验批 cpu-ctrl-2（A800 CPU，36 格网格，GPU 已屏蔽）",
+   "box": "A800",
+   "cards": [],
+   "cpu": "CPU",
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 36,
+    "total": 36,
+    "unit": "格"
+   },
+   "detail": "全部完成",
+   "alerts": []
+  },
+  {
+   "id": "cpu-ctrl-3",
+   "repo": "private",
+   "title": "对照实验批 cpu-ctrl-3（A800 CPU，24 格网格，GPU 已屏蔽）",
+   "box": "A800",
+   "cards": [],
+   "cpu": "CPU 15 核",
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 19,
+    "total": 24,
+    "unit": "格"
+   },
+   "detail": "2 个进程 · 约 15 核 · 网格 19/24 格",
+   "alerts": []
+  },
+  {
    "id": "pheromones-d1",
    "repo": "AAAI2027-7",
    "title": "Pheromones D1 禁 STAY 诊断：G4 解码门 + 7B 400 局（new105 卡 1）",
@@ -267,12 +370,27 @@
    },
    "detail": "P1 600/600 · P3 60/60 · P2 无模型臂 500 行（CPU 已跑完）；0 个分片在跑",
    "alerts": []
+  },
+  {
+   "id": "pheromones-resubmit",
+   "repo": "AAAI2027-7",
+   "title": "Pheromones 转投实验 E1–E4 + E1-RA（A800 CPU，GPU 隐藏）",
+   "box": "A800",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 1890,
+    "total": 1890,
+    "unit": "run"
+   },
+   "detail": "E1 450/450 · E2 540/540 · E3 270/270 · E1-RA 630/630；09-27 已读出，转大修（REVISION_V2）",
+   "alerts": []
   }
  ],
  "alerts": [
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
-  "A800 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 134.4
+ "collect_s": 52.2
 }
