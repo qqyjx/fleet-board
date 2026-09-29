@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29 15:40 LA",
+ "generated_at": "2026-09-29 15:50 LA",
  "boxes": [
   {
    "name": "A800",
@@ -37,9 +37,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 34.31,
+    "load": 34.43,
     "mem_total": 503,
-    "mem_avail": 414
+    "mem_avail": 402
    }
   },
   {
@@ -49,28 +49,28 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 22360,
+     "mem_used": 15038,
      "mem_total": 24576,
-     "util": 100,
+     "util": 42,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 22418,
+     "mem_used": 16078,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 23840,
+     "mem_used": 16364,
      "mem_total": 24576,
-     "util": 0,
+     "util": 1,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 22380,
+     "mem_used": 20954,
      "mem_total": 24576,
      "util": 100,
      "owner": "ours"
@@ -79,36 +79,36 @@
      "idx": 4,
      "mem_used": 20984,
      "mem_total": 24576,
-     "util": 37,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 5,
-     "mem_used": 16078,
+     "mem_used": 20670,
      "mem_total": 24576,
      "util": 0,
      "owner": "ours"
     },
     {
      "idx": 6,
-     "mem_used": 22388,
+     "mem_used": 20968,
      "mem_total": 24576,
-     "util": 99,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 7,
-     "mem_used": 21092,
+     "mem_used": 18272,
      "mem_total": 24576,
      "util": 0,
-     "owner": "other"
+     "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 22.13,
+    "load": 22.26,
     "mem_total": 125,
-    "mem_avail": 106
+    "mem_avail": 108
    }
   },
   {
@@ -134,13 +134,13 @@
      "idx": 1,
      "mem_used": 17758,
      "mem_total": 49140,
-     "util": 71,
+     "util": 72,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 112,
-    "load": 2.16,
+    "load": 2.38,
     "mem_total": 188,
     "mem_avail": 149
    }
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.26,
+    "load": 0.21,
     "mem_total": 251,
     "mem_avail": 229
    }
@@ -392,5 +392,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 36.7
+ "collect_s": 34.7
 }
