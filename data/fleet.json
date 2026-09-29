@@ -1,46 +1,12 @@
 {
- "generated_at": "2026-09-28 23:50 LA",
+ "generated_at": "2026-09-29 00:02 LA",
  "boxes": [
   {
    "name": "A800",
    "label": "A800 ×4 (80 GB; 卡 0–2 借 xdx 到 09-29；卡 3 09-27 20:53 LA 起跑 Science 32B)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 39338,
-     "mem_total": 81920,
-     "util": 100,
-     "owner": "other"
-    },
-    {
-     "idx": 1,
-     "mem_used": 39338,
-     "mem_total": 81920,
-     "util": 100,
-     "owner": "other"
-    },
-    {
-     "idx": 2,
-     "mem_used": 39314,
-     "mem_total": 81920,
-     "util": 100,
-     "owner": "other"
-    },
-    {
-     "idx": 3,
-     "mem_used": 69557,
-     "mem_total": 81920,
-     "util": 97,
-     "owner": "ours"
-    }
-   ],
-   "sys": {
-    "cores": 80,
-    "load": 58.17,
-    "mem_total": 503,
-    "mem_avail": 315
-   }
+   "reachable": false,
+   "cards": [],
+   "sys": null
   },
   {
    "name": "3090",
@@ -51,64 +17,64 @@
      "idx": 0,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 21,
+     "util": 7,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 24,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 12124,
      "mem_total": 24576,
-     "util": 33,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 12124,
      "mem_total": 24576,
-     "util": 19,
+     "util": 11,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 11848,
      "mem_total": 24576,
-     "util": 20,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 11848,
      "mem_total": 24576,
-     "util": 18,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 14186,
      "mem_total": 24576,
-     "util": 6,
+     "util": 21,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 3,
+     "util": 0,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 155.9,
+    "load": 164.27,
     "mem_total": 125,
-    "mem_avail": 33
+    "mem_avail": 36
    }
   },
   {
@@ -140,7 +106,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.33,
+    "load": 1.2,
     "mem_total": 188,
     "mem_avail": 169
    }
@@ -159,17 +125,17 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 12025,
+     "mem_used": 22503,
      "mem_total": 49140,
-     "util": 22,
+     "util": 88,
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 48,
-    "load": 1.23,
+    "load": 1.3,
     "mem_total": 251,
-    "mem_avail": 228
+    "mem_avail": 221
    }
   }
  ],
@@ -235,7 +201,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 5/6 已完成;当前 ctrl_seed2 第 1000/5511 步,约 253 分钟;链日志:[2026-09-29 13:39:35] START train ctrl_seed2",
+   "detail": "训练 run 5/6 已完成;当前 ctrl_seed2 第 1200/5511 步,约 242 分钟;链日志:[2026-09-29 13:39:35] START train ctrl_seed2",
    "alerts": []
   },
   {
@@ -247,13 +213,13 @@
     3
    ],
    "kind": "gen",
-   "status": "running",
+   "status": "stale",
    "progress": {
     "done": 0,
     "total": 1,
     "unit": "格"
    },
-   "detail": "盲态：只记 rc/秒，指标在 _blind/ 未读；上次同格 29.7 h 到 2911/6000。2026-09-27T23:53:06 FULL_START cards=3 tasks=17",
+   "detail": "A800 本轮未采集到；上次状态：盲态：只记 rc/秒，指标在 _blind/ 未读；上次同格 29.7 h 到 2911/6000。2026-09-27T23:53:06 FULL_START",
    "alerts": []
   },
   {
@@ -264,13 +230,13 @@
    "cards": [],
    "cpu": "CPU 29 核",
    "kind": "gen",
-   "status": "running",
+   "status": "stale",
    "progress": {
     "done": 22,
     "total": 28,
     "unit": "格"
    },
-   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 180 分钟，约 09-29 04:20 LA 跑完",
+   "detail": "A800 本轮未采集到；上次状态：4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 180 分钟，约 09-29 04:32 LA 跑完",
    "alerts": []
   },
   {
@@ -281,13 +247,13 @@
    "cards": [],
    "cpu": "CPU 15 核",
    "kind": "gen",
-   "status": "running",
+   "status": "stale",
    "progress": {
     "done": 30,
     "total": 36,
     "unit": "格"
    },
-   "detail": "2 个进程 · 约 15 核 · 网格 30/36 格",
+   "detail": "A800 本轮未采集到；上次状态：2 个进程 · 约 15 核 · 网格 30/36 格",
    "alerts": []
   },
   {
@@ -298,13 +264,13 @@
    "cards": [],
    "cpu": "CPU 7 核",
    "kind": "gen",
-   "status": "running",
+   "status": "stale",
    "progress": {
     "done": 9,
     "total": 24,
     "unit": "格"
    },
-   "detail": "1 个进程 · 约 7 核 · 网格 9/24 格",
+   "detail": "A800 本轮未采集到；上次状态：1 个进程 · 约 7 核 · 网格 9/24 格",
    "alerts": []
   },
   {
@@ -390,7 +356,8 @@
  ],
  "alerts": [
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
+  "A800 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 28.8
+ "collect_s": 145.6
 }
