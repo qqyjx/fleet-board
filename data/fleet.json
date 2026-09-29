@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 19:00 LA",
+ "generated_at": "2026-09-28 19:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,38 +8,38 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39078,
+     "mem_used": 39498,
      "mem_total": 81920,
-     "util": 37,
+     "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39078,
+     "mem_used": 39498,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39054,
+     "mem_used": 39474,
      "mem_total": 81920,
-     "util": 35,
+     "util": 100,
      "owner": "other"
     },
     {
      "idx": 3,
      "mem_used": 69557,
      "mem_total": 81920,
-     "util": 98,
+     "util": 97,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 55.28,
+    "load": 57.15,
     "mem_total": 503,
-    "mem_avail": 280
+    "mem_avail": 243
    }
   },
   {
@@ -51,42 +51,42 @@
      "idx": 0,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 41,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 12308,
      "mem_total": 24576,
-     "util": 48,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 12596,
      "mem_total": 24576,
-     "util": 67,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 12596,
      "mem_total": 24576,
-     "util": 50,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 12320,
      "mem_total": 24576,
-     "util": 44,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 12320,
      "mem_total": 24576,
-     "util": 42,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -100,15 +100,15 @@
      "idx": 7,
      "mem_used": 12310,
      "mem_total": 24576,
-     "util": 88,
+     "util": 100,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 175.97,
+    "load": 187.67,
     "mem_total": 125,
-    "mem_avail": 35
+    "mem_avail": 37
    }
   },
   {
@@ -132,7 +132,7 @@
     },
     {
      "idx": 1,
-     "mem_used": 35436,
+     "mem_used": 35966,
      "mem_total": 49140,
      "util": 100,
      "owner": "ours"
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 3.1,
+    "load": 3.29,
     "mem_total": 188,
     "mem_avail": 167
    }
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.48,
+    "load": 0.38,
     "mem_total": 251,
     "mem_avail": 232
    }
@@ -235,7 +235,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 4/6 已完成;当前 multi_seed2 第 1950/5511 步,约 224 分钟;链日志:[2026-09-29 07:42:52] START train multi_seed2",
+   "detail": "训练 run 4/6 已完成;当前 multi_seed2 第 2150/5511 步,约 209 分钟;链日志:[2026-09-29 07:42:52] START train multi_seed2",
    "alerts": []
   },
   {
@@ -262,7 +262,7 @@
    "title": "对照实验批 cpu-ctrl-1（A800 CPU，7 组 × 4 种子，GPU 已屏蔽）",
    "box": "A800",
    "cards": [],
-   "cpu": "CPU 23 核",
+   "cpu": "CPU 29 核",
    "kind": "gen",
    "status": "running",
    "progress": {
@@ -270,7 +270,7 @@
     "total": 28,
     "unit": "格"
    },
-   "detail": "4 个进程 · 约 23 核 · 09-28 05:23 LA 起跑 · 每格均 178 分钟，约 09-29 03:55 LA 跑完",
+   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 178 分钟，约 09-29 04:05 LA 跑完",
    "alerts": []
   },
   {
@@ -283,11 +283,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 27,
+    "done": 28,
     "total": 36,
     "unit": "格"
    },
-   "detail": "2 个进程 · 约 15 核 · 网格 27/36 格",
+   "detail": "2 个进程 · 约 15 核 · 网格 28/36 格",
    "alerts": []
   },
   {
@@ -334,11 +334,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 22,
+    "done": 23,
     "total": 27,
     "unit": "步"
    },
-   "detail": "2026-09-29T09:58:38+08:00 card1a start judge_llama_1p5b_s1",
+   "detail": "2026-09-29T10:03:13+08:00 card1b start judge_qwen_1p5b_s1",
    "alerts": []
   },
   {
@@ -394,5 +394,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 57.1
+ "collect_s": 31.6
 }
