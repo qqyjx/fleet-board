@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29 05:31 LA",
+ "generated_at": "2026-09-29 05:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -31,15 +31,15 @@
      "idx": 3,
      "mem_used": 69557,
      "mem_total": 81920,
-     "util": 99,
+     "util": 98,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 32.8,
+    "load": 32.35,
     "mem_total": 503,
-    "mem_avail": 371
+    "mem_avail": 401
    }
   },
   {
@@ -51,14 +51,14 @@
      "idx": 0,
      "mem_used": 1474,
      "mem_total": 24576,
-     "util": 0,
+     "util": 65,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 1474,
      "mem_total": 24576,
-     "util": 46,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -79,7 +79,7 @@
      "idx": 4,
      "mem_used": 1474,
      "mem_total": 24576,
-     "util": 94,
+     "util": 73,
      "owner": "ours"
     },
     {
@@ -93,22 +93,22 @@
      "idx": 6,
      "mem_used": 1474,
      "mem_total": 24576,
-     "util": 61,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 1474,
      "mem_total": 24576,
-     "util": 89,
+     "util": 0,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 181.52,
+    "load": 187.44,
     "mem_total": 125,
-    "mem_avail": 62
+    "mem_avail": 61
    }
   },
   {
@@ -140,9 +140,9 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 2.21,
+    "load": 2.75,
     "mem_total": 188,
-    "mem_avail": 165
+    "mem_avail": 164
    }
   },
   {
@@ -159,15 +159,15 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 13325,
+     "mem_used": 13327,
      "mem_total": 49140,
-     "util": 28,
+     "util": 20,
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 48,
-    "load": 1.2,
+    "load": 1.34,
     "mem_total": 251,
     "mem_avail": 230
    }
@@ -279,15 +279,15 @@
    "title": "对照实验批 cpu-ctrl-2（A800 CPU，36 格网格，GPU 已屏蔽）",
    "box": "A800",
    "cards": [],
-   "cpu": "CPU 15 核",
+   "cpu": "CPU 8 核",
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 34,
+    "done": 35,
     "total": 36,
     "unit": "格"
    },
-   "detail": "2 个进程 · 约 15 核 · 网格 34/36 格",
+   "detail": "1 个进程 · 约 8 核 · 网格 35/36 格",
    "alerts": []
   },
   {
@@ -300,11 +300,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 14,
+    "done": 16,
     "total": 24,
     "unit": "格"
    },
-   "detail": "2 个进程 · 约 14 核 · 网格 14/24 格",
+   "detail": "2 个进程 · 约 14 核 · 网格 16/24 格",
    "alerts": []
   },
   {
@@ -392,5 +392,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 62.9
+ "collect_s": 48.2
 }
