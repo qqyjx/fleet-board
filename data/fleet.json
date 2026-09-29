@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29 09:41 LA",
+ "generated_at": "2026-09-29 09:50 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,24 +8,24 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 40642,
+     "mem_used": 13,
      "mem_total": 81920,
-     "util": 90,
-     "owner": "other"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 1,
-     "mem_used": 40642,
+     "mem_used": 40052,
      "mem_total": 81920,
-     "util": 89,
+     "util": 0,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 40642,
+     "mem_used": 13,
      "mem_total": 81920,
-     "util": 90,
-     "owner": "other"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 3,
@@ -37,9 +37,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 20.68,
+    "load": 17.77,
     "mem_total": 503,
-    "mem_avail": 402
+    "mem_avail": 422
    }
   },
   {
@@ -77,9 +77,9 @@
     },
     {
      "idx": 4,
-     "mem_used": 11932,
+     "mem_used": 11974,
      "mem_total": 24576,
-     "util": 79,
+     "util": 92,
      "owner": "other"
     },
     {
@@ -91,10 +91,10 @@
     },
     {
      "idx": 6,
-     "mem_used": 11958,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 74,
-     "owner": "other"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 7,
@@ -106,9 +106,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 47.3,
+    "load": 2.67,
     "mem_total": 125,
-    "mem_avail": 99
+    "mem_avail": 108
    }
   },
   {
@@ -132,7 +132,7 @@
     },
     {
      "idx": 1,
-     "mem_used": 14892,
+     "mem_used": 22112,
      "mem_total": 49140,
      "util": 100,
      "owner": "ours"
@@ -140,9 +140,9 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 4.51,
+    "load": 2.22,
     "mem_total": 188,
-    "mem_avail": 166
+    "mem_avail": 165
    }
   },
   {
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.35,
+    "load": 0.08,
     "mem_total": 251,
     "mem_avail": 229
    }
@@ -235,7 +235,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 6/6 已完成;当前 ctrl_seed2;链日志:[2026-09-30 00:39:48] FAIL readout",
+   "detail": "训练 run 6/6 已完成;当前 ctrl_seed2;链日志:CHAIN_DONE",
    "alerts": []
   },
   {
@@ -392,5 +392,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 64.8
+ "collect_s": 56.9
 }
