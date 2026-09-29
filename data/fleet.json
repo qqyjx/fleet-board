@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29 12:11 LA",
+ "generated_at": "2026-09-29 12:21 LA",
  "boxes": [
   {
    "name": "A800",
@@ -10,7 +10,7 @@
      "idx": 0,
      "mem_used": 40672,
      "mem_total": 81920,
-     "util": 83,
+     "util": 67,
      "owner": "other"
     },
     {
@@ -22,24 +22,24 @@
     },
     {
      "idx": 2,
-     "mem_used": 40642,
+     "mem_used": 13,
      "mem_total": 81920,
-     "util": 85,
-     "owner": "other"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 3,
      "mem_used": 69557,
      "mem_total": 81920,
-     "util": 99,
+     "util": 98,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 42.87,
+    "load": 40.52,
     "mem_total": 503,
-    "mem_avail": 363
+    "mem_avail": 358
    }
   },
   {
@@ -49,66 +49,66 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 18080,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 73,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 1,
-     "mem_used": 18440,
+     "mem_used": 16902,
      "mem_total": 24576,
-     "util": 100,
-     "owner": "ours"
+     "util": 79,
+     "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 18672,
+     "mem_used": 16902,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "ours"
+     "util": 9,
+     "owner": "other"
     },
     {
      "idx": 3,
-     "mem_used": 18080,
+     "mem_used": 0,
      "mem_total": 24576,
      "util": 0,
-     "owner": "ours"
+     "owner": "free"
     },
     {
      "idx": 4,
-     "mem_used": 18484,
+     "mem_used": 0,
      "mem_total": 24576,
      "util": 0,
-     "owner": "ours"
+     "owner": "free"
     },
     {
      "idx": 5,
-     "mem_used": 18844,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 100,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 6,
-     "mem_used": 18258,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 54,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     },
     {
      "idx": 7,
-     "mem_used": 18254,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 100,
-     "owner": "ours"
+     "util": 0,
+     "owner": "free"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 30.24,
+    "load": 11.58,
     "mem_total": 125,
-    "mem_avail": 105
+    "mem_avail": 115
    }
   },
   {
@@ -134,13 +134,13 @@
      "idx": 1,
      "mem_used": 17632,
      "mem_total": 49140,
-     "util": 79,
+     "util": 77,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 112,
-    "load": 3.82,
+    "load": 4.13,
     "mem_total": 188,
     "mem_avail": 151
    }
@@ -159,7 +159,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 1928,
+     "mem_used": 13013,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
@@ -167,9 +167,9 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.15,
+    "load": 13.64,
     "mem_total": 251,
-    "mem_avail": 229
+    "mem_avail": 227
    }
   }
  ],
@@ -220,22 +220,6 @@
     "unit": "格"
    },
    "detail": "E6/E6-A1/E7 已读出（均 FAIL，见 REVISION_V2.md）",
-   "alerts": []
-  },
-  {
-   "id": "cvpr3-adapt",
-   "repo": "CVPR2027-1",
-   "title": "CVPR-3 P-3-5 适配腿(6 个 8 卡训练 run → 36 评测)",
-   "box": "3090",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 6,
-    "total": 6,
-    "unit": "run"
-   },
-   "detail": "训练 run 6/6 已完成;当前 ctrl_seed2;链日志:CHAIN_DONE",
    "alerts": []
   },
   {
@@ -392,5 +376,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 59.8
+ "collect_s": 107.8
 }
