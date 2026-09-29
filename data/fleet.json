@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28 17:30 LA",
+ "generated_at": "2026-09-28 17:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,38 +8,38 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 39358,
+     "mem_used": 29016,
      "mem_total": 81920,
-     "util": 100,
+     "util": 0,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 39358,
+     "mem_used": 29016,
      "mem_total": 81920,
-     "util": 100,
+     "util": 0,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 39334,
+     "mem_used": 28992,
      "mem_total": 81920,
-     "util": 100,
+     "util": 0,
      "owner": "other"
     },
     {
      "idx": 3,
      "mem_used": 69557,
      "mem_total": 81920,
-     "util": 86,
+     "util": 97,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 55.74,
+    "load": 57.31,
     "mem_total": 503,
-    "mem_avail": 287
+    "mem_avail": 284
    }
   },
   {
@@ -51,64 +51,64 @@
      "idx": 0,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 24,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 67,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 12124,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 12124,
      "mem_total": 24576,
-     "util": 100,
+     "util": 67,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 11848,
      "mem_total": 24576,
-     "util": 100,
+     "util": 16,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 11848,
      "mem_total": 24576,
-     "util": 100,
+     "util": 38,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 14186,
      "mem_total": 24576,
-     "util": 100,
+     "util": 72,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 11836,
      "mem_total": 24576,
-     "util": 100,
+     "util": 99,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 147.96,
+    "load": 154.41,
     "mem_total": 125,
-    "mem_avail": 33
+    "mem_avail": 34
    }
   },
   {
@@ -132,7 +132,7 @@
     },
     {
      "idx": 1,
-     "mem_used": 23012,
+     "mem_used": 23738,
      "mem_total": 49140,
      "util": 99,
      "owner": "ours"
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 3.16,
+    "load": 3.09,
     "mem_total": 188,
     "mem_avail": 167
    }
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.43,
+    "load": 0.14,
     "mem_total": 251,
     "mem_avail": 233
    }
@@ -235,7 +235,7 @@
     "total": 6,
     "unit": "run"
    },
-   "detail": "训练 run 4/6 已完成;当前 multi_seed2 第 600/5511 步,约 279 分钟;链日志:[2026-09-29 07:42:52] START train multi_seed2",
+   "detail": "训练 run 4/6 已完成;当前 multi_seed2 第 750/5511 步,约 270 分钟;链日志:[2026-09-29 07:42:52] START train multi_seed2",
    "alerts": []
   },
   {
@@ -270,7 +270,7 @@
     "total": 28,
     "unit": "格"
    },
-   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 183 分钟，约 09-29 04:09 LA 跑完",
+   "detail": "4 个进程 · 约 29 核 · 09-28 05:23 LA 起跑 · 每格均 183 分钟，约 09-29 04:19 LA 跑完",
    "alerts": []
   },
   {
@@ -334,11 +334,11 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 11,
+    "done": 12,
     "total": 27,
     "unit": "步"
    },
-   "detail": "2026-09-29T08:21:28+08:00 card1b start judge_qwen_7b_s1",
+   "detail": "2026-09-29T08:32:31+08:00 card1b start judge_llama_7b_s2",
    "alerts": []
   },
   {
@@ -394,5 +394,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 33.5
+ "collect_s": 31.1
 }
