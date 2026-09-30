@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-30 09:00 LA",
+ "generated_at": "2026-09-30 09:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,38 +8,38 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 57604,
+     "mem_used": 57804,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 57604,
+     "mem_used": 57804,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 57580,
+     "mem_used": 57780,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 3,
-     "mem_used": 14,
+     "mem_used": 36697,
      "mem_total": 81920,
-     "util": 0,
-     "owner": "free"
+     "util": 98,
+     "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 3.18,
+    "load": 4.28,
     "mem_total": 503,
-    "mem_avail": 461
+    "mem_avail": 460
    }
   },
   {
@@ -49,16 +49,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 21352,
+     "mem_used": 24118,
      "mem_total": 24576,
-     "util": 48,
+     "util": 49,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 10578,
+     "mem_used": 10278,
      "mem_total": 24576,
-     "util": 40,
+     "util": 45,
      "owner": "ours"
     },
     {
@@ -72,43 +72,43 @@
      "idx": 3,
      "mem_used": 552,
      "mem_total": 24576,
-     "util": 13,
+     "util": 14,
      "owner": "ours"
     },
     {
      "idx": 4,
-     "mem_used": 0,
+     "mem_used": 550,
      "mem_total": 24576,
-     "util": 0,
+     "util": 25,
      "owner": "ours"
     },
     {
      "idx": 5,
-     "mem_used": 3,
+     "mem_used": 650,
      "mem_total": 24576,
-     "util": 0,
+     "util": 14,
      "owner": "ours"
     },
     {
      "idx": 6,
-     "mem_used": 14708,
+     "mem_used": 306,
      "mem_total": 24576,
-     "util": 76,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 14708,
      "mem_total": 24576,
-     "util": 73,
+     "util": 90,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 8.47,
+    "load": 9.62,
     "mem_total": 125,
-    "mem_avail": 90
+    "mem_avail": 92
    }
   },
   {
@@ -134,13 +134,13 @@
      "idx": 1,
      "mem_used": 17752,
      "mem_total": 49140,
-     "util": 80,
+     "util": 79,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 112,
-    "load": 2.54,
+    "load": 2.18,
     "mem_total": 188,
     "mem_avail": 149
    }
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.32,
+    "load": 0.19,
     "mem_total": 251,
     "mem_avail": 229
    }
@@ -243,15 +243,17 @@
    "repo": "Science",
    "title": "Phase-Trans 延期格：Qwen2.5-32B arithmetic（A800 卡 3，用户 09-27 批）",
    "box": "A800",
-   "cards": [],
+   "cards": [
+    3
+   ],
    "kind": "gen",
-   "status": "done",
+   "status": "running",
    "progress": {
-    "done": 1,
+    "done": 0,
     "total": 1,
     "unit": "格"
    },
-   "detail": "2026-09-30T11:02:27 FULL_DONE",
+   "detail": "盲态：只记 rc/秒，指标在 _blind/ 未读；上次同格 29.7 h 到 2911/6000。2026-09-30T12:01:13 FULL_START cards=3 tasks=17",
    "alerts": []
   },
   {
@@ -390,5 +392,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 29.3
+ "collect_s": 30.8
 }
