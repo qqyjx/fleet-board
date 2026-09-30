@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-30 06:12 LA",
+ "generated_at": "2026-09-30 06:23 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 43556,
+     "mem_used": 43636,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 43556,
+     "mem_used": 43636,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 43532,
+     "mem_used": 43612,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -31,15 +31,15 @@
      "idx": 3,
      "mem_used": 69557,
      "mem_total": 81920,
-     "util": 100,
+     "util": 99,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 4.14,
+    "load": 4.63,
     "mem_total": 503,
-    "mem_avail": 463
+    "mem_avail": 462
    }
   },
   {
@@ -49,31 +49,31 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 23280,
+     "mem_used": 9076,
      "mem_total": 24576,
-     "util": 44,
+     "util": 2,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 11492,
+     "mem_used": 8228,
      "mem_total": 24576,
-     "util": 42,
-     "owner": "other"
+     "util": 62,
+     "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 0,
+     "mem_used": 852,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 31,
+     "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 0,
+     "mem_used": 852,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 14,
+     "owner": "ours"
     },
     {
      "idx": 4,
@@ -106,9 +106,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 2.12,
+    "load": 6.42,
     "mem_total": 125,
-    "mem_avail": 114
+    "mem_avail": 113
    }
   },
   {
@@ -147,7 +147,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.12,
+    "load": 0.16,
     "mem_total": 251,
     "mem_avail": 229
    }
@@ -288,22 +288,6 @@
    "alerts": []
   },
   {
-   "id": "pheromones-v3",
-   "repo": "AAAI2027-7",
-   "title": "Pheromones V3 相对方向信息素：7B 评测 600 局（new105 卡 1）",
-   "box": "new105",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 600,
-    "total": 600,
-    "unit": "局"
-   },
-   "detail": "09-27 23:39 LA 读出：V3-P1/P2 均 FAIL，走路线 B（REVISION_V3.md）",
-   "alerts": []
-  },
-  {
    "id": "pheromones-v2",
    "repo": "AAAI2027-7",
    "title": "Pheromones 大修 P1 内容消融 / P3 委托曲线（3090 GPU，Qwen2.5-3B）",
@@ -341,5 +325,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "new105 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 164.8
+ "collect_s": 183.7
 }
