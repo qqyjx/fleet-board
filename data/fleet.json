@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-30 08:41 LA",
+ "generated_at": "2026-09-30 08:52 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 57524,
+     "mem_used": 57604,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 57524,
+     "mem_used": 57604,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 57500,
+     "mem_used": 57580,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -37,9 +37,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 3.29,
+    "load": 3.25,
     "mem_total": 503,
-    "mem_avail": 462
+    "mem_avail": 461
    }
   },
   {
@@ -49,16 +49,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 6732,
+     "mem_used": 19406,
      "mem_total": 24576,
-     "util": 51,
+     "util": 45,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 788,
+     "mem_used": 10578,
      "mem_total": 24576,
-     "util": 0,
+     "util": 39,
      "owner": "ours"
     },
     {
@@ -72,8 +72,8 @@
      "idx": 3,
      "mem_used": 760,
      "mem_total": 24576,
-     "util": 27,
-     "owner": "ours"
+     "util": 29,
+     "owner": "free"
     },
     {
      "idx": 4,
@@ -93,22 +93,22 @@
      "idx": 6,
      "mem_used": 14708,
      "mem_total": 24576,
-     "util": 86,
+     "util": 82,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 14708,
      "mem_total": 24576,
-     "util": 86,
+     "util": 72,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 8.95,
+    "load": 6.52,
     "mem_total": 125,
-    "mem_avail": 84
+    "mem_avail": 90
    }
   },
   {
@@ -147,7 +147,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.32,
+    "load": 0.24,
     "mem_total": 251,
     "mem_avail": 229
    }
@@ -286,22 +286,6 @@
    "alerts": []
   },
   {
-   "id": "pheromones-d1",
-   "repo": "AAAI2027-7",
-   "title": "Pheromones D1 禁 STAY 诊断：G4 解码门 + 7B 400 局（new105 卡 1）",
-   "box": "new105",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 400,
-    "total": 400,
-    "unit": "局"
-   },
-   "detail": "2026-09-28T16:07:47+08:00 D1 done: rel_ns=200 rel_randdir_ns=200 random8=200",
-   "alerts": []
-  },
-  {
    "id": "dcas-e1",
    "repo": "AAAI2027-1",
    "title": "DCAS E1：9 个 dump + 18 个判分（new105 卡 1，装环境后接 D1）",
@@ -371,5 +355,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "new105 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 70.8
+ "collect_s": 134.9
 }
