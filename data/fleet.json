@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-30 08:52 LA",
+ "generated_at": "2026-09-30 09:00 LA",
  "boxes": [
   {
    "name": "A800",
@@ -37,7 +37,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 3.25,
+    "load": 3.18,
     "mem_total": 503,
     "mem_avail": 461
    }
@@ -49,64 +49,64 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 19406,
+     "mem_used": 21352,
      "mem_total": 24576,
-     "util": 45,
+     "util": 48,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 10578,
      "mem_total": 24576,
-     "util": 39,
+     "util": 40,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 22126,
      "mem_total": 24576,
-     "util": 100,
+     "util": 99,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 760,
+     "mem_used": 552,
      "mem_total": 24576,
-     "util": 29,
-     "owner": "free"
+     "util": 13,
+     "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 0,
      "mem_total": 24576,
      "util": 0,
-     "owner": "free"
+     "owner": "ours"
     },
     {
      "idx": 5,
-     "mem_used": 0,
+     "mem_used": 3,
      "mem_total": 24576,
      "util": 0,
-     "owner": "free"
+     "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 14708,
      "mem_total": 24576,
-     "util": 82,
+     "util": 76,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 14708,
      "mem_total": 24576,
-     "util": 72,
+     "util": 73,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 6.52,
+    "load": 8.47,
     "mem_total": 125,
     "mem_avail": 90
    }
@@ -121,9 +121,29 @@
   {
    "name": "new105",
    "label": "new105 4090D ×2 (48 GB, 公司)",
-   "reachable": false,
-   "cards": [],
-   "sys": null
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 40283,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 1,
+     "mem_used": 17752,
+     "mem_total": 49140,
+     "util": 80,
+     "owner": "ours"
+    }
+   ],
+   "sys": {
+    "cores": 112,
+    "load": 2.54,
+    "mem_total": 188,
+    "mem_avail": 149
+   }
   },
   {
    "name": "194-yyd",
@@ -147,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.24,
+    "load": 0.32,
     "mem_total": 251,
     "mem_avail": 229
    }
@@ -286,6 +306,22 @@
    "alerts": []
   },
   {
+   "id": "pheromones-d1",
+   "repo": "AAAI2027-7",
+   "title": "Pheromones D1 禁 STAY 诊断：G4 解码门 + 7B 400 局（new105 卡 1）",
+   "box": "new105",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 400,
+    "total": 400,
+    "unit": "局"
+   },
+   "detail": "2026-09-28T16:07:47+08:00 D1 done: rel_ns=200 rel_randdir_ns=200 random8=200",
+   "alerts": []
+  },
+  {
    "id": "dcas-e1",
    "repo": "AAAI2027-1",
    "title": "DCAS E1：9 个 dump + 18 个判分（new105 卡 1，装环境后接 D1）",
@@ -352,8 +388,7 @@
  ],
  "alerts": [
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
-  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
-  "new105 本轮采集失败：该机任务状态为上次快照，不作数"
+  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 134.9
+ "collect_s": 29.3
 }
