@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-30 07:13 LA",
+ "generated_at": "2026-09-30 07:23 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 57542,
+     "mem_used": 57684,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 57544,
+     "mem_used": 57684,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 57520,
+     "mem_used": 57660,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -37,9 +37,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 4.06,
+    "load": 4.12,
     "mem_total": 503,
-    "mem_avail": 461
+    "mem_avail": 463
    }
   },
   {
@@ -49,23 +49,23 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 0,
+     "mem_used": 17490,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 32,
+     "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 0,
+     "mem_used": 17116,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 35,
+     "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 1304,
      "mem_total": 24576,
-     "util": 30,
+     "util": 15,
      "owner": "ours"
     },
     {
@@ -93,20 +93,20 @@
      "idx": 6,
      "mem_used": 14828,
      "mem_total": 24576,
-     "util": 88,
+     "util": 91,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 14708,
      "mem_total": 24576,
-     "util": 81,
+     "util": 89,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 6.55,
+    "load": 5.8,
     "mem_total": 125,
     "mem_avail": 111
    }
@@ -121,29 +121,9 @@
   {
    "name": "new105",
    "label": "new105 4090D ×2 (48 GB, 公司)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 40283,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    },
-    {
-     "idx": 1,
-     "mem_used": 2819,
-     "mem_total": 49140,
-     "util": 0,
-     "owner": "other"
-    }
-   ],
-   "sys": {
-    "cores": 112,
-    "load": 9.39,
-    "mem_total": 188,
-    "mem_avail": 151
-   }
+   "reachable": false,
+   "cards": [],
+   "sys": null
   },
   {
    "name": "194-yyd",
@@ -167,7 +147,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.19,
+    "load": 0.2,
     "mem_total": 251,
     "mem_avail": 229
    }
@@ -342,7 +322,8 @@
  ],
  "alerts": [
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
-  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
+  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
+  "new105 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 195.4
+ "collect_s": 184.1
 }
