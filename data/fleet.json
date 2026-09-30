@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-30 12:01 LA",
+ "generated_at": "2026-09-30 12:12 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 47942,
+     "mem_used": 55422,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 47942,
+     "mem_used": 55422,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 47918,
+     "mem_used": 55398,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -31,15 +31,15 @@
      "idx": 3,
      "mem_used": 36839,
      "mem_total": 81920,
-     "util": 99,
+     "util": 98,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 4.31,
+    "load": 4.22,
     "mem_total": 503,
-    "mem_avail": 463
+    "mem_avail": 460
    }
   },
   {
@@ -49,16 +49,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 19846,
+     "mem_used": 21926,
      "mem_total": 24576,
-     "util": 25,
+     "util": 24,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 20466,
+     "mem_used": 20784,
      "mem_total": 24576,
-     "util": 24,
+     "util": 27,
      "owner": "ours"
     },
     {
@@ -79,34 +79,34 @@
      "idx": 4,
      "mem_used": 892,
      "mem_total": 24576,
-     "util": 14,
+     "util": 15,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 1324,
      "mem_total": 24576,
-     "util": 14,
+     "util": 28,
      "owner": "ours"
     },
     {
      "idx": 6,
-     "mem_used": 18590,
+     "mem_used": 23020,
      "mem_total": 24576,
-     "util": 2,
+     "util": 33,
      "owner": "ours"
     },
     {
      "idx": 7,
-     "mem_used": 20866,
+     "mem_used": 21434,
      "mem_total": 24576,
-     "util": 88,
+     "util": 29,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 6.31,
+    "load": 6.81,
     "mem_total": 125,
     "mem_avail": 103
    }
@@ -121,9 +121,29 @@
   {
    "name": "new105",
    "label": "new105 4090D ×2 (48 GB, 公司)",
-   "reachable": false,
-   "cards": [],
-   "sys": null
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 40283,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    },
+    {
+     "idx": 1,
+     "mem_used": 2819,
+     "mem_total": 49140,
+     "util": 0,
+     "owner": "other"
+    }
+   ],
+   "sys": {
+    "cores": 112,
+    "load": 1.42,
+    "mem_total": 188,
+    "mem_avail": 151
+   }
   },
   {
    "name": "194-yyd",
@@ -139,15 +159,15 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 11717,
+     "mem_used": 12399,
      "mem_total": 49140,
-     "util": 72,
+     "util": 9,
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 48,
-    "load": 2.81,
+    "load": 1.84,
     "mem_total": 251,
     "mem_avail": 227
    }
@@ -304,22 +324,6 @@
    "alerts": []
   },
   {
-   "id": "dcas-e1",
-   "repo": "AAAI2027-1",
-   "title": "DCAS E1：9 个 dump + 18 个判分（new105 卡 1，装环境后接 D1）",
-   "box": "new105",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 27,
-    "total": 27,
-    "unit": "步"
-   },
-   "detail": "2026-09-29T10:34:42+08:00 card1b worker exit (nothing left)",
-   "alerts": []
-  },
-  {
    "id": "pheromones-v3",
    "repo": "AAAI2027-7",
    "title": "Pheromones V3 相对方向信息素：7B 评测 600 局（new105 卡 1）",
@@ -370,8 +374,7 @@
  ],
  "alerts": [
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
-  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
-  "new105 本轮采集失败：该机任务状态为上次快照，不作数"
+  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 116.8
+ "collect_s": 160.1
 }
