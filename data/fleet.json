@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-30 08:33 LA",
+ "generated_at": "2026-09-30 08:41 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 75744,
+     "mem_used": 57524,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 75744,
+     "mem_used": 57524,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 75720,
+     "mem_used": 57500,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -37,7 +37,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 3.62,
+    "load": 3.29,
     "mem_total": 503,
     "mem_avail": 462
    }
@@ -49,16 +49,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 20474,
+     "mem_used": 6732,
      "mem_total": 24576,
-     "util": 33,
+     "util": 51,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 17870,
+     "mem_used": 788,
      "mem_total": 24576,
-     "util": 27,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -93,7 +93,7 @@
      "idx": 6,
      "mem_used": 14708,
      "mem_total": 24576,
-     "util": 82,
+     "util": 86,
      "owner": "ours"
     },
     {
@@ -106,9 +106,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 6.6,
+    "load": 8.95,
     "mem_total": 125,
-    "mem_avail": 90
+    "mem_avail": 84
    }
   },
   {
@@ -147,7 +147,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.42,
+    "load": 0.32,
     "mem_total": 251,
     "mem_avail": 229
    }
@@ -286,6 +286,54 @@
    "alerts": []
   },
   {
+   "id": "pheromones-d1",
+   "repo": "AAAI2027-7",
+   "title": "Pheromones D1 禁 STAY 诊断：G4 解码门 + 7B 400 局（new105 卡 1）",
+   "box": "new105",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 400,
+    "total": 400,
+    "unit": "局"
+   },
+   "detail": "2026-09-28T16:07:47+08:00 D1 done: rel_ns=200 rel_randdir_ns=200 random8=200",
+   "alerts": []
+  },
+  {
+   "id": "dcas-e1",
+   "repo": "AAAI2027-1",
+   "title": "DCAS E1：9 个 dump + 18 个判分（new105 卡 1，装环境后接 D1）",
+   "box": "new105",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 27,
+    "total": 27,
+    "unit": "步"
+   },
+   "detail": "2026-09-29T10:34:42+08:00 card1b worker exit (nothing left)",
+   "alerts": []
+  },
+  {
+   "id": "pheromones-v3",
+   "repo": "AAAI2027-7",
+   "title": "Pheromones V3 相对方向信息素：7B 评测 600 局（new105 卡 1）",
+   "box": "new105",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 600,
+    "total": 600,
+    "unit": "局"
+   },
+   "detail": "09-27 23:39 LA 读出：V3-P1/P2 均 FAIL，走路线 B（REVISION_V3.md）",
+   "alerts": []
+  },
+  {
    "id": "pheromones-v2",
    "repo": "AAAI2027-7",
    "title": "Pheromones 大修 P1 内容消融 / P3 委托曲线（3090 GPU，Qwen2.5-3B）",
@@ -323,5 +371,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "new105 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 183.6
+ "collect_s": 70.8
 }
