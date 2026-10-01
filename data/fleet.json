@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01 01:50 LA",
+ "generated_at": "2026-10-01 02:00 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 75122,
+     "mem_used": 75942,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 75122,
+     "mem_used": 75942,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 76398,
+     "mem_used": 76278,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -31,13 +31,13 @@
      "idx": 3,
      "mem_used": 36899,
      "mem_total": 81920,
-     "util": 98,
+     "util": 99,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 4.18,
+    "load": 4.08,
     "mem_total": 503,
     "mem_avail": 459
    }
@@ -58,7 +58,7 @@
      "idx": 1,
      "mem_used": 17208,
      "mem_total": 24576,
-     "util": 78,
+     "util": 79,
      "owner": "ours"
     },
     {
@@ -93,20 +93,20 @@
      "idx": 6,
      "mem_used": 20454,
      "mem_total": 24576,
-     "util": 94,
+     "util": 78,
      "owner": "ours"
     },
     {
      "idx": 7,
-     "mem_used": 20112,
+     "mem_used": 20192,
      "mem_total": 24576,
-     "util": 78,
+     "util": 84,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 4.36,
+    "load": 4.12,
     "mem_total": 125,
     "mem_avail": 112
    }
@@ -134,13 +134,13 @@
      "idx": 1,
      "mem_used": 29862,
      "mem_total": 49140,
-     "util": 78,
+     "util": 80,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 112,
-    "load": 2.42,
+    "load": 2.22,
     "mem_total": 188,
     "mem_avail": 151
    }
@@ -159,17 +159,17 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 24295,
+     "mem_used": 1928,
      "mem_total": 49140,
-     "util": 89,
+     "util": 0,
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 48,
-    "load": 1.34,
+    "load": 0.64,
     "mem_total": 251,
-    "mem_avail": 220
+    "mem_avail": 228
    }
   }
  ],
@@ -238,7 +238,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790844621.5903213,
+    "observed_at": 1790845222.2167056,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -263,7 +263,7 @@
    "detail": "1 个计算进程；阶段 作业运行",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790844621.5903213,
+    "observed_at": 1790845222.2167056,
     "controllers": 5,
     "compute": 1,
     "log_bytes": 3120,
@@ -286,7 +286,7 @@
    "detail": "链在线；等待 GAVEL 队列与 W5 完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790844621.5903213,
+    "observed_at": 1790845222.2167056,
     "controllers": 1,
     "compute": 0,
     "log_bytes": 0,
@@ -313,11 +313,11 @@
    "detail": "3 个计算进程；阶段 run",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790844621.5903213,
+    "observed_at": 1790845222.2167056,
     "controllers": 1,
     "compute": 3,
-    "log_bytes": 4246,
-    "log_mtime": 1790844351.5134726
+    "log_bytes": 4360,
+    "log_mtime": 1790844995.6523716
    }
   },
   {
@@ -336,7 +336,7 @@
    "detail": "链在线；等待依赖、空卡或已登记检查点",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790844621.5903213,
+    "observed_at": 1790845222.2167056,
     "controllers": 1,
     "compute": 0,
     "log_bytes": 0,
@@ -361,7 +361,7 @@
    "detail": "1 个计算进程；阶段 作业运行",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790844622.5653374,
+    "observed_at": 1790845222.9515462,
     "controllers": 1,
     "compute": 1,
     "log_bytes": 1249,
@@ -384,7 +384,7 @@
    "detail": "未发现链或计算进程；不能据旧标记确认在跑",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790844622.8472517,
+    "observed_at": 1790845223.232199,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -577,5 +577,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 30.6
+ "collect_s": 29.9
 }
