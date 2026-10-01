@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01 06:30 LA",
+ "generated_at": "2026-10-01 06:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 55402,
+     "mem_used": 55422,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 55402,
+     "mem_used": 55422,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 55518,
+     "mem_used": 55618,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -37,7 +37,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 4.21,
+    "load": 4.15,
     "mem_total": 503,
     "mem_avail": 459
    }
@@ -49,66 +49,66 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 0,
+     "mem_used": 18156,
      "mem_total": 24576,
-     "util": 0,
+     "util": 98,
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 17248,
+     "mem_used": 18156,
      "mem_total": 24576,
-     "util": 98,
+     "util": 74,
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 17248,
+     "mem_used": 18156,
      "mem_total": 24576,
-     "util": 84,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 3,
-     "mem_used": 18158,
-     "mem_total": 24576,
-     "util": 99,
-     "owner": "ours"
-    },
-    {
-     "idx": 4,
-     "mem_used": 17248,
-     "mem_total": 24576,
-     "util": 98,
-     "owner": "ours"
-    },
-    {
-     "idx": 5,
-     "mem_used": 18158,
-     "mem_total": 24576,
-     "util": 82,
-     "owner": "ours"
-    },
-    {
-     "idx": 6,
-     "mem_used": 18158,
+     "mem_used": 18156,
      "mem_total": 24576,
      "util": 71,
      "owner": "ours"
     },
     {
-     "idx": 7,
-     "mem_used": 18158,
+     "idx": 4,
+     "mem_used": 18156,
+     "mem_total": 24576,
+     "util": 100,
+     "owner": "ours"
+    },
+    {
+     "idx": 5,
+     "mem_used": 17704,
+     "mem_total": 24576,
+     "util": 0,
+     "owner": "ours"
+    },
+    {
+     "idx": 6,
+     "mem_used": 18156,
      "mem_total": 24576,
      "util": 99,
+     "owner": "ours"
+    },
+    {
+     "idx": 7,
+     "mem_used": 17248,
+     "mem_total": 24576,
+     "util": 100,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 10.79,
+    "load": 10.71,
     "mem_total": 125,
-    "mem_avail": 108
+    "mem_avail": 107
    }
   },
   {
@@ -132,17 +132,17 @@
     },
     {
      "idx": 1,
-     "mem_used": 7496,
+     "mem_used": 12564,
      "mem_total": 49140,
-     "util": 21,
+     "util": 11,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 112,
-    "load": 5.76,
+    "load": 2.32,
     "mem_total": 188,
-    "mem_avail": 152
+    "mem_avail": 151
    }
   },
   {
@@ -159,7 +159,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 24365,
+     "mem_used": 24443,
      "mem_total": 49140,
      "util": 90,
      "owner": "other"
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 1.21,
+    "load": 1.22,
     "mem_total": 251,
     "mem_avail": 220
    }
@@ -238,7 +238,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790861422.4959085,
+    "observed_at": 1790862023.0543296,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -261,7 +261,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790861422.4959085,
+    "observed_at": 1790862023.0543296,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -286,18 +286,18 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 214,
+    "done": 222,
     "total": 307,
     "unit": "作业"
    },
    "detail": "8 个计算进程；阶段 main",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790861422.4959085,
+    "observed_at": 1790862023.0543296,
     "controllers": 1,
     "compute": 8,
-    "log_bytes": 11740,
-    "log_mtime": 1790861415.0016096
+    "log_bytes": 11984,
+    "log_mtime": 1790862013.5828044
    }
   },
   {
@@ -316,7 +316,7 @@
    "detail": "链在线；等待依赖、空卡或已登记检查点",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790861422.4959085,
+    "observed_at": 1790862023.0543296,
     "controllers": 1,
     "compute": 0,
     "log_bytes": 0,
@@ -339,7 +339,7 @@
    "detail": "链在线；等待依赖、空卡或已登记检查点",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790861422.4959085,
+    "observed_at": 1790862023.0543296,
     "controllers": 1,
     "compute": 0,
     "log_bytes": 0,
@@ -362,7 +362,7 @@
    "detail": "链在线；等待依赖、空卡或已登记检查点",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790861423.4058409,
+    "observed_at": 1790862024.273927,
     "controllers": 1,
     "compute": 0,
     "log_bytes": 0,
@@ -370,22 +370,47 @@
    }
   },
   {
+   "id": "camco-e12-recovery",
+   "repo": "AAAI2027-4",
+   "title": "CaMCo E12：最后种子迁移重跑",
+   "box": "new105",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 0,
+    "total": 1,
+    "unit": "作业"
+   },
+   "detail": "1 个计算进程；阶段 作业运行",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1790862024.273927,
+    "controllers": 2,
+    "compute": 1,
+    "log_bytes": 4308,
+    "log_mtime": 1790862007.6246371
+   }
+  },
+  {
    "id": "camco-e12-train",
    "repo": "AAAI2027-4",
-   "title": "CaMCo E12：13B 已启动训练链",
+   "title": "CaMCo E12：原 13B 训练链",
    "box": "4090-jm",
    "cards": [],
    "kind": "gen",
-   "status": "unknown",
+   "status": "failed",
    "progress": {
     "done": 8,
     "total": 9,
     "unit": "作业"
    },
-   "detail": "未发现链或计算进程；不能据旧标记确认在跑",
+   "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790861423.821187,
+    "observed_at": 1790862024.673794,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -576,7 +601,8 @@
  ],
  "alerts": [
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
-  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
+  "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
+  "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105"
  ],
- "collect_s": 34.2
+ "collect_s": 34.3
 }
