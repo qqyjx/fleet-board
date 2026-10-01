@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01 01:00 LA",
+ "generated_at": "2026-10-01 01:10 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 75602,
+     "mem_used": 75962,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 75602,
+     "mem_used": 75962,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 75218,
+     "mem_used": 75238,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -37,7 +37,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 4.29,
+    "load": 4.59,
     "mem_total": 503,
     "mem_avail": 459
    }
@@ -51,14 +51,14 @@
      "idx": 0,
      "mem_used": 20238,
      "mem_total": 24576,
-     "util": 93,
+     "util": 92,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 20238,
      "mem_total": 24576,
-     "util": 77,
+     "util": 93,
      "owner": "ours"
     },
     {
@@ -93,20 +93,20 @@
      "idx": 6,
      "mem_used": 20238,
      "mem_total": 24576,
-     "util": 93,
+     "util": 84,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 16664,
      "mem_total": 24576,
-     "util": 100,
+     "util": 40,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 5.78,
+    "load": 5.34,
     "mem_total": 125,
     "mem_avail": 109
    }
@@ -132,17 +132,17 @@
     },
     {
      "idx": 1,
-     "mem_used": 29862,
+     "mem_used": 32436,
      "mem_total": 49140,
-     "util": 79,
+     "util": 99,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 112,
-    "load": 2.12,
+    "load": 2.36,
     "mem_total": 188,
-    "mem_avail": 151
+    "mem_avail": 152
    }
   },
   {
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.43,
+    "load": 0.27,
     "mem_total": 251,
     "mem_avail": 229
    }
@@ -238,7 +238,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790841621.7043946,
+    "observed_at": 1790842222.2014143,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -263,7 +263,7 @@
    "detail": "1 个计算进程；阶段 作业运行",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790841621.7043946,
+    "observed_at": 1790842222.2014143,
     "controllers": 5,
     "compute": 1,
     "log_bytes": 2080,
@@ -286,7 +286,7 @@
    "detail": "链在线；等待 GAVEL 队列与 W5 完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790841621.7043946,
+    "observed_at": 1790842222.2014143,
     "controllers": 1,
     "compute": 0,
     "log_bytes": 0,
@@ -309,7 +309,7 @@
    "detail": "链在线；等待依赖、空卡或已登记检查点",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790841621.7043946,
+    "observed_at": 1790842222.2014143,
     "controllers": 1,
     "compute": 0,
     "log_bytes": 0,
@@ -337,11 +337,11 @@
    "detail": "4 个计算进程；阶段 run",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790841621.7043946,
+    "observed_at": 1790842222.2014143,
     "controllers": 1,
     "compute": 4,
-    "log_bytes": 20790,
-    "log_mtime": 1790841615.0501668
+    "log_bytes": 26798,
+    "log_mtime": 1790842198.6131577
    }
   },
   {
@@ -355,18 +355,18 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 12,
+    "done": 13,
     "total": 20,
     "unit": "作业"
    },
    "detail": "1 个计算进程；阶段 作业运行",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790841622.7143223,
+    "observed_at": 1790842223.1977372,
     "controllers": 1,
     "compute": 1,
-    "log_bytes": 1242,
-    "log_mtime": 1790837480.0838258
+    "log_bytes": 1431,
+    "log_mtime": 1790841761.1271474
    }
   },
   {
@@ -385,7 +385,7 @@
    "detail": "未发现链或计算进程；不能据旧标记确认在跑",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790841622.9888935,
+    "observed_at": 1790842223.4766438,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -578,5 +578,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 30.7
+ "collect_s": 30.5
 }
