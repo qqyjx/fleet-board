@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01 07:20 LA",
+ "generated_at": "2026-10-01 07:25 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 75762,
+     "mem_used": 55442,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 75762,
+     "mem_used": 55442,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 75698,
+     "mem_used": 55458,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -37,7 +37,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 4.31,
+    "load": 4.05,
     "mem_total": 503,
     "mem_avail": 459
    }
@@ -49,64 +49,64 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 17498,
+     "mem_used": 21442,
+     "mem_total": 24576,
+     "util": 66,
+     "owner": "ours"
+    },
+    {
+     "idx": 1,
+     "mem_used": 21486,
      "mem_total": 24576,
      "util": 99,
      "owner": "ours"
     },
     {
-     "idx": 1,
-     "mem_used": 21442,
+     "idx": 2,
+     "mem_used": 21486,
      "mem_total": 24576,
-     "util": 0,
+     "util": 99,
      "owner": "ours"
     },
     {
-     "idx": 2,
-     "mem_used": 22838,
+     "idx": 3,
+     "mem_used": 21486,
      "mem_total": 24576,
      "util": 100,
      "owner": "ours"
     },
     {
-     "idx": 3,
-     "mem_used": 21442,
-     "mem_total": 24576,
-     "util": 99,
-     "owner": "ours"
-    },
-    {
      "idx": 4,
-     "mem_used": 21442,
+     "mem_used": 21486,
      "mem_total": 24576,
-     "util": 95,
+     "util": 100,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 21442,
      "mem_total": 24576,
-     "util": 100,
+     "util": 99,
      "owner": "ours"
     },
     {
      "idx": 6,
-     "mem_used": 22838,
+     "mem_used": 21486,
      "mem_total": 24576,
      "util": 100,
      "owner": "ours"
     },
     {
      "idx": 7,
-     "mem_used": 24240,
+     "mem_used": 21442,
      "mem_total": 24576,
-     "util": 98,
+     "util": 100,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 12.6,
+    "load": 13.07,
     "mem_total": 125,
     "mem_avail": 107
    }
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 2.24,
+    "load": 2.33,
     "mem_total": 188,
     "mem_avail": 151
    }
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.18,
+    "load": 0.35,
     "mem_total": 251,
     "mem_avail": 228
    }
@@ -238,7 +238,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790864422.815861,
+    "observed_at": 1790864736.3938468,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -261,7 +261,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790864422.815861,
+    "observed_at": 1790864736.3938468,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -286,18 +286,18 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 262,
+    "done": 269,
     "total": 307,
     "unit": "作业"
    },
    "detail": "8 个计算进程；阶段 main",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790864422.815861,
+    "observed_at": 1790864736.3938468,
     "controllers": 1,
     "compute": 8,
-    "log_bytes": 11222,
-    "log_mtime": 1790864413.0465736
+    "log_bytes": 11205,
+    "log_mtime": 1790864735.7620654
    }
   },
   {
@@ -316,7 +316,7 @@
    "detail": "链在线；等待依赖、空卡或已登记检查点",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790864422.815861,
+    "observed_at": 1790864736.3938468,
     "controllers": 1,
     "compute": 0,
     "log_bytes": 0,
@@ -339,7 +339,7 @@
    "detail": "链在线；等待依赖、空卡或已登记检查点",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790864422.815861,
+    "observed_at": 1790864736.3938468,
     "controllers": 1,
     "compute": 0,
     "log_bytes": 0,
@@ -364,7 +364,7 @@
    "detail": "1 个计算进程；阶段 作业运行",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790864424.019384,
+    "observed_at": 1790864737.8790426,
     "controllers": 1,
     "compute": 1,
     "log_bytes": 1249,
@@ -387,7 +387,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790864424.019384,
+    "observed_at": 1790864737.8790426,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -410,7 +410,7 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790864424.5529137,
+    "observed_at": 1790864738.6026149,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -452,19 +452,19 @@
    "alerts": []
   },
   {
-   "id": "cvpr3-adapt",
+   "id": "cvpr3v",
    "repo": "CVPR2027-1",
-   "title": "CVPR-3 P-3-5 适配腿(6 个 8 卡训练 run → 36 评测)",
-   "box": "3090",
+   "title": "CVPR-3 3v：按需 view（A800 CPU 读出）",
+   "box": "A800",
    "cards": [],
    "kind": "gen",
    "status": "done",
    "progress": {
-    "done": 6,
-    "total": 6,
-    "unit": "run"
+    "done": 2,
+    "total": 2,
+    "unit": "步"
    },
-   "detail": "训练 run 6/6 已完成;当前 ctrl_seed2;链日志:CHAIN_DONE",
+   "detail": "3c 门读出已写出；3v 第一阶段读出已写出（只看文件与进程，不读指标）",
    "alerts": []
   },
   {
@@ -604,5 +604,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105"
  ],
- "collect_s": 34.6
+ "collect_s": 36.2
 }
