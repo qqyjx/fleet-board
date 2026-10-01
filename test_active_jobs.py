@@ -63,6 +63,23 @@ class ActiveJobsTests(unittest.TestCase):
                       (12, 11, '/log/a', [0]), (20, 1, '/log/b', [6])]
         self.assertEqual([r[0] for r in compute_roots(candidates)], [10, 20])
 
+    def test_interrupted_training_preserves_completed_count(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            (root/'state').mkdir()
+            spec = dict(SPECS['4090-jm'][0], root=td)
+            for name in spec['targets'][:-1]:
+                (root/'state'/(name+'.done')).touch()
+            (root/'state'/'INTERRUPTED_plain_lora_seed2_train').touch()
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                exec(REMOTE_PROBE, {'specs': [spec]})
+            snap = json.loads(buf.getvalue())[0]
+            job = job_from_snapshot(spec, snap, '4090-jm')
+            self.assertEqual(job['status'], 'failed')
+            self.assertEqual(job['progress']['done'], 8)
+            self.assertIn('迁移至 new105', job['detail'])
+
     def test_science_excludes_goldll_and_duplicate_attempts(self):
         rows = ['t FULL Qwen/Qwen2.5-32B gsm8k rc=0 wall=1s ',
                 't FULL Qwen/Qwen2.5-32B gsm8k rc=0 wall=2s ',

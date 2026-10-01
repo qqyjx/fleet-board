@@ -48,9 +48,14 @@ SPECS = {
              code="/home/xyf/e12", controller="run_e12_new105.sh", logs="logs", total=20, terminal="state/E12_DONE",
              targets=["chair_vanilla", "pope_vanilla"] + [f"{metric}_{arm}_seed{s}" for arm in ("random", "cem", "plain_lora")
                         for s in range(3) for metric in ("chair", "pope")]),
+        dict(id="camco-e12-recovery", repo="AAAI2027-4", title="CaMCo E12：最后种子迁移重跑", root="/home/xyf/e12/e12",
+             code="/home/xyf/e12/e12/recovery_plain_seed2_20261001", controller="recover_plain_seed2_new105.sh",
+             logroot="/home/xyf/e12/e12/recovery_plain_seed2_20261001", total=1,
+             terminal="state/plain_lora_seed2_train_new105.done", targets=["plain_lora_seed2_train_new105"],
+             failure_markers=["recovery_plain_seed2_20261001/STOPPED"]),
     ],
     "4090-jm": [
-        dict(id="camco-e12-train", repo="AAAI2027-4", title="CaMCo E12：13B 已启动训练链", root="/home/yxy/camco13b/e12",
+        dict(id="camco-e12-train", repo="AAAI2027-4", title="CaMCo E12：原 13B 训练链", root="/home/yxy/camco13b/e12",
              code="/home/yxy/camco13b", controller="run_e12_4090jm.sh", logs="logs", total=9, terminal="state/E12_4090JM_DONE",
              targets=[f"{arm}_seed{s}_train" for arm in ("random", "cem", "plain_lora") for s in range(3)]),
     ],
@@ -120,14 +125,16 @@ for s in specs:
         failures = {x[:-7] for x in m if x.endswith('.failed')}
     elif s.get('targets'):
         completed = {x for x in s['targets'] if (root/'state'/(x+'.done')).is_file()}
-        failures = {x for x in names(root/'state') if x.startswith(('BLOCKED_', 'STOPPED_', 'INSTRUMENT_VOID'))}
+        failures = {x for x in names(root/'state') if x.startswith(('BLOCKED_', 'STOPPED_', 'INTERRUPTED_', 'INSTRUMENT_VOID'))}
     else:
         completed = names(root/s['done']) & expected
         failures = names(root/s['failed'])
+    failures.update(path for path in s.get('failure_markers', []) if (root/path).exists())
+    interrupted = any(name.startswith('INTERRUPTED_') for name in failures)
     terminal = (root/s['terminal']).exists() if s.get('terminal') else phase == 'done'
     timed_out = any(logroot.glob('TIMEOUT*'))
     out.append(dict(id=s['id'], done=len(completed), failed=len(failures), phase=phase,
-                    terminal=terminal, timeout=timed_out, controllers=live, compute=compute,
+                    terminal=terminal, timeout=timed_out, controllers=live, compute=compute, interrupted=interrupted,
                     cards=sorted(cards), log_bytes=log_bytes, log_mtime=log_mtime,
                     observed_at=now, cost_recorded=(root/s['cost_gate']).exists() if s.get('cost_gate') else None))
 print(json.dumps(out))
@@ -140,6 +147,8 @@ def job_from_snapshot(spec, snap, host):
     if failed:
         status = "failed"
         detail = f"失败标记 {snap['failed']}；阶段 {phase or '未写入'}；需核对链日志"
+        if spec['id'] == 'camco-e12-train' and snap.get('interrupted'):
+            detail = "原训练链中断；8 个训练完成，最后种子迁移至 new105"
     elif snap["terminal"]:
         # W5's CHAIN_DONE means workers have drained even if a job failed.
         # All planned successful units are required before claiming completion.
@@ -152,6 +161,8 @@ def job_from_snapshot(spec, snap, host):
         status = "waiting"
         if spec["id"] == "cvpr2c" and phase is None:
             detail = "链在线；等待 GAVEL 队列与 W5 完成"
+        elif spec['id'] == 'camco-e12-recovery':
+            detail = "恢复链在线；等待前 18 个评测完成及 GPU 1 共享锁"
         elif spec["id"] in ("camco-e13", "camco-e14") and complete == 0:
             detail = "链在线；等待 GAVEL / CVPR-2c 让卡"
         elif complete == spec["total"]:
