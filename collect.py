@@ -272,6 +272,31 @@ def cvpr3_job():
             "alerts": [] if alive != "0" or ndone == 6 else ["链与监护脚本都不在跑"]}
 
 
+def cvpr3v_job():
+    # 2026-10-01: CVPR2027-3 is now "3v" (adaptive test-time views). Its stage-1 read-out and the 3c gate before it run on
+    # the A800, CPU only, in the checkout below. Only file presence and process liveness are probed; no verdict or metric.
+    h, R = "A800", "/data0/xyf/CVPR2027-1-3c-gate"
+    out = ssh(h, f"cd {R} 2>/dev/null && echo @root=1; "
+                 "echo @gate=$(test -s results_3c/gate.json && echo 1 || echo 0); "
+                 "echo @ro=$(test -s results_3v/readout.json && echo 1 || echo 0); "
+                 "echo @log=$(test -s logs/3v/readout.out && echo 1 || echo 0); "
+                 "echo @alive=$(pgrep -fc 'views_3[v].py')")
+    if not out: return None
+    kv = dict(l.split("=", 1) for l in out.strip().splitlines() if l.startswith("@") and "=" in l)
+    if kv.get("@root") != "1":
+        return {"id": "cvpr3v", "repo": "CVPR2027-1", "title": "CVPR-3 3v：按需 view（A800 CPU 读出）", "box": h, "cards": [],
+                "kind": "gen", "status": "unknown", "progress": {"done": 0, "total": 2, "unit": "步"},
+                "detail": f"{R} 不存在", "alerts": ["3v 工作目录不可读"]}
+    gate, ro, alive = kv.get("@gate") == "1", kv.get("@ro") == "1", kv.get("@alive", "0") != "0"
+    status = "done" if ro else ("running" if alive else "waiting")
+    stage = "已写出" if ro else ("在跑" if alive else ("已启动过、进程不在" if kv.get("@log") == "1" else "未开始"))
+    det = f"3c 门读出{'已写出' if gate else '缺失'}；3v 第一阶段读出{stage}（只看文件与进程，不读指标）"
+    alerts = ["3v 读出进程已退出但没有 readout.json"] if (kv.get("@log") == "1" and not ro and not alive) else []
+    return {"id": "cvpr3v", "repo": "CVPR2027-1", "title": "CVPR-3 3v：按需 view（A800 CPU 读出）", "box": h, "cards": [],
+            "kind": "gen", "status": status, "progress": {"done": int(gate) + int(ro), "total": 2, "unit": "步"},
+            "detail": det, "alerts": alerts}
+
+
 def pheromones_job():
     h, R = "A800", "/data0/xyf/AAAI2027-7/results/resubmit"
     out = ssh(h, f"for e in e1 e2 e3 e1ra; do printf '%s ' $(cat {R}/${{e}}_runs.jsonl 2>/dev/null | wc -l); done; ps -eo args | grep -cE 'run_e(1ra)?.py'")
@@ -489,7 +514,7 @@ def main():
     jobs.extend(active)
     alerts.extend(active_alerts)
     jobs.extend(science_a800_jobs())
-    for fn in (cvpr3_job, cpu_ctrl_job, cpu_ctrl2_job, cpu_ctrl3_job, pheromones_d1_job, dcas_e1_job, pheromones_v3_job, pheromones_v2_job, pheromones_job):
+    for fn in (cvpr3v_job, cpu_ctrl_job, cpu_ctrl2_job, cpu_ctrl3_job, pheromones_d1_job, dcas_e1_job, pheromones_v3_job, pheromones_v2_job, pheromones_job):
         j = fn()
         if j: jobs.append(j)
     # 2026-09-27: the jobs below all finished before 09-26 (WWW stage7, ICLR ladders, Science legs, ChronoCheck);
@@ -499,6 +524,7 @@ def main():
         j = stage7(curves);  jobs.append(j) if j else alerts.append("A800 stage7 状态不可读")
         j = ladder();        jobs.append(j) if j else alerts.append("3090 阶梯状态不可读")
         j = b7tp2();         jobs.append(j) if j else None
+        j = cvpr3_job();     jobs.append(j) if j else None   # CVPR-3 P-3-5 adaptation leg, finished 09-29
         for args in STATUS_JOBS:
             j = status_job(*args)
             if j: jobs.append(j)
@@ -541,6 +567,11 @@ def main():
     if os.environ.get("FLEET_PUSH", "1") == "1":
         subprocess.run(["git", "-C", str(ROOT), "add", "-A"], capture_output=True)
         subprocess.run(["git", "-C", str(ROOT), "commit", "-qm", f"data {fleet['generated_at']}"], capture_output=True)
+        # code may also be pushed from elsewhere (2026-10-01): rebase onto it first, or every later push is rejected
+        try:
+            subprocess.run(["git", "-C", str(ROOT), "pull", "-q", "--rebase", "--autostash", "origin", "main"], capture_output=True, timeout=120)
+        except subprocess.TimeoutExpired:
+            pass
         [subprocess.run(["git", "-C", str(ROOT), "push", "-q", "origin", "HEAD:main"], capture_output=True, timeout=300) for _ in range(2) if subprocess.run(["git", "-C", str(ROOT), "status", "-sb"], capture_output=True, text=True).stdout.splitlines()[0].find("ahead") >= 0]
 
 if __name__ == "__main__":
