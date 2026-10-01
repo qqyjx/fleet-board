@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01 14:40 LA",
+ "generated_at": "2026-10-01 14:50 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 55442,
+     "mem_used": 55362,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 55442,
+     "mem_used": 55362,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 55698,
+     "mem_used": 55398,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -37,7 +37,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 3.31,
+    "load": 3.3,
     "mem_total": 503,
     "mem_avail": 459
    }
@@ -51,62 +51,62 @@
      "idx": 0,
      "mem_used": 17226,
      "mem_total": 24576,
-     "util": 59,
+     "util": 65,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 17226,
      "mem_total": 24576,
-     "util": 65,
+     "util": 77,
      "owner": "ours"
     },
     {
      "idx": 2,
      "mem_used": 17226,
      "mem_total": 24576,
-     "util": 58,
+     "util": 65,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 17226,
      "mem_total": 24576,
-     "util": 60,
+     "util": 67,
      "owner": "ours"
     },
     {
      "idx": 4,
      "mem_used": 17226,
      "mem_total": 24576,
-     "util": 64,
+     "util": 68,
      "owner": "ours"
     },
     {
      "idx": 5,
      "mem_used": 17226,
      "mem_total": 24576,
-     "util": 61,
+     "util": 67,
      "owner": "ours"
     },
     {
      "idx": 6,
      "mem_used": 17226,
      "mem_total": 24576,
-     "util": 98,
+     "util": 64,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 17226,
      "mem_total": 24576,
-     "util": 53,
+     "util": 69,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 8.51,
+    "load": 8.57,
     "mem_total": 125,
     "mem_avail": 104
    }
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.08,
+    "load": 1.12,
     "mem_total": 188,
     "mem_avail": 153
    }
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.47,
+    "load": 0.31,
     "mem_total": 251,
     "mem_avail": 227
    }
@@ -238,7 +238,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790890824.7341554,
+    "observed_at": 1790891424.8710508,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -261,7 +261,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790890824.7341554,
+    "observed_at": 1790891424.8710508,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -284,7 +284,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790890824.7341554,
+    "observed_at": 1790891424.8710508,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -316,7 +316,7 @@
    "detail": "8 个计算进程；阶段 run",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790890824.7341554,
+    "observed_at": 1790891424.8710508,
     "controllers": 1,
     "compute": 8,
     "log_bytes": 17011,
@@ -339,7 +339,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790890824.7341554,
+    "observed_at": 1790891424.8710508,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -362,7 +362,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790890825.8238816,
+    "observed_at": 1790891425.5441916,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -385,7 +385,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790890825.8238816,
+    "observed_at": 1790891425.5441916,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -408,7 +408,7 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790890826.3764431,
+    "observed_at": 1790891425.9605348,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -584,5 +584,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105"
  ],
- "collect_s": 32.5
+ "collect_s": 32.0
 }
