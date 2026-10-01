@@ -2,7 +2,8 @@
 """Fleet & training board collector. Probes the four boxes over ssh (read-only),
 writes data/fleet.json (latest) and data/curves.json (training series), then commits
 and pushes. Runs from cron every 10 minutes; safe to run by hand."""
-import json, os, re, subprocess, time, datetime as dt, pathlib
+import json, os, re, shlex, inspect, subprocess, time, datetime as dt, pathlib
+from active_jobs import collect_active_jobs, science_counts
 
 ROOT = pathlib.Path(__file__).resolve().parent
 DATA = ROOT / "data"
@@ -294,21 +295,53 @@ def pheromones_v2_job():
             "detail": f"P1 {p1}/600 · P3 {p3}/60 · P2 无模型臂 {p2} 行（CPU 已跑完）；{run} 个分片在跑",
             "alerts": [f"p_launch.log 有 {fail} 行 FAIL"] if fail else []}
 
-def science32b_job():
-    # 2026-09-27 20:53 LA: the user approved A800 card 3 for the deferred Qwen2.5-32B arithmetic cell; the chain appends to
-    # full_eval.log (A800 clock is US Eastern). Read only the lines after the last FULL_START.
-    h = "A800"
-    out = ssh(h, "tac /data0/xyf/science/logs/full_eval.log | sed '/FULL_START/q' | tac")
-    if not out: return None
-    lines = [l for l in out.strip().splitlines() if l.strip()]
-    ok = sum(1 for l in lines if l.split()[1:2] == ["FULL"] and " rc=0 " in l + " ")
-    bad = [l for l in lines if re.search(r"\brc=[1-9]", l)]
-    fin = any("FULL_DONE" in l for l in lines[1:])
-    status = "failed" if bad else ("done" if fin else "running")
-    return {"id": "science-a800-32b", "repo": "Science", "title": "Phase-Trans 延期格：Qwen2.5-32B arithmetic（A800 卡 3，用户 09-27 批）", "box": h,
-            "cards": [] if status == "done" else [3], "kind": "gen", "status": status, "progress": {"done": ok, "total": 1, "unit": "格"},
-            "detail": ("盲态：只记 rc/秒，指标在 _blind/ 未读；上次同格 29.7 h 到 2911/6000。" if status == "running" else "") + lines[-1][:80],
-            "alerts": [b[:110] for b in bad[-1:]]}
+SCIENCE_PROBE = inspect.getsource(science_counts) + r'''
+import json, os, re
+from pathlib import Path
+# Operational ledger only. No file under results/_blind is opened.
+log = Path('/data0/xyf/science/logs/full_eval.log')
+lines = log.read_text().splitlines() if log.exists() else []
+completed = science_counts(lines)
+consumers = []
+for p in Path('/proc').iterdir():
+    if not p.name.isdigit(): continue
+    try:
+        if p.stat().st_uid != os.getuid(): continue
+        args = p.joinpath('cmdline').read_bytes().split(b'\0')
+        if not any(Path(a.decode()).name == 'full_eval.py' for a in args[1:3] if a): continue
+        allowed = {}
+        for field in p.joinpath('environ').read_bytes().split(b'\0'):
+            key, sep, value = field.partition(b'=')
+            if key in (b'EVAL_ONLY', b'EVAL_CARDS'): allowed[key.decode()] = value.decode()
+        consumers.append(allowed)
+    except (OSError, ValueError): pass
+out = []
+for model in sorted(set(completed) | {m for c in consumers for m in c.get('EVAL_ONLY','').split(',') if m}):
+    ok = completed.get(model, 0)
+    live = [c for c in consumers if model in c.get('EVAL_ONLY','').split(',')]
+    if model != 'Qwen/Qwen2.5-32B' and not live: continue
+    out.append(dict(model=model, done=ok, running=bool(live),
+                    cards=sorted({int(k) for c in live for k in c.get('EVAL_CARDS','').split(',') if k.isdigit()})))
+print(json.dumps(out))
+'''
+
+
+def science_a800_jobs():
+    out = ssh("A800", "python3 -c " + shlex.quote(SCIENCE_PROBE))
+    try:
+        snapshots = json.loads(out)
+    except (TypeError, ValueError):
+        return []
+    jobs = []
+    for s in snapshots:
+        model = s["model"].rsplit("/", 1)[-1]
+        status = "running" if s["running"] else ("done" if s["done"] == 17 else "unknown")
+        jobs.append({"id": "science-a800-" + model.lower().replace("qwen2.5-", ""), "repo": "Science",
+                     "title": f"Phase-Trans A800：{model} 离散评测", "box": "A800", "cards": s["cards"],
+                     "kind": "gen", "status": status, "progress": {"done": s["done"], "total": 17, "unit": "任务"},
+                     "detail": "盲态：只读状态台账和进程配置，不读指标；" + ("进程在线" if s["running"] else "17 项任务 rc=0" if status == "done" else "未确认在跑"),
+                     "alerts": []})
+    return jobs
 
 def pheromones_v3_job():
     # 2026-09-27: V3 relative-direction pheromones, 7B fp16 eval on new105 card 1 (REVISION_V3.md; machine change recorded there)
@@ -445,14 +478,18 @@ def main():
     t0 = time.time()
     curves = json.loads((DATA / "curves.json").read_text()) if (DATA / "curves.json").exists() else {}
     boxes, jobs, alerts = [], [], []
-    for name, label in (("A800", "A800 ×4 (80 GB; 卡 0–2 借 xdx 到 09-29；卡 3 09-27 20:53 LA 起跑 Science 32B)"), ("3090", "3090 ×8 (24 GB, .110)"),
+    for name, label in (("A800", "A800 ×4 (80 GB；共享卡按当前进程归属)"), ("3090", "3090 ×8 (24 GB, .110)"),
                         ("fuxin", "fuxin 4090 ×8 (48 GB, 公司)"), ("new105", "new105 4090D ×2 (48 GB, 公司)"), ("194-yyd", "194 4090D ×4 (48 GB, 公司)"),
-                        ("4090-jm", "4090-jm ×1 (24 GB, 实验室 .176; yxy 在用, 不上)")):
+                        ("4090-jm", "4090-jm（共享；不启动新任务）")):
         cards = gpus(name)
         boxes.append({"name": name, "label": label, "reachable": cards is not None, "cards": cards or [],
                       "sys": sysload(name) if cards is not None else None})
     jobs.extend(camco_jobs())
-    for fn in (cvpr3_job, science32b_job, cpu_ctrl_job, cpu_ctrl2_job, cpu_ctrl3_job, pheromones_d1_job, dcas_e1_job, pheromones_v3_job, pheromones_v2_job, pheromones_job):
+    active, active_alerts = collect_active_jobs(ssh, {b["name"] for b in boxes if b["reachable"]})
+    jobs.extend(active)
+    alerts.extend(active_alerts)
+    jobs.extend(science_a800_jobs())
+    for fn in (cvpr3_job, cpu_ctrl_job, cpu_ctrl2_job, cpu_ctrl3_job, pheromones_d1_job, dcas_e1_job, pheromones_v3_job, pheromones_v2_job, pheromones_job):
         j = fn()
         if j: jobs.append(j)
     # 2026-09-27: the jobs below all finished before 09-26 (WWW stage7, ICLR ladders, Science legs, ChronoCheck);
