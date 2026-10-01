@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01 08:31 LA",
+ "generated_at": "2026-10-01 08:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 75422,
+     "mem_used": 75802,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 75422,
+     "mem_used": 75802,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 75578,
+     "mem_used": 75698,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -37,7 +37,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 4.14,
+    "load": 4.24,
     "mem_total": 503,
     "mem_avail": 458
    }
@@ -49,17 +49,17 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 0,
+     "mem_used": 11142,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 97,
+     "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 0,
+     "mem_used": 11142,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 100,
+     "owner": "ours"
     },
     {
      "idx": 2,
@@ -84,31 +84,31 @@
     },
     {
      "idx": 5,
-     "mem_used": 3084,
+     "mem_used": 11142,
      "mem_total": 24576,
      "util": 98,
      "owner": "ours"
     },
     {
      "idx": 6,
-     "mem_used": 0,
+     "mem_used": 9218,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 97,
+     "owner": "ours"
     },
     {
      "idx": 7,
-     "mem_used": 0,
+     "mem_used": 9218,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 100,
+     "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 7.1,
+    "load": 8.46,
     "mem_total": 125,
-    "mem_avail": 111
+    "mem_avail": 104
    }
   },
   {
@@ -140,9 +140,9 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 2.12,
+    "load": 2.07,
     "mem_total": 188,
-    "mem_avail": 151
+    "mem_avail": 152
    }
   },
   {
@@ -159,15 +159,15 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 19059,
+     "mem_used": 20649,
      "mem_total": 49140,
-     "util": 15,
+     "util": 19,
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 48,
-    "load": 1.16,
+    "load": 1.38,
     "mem_total": 251,
     "mem_avail": 227
    }
@@ -238,7 +238,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790868666.4048102,
+    "observed_at": 1790869224.9830403,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -261,7 +261,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790868666.4048102,
+    "observed_at": 1790869224.9830403,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -284,7 +284,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790868666.4048102,
+    "observed_at": 1790869224.9830403,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -297,10 +297,14 @@
    "title": "CaMCo E13：Qwen2-VL 第二模型家族",
    "box": "3090",
    "cards": [
+    0,
+    1,
     2,
     3,
     4,
-    5
+    5,
+    6,
+    7
    ],
    "kind": "gen",
    "status": "running",
@@ -309,14 +313,14 @@
     "total": 33,
     "unit": "作业"
    },
-   "detail": "4 个计算进程；阶段 run",
+   "detail": "8 个计算进程；阶段 run",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790868666.4048102,
+    "observed_at": 1790869224.9830403,
     "controllers": 1,
-    "compute": 4,
-    "log_bytes": 24660,
-    "log_mtime": 1790868661.919784
+    "compute": 8,
+    "log_bytes": 42177,
+    "log_mtime": 1790869217.6034057
    }
   },
   {
@@ -335,7 +339,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790868666.4048102,
+    "observed_at": 1790869224.9830403,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -360,7 +364,7 @@
    "detail": "1 个计算进程；阶段 作业运行",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790868667.4765067,
+    "observed_at": 1790869226.3313286,
     "controllers": 1,
     "compute": 1,
     "log_bytes": 1438,
@@ -383,7 +387,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790868667.4765067,
+    "observed_at": 1790869226.3313286,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -406,7 +410,7 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790868667.8440862,
+    "observed_at": 1790869226.6930475,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -600,5 +604,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105"
  ],
- "collect_s": 73.6
+ "collect_s": 33.2
 }
