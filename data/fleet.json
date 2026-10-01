@@ -1,28 +1,28 @@
 {
- "generated_at": "2026-10-01 00:50 LA",
+ "generated_at": "2026-10-01 01:00 LA",
  "boxes": [
   {
    "name": "A800",
-   "label": "A800 ×4 (80 GB; 卡 0–2 借 xdx 到 09-29；卡 3 09-27 20:53 LA 起跑 Science 32B)",
+   "label": "A800 ×4 (80 GB；共享卡按当前进程归属)",
    "reachable": true,
    "cards": [
     {
      "idx": 0,
-     "mem_used": 75742,
+     "mem_used": 75602,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 75742,
+     "mem_used": 75602,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 75358,
+     "mem_used": 75218,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -31,13 +31,13 @@
      "idx": 3,
      "mem_used": 36879,
      "mem_total": 81920,
-     "util": 98,
+     "util": 99,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 4.41,
+    "load": 4.29,
     "mem_total": 503,
     "mem_avail": 459
    }
@@ -51,14 +51,14 @@
      "idx": 0,
      "mem_used": 20238,
      "mem_total": 24576,
-     "util": 92,
+     "util": 93,
      "owner": "ours"
     },
     {
      "idx": 1,
      "mem_used": 20238,
      "mem_total": 24576,
-     "util": 86,
+     "util": 77,
      "owner": "ours"
     },
     {
@@ -93,22 +93,22 @@
      "idx": 6,
      "mem_used": 20238,
      "mem_total": 24576,
-     "util": 77,
+     "util": 93,
      "owner": "ours"
     },
     {
      "idx": 7,
-     "mem_used": 0,
+     "mem_used": 16664,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 100,
+     "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 5.0,
+    "load": 5.78,
     "mem_total": 125,
-    "mem_avail": 111
+    "mem_avail": 109
    }
   },
   {
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 2.19,
+    "load": 2.12,
     "mem_total": 188,
     "mem_avail": 151
    }
@@ -154,7 +154,7 @@
   },
   {
    "name": "4090-jm",
-   "label": "4090-jm ×1 (24 GB, 实验室 .176; yxy 在用, 不上)",
+   "label": "4090-jm（共享；不启动新任务）",
    "reachable": true,
    "cards": [
     {
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.23,
+    "load": 0.43,
     "mem_total": 251,
     "mem_avail": 229
    }
@@ -223,6 +223,210 @@
    "alerts": []
   },
   {
+   "id": "gavel-opera",
+   "repo": "AAAI2027-5",
+   "title": "GAVEL OPERA 全量对照",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 45,
+    "total": 45,
+    "unit": "作业"
+   },
+   "detail": "全部完成",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1790841621.7043946,
+    "controllers": 0,
+    "compute": 0,
+    "log_bytes": 0,
+    "log_mtime": 0
+   }
+  },
+  {
+   "id": "certhar-w5",
+   "repo": "IMWUT2027-1",
+   "title": "CertHAR W5：HHAR 修复依赖重跑",
+   "box": "3090",
+   "cards": [
+    5
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 45,
+    "total": 46,
+    "unit": "作业"
+   },
+   "detail": "1 个计算进程；阶段 作业运行",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1790841621.7043946,
+    "controllers": 5,
+    "compute": 1,
+    "log_bytes": 2080,
+    "log_mtime": 1790832090.1333797
+   }
+  },
+  {
+   "id": "cvpr2c",
+   "repo": "CVPR2027-1",
+   "title": "CVPR-2c：时间组内运动状态",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "waiting",
+   "progress": {
+    "done": 0,
+    "total": 307,
+    "unit": "作业"
+   },
+   "detail": "链在线；等待 GAVEL 队列与 W5 完成",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1790841621.7043946,
+    "controllers": 1,
+    "compute": 0,
+    "log_bytes": 0,
+    "log_mtime": 0
+   }
+  },
+  {
+   "id": "camco-e13",
+   "repo": "AAAI2027-4",
+   "title": "CaMCo E13：Qwen2-VL 第二模型家族",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "waiting",
+   "progress": {
+    "done": 1,
+    "total": 33,
+    "unit": "作业"
+   },
+   "detail": "链在线；等待依赖、空卡或已登记检查点",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1790841621.7043946,
+    "controllers": 1,
+    "compute": 0,
+    "log_bytes": 0,
+    "log_mtime": 0
+   }
+  },
+  {
+   "id": "camco-e14",
+   "repo": "AAAI2027-4",
+   "title": "CaMCo E14：匹配 No 目标数量的对照",
+   "box": "3090",
+   "cards": [
+    0,
+    1,
+    6,
+    7
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 0,
+    "total": 7,
+    "unit": "作业"
+   },
+   "detail": "4 个计算进程；阶段 run",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1790841621.7043946,
+    "controllers": 1,
+    "compute": 4,
+    "log_bytes": 20790,
+    "log_mtime": 1790841615.0501668
+   }
+  },
+  {
+   "id": "camco-e12-eval",
+   "repo": "AAAI2027-4",
+   "title": "CaMCo E12：13B 留出模型评测",
+   "box": "new105",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 12,
+    "total": 20,
+    "unit": "作业"
+   },
+   "detail": "1 个计算进程；阶段 作业运行",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1790841622.7143223,
+    "controllers": 1,
+    "compute": 1,
+    "log_bytes": 1242,
+    "log_mtime": 1790837480.0838258
+   }
+  },
+  {
+   "id": "camco-e12-train",
+   "repo": "AAAI2027-4",
+   "title": "CaMCo E12：13B 已启动训练链",
+   "box": "4090-jm",
+   "cards": [],
+   "kind": "gen",
+   "status": "unknown",
+   "progress": {
+    "done": 8,
+    "total": 9,
+    "unit": "作业"
+   },
+   "detail": "未发现链或计算进程；不能据旧标记确认在跑",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1790841622.9888935,
+    "controllers": 0,
+    "compute": 0,
+    "log_bytes": 0,
+    "log_mtime": 0
+   }
+  },
+  {
+   "id": "science-a800-14b",
+   "repo": "Science",
+   "title": "Phase-Trans A800：Qwen2.5-14B 离散评测",
+   "box": "A800",
+   "cards": [
+    3
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 16,
+    "total": 17,
+    "unit": "任务"
+   },
+   "detail": "盲态：只读状态台账和进程配置，不读指标；进程在线",
+   "alerts": []
+  },
+  {
+   "id": "science-a800-32b",
+   "repo": "Science",
+   "title": "Phase-Trans A800：Qwen2.5-32B 离散评测",
+   "box": "A800",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 17,
+    "total": 17,
+    "unit": "任务"
+   },
+   "detail": "盲态：只读状态台账和进程配置，不读指标；17 项任务 rc=0",
+   "alerts": []
+  },
+  {
    "id": "cvpr3-adapt",
    "repo": "CVPR2027-1",
    "title": "CVPR-3 P-3-5 适配腿(6 个 8 卡训练 run → 36 评测)",
@@ -236,24 +440,6 @@
     "unit": "run"
    },
    "detail": "训练 run 6/6 已完成;当前 ctrl_seed2;链日志:CHAIN_DONE",
-   "alerts": []
-  },
-  {
-   "id": "science-a800-32b",
-   "repo": "Science",
-   "title": "Phase-Trans 延期格：Qwen2.5-32B arithmetic（A800 卡 3，用户 09-27 批）",
-   "box": "A800",
-   "cards": [
-    3
-   ],
-   "kind": "gen",
-   "status": "running",
-   "progress": {
-    "done": 0,
-    "total": 1,
-    "unit": "格"
-   },
-   "detail": "盲态：只记 rc/秒，指标在 _blind/ 未读；上次同格 29.7 h 到 2911/6000。2026-09-30T12:01:13 FULL_START cards=3 tasks=17",
    "alerts": []
   },
   {
@@ -392,5 +578,5 @@
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数"
  ],
- "collect_s": 28.7
+ "collect_s": 30.7
 }
