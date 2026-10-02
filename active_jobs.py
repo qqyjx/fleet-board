@@ -82,6 +82,13 @@ SPECS = {
              code="/data/xyf/IMWUT2027-1-w5", controller="w5_e7_device.py",
              logroot="/data/xyf/IMWUT2027-1-w5/results/w5/e7_device_confirmed",
              mode="device_chain", seeds=[42, 43, 44], total=3),
+        *[dict(id=f"gavel-cost-{ds}", repo="AAAI2027-5", title=f"GAVEL 完整成本补测：{ds}",
+               root=f"/data/xyf/scratch/gavel/forward-cost-20261002/{ds}/AAAI2027-5/experiments/gavel",
+               code=f"/data/xyf/scratch/gavel/forward-cost-20261002/{ds}/AAAI2027-5/experiments/gavel",
+               controller="run_forward_cost_3090.sh", logs="logs", total=4, terminal="state/COST_DONE",
+               targets=["s1", "s2", "s3", "s4"],
+               failure_markers=[f"state/{stage}.failed" for stage in ("s1", "s2", "s3", "s4")])
+          for ds in ("pope", "object_halbench", "mmhal_bench")],
     ],
     "new105": [
         dict(id="camco-e12-eval", repo="AAAI2027-4", title="CaMCo E12：13B 留出模型评测", root="/home/xyf/e12/e12",
