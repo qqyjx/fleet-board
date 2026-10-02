@@ -1,46 +1,12 @@
 {
- "generated_at": "2026-10-02 08:09 LA",
+ "generated_at": "2026-10-02 08:17 LA",
  "boxes": [
   {
    "name": "A800",
    "label": "A800 ×4 (80 GB；共享卡按当前进程归属)",
-   "reachable": true,
-   "cards": [
-    {
-     "idx": 0,
-     "mem_used": 75662,
-     "mem_total": 81920,
-     "util": 100,
-     "owner": "other"
-    },
-    {
-     "idx": 1,
-     "mem_used": 75662,
-     "mem_total": 81920,
-     "util": 100,
-     "owner": "other"
-    },
-    {
-     "idx": 2,
-     "mem_used": 75618,
-     "mem_total": 81920,
-     "util": 100,
-     "owner": "other"
-    },
-    {
-     "idx": 3,
-     "mem_used": 26855,
-     "mem_total": 81920,
-     "util": 100,
-     "owner": "other"
-    }
-   ],
-   "sys": {
-    "cores": 80,
-    "load": 4.9,
-    "mem_total": 503,
-    "mem_avail": 438
-   }
+   "reachable": false,
+   "cards": [],
+   "sys": null
   },
   {
    "name": "3090",
@@ -70,9 +36,9 @@
     },
     {
      "idx": 3,
-     "mem_used": 19102,
+     "mem_used": 18676,
      "mem_total": 24576,
-     "util": 97,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -93,20 +59,20 @@
      "idx": 6,
      "mem_used": 19100,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 7,
      "mem_used": 19102,
      "mem_total": 24576,
-     "util": 77,
+     "util": 100,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 14.03,
+    "load": 12.45,
     "mem_total": 125,
     "mem_avail": 100
    }
@@ -140,9 +106,9 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 3.27,
+    "load": 2.41,
     "mem_total": 188,
-    "mem_avail": 151
+    "mem_avail": 152
    }
   },
   {
@@ -167,9 +133,9 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.28,
+    "load": 0.45,
     "mem_total": 251,
-    "mem_avail": 227
+    "mem_avail": 226
    }
   }
  ],
@@ -238,7 +204,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790953360.1036973,
+    "observed_at": 1790953945.1555383,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -261,7 +227,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790953360.1036973,
+    "observed_at": 1790953945.1555383,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -284,7 +250,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790953360.1036973,
+    "observed_at": 1790953945.1555383,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -309,18 +275,18 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 17,
+    "done": 18,
     "total": 96,
     "unit": "作业"
    },
    "detail": "8 个计算进程；阶段 main",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790953360.1036973,
+    "observed_at": 1790953945.1555383,
     "controllers": 1,
     "compute": 8,
-    "log_bytes": 15582,
-    "log_mtime": 1790953271.0578835
+    "log_bytes": 15214,
+    "log_mtime": 1790953885.1096244
    }
   },
   {
@@ -339,7 +305,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790953360.1036973,
+    "observed_at": 1790953945.1555383,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -362,7 +328,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790953360.1036973,
+    "observed_at": 1790953945.1555383,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -385,7 +351,7 @@
    "detail": "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 CPU 汇总与论文宏仍待完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790953360.1036973,
+    "observed_at": 1790953945.1555383,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -408,7 +374,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790953360.1036973,
+    "observed_at": 1790953945.1555383,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -431,7 +397,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790953360.1036973,
+    "observed_at": 1790953945.1555383,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -454,7 +420,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790953360.1036973,
+    "observed_at": 1790953945.1555383,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -477,7 +443,7 @@
    "detail": "72B 输入与缓存已校验；等待 8 张 3090 同时空闲；算术与同机 goldll 各 1 项",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790953360.1036973,
+    "observed_at": 1790953945.1555383,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -500,7 +466,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790953361.3966134,
+    "observed_at": 1790953946.695485,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -523,7 +489,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790953361.3966134,
+    "observed_at": 1790953946.695485,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -546,7 +512,7 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790953363.3793414,
+    "observed_at": 1790953946.9812832,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -567,6 +533,39 @@
     "unit": "part"
    },
    "detail": "dump 40/40 part；完成分片 4/4；读出已写出；最新日志：RUN3S2_DONE 4881 videos (bad 2) 3777s",
+   "alerts": []
+  },
+  {
+   "id": "cvpr3s2v",
+   "repo": "CVPR2027-1",
+   "title": "CVPR-3 第二阶段修订 A1：ViViT-B 全 K400 val dump（第二个未见主干，复现）",
+   "box": "A800",
+   "cards": [],
+   "kind": "gen",
+   "status": "waiting",
+   "progress": {
+    "done": 0,
+    "total": 40,
+    "unit": "part"
+   },
+   "detail": "dump 0/40 part；完成分片 0/4；读出未跑；最新日志：AssertionError: ('label mapping', ['label 0', 'label 1', 'label 10', 'label 100', 'label 1",
+   "alerts": []
+  },
+  {
+   "id": "cpu-ctrl-3",
+   "repo": "private",
+   "title": "对照实验批 cpu-ctrl-3（A800 CPU，24 格网格，GPU 已屏蔽）",
+   "box": "A800",
+   "cards": [],
+   "cpu": "CPU",
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 24,
+    "total": 24,
+    "unit": "格"
+   },
+   "detail": "全部完成",
    "alerts": []
   },
   {
@@ -632,13 +631,30 @@
    },
    "detail": "P1 600/600 · P3 60/60 · P2 无模型臂 500 行（CPU 已跑完）；0 个分片在跑",
    "alerts": []
+  },
+  {
+   "id": "pheromones-resubmit",
+   "repo": "AAAI2027-7",
+   "title": "Pheromones 转投实验 E1–E4 + E1-RA（A800 CPU，GPU 隐藏）",
+   "box": "A800",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 1890,
+    "total": 1890,
+    "unit": "run"
+   },
+   "detail": "E1 450/450 · E2 540/540 · E3 270/270 · E1-RA 630/630；09-27 已读出，转大修（REVISION_V2）",
+   "alerts": []
   }
  ],
  "alerts": [
-  "CertHAR W5：12 组 CPU 派生重算：本轮未读到已登记目录",
+  "A800 当前实验链状态本轮未读到",
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
+  "A800 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105"
  ],
- "collect_s": 539.3
+ "collect_s": 456.5
 }
