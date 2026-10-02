@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-02 03:30 LA",
+ "generated_at": "2026-10-02 03:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 55422,
+     "mem_used": 55442,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 55422,
+     "mem_used": 55442,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 55338,
+     "mem_used": 55398,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -37,7 +37,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 3.06,
+    "load": 3.1,
     "mem_total": 503,
     "mem_avail": 458
    }
@@ -51,7 +51,7 @@
      "idx": 0,
      "mem_used": 18922,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
@@ -65,14 +65,14 @@
      "idx": 2,
      "mem_used": 18922,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     },
     {
      "idx": 3,
      "mem_used": 18920,
      "mem_total": 24576,
-     "util": 100,
+     "util": 75,
      "owner": "ours"
     },
     {
@@ -86,7 +86,7 @@
      "idx": 5,
      "mem_used": 18920,
      "mem_total": 24576,
-     "util": 100,
+     "util": 76,
      "owner": "ours"
     },
     {
@@ -100,15 +100,15 @@
      "idx": 7,
      "mem_used": 18922,
      "mem_total": 24576,
-     "util": 0,
+     "util": 77,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 16.44,
+    "load": 11.67,
     "mem_total": 125,
-    "mem_avail": 100
+    "mem_avail": 99
    }
   },
   {
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.34,
+    "load": 1.18,
     "mem_total": 188,
     "mem_avail": 153
    }
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 1.22,
+    "load": 1.24,
     "mem_total": 251,
     "mem_avail": 218
    }
@@ -238,7 +238,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790937024.378832,
+    "observed_at": 1790937623.6950052,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -261,7 +261,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790937024.378832,
+    "observed_at": 1790937623.6950052,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -284,7 +284,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790937024.378832,
+    "observed_at": 1790937623.6950052,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -316,11 +316,11 @@
    "detail": "8 个计算进程；阶段 main",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790937024.378832,
+    "observed_at": 1790937623.6950052,
     "controllers": 1,
     "compute": 8,
-    "log_bytes": 15356,
-    "log_mtime": 1790937020.2991235
+    "log_bytes": 15976,
+    "log_mtime": 1790937548.3788617
    }
   },
   {
@@ -339,7 +339,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790937024.378832,
+    "observed_at": 1790937623.6950052,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -362,7 +362,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790937024.378832,
+    "observed_at": 1790937623.6950052,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -385,7 +385,7 @@
    "detail": "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 CPU 汇总与论文宏仍待完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790937024.378832,
+    "observed_at": 1790937623.6950052,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -408,7 +408,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790937024.378832,
+    "observed_at": 1790937623.6950052,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -431,7 +431,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790937024.378832,
+    "observed_at": 1790937623.6950052,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -454,7 +454,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790937024.378832,
+    "observed_at": 1790937623.6950052,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -477,7 +477,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790937025.7218778,
+    "observed_at": 1790937625.0629056,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -500,7 +500,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790937025.7218778,
+    "observed_at": 1790937625.0629056,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -523,7 +523,7 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790937026.046675,
+    "observed_at": 1790937625.41435,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -747,5 +747,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105"
  ],
- "collect_s": 34.9
+ "collect_s": 32.9
 }
