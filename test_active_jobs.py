@@ -120,6 +120,28 @@ class ActiveJobsTests(unittest.TestCase):
         chain['units'][-1] = dict(seed=43, rc=0)
         self.assertEqual(device_chain_state(chain, runtimes, seeds)[0], set())
 
+    def test_verified_migration_waits_without_claiming_gpu_use(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            (root/'state').mkdir()
+            (root/'state/INPUTS_VERIFIED.json').write_text('{"status":"verified"}')
+            spec = dict(next(s for s in SPECS['3090'] if s['id'] == 'science-72b-migration'), root=td)
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                exec(REMOTE_PROBE, {'specs': [spec]})
+            snap = json.loads(buf.getvalue())[0]
+            job = job_from_snapshot(spec, snap, '3090')
+            self.assertEqual(job['status'], 'waiting')
+            self.assertEqual(job['cards'], [])
+            self.assertEqual(job['progress']['done'], 0)
+            (root/'state/ARITHMETIC_DONE').write_text('done')
+            (root/'state/CHAIN_DONE').write_text('done')
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                exec(REMOTE_PROBE, {'specs': [spec]})
+            snap = json.loads(buf.getvalue())[0]
+            self.assertEqual(job_from_snapshot(spec, snap, '3090')['status'], 'unknown')
+
 
 if __name__ == "__main__":
     unittest.main()

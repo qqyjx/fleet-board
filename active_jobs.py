@@ -92,6 +92,13 @@ SPECS = {
                targets=["s1", "s2", "s3", "s4"],
                failure_markers=[f"state/{stage}.failed" for stage in ("s1", "s2", "s3", "s4")])
           for ds in ("pope", "object_halbench", "mmhal_bench")],
+        dict(id="science-72b-migration", repo="science", title="Science 72B：剩余算术与同机 goldll",
+             root="/data/xyf/science_72b_3090_20261002", code="/data/xyf/science_72b_3090_20261002",
+             controller="run_72b_migration_3090.sh", logs="logs", phase="state/phase", total=2,
+             terminal="state/CHAIN_DONE", ready="state/INPUTS_VERIFIED.json",
+             completion_markers={"arithmetic": "state/ARITHMETIC_DONE", "goldll": "state/GOLDLL_DONE"},
+             failure_markers=["state/CHAIN_FAILED", "state/PLACEMENT_FAILED"],
+             ready_detail="72B 输入与缓存已校验；等待 8 张 3090 同时空闲；算术与同机 goldll 各 1 项"),
     ],
     "new105": [
         dict(id="camco-e12-eval", repo="AAAI2027-4", title="CaMCo E12：13B 留出模型评测", root="/home/xyf/e12/e12",
@@ -180,6 +187,9 @@ for s in specs:
         except (OSError, ValueError, TypeError, AttributeError):
             completed, failures, device_terminal = set(), set(), False
             phase = '运行记录不可读'
+    elif s.get('completion_markers'):
+        completed = {unit for unit, path in s['completion_markers'].items() if (root/path).is_file()}
+        failures = set()
     elif s.get('markers'):
         m = names(root/s['markers'])
         completed = {x[:-5] for x in m if x.endswith('.done')}
@@ -197,6 +207,7 @@ for s in specs:
     out.append(dict(id=s['id'], done=len(completed), failed=len(failures), phase=phase,
                     terminal=terminal, timeout=timed_out, controllers=live, compute=compute, interrupted=interrupted,
                     cards=sorted(cards), log_bytes=log_bytes, log_mtime=log_mtime,
+                    ready=(root/s['ready']).is_file() if s.get('ready') else False,
                     observed_at=now, cost_recorded=(root/s['cost_gate']).exists() if s.get('cost_gate') else None))
 print(json.dumps(out))
 '''
@@ -232,6 +243,9 @@ def job_from_snapshot(spec, snap, host):
             detail = "计算单元已完成；等待合并、检查或读出"
         else:
             detail = "链在线；等待依赖、空卡或已登记检查点"
+    elif snap.get("ready") and spec.get("ready_detail"):
+        status = "waiting"
+        detail = spec["ready_detail"]
     else:
         status = "unknown"
         detail = "未发现链或计算进程；不能据旧标记确认在跑"
