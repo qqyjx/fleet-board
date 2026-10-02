@@ -31,15 +31,15 @@
      "idx": 3,
      "mem_used": 9861,
      "mem_total": 81920,
-     "util": 100,
+     "util": 92,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 10.13,
+    "load": 9.01,
     "mem_total": 503,
-    "mem_avail": 442
+    "mem_avail": 441
    }
   },
   {
@@ -106,7 +106,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 3.89,
+    "load": 3.76,
     "mem_total": 125,
     "mem_avail": 118
    }
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.72,
+    "load": 1.88,
     "mem_total": 188,
     "mem_avail": 153
    }
@@ -161,13 +161,13 @@
      "idx": 0,
      "mem_used": 29288,
      "mem_total": 49140,
-     "util": 88,
+     "util": 12,
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 48,
-    "load": 4.34,
+    "load": 2.51,
     "mem_total": 251,
     "mem_avail": 224
    }
@@ -238,7 +238,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790932831.7639856,
+    "observed_at": 1790932888.9585323,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -261,7 +261,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790932831.7639856,
+    "observed_at": 1790932888.9585323,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -284,7 +284,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790932831.7639856,
+    "observed_at": 1790932888.9585323,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -298,17 +298,17 @@
    "box": "3090",
    "cards": [],
    "kind": "gen",
-   "status": "unknown",
+   "status": "waiting",
    "progress": {
     "done": 0,
     "total": 96,
     "unit": "作业"
    },
-   "detail": "未发现链或计算进程；不能据旧标记确认在跑",
+   "detail": "链在线；等待依赖、空卡或已登记检查点",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790932831.7639856,
-    "controllers": 0,
+    "observed_at": 1790932888.9585323,
+    "controllers": 2,
     "compute": 0,
     "log_bytes": 0,
     "log_mtime": 0
@@ -330,7 +330,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790932831.7639856,
+    "observed_at": 1790932888.9585323,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -353,7 +353,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790932831.7639856,
+    "observed_at": 1790932888.9585323,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -376,7 +376,7 @@
    "detail": "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 CPU 汇总与论文宏仍待完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790932831.7639856,
+    "observed_at": 1790932888.9585323,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -399,7 +399,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790932831.7639856,
+    "observed_at": 1790932888.9585323,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -422,7 +422,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790932831.7639856,
+    "observed_at": 1790932888.9585323,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -445,7 +445,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790932831.7639856,
+    "observed_at": 1790932888.9585323,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -468,7 +468,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790932834.1868575,
+    "observed_at": 1790932890.372493,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -491,7 +491,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790932834.1868575,
+    "observed_at": 1790932890.372493,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -514,7 +514,7 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790932834.7115498,
+    "observed_at": 1790932890.6951425,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -584,7 +584,7 @@
     "total": 40,
     "unit": "part"
    },
-   "detail": "dump 0/40 part；完成分片 0/4；读出未跑；最新日志：Using a slow image processor as `use_fast` is unset and a slow processor was saved with th",
+   "detail": "dump 0/40 part；完成分片 0/4；读出未跑；最新日志：[05:20:48] 200/5000 videos (bad 0) 0.59 s/video",
    "alerts": []
   },
   {
@@ -740,5 +740,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105"
  ],
- "collect_s": 59.1
+ "collect_s": 46.5
 }
