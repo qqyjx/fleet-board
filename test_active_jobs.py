@@ -18,6 +18,22 @@ class ActiveJobsTests(unittest.TestCase):
                     controllers=1, compute=0, cards=[], observed_at=1,
                     log_bytes=0, log_mtime=0, **kw)
 
+    def test_inventory_ready_before_queue_is_created(self):
+        with tempfile.TemporaryDirectory() as td:
+            base = Path(td)
+            inventory = base / "inventory.json"
+            inventory.write_text("not read: metadata only")
+            spec = dict(next(s for s in SPECS["3090"] if s["id"] == "cvpr2e"))
+            spec.update(root=str(base / "missing_queue"), ready=str(inventory),
+                        code=str(base), logroot=str(base / "logs"))
+            raw = subprocess.check_output([sys.executable, "-c", "specs = " + repr([spec]) + "\n" + REMOTE_PROBE], text=True)
+            snap = json.loads(raw)
+            self.assertEqual(len(snap), 1)
+            job = job_from_snapshot(spec, snap[0], "3090")
+            self.assertEqual(job["status"], "waiting")
+            self.assertEqual(job["progress"], dict(done=0, total=224, unit="作业"))
+            self.assertEqual(job["cards"], [])
+
     def test_live_controller_does_not_claim_gpu_work(self):
         s = self.snap()
         j = job_from_snapshot(SPECS["3090"][0], s, "3090")

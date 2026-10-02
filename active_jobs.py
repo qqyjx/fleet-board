@@ -85,7 +85,9 @@ SPECS = {
              logroot="/data/xyf/CVPR2027-1/logs/2d", queue="main", done="done", failed="failed", phase="phase", total=96),
         dict(id="cvpr2e", repo="CVPR2027-1", title="CVPR-2e：复制帧代价的规模 / 代 / 家族扫描（CLEVRER，8 个模型）",
              root="/data/xyf/CVPR2027-1/results_2e/_queue", code="/data/xyf/CVPR2027-1", controller="chain_2e.sh",
-             logroot="/data/xyf/CVPR2027-1/logs/2e", queue="dev main glmdev glm", done="done", failed="failed", phase="phase", total=224),
+             logroot="/data/xyf/CVPR2027-1/logs/2e", queue="dev main glmdev glm", done="done", failed="failed", phase="phase", total=224,
+             ready="/data/xyf/CVPR2027-1/results_2e/inventory.json",
+             ready_detail="CPU 盘点已完成；等待 2d A2 重启后起链，再等 2d 让卡"),
         dict(id="camco-e13", repo="AAAI2027-4", title="CaMCo E13：Qwen2-VL 第二模型家族", root="/data/xyf/scratch/camco/e13",
              code="/data/xyf/scratch/camco/AAAI2027-4", controller="chain_e13.sh", logs="logs",
              queue="queue/units", done="queue/done", failed="queue/failed", phase="queue/phase", total=33,
@@ -161,7 +163,7 @@ def names(p):
 out = []
 for s in specs:
     root = Path(s['root'])
-    if not root.exists(): continue
+    if not root.exists() and not (s.get('ready') and (root/s['ready']).is_file()): continue
     logroot = Path(s.get('logroot', str(root/s.get('logs','logs'))))
     live, compute, cards, log_bytes, log_mtime = 0, 0, set(), 0, 0
     candidates = []
