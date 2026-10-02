@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-02 11:20 LA",
+ "generated_at": "2026-10-02 11:30 LA",
  "boxes": [
   {
    "name": "A800",
@@ -15,7 +15,7 @@
     },
     {
      "idx": 1,
-     "mem_used": 43462,
+     "mem_used": 43582,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -29,17 +29,17 @@
     },
     {
      "idx": 3,
-     "mem_used": 26879,
+     "mem_used": 26899,
      "mem_total": 81920,
-     "util": 100,
+     "util": 86,
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 5.44,
+    "load": 4.36,
     "mem_total": 503,
-    "mem_avail": 441
+    "mem_avail": 434
    }
   },
   {
@@ -70,9 +70,9 @@
     },
     {
      "idx": 3,
-     "mem_used": 18630,
+     "mem_used": 17438,
      "mem_total": 24576,
-     "util": 78,
+     "util": 100,
      "owner": "ours"
     },
     {
@@ -100,13 +100,13 @@
      "idx": 7,
      "mem_used": 17438,
      "mem_total": 24576,
-     "util": 100,
+     "util": 0,
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 11.9,
+    "load": 12.12,
     "mem_total": 125,
     "mem_avail": 103
    }
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.33,
+    "load": 1.51,
     "mem_total": 188,
     "mem_avail": 152
    }
@@ -159,7 +159,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 1928,
+     "mem_used": 13013,
      "mem_total": 49140,
      "util": 0,
      "owner": "other"
@@ -167,9 +167,9 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 10.12,
+    "load": 15.78,
     "mem_total": 251,
-    "mem_avail": 224
+    "mem_avail": 223
    }
   }
  ],
@@ -238,7 +238,7 @@
    "detail": "失败标记 1；阶段 W4a；需核对链日志",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790965224.2743266,
+    "observed_at": 1790965824.5215206,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -261,7 +261,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790965224.4462771,
+    "observed_at": 1790965824.7478905,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -284,7 +284,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790965224.4462771,
+    "observed_at": 1790965824.7478905,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -307,7 +307,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790965224.4462771,
+    "observed_at": 1790965824.7478905,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -332,18 +332,41 @@
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 27,
+    "done": 28,
     "total": 96,
     "unit": "作业"
    },
    "detail": "8 个计算进程；阶段 main",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790965224.4462771,
+    "observed_at": 1790965824.7478905,
     "controllers": 1,
     "compute": 8,
-    "log_bytes": 106272,
-    "log_mtime": 1790965224.313376
+    "log_bytes": 165618,
+    "log_mtime": 1790965824.7086694
+   }
+  },
+  {
+   "id": "cvpr2e",
+   "repo": "CVPR2027-1",
+   "title": "CVPR-2e：复制帧代价的规模 / 代 / 家族扫描（CLEVRER，8 个模型）",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "waiting",
+   "progress": {
+    "done": 0,
+    "total": 224,
+    "unit": "作业"
+   },
+   "detail": "CPU 盘点已完成；等待 2d A2 重启后起链，再等 2d 让卡",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1790965824.7478905,
+    "controllers": 0,
+    "compute": 0,
+    "log_bytes": 0,
+    "log_mtime": 0
    }
   },
   {
@@ -362,7 +385,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790965224.4462771,
+    "observed_at": 1790965824.7478905,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -385,7 +408,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790965224.4462771,
+    "observed_at": 1790965824.7478905,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -408,7 +431,7 @@
    "detail": "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 CPU 汇总与论文宏仍待完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790965224.4462771,
+    "observed_at": 1790965824.7478905,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -431,7 +454,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790965224.4462771,
+    "observed_at": 1790965824.7478905,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -454,7 +477,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790965224.4462771,
+    "observed_at": 1790965824.7478905,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -477,7 +500,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790965224.4462771,
+    "observed_at": 1790965824.7478905,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -500,7 +523,7 @@
    "detail": "72B 输入与缓存已校验；等待 8 张 3090 同时空闲；算术与同机 goldll 各 1 项",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790965224.4462771,
+    "observed_at": 1790965824.7478905,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -523,7 +546,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790965225.4450586,
+    "observed_at": 1790965825.775489,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -546,7 +569,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790965225.4450586,
+    "observed_at": 1790965825.775489,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -569,7 +592,7 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790965225.7610905,
+    "observed_at": 1790965826.6429815,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -805,11 +828,10 @@
   }
  ],
  "alerts": [
-  "CVPR-2e：复制帧代价的规模 / 代 / 家族扫描（CLEVRER，8 个模型）：本轮未读到已登记目录",
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CertHAR W5：12 组 CPU 派生重算 失败：失败标记 1；阶段 W4a；需核对链日志",
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105"
  ],
- "collect_s": 32.1
+ "collect_s": 32.2
 }
