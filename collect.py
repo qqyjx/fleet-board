@@ -3,7 +3,7 @@
 writes data/fleet.json (latest) and data/curves.json (training series), then commits
 and pushes. Runs from cron every 10 minutes; safe to run by hand."""
 import json, os, re, shlex, inspect, subprocess, time, datetime as dt, pathlib
-from active_jobs import collect_active_jobs, science_counts
+from active_jobs import collect_active_jobs, science_counts, science_snapshots
 
 ROOT = pathlib.Path(__file__).resolve().parent
 DATA = ROOT / "data"
@@ -320,7 +320,7 @@ def pheromones_v2_job():
             "detail": f"P1 {p1}/600 · P3 {p3}/60 · P2 无模型臂 {p2} 行（CPU 已跑完）；{run} 个分片在跑",
             "alerts": [f"p_launch.log 有 {fail} 行 FAIL"] if fail else []}
 
-SCIENCE_PROBE = inspect.getsource(science_counts) + r'''
+SCIENCE_PROBE = inspect.getsource(science_counts) + inspect.getsource(science_snapshots) + r'''
 import json, os, re
 from pathlib import Path
 # Operational ledger only. No file under results/_blind is opened.
@@ -340,14 +340,7 @@ for p in Path('/proc').iterdir():
             if key in (b'EVAL_ONLY', b'EVAL_CARDS'): allowed[key.decode()] = value.decode()
         consumers.append(allowed)
     except (OSError, ValueError): pass
-out = []
-for model in sorted(set(completed) | {m for c in consumers for m in c.get('EVAL_ONLY','').split(',') if m}):
-    ok = completed.get(model, 0)
-    live = [c for c in consumers if model in c.get('EVAL_ONLY','').split(',')]
-    if model != 'Qwen/Qwen2.5-32B' and not live: continue
-    out.append(dict(model=model, done=ok, running=bool(live),
-                    cards=sorted({int(k) for c in live for k in c.get('EVAL_CARDS','').split(',') if k.isdigit()})))
-print(json.dumps(out))
+print(json.dumps(science_snapshots(completed, consumers)))
 '''
 
 
@@ -361,10 +354,14 @@ def science_a800_jobs():
     for s in snapshots:
         model = s["model"].rsplit("/", 1)[-1]
         status = "running" if s["running"] else ("done" if s["done"] == 17 else "unknown")
+        if not s["running"] and s["done"] < 17 and model == "Qwen2.5-72B":
+            status = "waiting"
+        detail = ("进程在线" if s["running"] else "17 项任务 rc=0" if status == "done"
+                  else "等待两张同时空闲的 A800；不占用同事的卡" if status == "waiting" else "未确认在跑")
         jobs.append({"id": "science-a800-" + model.lower().replace("qwen2.5-", ""), "repo": "Science",
                      "title": f"Phase-Trans A800：{model} 离散评测", "box": "A800", "cards": s["cards"],
                      "kind": "gen", "status": status, "progress": {"done": s["done"], "total": 17, "unit": "任务"},
-                     "detail": "盲态：只读状态台账和进程配置，不读指标；" + ("进程在线" if s["running"] else "17 项任务 rc=0" if status == "done" else "未确认在跑"),
+                     "detail": "盲态：只读状态台账和进程配置，不读指标；" + detail,
                      "alerts": []})
     return jobs
 

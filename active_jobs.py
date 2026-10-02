@@ -23,6 +23,41 @@ def science_counts(lines):
             for model, task in completed}
 
 
+def science_snapshots(completed, consumers):
+    """Keep the current large-model matrix visible after its consumers exit."""
+    current = {"Qwen/Qwen2.5-14B", "Qwen/Qwen2.5-32B", "Qwen/Qwen2.5-72B"}
+    live_models = {m for c in consumers for m in c.get("EVAL_ONLY", "").split(",") if m}
+    out = []
+    for model in sorted(current | live_models):
+        live = [c for c in consumers if model in c.get("EVAL_ONLY", "").split(",")]
+        out.append(dict(model=model, done=completed.get(model, 0), running=bool(live),
+                        cards=sorted({int(k) for c in live for k in c.get("EVAL_CARDS", "").split(",") if k.isdigit()})))
+    return out
+
+
+def device_chain_state(chain, runtimes, seeds):
+    """Count confirmed seeds from operational JSON, without opening metrics."""
+    units = chain.get("units", [])
+    valid = (chain.get("seeds") == seeds and len(units) == len(seeds)
+             and {u.get("seed") for u in units} == set(seeds))
+    completed = set()
+    failures = set()
+    for unit in units:
+        seed = unit.get("seed")
+        if seed not in seeds:
+            continue
+        if unit.get("rc") not in (None, 0):
+            failures.add(str(seed))
+        runtime = runtimes.get(seed, {})
+        if (valid and unit.get("rc") == 0 and runtime.get("seed") == seed
+                and runtime.get("status") == "complete"
+                and runtime.get("observations") == {"embed": 1, "train_head": 3, "predict": 3}
+                and runtime.get("cuda_peak_allocated_bytes", 0) > 0
+                and runtime.get("wrapper_sha256") == chain.get("wrapper_sha256")):
+            completed.add(str(seed))
+    return completed, failures, chain.get("status") == "complete"
+
+
 SPECS = {
     "3090": [
         dict(id="gavel-opera", repo="AAAI2027-5", title="GAVEL OPERA 全量对照", root="/data/xyf/scratch/gavel/opera/run3090",
@@ -42,6 +77,11 @@ SPECS = {
              code="/data/xyf/scratch/camco/e13/e14/code", controller="chain_e14.sh", logs="logs",
              queue="queue/units", done="queue/done", failed="queue/failed", phase="queue/phase", total=7,
              terminal="state/E14_DONE", cost_gate="state/cost_recorded"),
+        dict(id="certhar-w5-e7-device", repo="IMWUT2027-1", title="CertHAR W5 E7：CUDA 设备确认复跑",
+             root="/data/xyf/IMWUT2027-1-w5/results/w5/e7_device_confirmed",
+             code="/data/xyf/IMWUT2027-1-w5", controller="w5_e7_device.py",
+             logroot="/data/xyf/IMWUT2027-1-w5/results/w5/e7_device_confirmed",
+             mode="device_chain", seeds=[42, 43, 44], total=3),
     ],
     "new105": [
         dict(id="camco-e12-eval", repo="AAAI2027-4", title="CaMCo E12：13B 留出模型评测", root="/home/xyf/e12/e12",
@@ -62,9 +102,9 @@ SPECS = {
 }
 
 # Sent through one read-only SSH command per box. Read only our process identities,
-# CUDA_VISIBLE_DEVICES, marker names, file metadata and phase words. Never read
+# CUDA_VISIBLE_DEVICES, marker names, file metadata, phase words and runtime JSON. Never read
 # task outputs, scores, checkpoints, arbitrary environments or private CPU jobs.
-REMOTE_PROBE = inspect.getsource(compute_roots) + r'''
+REMOTE_PROBE = inspect.getsource(compute_roots) + inspect.getsource(device_chain_state) + r'''
 import json, os, time
 from pathlib import Path
 now = time.time()
@@ -119,7 +159,18 @@ for s in specs:
     phase = phpath.read_text().strip() if phpath.is_file() else None
     expected = set()
     for sub in s.get('queue','').split(): expected.update(names(root/sub))
-    if s.get('markers'):
+    device_terminal = None
+    if s.get('mode') == 'device_chain':
+        try:
+            chain = json.loads((root/'chain.json').read_text())
+            runtimes = {seed: json.loads((root/f'seed{seed}'/'runtime.json').read_text())
+                        for seed in s['seeds'] if (root/f'seed{seed}'/'runtime.json').is_file()}
+            completed, failures, device_terminal = device_chain_state(chain, runtimes, s['seeds'])
+            phase = chain.get('status')
+        except (OSError, ValueError, TypeError, AttributeError):
+            completed, failures, device_terminal = set(), set(), False
+            phase = '运行记录不可读'
+    elif s.get('markers'):
         m = names(root/s['markers'])
         completed = {x[:-5] for x in m if x.endswith('.done')}
         failures = {x[:-7] for x in m if x.endswith('.failed')}
@@ -131,7 +182,7 @@ for s in specs:
         failures = names(root/s['failed'])
     failures.update(path for path in s.get('failure_markers', []) if (root/path).exists())
     interrupted = any(name.startswith('INTERRUPTED_') for name in failures)
-    terminal = (root/s['terminal']).exists() if s.get('terminal') else phase == 'done'
+    terminal = device_terminal if device_terminal is not None else ((root/s['terminal']).exists() if s.get('terminal') else phase == 'done')
     timed_out = any(logroot.glob('TIMEOUT*'))
     out.append(dict(id=s['id'], done=len(completed), failed=len(failures), phase=phase,
                     terminal=terminal, timeout=timed_out, controllers=live, compute=compute, interrupted=interrupted,
@@ -154,6 +205,8 @@ def job_from_snapshot(spec, snap, host):
         # All planned successful units are required before claiming completion.
         status = "done" if complete == spec["total"] else "unknown"
         detail = "全部完成" if status == "done" else "终止标记与完成数不一致；需核对"
+        if spec.get("mode") == "device_chain" and status == "done":
+            detail = "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 CPU 汇总与论文宏仍待完成"
     elif snap["compute"]:
         status = "running"
         detail = f"{snap['compute']} 个计算进程；阶段 {phase or '作业运行'}"

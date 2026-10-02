@@ -5,7 +5,8 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from active_jobs import REMOTE_PROBE, SPECS, compute_roots, science_counts, job_from_snapshot
+from active_jobs import (REMOTE_PROBE, SPECS, compute_roots, science_counts,
+                         science_snapshots, device_chain_state, job_from_snapshot)
 
 
 class ActiveJobsTests(unittest.TestCase):
@@ -86,6 +87,38 @@ class ActiveJobsTests(unittest.TestCase):
                 't FULL Qwen/Qwen2.5-32B gsm8k_goldll rc=0 wall=3s ',
                 't FULL Qwen/Qwen2.5-32B mbpp_all964 rc=1 wall=4s ']
         self.assertEqual(science_counts(rows), {'Qwen/Qwen2.5-32B': 1})
+
+    def test_completed_science_models_remain_visible_without_processes(self):
+        rows = science_snapshots({'Qwen/Qwen2.5-14B': 17, 'Qwen/Qwen2.5-32B': 17,
+                                  'Qwen/Qwen2.5-72B': 16, 'Qwen/Qwen2.5-7B': 17}, [])
+        by_model = {row['model']: row for row in rows}
+        self.assertEqual(len(rows), 3)
+        self.assertEqual(by_model['Qwen/Qwen2.5-14B']['done'], 17)
+        self.assertEqual(by_model['Qwen/Qwen2.5-72B']['done'], 16)
+        self.assertTrue(all(not row['running'] and not row['cards'] for row in rows))
+
+    def test_live_science_model_has_only_its_observed_cards(self):
+        rows = science_snapshots({}, [{'EVAL_ONLY': 'other/live-model', 'EVAL_CARDS': '3'}])
+        live = next(row for row in rows if row['model'] == 'other/live-model')
+        self.assertTrue(live['running'])
+        self.assertEqual(live['cards'], [3])
+
+    def test_device_chain_needs_all_runtime_records_and_distinct_seeds(self):
+        seeds = [42, 43, 44]
+        chain = dict(seeds=seeds, status='complete', wrapper_sha256='pin',
+                     units=[dict(seed=s, rc=0) for s in seeds])
+        runtimes = {s: dict(seed=s, status='complete', wrapper_sha256='pin',
+                           cuda_peak_allocated_bytes=100,
+                           observations=dict(embed=1, train_head=3, predict=3)) for s in seeds}
+        self.assertEqual(device_chain_state(chain, runtimes, seeds), ({'42', '43', '44'}, set(), True))
+        del runtimes[44]
+        completed, failures, terminal = device_chain_state(chain, runtimes, seeds)
+        spec = next(s for s in SPECS['3090'] if s.get('mode') == 'device_chain')
+        snap = self.snap()
+        snap.update(done=len(completed), failed=len(failures), terminal=terminal, controllers=0)
+        self.assertEqual(job_from_snapshot(spec, snap, '3090')['status'], 'unknown')
+        chain['units'][-1] = dict(seed=43, rc=0)
+        self.assertEqual(device_chain_state(chain, runtimes, seeds)[0], set())
 
 
 if __name__ == "__main__":
