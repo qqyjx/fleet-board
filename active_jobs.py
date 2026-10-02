@@ -59,6 +59,17 @@ def device_chain_state(chain, runtimes, seeds):
 
 
 SPECS = {
+    "A800": [
+        dict(id="certhar-w5-cpu", repo="IMWUT2027-1", title="CertHAR W5：12 组 CPU 派生重算",
+             root="/data0/xyf/IMWUT2027-1-w5-cpu-20261002",
+             code="/data0/xyf/IMWUT2027-1-w5-cpu-20261002", controller="W5_cpu_recompute.py",
+             logs="logs", kind="cpu", phase="state/phase", total=12,
+             targets=["E10_w1_probe", "frontier", "anatomy", "E12_l3_classifier", "E7_aggregate",
+                      "derived", "b_lanes", "W3a", "W3b", "W4bc", "W4a", "E13_llm_fields"],
+             terminal="state/CHAIN_DONE", ready="state/DATA_VERIFIED.json",
+             failure_markers=["state/CHAIN_FAILED", "state/DATA_COPY_FAILED"],
+             ready_detail="CPU 输入已校验；等待计算进程；论文宏仍待在 WSL 生成"),
+    ],
     "3090": [
         dict(id="gavel-opera", repo="AAAI2027-5", title="GAVEL OPERA 全量对照", root="/data/xyf/scratch/gavel/opera/run3090",
              code="/data/xyf/scratch/gavel/AAAI2027-5", controller="opera_chain_3090.sh", logs="logs",
@@ -120,7 +131,7 @@ SPECS = {
 
 # Sent through one read-only SSH command per box. Read only our process identities,
 # CUDA_VISIBLE_DEVICES, marker names, file metadata, phase words and runtime JSON. Never read
-# task outputs, scores, checkpoints, arbitrary environments or private CPU jobs.
+# task outputs, scores, checkpoints, arbitrary environments or unregistered CPU jobs.
 REMOTE_PROBE = inspect.getsource(compute_roots) + inspect.getsource(device_chain_state) + r'''
 import json, os, time
 from pathlib import Path
@@ -159,7 +170,7 @@ for s in specs:
                 break
         # Shell workers and memory pollers inherit CUDA settings. Only actual
         # Python compute processes with stdout inside this chain's log dir count.
-        if cvd and Path(argv[0]).name.startswith('python') and stdout.startswith(str(logroot)+'/'):
+        if (cvd or s.get('kind') == 'cpu') and Path(argv[0]).name.startswith('python') and stdout.startswith(str(logroot)+'/'):
             candidates.append((pid, ppid, stdout, cvd))
     outputs = set()
     for pid, ppid, stdout, cvd in compute_roots(candidates):
@@ -228,6 +239,8 @@ def job_from_snapshot(spec, snap, host):
         detail = "全部完成" if status == "done" else "终止标记与完成数不一致；需核对"
         if spec.get("mode") == "device_chain" and status == "done":
             detail = "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 CPU 汇总与论文宏仍待完成"
+        elif spec.get("kind") == "cpu" and status == "done":
+            detail = "12 组 CPU 重算均 rc=0；结果落地与 WSL 论文宏仍待完成"
     elif snap["compute"]:
         status = "running"
         detail = f"{snap['compute']} 个计算进程；阶段 {phase or '作业运行'}"
@@ -250,7 +263,7 @@ def job_from_snapshot(spec, snap, host):
         status = "unknown"
         detail = "未发现链或计算进程；不能据旧标记确认在跑"
     return dict(id=spec["id"], repo=spec["repo"], title=spec["title"], box=host,
-                cards=snap["cards"] if status == "running" else [], kind="gen", status=status,
+                cards=snap["cards"] if status == "running" else [], kind=spec.get("kind", "gen"), status=status,
                 progress=dict(done=complete, total=spec["total"], unit="作业"), detail=detail, alerts=[],
                 runtime={k: snap[k] for k in ("observed_at", "controllers", "compute", "log_bytes", "log_mtime")})
 

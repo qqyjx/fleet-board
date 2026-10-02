@@ -1,7 +1,10 @@
 import contextlib
 import io
 import json
+import os
 from pathlib import Path
+import subprocess
+import sys
 import tempfile
 import unittest
 
@@ -141,6 +144,45 @@ class ActiveJobsTests(unittest.TestCase):
                 exec(REMOTE_PROBE, {'specs': [spec]})
             snap = json.loads(buf.getvalue())[0]
             self.assertEqual(job_from_snapshot(spec, snap, '3090')['status'], 'unknown')
+
+    def test_registered_cpu_chain_runs_without_claiming_cards(self):
+        spec = SPECS['A800'][0]
+        snap = self.snap()
+        snap.update(compute=1, phase='W3b')
+        job = job_from_snapshot(spec, snap, 'A800')
+        self.assertEqual(job['status'], 'running')
+        self.assertEqual(job['kind'], 'cpu')
+        self.assertEqual(job['cards'], [])
+
+    def test_cpu_terminal_needs_all_twelve_successful_groups(self):
+        spec = SPECS['A800'][0]
+        snap = self.snap()
+        snap.update(done=11, terminal=True)
+        self.assertEqual(job_from_snapshot(spec, snap, 'A800')['status'], 'unknown')
+        snap['done'] = 12
+        job = job_from_snapshot(spec, snap, 'A800')
+        self.assertEqual(job['status'], 'done')
+        self.assertIn('论文宏仍待完成', job['detail'])
+
+    def test_remote_probe_observes_cpu_only_in_registered_log_directory(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            (root/'logs').mkdir()
+            spec = dict(SPECS['A800'][0], root=td, code=td)
+            with (root/'logs/compute.log').open('w') as output:
+                child = subprocess.Popen([sys.executable, '-c', 'import time; time.sleep(20)'],
+                                         stdout=output, env=dict(os.environ, CUDA_VISIBLE_DEVICES=''))
+                try:
+                    buf = io.StringIO()
+                    with contextlib.redirect_stdout(buf):
+                        exec(REMOTE_PROBE, {'specs': [spec, dict(spec, id='unregistered', kind='gen')]})
+                    cpu, other = json.loads(buf.getvalue())
+                    self.assertEqual(cpu['compute'], 1)
+                    self.assertEqual(cpu['cards'], [])
+                    self.assertEqual(other['compute'], 0)
+                finally:
+                    child.terminate()
+                    child.wait(timeout=5)
 
 
 if __name__ == "__main__":
