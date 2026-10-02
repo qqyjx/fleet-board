@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-02 01:51 LA",
+ "generated_at": "2026-10-02 01:56 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 55462,
+     "mem_used": 75422,
      "mem_total": 81920,
-     "util": 100,
+     "util": 92,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 55462,
+     "mem_used": 75422,
      "mem_total": 81920,
-     "util": 100,
+     "util": 92,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 55418,
+     "mem_used": 75578,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -37,9 +37,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 3.64,
+    "load": 3.5,
     "mem_total": 503,
-    "mem_avail": 458
+    "mem_avail": 455
    }
   },
   {
@@ -49,24 +49,24 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 0,
+     "mem_used": 4496,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 44,
+     "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 0,
+     "mem_used": 4504,
      "mem_total": 24576,
-     "util": 0,
-     "owner": "free"
+     "util": 28,
+     "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 0,
+     "mem_used": 4504,
      "mem_total": 24576,
      "util": 0,
-     "owner": "free"
+     "owner": "ours"
     },
     {
      "idx": 3,
@@ -100,15 +100,15 @@
      "idx": 7,
      "mem_used": 0,
      "mem_total": 24576,
-     "util": 1,
+     "util": 0,
      "owner": "free"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 3.55,
+    "load": 5.68,
     "mem_total": 125,
-    "mem_avail": 117
+    "mem_avail": 113
    }
   },
   {
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.36,
+    "load": 1.14,
     "mem_total": 188,
     "mem_avail": 153
    }
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.37,
+    "load": 0.36,
     "mem_total": 251,
     "mem_avail": 227
    }
@@ -238,7 +238,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790931035.1850379,
+    "observed_at": 1790931366.114311,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -261,7 +261,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790931035.1850379,
+    "observed_at": 1790931366.114311,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -284,7 +284,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790931035.1850379,
+    "observed_at": 1790931366.114311,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -307,7 +307,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790931035.1850379,
+    "observed_at": 1790931366.114311,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -330,7 +330,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790931035.1850379,
+    "observed_at": 1790931366.114311,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -353,11 +353,84 @@
    "detail": "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 CPU 汇总与论文宏仍待完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790931035.1850379,
+    "observed_at": 1790931366.114311,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
     "log_mtime": 0
+   }
+  },
+  {
+   "id": "gavel-cost-pope",
+   "repo": "AAAI2027-5",
+   "title": "GAVEL 完整成本补测：pope",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 4,
+    "total": 4,
+    "unit": "作业"
+   },
+   "detail": "全部完成",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1790931366.114311,
+    "controllers": 0,
+    "compute": 0,
+    "log_bytes": 0,
+    "log_mtime": 0
+   }
+  },
+  {
+   "id": "gavel-cost-object_halbench",
+   "repo": "AAAI2027-5",
+   "title": "GAVEL 完整成本补测：object_halbench",
+   "box": "3090",
+   "cards": [
+    1
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 2,
+    "total": 4,
+    "unit": "作业"
+   },
+   "detail": "1 个计算进程；阶段 s3",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1790931366.114311,
+    "controllers": 1,
+    "compute": 1,
+    "log_bytes": 287,
+    "log_mtime": 1790931318.393901
+   }
+  },
+  {
+   "id": "gavel-cost-mmhal_bench",
+   "repo": "AAAI2027-5",
+   "title": "GAVEL 完整成本补测：mmhal_bench",
+   "box": "3090",
+   "cards": [
+    2
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 2,
+    "total": 4,
+    "unit": "作业"
+   },
+   "detail": "1 个计算进程；阶段 s3",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1790931366.114311,
+    "controllers": 1,
+    "compute": 1,
+    "log_bytes": 283,
+    "log_mtime": 1790931254.08599
    }
   },
   {
@@ -376,7 +449,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790931036.5101573,
+    "observed_at": 1790931368.3701987,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -399,7 +472,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790931036.5101573,
+    "observed_at": 1790931368.3701987,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -422,7 +495,7 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790931036.8844104,
+    "observed_at": 1790931368.697357,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -630,5 +703,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105"
  ],
- "collect_s": 59.2
+ "collect_s": 36.8
 }
