@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01 21:40 LA",
+ "generated_at": "2026-10-01 21:50 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,21 +8,21 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 75882,
+     "mem_used": 75602,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 1,
-     "mem_used": 75882,
+     "mem_used": 75602,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
     },
     {
      "idx": 2,
-     "mem_used": 75358,
+     "mem_used": 75678,
      "mem_total": 81920,
      "util": 100,
      "owner": "other"
@@ -37,7 +37,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 3.35,
+    "load": 3.33,
     "mem_total": 503,
     "mem_avail": 459
    }
@@ -106,7 +106,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 2.45,
+    "load": 2.44,
     "mem_total": 125,
     "mem_avail": 118
    }
@@ -140,7 +140,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.95,
+    "load": 1.16,
     "mem_total": 188,
     "mem_avail": 153
    }
@@ -167,7 +167,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.6,
+    "load": 0.28,
     "mem_total": 251,
     "mem_avail": 227
    }
@@ -238,7 +238,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790916030.1429882,
+    "observed_at": 1790916626.3373246,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -261,7 +261,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790916030.1429882,
+    "observed_at": 1790916626.3373246,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -284,7 +284,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790916030.1429882,
+    "observed_at": 1790916626.3373246,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -307,7 +307,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790916030.1429882,
+    "observed_at": 1790916626.3373246,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -330,7 +330,30 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790916030.1429882,
+    "observed_at": 1790916626.3373246,
+    "controllers": 0,
+    "compute": 0,
+    "log_bytes": 0,
+    "log_mtime": 0
+   }
+  },
+  {
+   "id": "certhar-w5-e7-device",
+   "repo": "IMWUT2027-1",
+   "title": "CertHAR W5 E7：CUDA 设备确认复跑",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 3,
+    "total": 3,
+    "unit": "作业"
+   },
+   "detail": "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 CPU 汇总与论文宏仍待完成",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1790916626.3373246,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -353,7 +376,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790916031.261155,
+    "observed_at": 1790916627.5559354,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -376,7 +399,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790916031.261155,
+    "observed_at": 1790916627.5559354,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -399,12 +422,28 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1790916031.5266173,
+    "observed_at": 1790916627.9917927,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
     "log_mtime": 0
    }
+  },
+  {
+   "id": "science-a800-14b",
+   "repo": "Science",
+   "title": "Phase-Trans A800：Qwen2.5-14B 离散评测",
+   "box": "A800",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 17,
+    "total": 17,
+    "unit": "任务"
+   },
+   "detail": "盲态：只读状态台账和进程配置，不读指标；17 项任务 rc=0",
+   "alerts": []
   },
   {
    "id": "science-a800-32b",
@@ -420,6 +459,22 @@
     "unit": "任务"
    },
    "detail": "盲态：只读状态台账和进程配置，不读指标；17 项任务 rc=0",
+   "alerts": []
+  },
+  {
+   "id": "science-a800-72b",
+   "repo": "Science",
+   "title": "Phase-Trans A800：Qwen2.5-72B 离散评测",
+   "box": "A800",
+   "cards": [],
+   "kind": "gen",
+   "status": "waiting",
+   "progress": {
+    "done": 16,
+    "total": 17,
+    "unit": "任务"
+   },
+   "detail": "盲态：只读状态台账和进程配置，不读指标；等待两张同时空闲的 A800；不占用同事的卡",
    "alerts": []
   },
   {
@@ -575,5 +630,5 @@
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105"
  ],
- "collect_s": 51.4
+ "collect_s": 45.8
 }
