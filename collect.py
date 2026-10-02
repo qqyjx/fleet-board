@@ -297,6 +297,29 @@ def cvpr3v_job():
             "detail": det, "alerts": alerts}
 
 
+def cvpr3s2_job():
+    # 2026-10-02: CVPR2027-3 stage 2, TimeSformer-B per-video dump on the A800 (4 fixed shards, 40 parts in total), then a
+    # CPU read-out. Only part counts, shard log tails and process liveness are probed; no metric is read.
+    h, R = "A800", "/data0/xyf/CVPR2027-1-3c-gate"
+    out = ssh(h, f"cd {R} 2>/dev/null && echo @root=1; "
+                 "echo @parts=$(ls results/ef2_k400_tsf/part_*.npz 2>/dev/null | wc -l); "
+                 "echo @done=$(grep -l RUN3S2_DONE logs/3s2/run_*.log 2>/dev/null | wc -l); "
+                 "echo @ro=$(test -s results_3s2/readout.json && echo 1 || echo 0); "
+                 "echo @alive=$(pgrep -fc 'run_3s[2].py'); "
+                 "echo @cards=$(for p in $(pgrep -f 'run_3s[2].py'); do tr '\\0' '\\n' < /proc/$p/environ 2>/dev/null | grep '^CUDA_VISIBLE_DEVICES=' | cut -d= -f2; done | sort -u | tr '\\n' ' '); "
+                 "echo @last=$(ls -t logs/3s2/run_*.log 2>/dev/null | head -1 | xargs -r tail -n 1 | cut -c1-90)")
+    if not out: return None
+    kv = dict(l.split("=", 1) for l in out.strip().splitlines() if l.startswith("@") and "=" in l)
+    if kv.get("@root") != "1": return None
+    parts = int(kv.get("@parts", "0") or 0); alive = int(kv.get("@alive", "0") or 0); ro = kv.get("@ro") == "1"
+    cards = sorted({int(c) for c in kv.get("@cards", "").split() if c.isdigit()})
+    status = "done" if ro else ("running" if alive else ("waiting" if parts < 40 else "running"))
+    det = f"dump {parts}/40 part；完成分片 {kv.get('@done', '0')}/4；读出{'已写出' if ro else '未跑'}；最新日志：{kv.get('@last', '')}"
+    return {"id": "cvpr3s2", "repo": "CVPR2027-1", "title": "CVPR-3 第二阶段：TimeSformer-B 全 K400 val dump（未见主干确认）", "box": h,
+            "cards": cards, "kind": "gen", "status": status, "progress": {"done": parts, "total": 40, "unit": "part"},
+            "detail": det, "alerts": []}
+
+
 def pheromones_job():
     h, R = "A800", "/data0/xyf/AAAI2027-7/results/resubmit"
     out = ssh(h, f"for e in e1 e2 e3 e1ra; do printf '%s ' $(cat {R}/${{e}}_runs.jsonl 2>/dev/null | wc -l); done; ps -eo args | grep -cE 'run_e(1ra)?.py'")
@@ -511,7 +534,7 @@ def main():
     jobs.extend(active)
     alerts.extend(active_alerts)
     jobs.extend(science_a800_jobs())
-    for fn in (cvpr3v_job, cpu_ctrl_job, cpu_ctrl2_job, cpu_ctrl3_job, pheromones_d1_job, dcas_e1_job, pheromones_v3_job, pheromones_v2_job, pheromones_job):
+    for fn in (cvpr3s2_job, cvpr3v_job, cpu_ctrl_job, cpu_ctrl2_job, cpu_ctrl3_job, pheromones_d1_job, dcas_e1_job, pheromones_v3_job, pheromones_v2_job, pheromones_job):
         j = fn()
         if j: jobs.append(j)
     # 2026-09-27: the jobs below all finished before 09-26 (WWW stage7, ICLR ladders, Science legs, ChronoCheck);
