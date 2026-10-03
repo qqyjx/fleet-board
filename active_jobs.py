@@ -134,7 +134,9 @@ SPECS = {
              terminal="state/CHAIN_DONE", ready="state/INPUTS_VERIFIED.json",
              completion_markers={"arithmetic": "state/ARITHMETIC_DONE", "goldll": "state/GOLDLL_DONE"},
              failure_markers=["state/CHAIN_FAILED", "state/PLACEMENT_FAILED"],
-             ready_detail="72B 输入与缓存已校验；等待 8 张 3090 同时空闲；算术与同机 goldll 各 1 项"),
+             hold_markers=["state/LOCK_BUSY", "state/CARD_BUSY"],
+             ready_detail="72B 输入与缓存已校验；等待 8 张 3090 同时空闲；算术与同机 goldll 各 1 项",
+             hold_detail="启动被共享锁或显存检查拦下；评测尚未开始；等待八张 3090 同时可用"),
     ],
     "new105": [
         dict(id="camco-e12-eval", repo="AAAI2027-4", title="CaMCo E12：13B 留出模型评测", root="/home/xyf/e12/e12",
@@ -251,11 +253,12 @@ for s in specs:
         completed = names(root/s['done']) & expected
         failures = names(root/s['failed'])
     failures.update(path for path in s.get('failure_markers', []) if (root/path).exists())
+    holds = [path for path in s.get('hold_markers', []) if (root/path).exists()]
     interrupted = any(name.startswith('INTERRUPTED_') for name in failures)
     terminal = device_terminal if device_terminal is not None else ((root/s['terminal']).exists() if s.get('terminal') else phase == 'done')
     timed_out = any(logroot.glob('TIMEOUT*'))
     out.append(dict(id=s['id'], done=len(completed), failed=len(failures), phase=phase,
-                    terminal=terminal, timeout=timed_out, controllers=live, compute=compute, interrupted=interrupted,
+                    terminal=terminal, timeout=timed_out, controllers=live, compute=compute, interrupted=interrupted, holds=holds,
                     cards=sorted(cards), log_bytes=log_bytes, log_mtime=log_mtime,
                     ready=(root/s['ready']).is_file() if s.get('ready') else False,
                     observed_at=now, cost_recorded=(root/s['cost_gate']).exists() if s.get('cost_gate') else None))
@@ -297,7 +300,7 @@ def job_from_snapshot(spec, snap, host):
             detail = "链在线；等待依赖、空卡或已登记检查点"
     elif snap.get("ready") and spec.get("ready_detail"):
         status = "waiting"
-        detail = spec["ready_detail"]
+        detail = spec.get("hold_detail", spec["ready_detail"]) if snap.get("holds") else spec["ready_detail"]
     else:
         status = "unknown"
         detail = "未发现链或计算进程；不能据旧标记确认在跑"

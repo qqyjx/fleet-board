@@ -13,6 +13,29 @@ from active_jobs import (REMOTE_PROBE, SPECS, compute_roots, science_counts,
 
 
 class ActiveJobsTests(unittest.TestCase):
+    def test_registered_job_ids_are_unique(self):
+        ids = [spec['id'] for specs in SPECS.values() for spec in specs]
+        self.assertEqual(len(ids), len(set(ids)))
+
+    def test_science_busy_lock_is_waiting_without_claiming_compute(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            (root/'state').mkdir()
+            (root/'state/INPUTS_VERIFIED.json').write_text('metadata only')
+            (root/'state/LOCK_BUSY').write_text('launch blocked')
+            spec = dict(next(s for s in SPECS['3090'] if s['id'] == 'science-72b-migration'),
+                        root=td, code=td)
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                exec(REMOTE_PROBE, {'specs': [spec]})
+            snap = json.loads(buf.getvalue())[0]
+            job = job_from_snapshot(spec, snap, '3090')
+            self.assertEqual(snap['failed'], 0)
+            self.assertEqual(job['status'], 'waiting')
+            self.assertEqual(job['progress']['done'], 0)
+            self.assertEqual(job['cards'], [])
+            self.assertIn('评测尚未开始', job['detail'])
+
     def snap(self, **kw):
         return dict(done=0, failed=0, phase="full", terminal=False, timeout=False,
                     controllers=1, compute=0, cards=[], observed_at=1,

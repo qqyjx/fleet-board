@@ -404,7 +404,7 @@ def science_a800_jobs():
         if not s["running"] and s["done"] < 17 and model == "Qwen2.5-72B":
             status = "waiting"
         detail = ("进程在线" if s["running"] else "17 项任务 rc=0" if status == "done"
-                  else "等待两张同时空闲的 A800；不占用同事的卡" if status == "waiting" else "未确认在跑")
+                  else "剩余算术已登记迁移至八张 3090；A800 0–2 继续借出" if status == "waiting" else "未确认在跑")
         jobs.append({"id": "science-a800-" + model.lower().replace("qwen2.5-", ""), "repo": "Science",
                      "title": f"Phase-Trans A800：{model} 离散评测", "box": "A800", "cards": s["cards"],
                      "kind": "gen", "status": status, "progress": {"done": s["done"], "total": 17, "unit": "任务"},
@@ -549,7 +549,7 @@ def main():
     boxes, jobs, alerts = [], [], []
     for name, label in (("A800", "A800 ×4 (80 GB；共享卡按当前进程归属)"), ("3090", "3090 ×8 (24 GB, .110)"),
                         ("fuxin", "fuxin 4090 ×8 (48 GB, 公司)"), ("new105", "new105 4090D ×2 (48 GB, 公司)"), ("194-yyd", "194 4090D ×4 (48 GB, 公司)"),
-                        ("4090-jm", "4090-jm（共享；不启动新任务）")):
+                        ("4090-jm", "4090-jm（共享；空闲可用卡已获授权）")):
         cards = gpus(name)
         boxes.append({"name": name, "label": label, "reachable": cards is not None, "cards": cards or [],
                       "sys": sysload(name) if cards is not None else None})
