@@ -10,9 +10,21 @@ import unittest
 
 from active_jobs import (REMOTE_PROBE, SPECS, compute_roots, science_counts,
                          science_snapshots, device_chain_state, job_from_snapshot)
+from active_jobs import held_card_locks
 
 
 class ActiveJobsTests(unittest.TestCase):
+    def test_only_active_kernel_locks_reserve_cards(self):
+        identities = {(8, 1, 999): [0], (8, 1, 1000): [1, 2]}
+        self.assertEqual(held_card_locks(identities, []), set())
+        lines = ['1: FLOCK ADVISORY WRITE 123 08:01:999 0 EOF',
+                 '2: FLOCK ADVISORY READ 124 08:01:1000 0 EOF',
+                 '3: -> FLOCK ADVISORY WRITE 125 08:01:1000 0 EOF',
+                 '4: POSIX ADVISORY WRITE 126 08:01:999 0 EOF',
+                 '5: FLOCK ADVISORY WRITE 127 08:01:2000 0 EOF']
+        self.assertEqual(held_card_locks(identities, lines), {0, 1, 2})
+        self.assertEqual(held_card_locks(identities, lines[2:]), set())
+
     def test_registered_job_ids_are_unique(self):
         ids = [spec['id'] for specs in SPECS.values() for spec in specs]
         self.assertEqual(len(ids), len(set(ids)))

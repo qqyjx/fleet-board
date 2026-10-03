@@ -4,6 +4,22 @@ import shlex
 import inspect
 
 
+def held_card_locks(identities, lines):
+    """Read active kernel flock records; an existing lock file is insufficient."""
+    cards = set()
+    for line in lines:
+        fields = line.split()
+        if len(fields) < 6 or '->' in fields or fields[1] != 'FLOCK':
+            continue
+        try:
+            major, minor, inode = fields[5].split(':')
+            identity = (int(major, 16), int(minor, 16), int(inode))
+        except ValueError:
+            continue
+        cards.update(identities.get(identity, []))
+    return cards
+
+
 def apply_allocations(boxes, allocations):
     """Keep borrowed idle cards out of our available capacity; retain live ownership."""
     for box in boxes:

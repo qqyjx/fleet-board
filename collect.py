@@ -3,13 +3,32 @@
 writes data/fleet.json (latest) and data/curves.json (training series), then commits
 and pushes. Runs from cron every 10 minutes; safe to run by hand."""
 import json, os, re, shlex, inspect, subprocess, time, datetime as dt, pathlib
-from active_jobs import collect_active_jobs, science_counts, science_snapshots, apply_allocations
+from active_jobs import collect_active_jobs, science_counts, science_snapshots, apply_allocations, held_card_locks
 
 ROOT = pathlib.Path(__file__).resolve().parent
 DATA = ROOT / "data"
 DATA.mkdir(exist_ok=True)
 from zoneinfo import ZoneInfo
 LA = ZoneInfo("America/Los_Angeles")   # was a fixed UTC-7, wrong after the November DST change
+
+LOCK_ROOTS = {"A800": "/data0/xyf/.gpu_locks", "3090": "/data/xyf/.gpu_locks",
+              "fuxin": "/data/xyf/.gpu_locks", "new105": "/home/xyf/.gpu_locks",
+              "194-yyd": "/data/yyd/.gpu_locks", "4090-jm": "/home/yxy/.gpu_locks"}
+LOCK_PROBE = inspect.getsource(held_card_locks) + r'''
+import json, os, re
+from pathlib import Path
+try:
+    identities = {}
+    for path in Path(lock_root).glob('card*.lock'):
+        match = re.fullmatch(r'card([0-9,]+)\.lock', path.name)
+        if match:
+            stat = path.stat()
+            identities[(os.major(stat.st_dev), os.minor(stat.st_dev), stat.st_ino)] = [int(c) for c in match[1].split(',')]
+    held = sorted(held_card_locks(identities, Path('/proc/locks').read_text().splitlines()))
+except OSError:
+    held = None
+print(json.dumps({'held_card_locks': held}))
+'''
 
 def ssh(host, cmd, t=40):
     try:
@@ -20,10 +39,15 @@ def ssh(host, cmd, t=40):
         return None
 
 def gpus(host):
-    out = ssh(host, "nvidia-smi --query-gpu=index,memory.used,memory.total,utilization.gpu --format=csv,noheader,nounits")
+    probe = "lock_root = " + repr(LOCK_ROOTS[host]) + "\n" + LOCK_PROBE
+    out = ssh(host, "nvidia-smi --query-gpu=index,memory.used,memory.total,utilization.gpu --format=csv,noheader,nounits && python3 -c " + shlex.quote(probe))
     if not out: return None
-    cards = []
+    cards, held = [], None
     for line in out.strip().splitlines():
+        if line.startswith('{'):
+            try: held = json.loads(line).get('held_card_locks')
+            except ValueError: pass
+            continue
         try:
             i, u, tot, ut = [x.strip() for x in line.split(",")]
             # a card whose utilization reads [N/A] (driver error state, seen on
@@ -37,7 +61,9 @@ def gpus(host):
             cards.append(card)
         except ValueError:
             pass
-    return cards
+    for card in cards:
+        card['lock_state'] = 'unknown' if held is None else 'held' if card['idx'] in held else 'free'
+    return cards or None
 
 def tail(host, path, n=3):
     out = ssh(host, f"tail -n {n} {path} 2>/dev/null")
@@ -590,6 +616,11 @@ def main():
             if (b["name"], c["idx"]) in ours or (u & mine): c["owner"] = "ours"
             elif u or c["mem_used"] > 1500: c["owner"] = "other"
             else: c["owner"] = "free"
+            if c['owner'] == 'free' and c.get('lock_state') == 'held':
+                c['owner'] = 'reserved'
+        held_idle = [c['idx'] for c in b['cards'] if c['owner'] == 'reserved']
+        if held_idle:
+            b['reservation_detail'] = '调度锁已占用的空闲卡：' + ', '.join(map(str, held_idle))
     allocations = ROOT / "allocations.json"
     if allocations.is_file():
         apply_allocations(boxes, json.loads(allocations.read_text()))
