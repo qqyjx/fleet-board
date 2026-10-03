@@ -4,6 +4,20 @@ import shlex
 import inspect
 
 
+def apply_allocations(boxes, allocations):
+    """Keep borrowed idle cards out of our available capacity; retain live ownership."""
+    for box in boxes:
+        record = allocations.get(box['name'])
+        if not record:
+            continue
+        reserved = set(record['reserved_cards'])
+        box['allocation_detail'] = record['detail']
+        for card in box['cards']:
+            card['borrowed'] = card['idx'] in reserved
+            if card['borrowed'] and card['owner'] == 'free':
+                card['owner'] = 'reserved'
+
+
 def compute_roots(candidates):
     """A DataLoader child shares its parent's stdout and is not a second run."""
     ids = {pid for pid, ppid, stdout, cards in candidates}

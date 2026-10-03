@@ -68,6 +68,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--line)}
 .gpu{background:var(--sunk);border:1px solid var(--line);border-left:2px solid var(--other);border-radius:3px;padding:5px 7px 6px;font:11px var(--mono);font-variant-numeric:tabular-nums}
 .gpu.ours{border-left-color:var(--ours);background:var(--ours-bg)}
 .gpu.free{border-left-color:var(--free)}
+.gpu.reserved{border-style:dashed;border-left-color:var(--other)}
 .gpu .gh{display:flex;justify-content:space-between;color:var(--ink2)}
 .gpu .gh b{font-weight:500;color:var(--ink)}
 .gpu .ub{height:3px;background:var(--line);margin:5px 0 4px;border-radius:2px;overflow:hidden}
@@ -206,19 +207,20 @@ function renderLive(f){
 }
 function render(f,curves){
   renderLive(f);
-  let ours=0,free=0,other=0;
-  f.boxes.forEach(b=>b.cards.forEach(c=>{if(c.owner==='ours')ours++;else if(c.owner==='free')free++;else other++;}));
+  let ours=0,free=0,other=0,reserved=0;
+  f.boxes.forEach(b=>b.cards.forEach(c=>{if(c.owner==='ours')ours++;else if(c.owner==='free')free++;else if(c.owner==='reserved')reserved++;else other++;}));
   const running=f.jobs.filter(j=>j.status==='running').length;
-  $('#kpis').innerHTML=[['ours','我们的卡',ours],['free','空闲',free],['','他人占用',other],['','在跑作业',running],[f.alerts.length?'bad':'','告警',f.alerts.length]]
+  $('#kpis').innerHTML=[['ours','我们的卡',ours],['free','可用空卡',free],['','他人占用',other],...(reserved?[['','借出空卡',reserved]]:[]),['','在跑作业',running],[f.alerts.length?'bad':'','告警',f.alerts.length]]
     .map(([c,l,v])=>`<div class="kpi ${c}"><div class="v">${v}</div><div class="l">${l}</div></div>`).join('');
-  const tot=ours+free+other||1;
-  $('#cap').innerHTML=[['--ours',ours],['--other',other],['--free',free]].map(([c,n])=>`<i style="flex:${n};background:var(${c})"></i>`).join('');
+  const tot=ours+free+other+reserved||1;
+  $('#cap').innerHTML=[['--ours',ours],['--other',other+reserved],['--free',free]].map(([c,n])=>`<i style="flex:${n};background:var(${c})"></i>`).join('');
   const bx=f.boxes.map((b,i)=>[b,i]).sort((a,b)=>(!a[0].reachable-!b[0].reachable)||a[1]-b[1]).map(x=>x[0]);
   $('#boxes').innerHTML=bx.map(b=>{
     const cards=b.cards.map(c=>{const err=c.util<0, u=err?0:c.util;
       return `<div class="gpu ${c.owner}${err?' err':''}"><div class="gh"><b>${c.idx}</b><span>${err?'ERR':u+'%'}</span></div><div class="ub"><i style="width:${u}%"></i></div><div class="gm">${Math.round(c.mem_used/1024)}${c.mem_total?'/'+Math.round(c.mem_total/1024):''}G</div></div>`;}).join('');
     const s=b.sys, load=s?Math.min(100,100*s.load/s.cores):0, mem=s?100*(s.mem_total-s.mem_avail)/s.mem_total:0;
     return `<div class="box${b.reachable?'':' off'}"><div class="name"><b>${b.name}</b><span class="st ${b.reachable?'up':'down'}">${b.reachable?'online':'不可达'}</span></div><div class="lab">${b.label}</div>`+
+      (b.allocation_detail?`<div class="lab">${b.allocation_detail}</div>`:'')+
       (b.reachable?`<div class="gpus">${cards}</div>`:`<div class="unreach">本轮采集失败 · 沿用上次快照</div>`)+
       (s?`<div class="sys"><span>CPU</span><div class="sb${load>85?' hot':''}"><i style="width:${load}%"></i></div><span>${s.load.toFixed(0)} / ${s.cores} 核</span><span>RAM</span><div class="sb${mem>85?' hot':''}"><i style="width:${mem}%"></i></div><span>可用 ${s.mem_avail} / ${s.mem_total} G</span></div>`:'')+`</div>`;}).join('');
   const jobs=f.jobs.map((j,i)=>[j,i]).sort((a,b)=>((ORDER[a[0].status]??1)-(ORDER[b[0].status]??1))||a[1]-b[1]).map(x=>x[0]);

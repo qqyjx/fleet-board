@@ -3,7 +3,7 @@
 writes data/fleet.json (latest) and data/curves.json (training series), then commits
 and pushes. Runs from cron every 10 minutes; safe to run by hand."""
 import json, os, re, shlex, inspect, subprocess, time, datetime as dt, pathlib
-from active_jobs import collect_active_jobs, science_counts, science_snapshots
+from active_jobs import collect_active_jobs, science_counts, science_snapshots, apply_allocations
 
 ROOT = pathlib.Path(__file__).resolve().parent
 DATA = ROOT / "data"
@@ -590,6 +590,9 @@ def main():
             if (b["name"], c["idx"]) in ours or (u & mine): c["owner"] = "ours"
             elif u or c["mem_used"] > 1500: c["owner"] = "other"
             else: c["owner"] = "free"
+    allocations = ROOT / "allocations.json"
+    if allocations.is_file():
+        apply_allocations(boxes, json.loads(allocations.read_text()))
     # a box that did not answer this round cannot vouch for its jobs: mark them stale instead of
     # carrying the last known status forward (2026-09-20: unreachable boxes kept showing "running")
     down = {b["name"] for b in boxes if not b["reachable"]}
