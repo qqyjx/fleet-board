@@ -60,6 +60,11 @@ def device_chain_state(chain, runtimes, seeds):
 
 SPECS = {
     "A800": [
+        dict(id="cvpr2e", repo="CVPR2027-1", title="CVPR-2e：复制帧代价的规模 / 代 / 家族扫描（CLEVRER，8 个模型，A800）",
+             root="/data0/xyf/CVPR2027-1-3c-gate/results_2e/_queue", code="/data0/xyf/CVPR2027-1-3c-gate", controller="chain_2e.sh",
+             logroot="/data0/xyf/CVPR2027-1-3c-gate/logs/2e", queue="dev main glmdev glm", done="done", failed="failed", phase="phase", total=224,
+             ready="/data0/xyf/CVPR2027-1-3c-gate/results_2e/xcheck_a800.json",
+             ready_detail="A800 等价门 X0 已过；链在等空卡"),
         dict(id="certhar-w5-cpu", repo="IMWUT2027-1", title="CertHAR W5：12 组 CPU 派生重算",
              root="/data0/xyf/IMWUT2027-1-w5-cpu-20261002",
              code="/data0/xyf/IMWUT2027-1-w5-cpu-20261002", controller="W5_cpu_recompute.py",
@@ -83,11 +88,6 @@ SPECS = {
         dict(id="cvpr2d", repo="CVPR2027-1", title="CVPR-2d：复制帧代价的真实视频确认（FAVOR + MotionBench）",
              root="/data/xyf/CVPR2027-1/results_2d/_queue", code="/data/xyf/CVPR2027-1", controller="chain_2d.sh",
              logroot="/data/xyf/CVPR2027-1/logs/2d", queue="main", done="done", failed="failed", phase="phase", total=96),
-        dict(id="cvpr2e", repo="CVPR2027-1", title="CVPR-2e：复制帧代价的规模 / 代 / 家族扫描（CLEVRER，8 个模型）",
-             root="/data/xyf/CVPR2027-1/results_2e/_queue", code="/data/xyf/CVPR2027-1", controller="chain_2e.sh",
-             logroot="/data/xyf/CVPR2027-1/logs/2e", queue="dev main glmdev glm", done="done", failed="failed", phase="phase", total=224,
-             ready="/data/xyf/CVPR2027-1/results_2e/inventory.json",
-             ready_detail="CPU 盘点已完成；等待 2d A2 重启后起链，再等 2d 让卡"),
         dict(id="camco-e13", repo="AAAI2027-4", title="CaMCo E13：Qwen2-VL 第二模型家族", root="/data/xyf/scratch/camco/e13",
              code="/data/xyf/scratch/camco/AAAI2027-4", controller="chain_e13.sh", logs="logs",
              queue="queue/units", done="queue/done", failed="queue/failed", phase="queue/phase", total=33,
