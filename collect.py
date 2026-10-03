@@ -430,7 +430,7 @@ def science_a800_jobs():
         if not s["running"] and s["done"] < 17 and model == "Qwen2.5-72B":
             status = "waiting"
         detail = ("进程在线" if s["running"] else "17 项任务 rc=0" if status == "done"
-                  else "剩余算术已登记迁移至八张 3090；A800 0–2 继续借出" if status == "waiting" else "未确认在跑")
+                  else "剩余算术已登记迁移至八张 3090；A800 0–3 已归还，当前仍有占用" if status == "waiting" else "未确认在跑")
         jobs.append({"id": "science-a800-" + model.lower().replace("qwen2.5-", ""), "repo": "Science",
                      "title": f"Phase-Trans A800：{model} 离散评测", "box": "A800", "cards": s["cards"],
                      "kind": "gen", "status": status, "progress": {"done": s["done"], "total": 17, "unit": "任务"},
