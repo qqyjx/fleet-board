@@ -60,11 +60,6 @@ def device_chain_state(chain, runtimes, seeds):
 
 SPECS = {
     "A800": [
-        dict(id="cvpr2e", repo="CVPR2027-1", title="CVPR-2e：复制帧代价的规模 / 代 / 家族扫描（CLEVRER，8 个模型，A800）",
-             root="/data0/xyf/CVPR2027-1-3c-gate/results_2e/_queue", code="/data0/xyf/CVPR2027-1-3c-gate", controller="chain_2e.sh",
-             logroot="/data0/xyf/CVPR2027-1-3c-gate/logs/2e", queue="dev main glmdev glm", done="done", failed="failed", phase="phase", total=224,
-             ready="/data0/xyf/CVPR2027-1-3c-gate/results_2e/xcheck_a800.json",
-             ready_detail="A800 等价门 X0 已过；链在等空卡"),
         dict(id="certhar-w5-cpu", repo="IMWUT2027-1", title="CertHAR W5：12 组 CPU 派生重算",
              root="/data0/xyf/IMWUT2027-1-w5-cpu-20261002",
              code="/data0/xyf/IMWUT2027-1-w5-cpu-20261002", controller="W5_cpu_recompute.py",
@@ -74,6 +69,11 @@ SPECS = {
              terminal="state/CHAIN_DONE", ready="state/DATA_VERIFIED.json",
              failure_markers=["state/CHAIN_FAILED", "state/DATA_COPY_FAILED"],
              ready_detail="CPU 输入已校验；等待计算进程；论文宏仍待在 WSL 生成"),
+        dict(id="cvpr2e", repo="CVPR2027-1", title="CVPR-2e：复制帧代价的规模 / 代 / 家族扫描（CLEVRER，8 个模型，A800）",
+             root="/data0/xyf/CVPR2027-1-3c-gate/results_2e/_queue", code="/data0/xyf/CVPR2027-1-3c-gate", controller="chain_2e.sh",
+             logroot="/data0/xyf/CVPR2027-1-3c-gate/logs/2e", queue="dev main glmdev glm", done="done", failed="failed", phase="phase", total=224,
+             ready="/data0/xyf/CVPR2027-1-3c-gate/results_2e/xcheck_a800.json",
+             ready_detail="A800 等价门 X0 已过；链在等空卡"),
     ],
     "3090": [
         dict(id="gavel-opera", repo="AAAI2027-5", title="GAVEL OPERA 全量对照", root="/data/xyf/scratch/gavel/opera/run3090",
