@@ -1,15 +1,14 @@
 {
  "A800": {
   "available_to_us_when_idle": [
-   3
-  ],
-  "detail": "0–2 号卡已借出；当前仅 3 号卡可分派。归还后由用户通知恢复。",
-  "reserved_cards": [
    0,
    1,
-   2
+   2,
+   3
   ],
-  "resume_requires_user": true,
-  "updated_at_la": "2026-10-03T00:54:48.619034-07:00"
+  "reserved_cards": [],
+  "resume_requires_user": false,
+  "detail": "0–3 号卡已归还；实际空闲且共享锁可用时可分派。WWW 由另一 session 处理。",
+  "updated_at_la": "2026-10-03T05:06:57-07:00"
  }
 }
