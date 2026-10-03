@@ -69,6 +69,12 @@ SPECS = {
              terminal="state/CHAIN_DONE", ready="state/DATA_VERIFIED.json",
              failure_markers=["state/CHAIN_FAILED", "state/DATA_COPY_FAILED"],
              ready_detail="CPU 输入已校验；等待计算进程；论文宏仍待在 WSL 生成"),
+        dict(id="certhar-w5-w3b-init", repo="IMWUT2027-1", title="CertHAR W5-A3：15 组配对初始化 CPU 复跑",
+             root="/data0/xyf/IMWUT2027-1-w5-cpu-20261002/results/w5/w3b_init_confirmed_20261002",
+             code="/data0/xyf/IMWUT2027-1-w5-cpu-20261002", controller="W5_w3b_init_cpu.py",
+             logs=".", kind="cpu", phase="phase", mode="cpu_pair_chain", total=15,
+             datasets=["uci_har", "hhar", "motionsense", "pamap2", "wisdm"], seeds=[42, 43, 44],
+             failure_markers=["CHAIN_FAILED"], complete_detail="15 组 CPU 配对初始化复跑均 rc=0；WSL 验证、宏与正文待完成"),
     ],
     "3090": [
         dict(id="gavel-opera", repo="AAAI2027-5", title="GAVEL OPERA 全量对照", root="/data/xyf/scratch/gavel/opera/run3090",
@@ -203,6 +209,20 @@ for s in specs:
         except (OSError, ValueError, TypeError, AttributeError):
             completed, failures, device_terminal = set(), set(), False
             phase = '运行记录不可读'
+    elif s.get('mode') == 'cpu_pair_chain':
+        try:
+            chain = json.loads((root/'chain.json').read_text())
+            units = chain['units']
+            keys = [(u['dataset'], u['seed']) for u in units]
+            allowed = {(d, seed) for d in s['datasets'] for seed in s['seeds']}
+            if len(keys) != len(set(keys)) or not set(keys) <= allowed:
+                raise ValueError('duplicate or unknown CPU work unit')
+            completed = {f"{u['dataset']}_seed{u['seed']}" for u in units if u['rc'] == 0}
+            failures = {f"{u['dataset']}_seed{u['seed']}" for u in units if u['rc'] != 0}
+            if chain['status'] == 'failed': failures.add('chain_failed')
+            device_terminal = chain['status'] == 'complete' and (root/'CHAIN_DONE').is_file()
+        except (OSError, ValueError, TypeError, KeyError):
+            completed, failures, device_terminal = set(), {'unreadable_cpu_chain'}, False
     elif s.get('completion_markers'):
         completed = {unit for unit, path in s['completion_markers'].items() if (root/path).is_file()}
         failures = set()
@@ -245,7 +265,7 @@ def job_from_snapshot(spec, snap, host):
         if spec.get("mode") == "device_chain" and status == "done":
             detail = "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 CPU 汇总与论文宏仍待完成"
         elif spec.get("kind") == "cpu" and status == "done":
-            detail = "12 组 CPU 重算均 rc=0；结果落地与 WSL 论文宏仍待完成"
+            detail = spec.get("complete_detail", "12 组 CPU 重算均 rc=0；结果已落地，WSL 论文宏仍待完成")
     elif snap["compute"]:
         status = "running"
         detail = f"{snap['compute']} 个计算进程；阶段 {phase or '作业运行'}"

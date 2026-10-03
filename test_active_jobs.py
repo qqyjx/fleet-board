@@ -200,6 +200,40 @@ class ActiveJobsTests(unittest.TestCase):
                     child.terminate()
                     child.wait(timeout=5)
 
+    def test_cpu_pair_chain_counts_only_distinct_registered_zero_exits(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            spec = dict(SPECS['A800'][1], root=td, code=td)
+            chain = {'status': 'running', 'units': [{'dataset': 'uci_har', 'seed': 42, 'rc': 0}]}
+            (root/'chain.json').write_text(json.dumps(chain))
+            def observe():
+                buf = io.StringIO()
+                with contextlib.redirect_stdout(buf):
+                    exec(REMOTE_PROBE, {'specs': [spec]})
+                return json.loads(buf.getvalue())[0]
+            snap = observe()
+            self.assertEqual(snap['done'], 1)
+            self.assertEqual(snap['failed'], 0)
+            self.assertFalse(snap['terminal'])
+            chain['units'].append(chain['units'][0])
+            (root/'chain.json').write_text(json.dumps(chain))
+            self.assertGreater(observe()['failed'], 0)
+            chain['units'] = [{'dataset': 'unknown', 'seed': 42, 'rc': 0}]
+            (root/'chain.json').write_text(json.dumps(chain))
+            self.assertGreater(observe()['failed'], 0)
+
+    def test_cpu_pair_terminal_needs_all_fifteen_units(self):
+        spec = SPECS['A800'][1]
+        snap = self.snap()
+        snap.update(done=14, terminal=True)
+        self.assertEqual(job_from_snapshot(spec, snap, 'A800')['status'], 'unknown')
+        snap['done'] = 15
+        job = job_from_snapshot(spec, snap, 'A800')
+        self.assertEqual(job['status'], 'done')
+        self.assertEqual(job['kind'], 'cpu')
+        self.assertEqual(job['cards'], [])
+        self.assertIn('15 组', job['detail'])
+
 
 if __name__ == "__main__":
     unittest.main()
