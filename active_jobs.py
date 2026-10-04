@@ -98,13 +98,14 @@ SPECS = {
                       "derived", "b_lanes", "W3a", "W3b", "W4bc", "W4a", "E13_llm_fields"],
              terminal="state/CHAIN_DONE", ready="state/DATA_VERIFIED.json",
              failure_markers=["state/CHAIN_FAILED", "state/DATA_COPY_FAILED"],
+             complete_detail="12 组 CPU 重算均 rc=0；实测宏、五图与26页改写稿已同步（50d51f0）",
              ready_detail="CPU 输入已校验；等待计算进程；论文宏仍待在 WSL 生成"),
         dict(id="certhar-w5-w3b-init", repo="IMWUT2027-1", title="CertHAR W5-A3：15 组配对初始化 CPU 复跑",
              root="/data0/xyf/IMWUT2027-1-w5-cpu-20261002/results/w5/w3b_init_confirmed_20261002",
              code="/data0/xyf/IMWUT2027-1-w5-cpu-20261002", controller="W5_w3b_init_cpu.py",
              logs=".", kind="cpu", phase="phase", mode="cpu_pair_chain", total=15,
              datasets=["uci_har", "hhar", "motionsense", "pamap2", "wisdm"], seeds=[42, 43, 44],
-             failure_markers=["CHAIN_FAILED"], complete_detail="15 组 CPU 配对初始化复跑均 rc=0；WSL 验证、宏与正文待完成"),
+             failure_markers=["CHAIN_FAILED"], complete_detail="15 组 CPU 配对初始化复跑均 rc=0；99 对初始化一致；改写稿已同步（50d51f0）"),
         dict(id="cvpr2e", repo="CVPR2027-1", title="CVPR-2e：复制帧代价的规模 / 代 / 家族扫描（CLEVRER，8 个模型，A800）",
              root="/data0/xyf/CVPR2027-1-3c-gate/results_2e/_queue", code="/data0/xyf/CVPR2027-1-3c-gate", controller="chain_2e.sh",
              logroot="/data0/xyf/CVPR2027-1-3c-gate/logs/2e", queue="dev main glmdev glm", done="done", failed="failed", phase="phase", total=224,
@@ -313,7 +314,7 @@ def job_from_snapshot(spec, snap, host):
         status = "done" if complete == spec["total"] else "unknown"
         detail = "全部完成" if status == "done" else "终止标记与完成数不一致；需核对"
         if spec.get("mode") == "device_chain" and status == "done":
-            detail = "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 CPU 汇总与论文宏仍待完成"
+            detail = "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 汇总与改写稿已同步（50d51f0）"
         elif spec.get("kind") == "cpu" and status == "done":
             detail = spec.get("complete_detail", "12 组 CPU 重算均 rc=0；结果已落地，WSL 论文宏仍待完成")
     elif snap["compute"]:
