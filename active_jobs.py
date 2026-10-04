@@ -88,6 +88,76 @@ def device_chain_state(chain, runtimes, seeds):
     return completed, failures, chain.get("status") == "complete"
 
 
+def cache_range_snapshot(root, spec, now, proc_root='/proc'):
+    """Read pinned cache metadata and live process identity, never model bytes."""
+    import hashlib
+    import json
+    from pathlib import Path
+    root, proc_root = Path(root), Path(proc_root)
+    result = dict(id=spec['id'], observed_at=now, controllers=0, compute=0, cards=[],
+                  log_bytes=0, log_mtime=0, cache_status='unknown', cache_detail='本轮缓存状态未核实',
+                  cache_bytes=0, verified_blobs=0)
+    def read(name):
+        path=root/name
+        return json.loads(path.read_text()) if path.is_file() and not path.is_symlink() else None
+    try:
+        data=(root/'manifest.json').read_bytes()
+        if hashlib.sha256(data).hexdigest()!=spec['manifest_sha256']:raise ValueError('manifest')
+        manifest=json.loads(data)
+        if len(manifest['files'])!=17 or sum(v['bytes'] for v in manifest['files'].values())!=spec['total_bytes']:
+            raise ValueError('counts')
+        launch,started,ready,failed=(read(name) for name in ('LAUNCH.json','STARTED.json','READY.json','FAILED.json'))
+        if not launch or launch.get('source_commit')!=spec['source_commit']:raise ValueError('launch')
+        for receipt in (started,ready,failed):
+            if receipt and (receipt.get('source_commit')!=spec['source_commit'] or
+                            receipt.get('manifest_sha256')!=spec['manifest_sha256']):raise ValueError('source')
+        pid=launch['pid'];stat_path=proc_root/str(pid)/'stat'
+        if stat_path.is_file():
+            fields=stat_path.read_text().rsplit(')',1)[1].split()
+            live=(fields[0]!='Z' and fields[19]==launch['process_start_ticks'] and
+                  (proc_root/'sys/kernel/random/boot_id').read_text().strip()==launch['boot_id'])
+            result['controllers']=int(live)
+        for name,expected in manifest['files'].items():
+            dest=root/'hub'/name;partial=dest.with_name(dest.name+'.partial');sizes=[]
+            for path in (dest,partial):
+                try:size=path.stat().st_size if path.is_file() and not path.is_symlink() else 0
+                except OSError:size=0
+                if size>expected['bytes']:raise ValueError('oversized')
+                sizes.append(size)
+            result['cache_bytes']+=max(sizes)
+            result['verified_blobs']+=int(sizes[0]==expected['bytes'])
+        log=root/'runtime.log'
+        if log.is_file():
+            st=log.stat();result.update(log_bytes=st.st_size,log_mtime=st.st_mtime)
+        if ready and failed:
+            result['cache_detail']='发现相互矛盾的终态回执；需核对'
+        elif ready:
+            archive=Path(ready.get('archive',''))
+            reported=ready.get('files',[])
+            file_match=(len(reported)==17 and {r['blob']:(r['bytes'],r['sha256']) for r in reported}==
+                        {k:(v['bytes'],v['sha256']) for k,v in manifest['files'].items()})
+            valid=(ready.get('status')=='READY' and ready.get('member_count')==35 and ready.get('blob_count')==17 and
+                   ready.get('link_count')==17 and ready.get('all_blob_hashes_verified') is True and
+                   ready.get('all_link_targets_verified') is True and ready.get('manifest_bytes_preserved') is True and
+                   ready.get('input_bytes')==spec['total_bytes'] and file_match and result['verified_blobs']==17 and
+                   archive.is_file() and not archive.is_symlink() and archive.resolve().is_relative_to(root.resolve()) and
+                   archive.stat().st_size==ready.get('compressed_bytes') and isinstance(ready.get('compressed_sha256'),str) and
+                   len(ready['compressed_sha256'])==64 and all(c in '0123456789abcdef' for c in ready['compressed_sha256']))
+            if valid:result.update(cache_status='done',cache_detail='缓存READY回执与文件元数据一致；GPU验证是下一独立步骤')
+            else:result['cache_detail']='READY回执或文件元数据不完整；不能确认交付'
+        elif failed:
+            if failed.get('status')=='FAILED':
+                result.update(cache_status='failed',cache_detail='本次缓存恢复失败；部分文件保留，需核对终态回执')
+            else:result['cache_detail']='失败文件没有有效终态；需核对'
+        elif started and result['controllers']:
+            phase='封包/完整校验' if result['cache_bytes']==spec['total_bytes'] else '复制/分段接收'
+            result.update(cache_status='running',cache_detail=f"{phase}；{result['verified_blobs']}/17整blob已晋级；未启动GPU")
+        elif started:result['cache_detail']='已无匹配的原进程，且没有终态回执；不据旧STARTED确认运行'
+    except (OSError,ValueError,TypeError,KeyError,IndexError,AttributeError):
+        result.update(cache_status='unknown',cache_detail='缓存身份或元数据校验未通过；本轮状态需核对')
+    return result
+
+
 SPECS = {
     "A800": [
         dict(id="certhar-w5-cpu", repo="IMWUT2027-1", title="CertHAR W5：12 组 CPU 派生重算",
@@ -159,6 +229,10 @@ SPECS = {
              hold_detail="启动被共享锁或显存检查拦下；评测尚未开始；等待八张 3090 同时可用"),
     ],
     "new105": [
+        dict(id="camco-cache-range-r2", repo="AAAI2027-4", title="CaMCo 7B：R2固定缓存分段交付",
+             root="/home/xyf/camco7b-range-recovery-r2-20261004T180638Z", mode="cache_range", kind="cpu",
+             source_commit="c2865e0668bcc9484cbacfb056c9f3f97cfd8119",
+             manifest_sha256="7e133f99bf9906a10071daa5d6af0ebec85e2ac9fe0fbc74251e8e784a56f374", total_bytes=14131147625),
         dict(id="camco-e12-eval", repo="AAAI2027-4", title="CaMCo E12：13B 留出模型评测", root="/home/xyf/e12/e12",
              code="/home/xyf/e12", controller="run_e12_new105.sh", logs="logs", total=20, terminal="state/E12_DONE",
              targets=["chair_vanilla", "pope_vanilla"] + [f"{metric}_{arm}_seed{s}" for arm in ("random", "cem", "plain_lora")
@@ -193,7 +267,7 @@ SPECS = {
 # Sent through one read-only SSH command per box. Read only our process identities,
 # CUDA_VISIBLE_DEVICES, marker names, file metadata, phase words and runtime JSON. Never read
 # task outputs, scores, checkpoints, arbitrary environments or unregistered CPU jobs.
-REMOTE_PROBE = inspect.getsource(compute_roots) + inspect.getsource(device_chain_state) + r'''
+REMOTE_PROBE = inspect.getsource(compute_roots) + inspect.getsource(device_chain_state) + inspect.getsource(cache_range_snapshot) + r'''
 import json, os, time
 from pathlib import Path
 now = time.time()
@@ -220,6 +294,9 @@ out = []
 for s in specs:
     root = Path(s['root'])
     if not root.exists() and not (s.get('ready') and (root/s['ready']).is_file()): continue
+    if s.get('mode') == 'cache_range':
+        out.append(cache_range_snapshot(root,s,now))
+        continue
     logroot = Path(s.get('logroot', str(root/s.get('logs','logs'))))
     live, compute, cards, log_bytes, log_mtime = 0, 0, set(), 0, 0
     candidates = []
@@ -301,6 +378,11 @@ print(json.dumps(out))
 
 
 def job_from_snapshot(spec, snap, host):
+    if spec.get('mode') == 'cache_range':
+        return dict(id=spec['id'],repo=spec['repo'],title=spec['title'],box=host,cards=[],kind='cpu',
+                    status=snap['cache_status'],progress=dict(done=round(snap['cache_bytes']/1048576,1),
+                    total=round(spec['total_bytes']/1048576,1),unit='MiB'),detail=snap['cache_detail'],alerts=[],
+                    runtime={k:snap[k] for k in ('observed_at','controllers','compute','log_bytes','log_mtime')})
     phase, complete = snap.get("phase"), snap["done"]
     failed = snap["failed"] or snap.get("timeout") or phase == "stop"
     if failed:

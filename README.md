@@ -8,6 +8,12 @@ and cloud operators may both develop, push PRs and merge verified work. Fetch
 before work, keep branch changes scoped, and synchronize clean main checkouts
 after merges. Preserve active execution directories at their registered SHAs.
 
+The registered CaMCo R2 cache job reports copied/received bytes in MiB without
+claiming GPU ownership. It checks the original process birth/boot identity,
+fixed manifest and source commit, and terminal receipt/file metadata. Reaching
+the byte total remains a running packaging/verification phase until a consistent
+READY exists. The probe reads no model contents or scientific scores.
+
 ## Collection and publication
 
 Configure an external cache using `FLEET_CACHE_DIR` or an ignored
@@ -54,3 +60,5 @@ and publishing transaction checks. These tests use local fixtures and temporary
 Git repositories; they do not run experiments or publish to GitHub. A real
 collection with `FLEET_PUSH=0` can then verify the source observations in the
 external cache before the first publication through the PR path.
+
+For cache status changes, include `test_cache_range_status` in that test command.

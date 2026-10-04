@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-10-04 17:25 UTC",
+ "generated_at": "2026-10-04 18:19 UTC",
  "basis": "本App负责维护；以共享owner、固定任务单和实际运行记录为依据；排期不代表GPU已取得。",
  "rows": [
   {
    "task": "CaMCo 7B 发布代码验证（本App）",
    "resources": "new105 卡 1，共享现有常驻服务余量",
    "start_condition": "固定权重完整校验；独占共享锁；启动时显存低于4GiB、利用率低于10%",
-   "status": "原流超时终止并保留partial；镜像两个64KiB Range已与源hash匹配，分段整缓存恢复待登记；尚未完整交付或启动GPU"
+   "status": "R2分段交付已于18:19 UTC启动，复用4.42GB源hash匹配前缀；实时字节进度见R2作业行，完整READY后再核验GPU条件"
   },
   {
    "task": "CVPR 2f（桌面会话）",
