@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-10-04 16:12 UTC",
+ "generated_at": "2026-10-04 17:15 UTC",
  "basis": "本App负责维护；以共享owner、固定任务单和实际运行记录为依据；排期不代表GPU已取得。",
  "rows": [
   {
    "task": "CaMCo 7B 发布代码验证（本App）",
    "resources": "new105 卡 1，共享现有常驻服务余量",
    "start_condition": "固定权重完整校验；独占共享锁；启动时显存低于4GiB、利用率低于10%",
-   "status": "固定缓存流已启动，完整交付尚未验收；GPU尚未启动"
+   "status": "固定缓存流17:06 UTC因接收端wall_timeout终止；2,401,239,040部分字节保留；准备小范围HTTP Range诊断，尚未释放新下载或GPU"
   },
   {
    "task": "CVPR 2f（桌面会话）",
