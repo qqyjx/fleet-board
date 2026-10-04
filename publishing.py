@@ -32,10 +32,10 @@ def git(root, *args, data=None, env=None):
     return command(['git', '-C', str(root), *args], data=data, env=env).decode().strip()
 
 
-def gh(repo, path, payload=None):
+def gh(repo, path, payload=None, *, method='POST'):
     args = ['gh', 'api', 'repos/' + repo + '/' + path]
     if payload is not None:
-        args += ['--method', 'POST', '--input', '-']
+        args += ['--method', method, '--input', '-']
     raw = command(args, data=json.dumps(payload).encode() if payload is not None else None)
     return json.loads(raw)
 
@@ -231,9 +231,12 @@ def publish_snapshot(root, cache, repo, base):
         raise PublicationError('PR head/base changed before merge; preserve it for review')
     if {item['filename'] for item in files} != set(changed):
         raise PublicationError('PR file scope differs from validated snapshot')
-    command(['gh', 'pr', 'merge', pr['html_url'], '--repo', repo, '--merge', '--match-head-commit', commit])
+    outcome = gh(repo, 'pulls/' + str(pr['number']) + '/merge',
+                 {'sha': commit, 'merge_method': 'merge'}, method='PUT')
+    if not outcome.get('merged') or not outcome.get('sha'):
+        raise PublicationError('GitHub did not confirm the requested merge')
     merged = gh(repo, 'pulls/' + str(pr['number']))
-    if not merged.get('merged') or merged['head']['sha'] != commit:
+    if not merged.get('merged') or merged['head']['sha'] != commit or merged.get('merge_commit_sha') != outcome['sha']:
         raise PublicationError('Merge outcome is not confirmed')
     # Keep the branch until the App coordinator has attached and recorded this PR.
     return finish_publication(root, cache, operation, merged['merge_commit_sha'])
