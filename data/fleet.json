@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04 06:00 LA",
+ "generated_at": "2026-10-04 06:15 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,7 +8,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 55002,
+     "mem_used": 54882,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -26,7 +26,7 @@
     },
     {
      "idx": 2,
-     "mem_used": 55138,
+     "mem_used": 55018,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -45,7 +45,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 5.57,
+    "load": 5.5,
     "mem_total": 503,
     "mem_avail": 448
    },
@@ -60,7 +60,7 @@
      "idx": 0,
      "mem_used": 6092,
      "mem_total": 24576,
-     "util": 31,
+     "util": 30,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -68,7 +68,7 @@
      "idx": 1,
      "mem_used": 6092,
      "mem_total": 24576,
-     "util": 32,
+     "util": 31,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -84,7 +84,7 @@
      "idx": 3,
      "mem_used": 6092,
      "mem_total": 24576,
-     "util": 31,
+     "util": 20,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -92,7 +92,7 @@
      "idx": 4,
      "mem_used": 5926,
      "mem_total": 24576,
-     "util": 33,
+     "util": 32,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -100,7 +100,7 @@
      "idx": 5,
      "mem_used": 6148,
      "mem_total": 24576,
-     "util": 30,
+     "util": 29,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -108,7 +108,7 @@
      "idx": 6,
      "mem_used": 6268,
      "mem_total": 24576,
-     "util": 32,
+     "util": 31,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -123,9 +123,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 8.13,
+    "load": 8.79,
     "mem_total": 125,
-    "mem_avail": 102
+    "mem_avail": 101
    }
   },
   {
@@ -157,12 +157,7 @@
      "owner": "other"
     }
    ],
-   "sys": {
-    "cores": 112,
-    "load": 1.08,
-    "mem_total": 188,
-    "mem_avail": 151
-   }
+   "sys": null
   },
   {
    "name": "194-yyd",
@@ -178,16 +173,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 47443,
+     "mem_used": 19427,
      "mem_total": 49140,
-     "util": 18,
+     "util": 21,
      "lock_state": "free",
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 48,
-    "load": 1.41,
+    "load": 1.54,
     "mem_total": 251,
     "mem_avail": 224
    }
@@ -258,7 +253,7 @@
    "detail": "12 组 CPU 重算均 rc=0；实测宏、五图与26页改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118826.246543,
+    "observed_at": 1791119502.5878828,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -281,7 +276,7 @@
    "detail": "15 组 CPU 配对初始化复跑均 rc=0；99 对初始化一致；改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118826.246543,
+    "observed_at": 1791119502.5878828,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -304,7 +299,7 @@
    "detail": "失败标记 1；阶段 stop；需核对链日志",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118826.246543,
+    "observed_at": 1791119502.5878828,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -327,7 +322,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118826.44415,
+    "observed_at": 1791119504.0802698,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -350,7 +345,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118826.44415,
+    "observed_at": 1791119504.0802698,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -373,7 +368,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118826.44415,
+    "observed_at": 1791119504.0802698,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -396,7 +391,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118826.44415,
+    "observed_at": 1791119504.0802698,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -428,7 +423,7 @@
    "detail": "8 个计算进程；阶段 main",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118826.44415,
+    "observed_at": 1791119504.0802698,
     "controllers": 1,
     "compute": 8,
     "log_bytes": 2563,
@@ -451,7 +446,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118826.44415,
+    "observed_at": 1791119504.0802698,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -474,7 +469,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118826.44415,
+    "observed_at": 1791119504.0802698,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -497,7 +492,7 @@
    "detail": "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 汇总与改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118826.44415,
+    "observed_at": 1791119504.0802698,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -520,7 +515,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118826.44415,
+    "observed_at": 1791119504.0802698,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -543,7 +538,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118826.44415,
+    "observed_at": 1791119504.0802698,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -566,7 +561,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118826.44415,
+    "observed_at": 1791119504.0802698,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -589,53 +584,7 @@
    "detail": "启动被共享锁或显存检查拦下；评测尚未开始；等待八张 3090 同时可用",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118826.44415,
-    "controllers": 0,
-    "compute": 0,
-    "log_bytes": 0,
-    "log_mtime": 0
-   }
-  },
-  {
-   "id": "camco-e12-eval",
-   "repo": "AAAI2027-4",
-   "title": "CaMCo E12：13B 留出模型评测",
-   "box": "new105",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 20,
-    "total": 20,
-    "unit": "作业"
-   },
-   "detail": "全部完成",
-   "alerts": [],
-   "runtime": {
-    "observed_at": 1791118827.346507,
-    "controllers": 0,
-    "compute": 0,
-    "log_bytes": 0,
-    "log_mtime": 0
-   }
-  },
-  {
-   "id": "camco-e12-recovery",
-   "repo": "AAAI2027-4",
-   "title": "CaMCo E12：最后种子迁移重跑",
-   "box": "new105",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 1,
-    "total": 1,
-    "unit": "作业"
-   },
-   "detail": "全部完成",
-   "alerts": [],
-   "runtime": {
-    "observed_at": 1791118827.346507,
+    "observed_at": 1791119504.0802698,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -658,7 +607,7 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118827.6751647,
+    "observed_at": 1791119539.2784355,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -681,7 +630,7 @@
    "detail": "失败标记 1；阶段 7b；需核对链日志",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118827.6751647,
+    "observed_at": 1791119539.2784355,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -704,7 +653,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791118827.6751647,
+    "observed_at": 1791119539.2784355,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -859,54 +808,6 @@
    "alerts": []
   },
   {
-   "id": "pheromones-d1",
-   "repo": "AAAI2027-7",
-   "title": "Pheromones D1 禁 STAY 诊断：G4 解码门 + 7B 400 局（new105 卡 1）",
-   "box": "new105",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 400,
-    "total": 400,
-    "unit": "局"
-   },
-   "detail": "2026-09-28T16:07:47+08:00 D1 done: rel_ns=200 rel_randdir_ns=200 random8=200",
-   "alerts": []
-  },
-  {
-   "id": "dcas-e1",
-   "repo": "AAAI2027-1",
-   "title": "DCAS E1：9 个 dump + 18 个判分（new105 卡 1，装环境后接 D1）",
-   "box": "new105",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 27,
-    "total": 27,
-    "unit": "步"
-   },
-   "detail": "2026-09-29T10:34:42+08:00 card1b worker exit (nothing left)",
-   "alerts": []
-  },
-  {
-   "id": "pheromones-v3",
-   "repo": "AAAI2027-7",
-   "title": "Pheromones V3 相对方向信息素：7B 评测 600 局（new105 卡 1）",
-   "box": "new105",
-   "cards": [],
-   "kind": "gen",
-   "status": "done",
-   "progress": {
-    "done": 600,
-    "total": 600,
-    "unit": "局"
-   },
-   "detail": "09-27 23:39 LA 读出：V3-P1/P2 均 FAIL，走路线 B（REVISION_V3.md）",
-   "alerts": []
-  },
-  {
    "id": "pheromones-v2",
    "repo": "AAAI2027-7",
    "title": "Pheromones 大修 P1 内容消融 / P3 委托曲线（3090 GPU，Qwen2.5-3B）",
@@ -940,11 +841,12 @@
   }
  ],
  "alerts": [
+  "new105 当前实验链状态本轮未读到",
   "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CVPR-2e：复制帧代价的规模 / 代 / 家族扫描（CLEVRER，8 个模型，A800） 失败：失败标记 1；阶段 stop；需核对链日志",
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105",
   "CaMCo 发布代码验证：7B / 13B 原链 失败：失败标记 1；阶段 7b；需核对链日志"
  ],
- "collect_s": 34.2
+ "collect_s": 305.0
 }
