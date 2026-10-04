@@ -139,6 +139,8 @@ td b{font-weight:500}
   tr td:nth-child(1){grid-column:1;grid-row:1} tr td:nth-child(3){grid-column:2;grid-row:1}
   tr td:nth-child(2){grid-column:1/-1;grid-row:2} tr td:nth-child(4){grid-column:1/-1;grid-row:3} tr td:nth-child(5){grid-column:1/-1;grid-row:4}
   tr.grp{display:block;margin-bottom:8px} tr.grp td{display:block;border:1px solid var(--line);border-radius:6px}
+  #schedule-table tr{grid-template-columns:1fr}
+  #schedule-table tr td:nth-child(n){grid-column:1;grid-row:auto}
   .bar{min-width:0}
 }
 </style>
@@ -147,7 +149,7 @@ td b{font-weight:500}
 <header>
   <div class="brand"><i></i>fleet-board</div>
   <div class="live" id="live"><span class="dot"></span><span id="stamp">加载中…</span></div>
-  <nav><a href="#s1"><b>01</b>卡</a><a href="#s2"><b>02</b>作业</a><a href="#s3"><b>03</b>曲线</a><a href="#s4"><b>04</b>告警</a></nav>
+  <nav><a href="#s1"><b>01</b>卡</a><a href="#s2"><b>02</b>作业</a><a href="#schedule"><b>03</b>排期</a><a href="#s3"><b>04</b>曲线</a><a href="#s4"><b>05</b>告警</a></nav>
   <button class="theme" id="theme" type="button">light</button>
 </header>
 
@@ -165,8 +167,14 @@ td b{font-weight:500}
   <div class="tw"><table id="jobs"><thead><tr><th>作业</th><th>机器 / 卡</th><th>状态</th><th>进度</th><th>当前</th></tr></thead><tbody></tbody></table></div>
 </section>
 
+<section id="schedule">
+  <h2><span class="ix">03</span>排期</h2>
+  <p class="detail" id="schedule-stamp">排期加载中。实际占用以实时卡和作业数据为准。</p>
+  <div class="tw"><table id="schedule-table"><thead><tr><th>任务</th><th>资源</th><th>启动条件</th><th>状态</th></tr></thead><tbody><tr><td colspan="4" class="detail">加载中…</td></tr></tbody></table></div>
+</section>
+
 <section id="s3">
-  <h2><span class="ix">03</span>WWW stage7 训练曲线（GRPO，六臂修正版；灰线为 T0 三十格旧臂）</h2>
+  <h2><span class="ix">04</span>WWW stage7 训练曲线（GRPO，六臂修正版；灰线为 T0 三十格旧臂）</h2>
   <div class="clegend" id="clegend"></div>
   <div class="charts">
     <div class="chart"><h3>reward mean</h3><div class="c"><canvas id="c_reward"></canvas></div></div>
@@ -177,12 +185,12 @@ td b{font-weight:500}
 </section>
 
 <section id="s4">
-  <h2><span class="ix">04</span>告警</h2>
+  <h2><span class="ix">05</span>告警</h2>
   <div class="alerts" id="alerts"></div>
 </section>
 
 <section id="ladsec">
-  <h2><span class="ix">05</span>ICLR2027-9 14B 温度阶梯（3090，12 次运行）</h2>
+  <h2><span class="ix">06</span>ICLR2027-9 14B 温度阶梯（3090，12 次运行）</h2>
   <div class="ladder" id="ladder"></div>
 </section>
 
@@ -190,6 +198,7 @@ td b{font-weight:500}
 
 <script>
 const $=s=>document.querySelector(s);
+const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const SERIES=['--s1','--s2','--s3','--s4','--s5','--s6'];
 const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 const ORDER={running:0,waiting:1,unknown:1,stale:1,failed:2,done:3};
@@ -204,6 +213,11 @@ function renderLive(f){
   const age=ageMin(f.generated_at);
   $('#live').className='live '+(age===null?'':age<=20?'ok':age<=60?'lag':'old');
   $('#stamp').innerHTML='采集于 '+f.generated_at+'（'+f.collect_s+' s）'+(age===null?'':` <span class="ago">· ${age} 分钟前</span>`);
+}
+function renderSchedule(schedule){
+  const rows=Array.isArray(schedule?.rows)?schedule.rows:[];
+  $('#schedule-stamp').textContent=(schedule?.generated_at?'排期更新于 '+schedule.generated_at+'。':'排期数据暂不可用。')+'排期是计划，实际占用以实时卡和作业数据为准。';
+  $('#schedule-table tbody').innerHTML=rows.length?rows.map(row=>`<tr><td><b>${escapeHtml(row?.task)}</b></td><td class="where">${escapeHtml(row?.resources)}</td><td class="detail">${escapeHtml(row?.start_condition)}</td><td class="detail">${escapeHtml(row?.status)}</td></tr>`).join(''):'<tr><td colspan="4" class="detail">暂无排期数据</td></tr>';
 }
 function render(f,curves){
   renderLive(f);
@@ -259,8 +273,10 @@ $('#theme').addEventListener('click',()=>{const r=document.documentElement; if(r
   try{localStorage.setItem('fb-theme',r.dataset.theme||'dark')}catch(e){} setThemeLabel(); if(last) render(...last);});
 setThemeLabel();
 async function load(){
+  const scheduleRequest=fetch('https://raw.githubusercontent.com/qqyjx/fleet-board/main/data/schedule.json?t='+Date.now()).then(r=>{if(!r.ok)throw new Error('schedule unavailable');return r.json();}).then(renderSchedule).catch(()=>renderSchedule(null));
   try{const [f,c]=await Promise.all([fetch('https://raw.githubusercontent.com/qqyjx/fleet-board/main/data/fleet.json?t='+Date.now()).then(r=>r.json()),fetch('https://raw.githubusercontent.com/qqyjx/fleet-board/main/data/curves.json?t='+Date.now()).then(r=>r.json())]); last=[f,c]; render(f,c);}
   catch(e){$('#stamp').textContent='数据加载失败：'+e;}
+  await scheduleRequest;
 }
 load(); setInterval(load,5*60*1000); setInterval(()=>{if(last) renderLive(last[0]);},60*1000);
 </script>

@@ -207,7 +207,7 @@ STATUS_JOBS = [
     ("fuxin", "/data/xyf/iclr9_ladder_seed2_fuxin_status_laneG", "ICLR2027-9", "14B 阶梯 seed 2 rlvr 臂 lane G（fuxin；等 rlvr 权重落地，卡 6 忙则卡 4）", []),
     ("3090", "/data/xyf/science/logs/full_eval.log", "Science", "Phase-Trans 盲态全量评测（≤14B 30 模型 × 17 任务，跟随 pin 下载；指标隔离在 _blind/ 未读，只记 rc/秒）", [6, 7]),
     ("new105", "/home/xyf/science/logs/full_eval.log", "Science", "Phase-Trans 盲态全量评测（≤4B 子集 20 模型 × 17 任务；box-floor 行）", [1]),
-    ("4090-jm", "/home/yxy/science/logs/full_eval.log", "Science", "Phase-Trans 盲态全量评测（1.4B–8B 段 9 模型；09-24 21:00 LA 按用户指示撤下，yxy 在用；九模型清单待另派机器）", [1]),
+    ("4090-jm", "/home/yxy/science/logs/full_eval.log", "Science", "Phase-Trans 历史 4090 腿（1.4B–8B 段 9 模型已在其他机器完成；2026-10-03 跨机状态台账核验）", []),
     ("A800", "/data0/xyf/science/logs/full_eval.log", "Science", "Phase-Trans A800 腿评测：Qwen2.5-32B（卡 3）/72B+OPT-66b（卡 1,2）/14B+OLMo-13B（卡 0）；只记 rc/秒", []),
     ("A800", "/data0/xyf/science/logs/dl_models.log", "Science", "Phase-Trans A800 腿：Qwen2.5-32B/72B + OPT-30b/66b pin 下载（≈400 GB，4.7 MB/s；只占盘不占卡）", []),
 ]
@@ -645,9 +645,10 @@ def main():
     if os.environ.get("FLEET_PUSH", "1") == "1":
         subprocess.run(["git", "-C", str(ROOT), "add", "-A"], capture_output=True)
         subprocess.run(["git", "-C", str(ROOT), "commit", "-qm", f"data {fleet['generated_at']}"], capture_output=True)
-        # code may also be pushed from elsewhere (2026-10-01): rebase onto it first, or every later push is rejected
+        # Preserve accepted merge commits. Divergent remote work requires an
+        # explicit merge; a background collection must not rewrite main.
         try:
-            subprocess.run(["git", "-C", str(ROOT), "pull", "-q", "--rebase", "--autostash", "origin", "main"], capture_output=True, timeout=120)
+            subprocess.run(["git", "-C", str(ROOT), "pull", "-q", "--ff-only", "origin", "main"], capture_output=True, timeout=120)
         except subprocess.TimeoutExpired:
             pass
         [subprocess.run(["git", "-C", str(ROOT), "push", "-q", "origin", "HEAD:main"], capture_output=True, timeout=300) for _ in range(2) if subprocess.run(["git", "-C", str(ROOT), "status", "-sb"], capture_output=True, text=True).stdout.splitlines()[0].find("ahead") >= 0]
