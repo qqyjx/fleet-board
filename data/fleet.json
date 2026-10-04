@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-03 19:30 LA",
+ "generated_at": "2026-10-03 19:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,7 +8,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 54962,
+     "mem_used": 74302,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -17,7 +17,7 @@
     },
     {
      "idx": 1,
-     "mem_used": 55102,
+     "mem_used": 74602,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -26,7 +26,7 @@
     },
     {
      "idx": 2,
-     "mem_used": 54898,
+     "mem_used": 73418,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -45,9 +45,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 5.26,
+    "load": 4.91,
     "mem_total": 503,
-    "mem_avail": 449
+    "mem_avail": 448
    },
    "allocation_detail": "0–3 号卡已归还；实际空闲且共享锁可用时可分派。WWW 由另一 session 处理。"
   },
@@ -60,7 +60,7 @@
      "idx": 0,
      "mem_used": 6158,
      "mem_total": 24576,
-     "util": 31,
+     "util": 30,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -68,7 +68,7 @@
      "idx": 1,
      "mem_used": 6158,
      "mem_total": 24576,
-     "util": 31,
+     "util": 20,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -76,7 +76,7 @@
      "idx": 2,
      "mem_used": 6158,
      "mem_total": 24576,
-     "util": 20,
+     "util": 30,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -84,7 +84,7 @@
      "idx": 3,
      "mem_used": 6158,
      "mem_total": 24576,
-     "util": 31,
+     "util": 30,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -92,7 +92,7 @@
      "idx": 4,
      "mem_used": 6108,
      "mem_total": 24576,
-     "util": 31,
+     "util": 30,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -100,7 +100,7 @@
      "idx": 5,
      "mem_used": 6108,
      "mem_total": 24576,
-     "util": 31,
+     "util": 30,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -123,7 +123,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 9.36,
+    "load": 8.45,
     "mem_total": 125,
     "mem_avail": 101
    }
@@ -159,7 +159,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.27,
+    "load": 1.16,
     "mem_total": 188,
     "mem_avail": 153
    }
@@ -178,16 +178,16 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 24365,
+     "mem_used": 24441,
      "mem_total": 49140,
-     "util": 90,
+     "util": 89,
      "lock_state": "free",
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 48,
-    "load": 1.27,
+    "load": 1.22,
     "mem_total": 251,
     "mem_avail": 217
    }
@@ -258,7 +258,7 @@
    "detail": "12 组 CPU 重算均 rc=0；结果已落地，WSL 论文宏仍待完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081023.9819217,
+    "observed_at": 1791081623.2982247,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -281,7 +281,7 @@
    "detail": "15 组 CPU 配对初始化复跑均 rc=0；WSL 验证、宏与正文待完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081023.9819217,
+    "observed_at": 1791081623.2982247,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -304,7 +304,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081024.1721544,
+    "observed_at": 1791081623.5119414,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -327,7 +327,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081024.1721544,
+    "observed_at": 1791081623.5119414,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -350,7 +350,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081024.1721544,
+    "observed_at": 1791081623.5119414,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -373,7 +373,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081024.1721544,
+    "observed_at": 1791081623.5119414,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -396,7 +396,7 @@
    "detail": "CPU 盘点已完成；等待 2d A2 重启后起链，再等 2d 让卡",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081024.1721544,
+    "observed_at": 1791081623.5119414,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -419,7 +419,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081024.1721544,
+    "observed_at": 1791081623.5119414,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -442,7 +442,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081024.1721544,
+    "observed_at": 1791081623.5119414,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -465,7 +465,7 @@
    "detail": "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 CPU 汇总与论文宏仍待完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081024.1721544,
+    "observed_at": 1791081623.5119414,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -488,7 +488,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081024.1721544,
+    "observed_at": 1791081623.5119414,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -511,7 +511,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081024.1721544,
+    "observed_at": 1791081623.5119414,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -534,7 +534,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081024.1721544,
+    "observed_at": 1791081623.5119414,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -557,7 +557,7 @@
    "detail": "启动被共享锁或显存检查拦下；评测尚未开始；等待八张 3090 同时可用",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081024.1721544,
+    "observed_at": 1791081623.5119414,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -580,7 +580,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081025.2771666,
+    "observed_at": 1791081625.0515568,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -603,7 +603,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081025.2771666,
+    "observed_at": 1791081625.0515568,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -626,7 +626,7 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081025.5077574,
+    "observed_at": 1791081625.3948085,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -649,7 +649,7 @@
    "detail": "失败标记 1；阶段 7b；需核对链日志",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081025.5077574,
+    "observed_at": 1791081625.3948085,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -672,7 +672,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791081025.5077574,
+    "observed_at": 1791081625.3948085,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -913,5 +913,5 @@
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105",
   "CaMCo 发布代码验证：7B / 13B 原链 失败：失败标记 1；阶段 7b；需核对链日志"
  ],
- "collect_s": 32.3
+ "collect_s": 33.4
 }
