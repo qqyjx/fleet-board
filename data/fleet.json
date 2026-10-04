@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04 13:30 LA",
+ "generated_at": "2026-10-04 13:40 LA",
  "boxes": [
   {
    "name": "A800",
@@ -17,7 +17,7 @@
     },
     {
      "idx": 1,
-     "mem_used": 54802,
+     "mem_used": 54962,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -26,7 +26,7 @@
     },
     {
      "idx": 2,
-     "mem_used": 55238,
+     "mem_used": 55198,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -37,7 +37,7 @@
      "idx": 3,
      "mem_used": 39724,
      "mem_total": 81920,
-     "util": 100,
+     "util": 99,
      "lock_state": "free",
      "owner": "other",
      "borrowed": false
@@ -45,7 +45,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 5.26,
+    "load": 5.64,
     "mem_total": 503,
     "mem_avail": 448
    },
@@ -60,7 +60,7 @@
      "idx": 0,
      "mem_used": 6274,
      "mem_total": 24576,
-     "util": 29,
+     "util": 31,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -76,7 +76,7 @@
      "idx": 2,
      "mem_used": 6450,
      "mem_total": 24576,
-     "util": 32,
+     "util": 33,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -92,7 +92,7 @@
      "idx": 4,
      "mem_used": 6108,
      "mem_total": 24576,
-     "util": 31,
+     "util": 33,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -108,7 +108,7 @@
      "idx": 6,
      "mem_used": 6450,
      "mem_total": 24576,
-     "util": 20,
+     "util": 31,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -123,7 +123,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 8.36,
+    "load": 9.5,
     "mem_total": 125,
     "mem_avail": 103
    }
@@ -159,7 +159,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.27,
+    "load": 1.12,
     "mem_total": 188,
     "mem_avail": 151
    }
@@ -187,7 +187,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 1.27,
+    "load": 1.61,
     "mem_total": 251,
     "mem_avail": 217
    }
@@ -258,7 +258,7 @@
    "detail": "12 组 CPU 重算均 rc=0；实测宏、五图与26页改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145827.869476,
+    "observed_at": 1791146429.1284857,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -281,7 +281,7 @@
    "detail": "15 组 CPU 配对初始化复跑均 rc=0；99 对初始化一致；改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145827.869476,
+    "observed_at": 1791146429.1284857,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -304,7 +304,7 @@
    "detail": "失败标记 1；阶段 stop；需核对链日志",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145827.869476,
+    "observed_at": 1791146429.1284857,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -327,7 +327,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145828.5760982,
+    "observed_at": 1791146429.3637233,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -350,7 +350,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145828.5760982,
+    "observed_at": 1791146429.3637233,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -373,7 +373,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145828.5760982,
+    "observed_at": 1791146429.3637233,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -396,7 +396,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145828.5760982,
+    "observed_at": 1791146429.3637233,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -428,11 +428,11 @@
    "detail": "8 个计算进程；阶段 main",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145828.5760982,
+    "observed_at": 1791146429.3637233,
     "controllers": 1,
     "compute": 8,
-    "log_bytes": 3812,
-    "log_mtime": 1791145184.4452312
+    "log_bytes": 3838,
+    "log_mtime": 1791146022.227457
    }
   },
   {
@@ -451,7 +451,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145828.5760982,
+    "observed_at": 1791146429.3637233,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -474,7 +474,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145828.5760982,
+    "observed_at": 1791146429.3637233,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -497,7 +497,7 @@
    "detail": "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 汇总与改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145828.5760982,
+    "observed_at": 1791146429.3637233,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -520,7 +520,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145828.5760982,
+    "observed_at": 1791146429.3637233,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -543,7 +543,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145828.5760982,
+    "observed_at": 1791146429.3637233,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -566,7 +566,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145828.5760982,
+    "observed_at": 1791146429.3637233,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -589,7 +589,7 @@
    "detail": "启动被共享锁或显存检查拦下；评测尚未开始；等待八张 3090 同时可用",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145828.5760982,
+    "observed_at": 1791146429.3637233,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -612,7 +612,7 @@
    "detail": "缓存READY回执与文件元数据一致；GPU验证是下一独立步骤",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145829.7270722,
+    "observed_at": 1791146431.6231773,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 272191,
@@ -635,7 +635,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145829.7270722,
+    "observed_at": 1791146431.6231773,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -658,7 +658,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145829.7270722,
+    "observed_at": 1791146431.6231773,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -681,7 +681,7 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145830.1582153,
+    "observed_at": 1791146432.0670047,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -704,7 +704,7 @@
    "detail": "失败标记 1；阶段 7b；需核对链日志",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145830.1582153,
+    "observed_at": 1791146432.0670047,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -727,7 +727,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791145830.1582153,
+    "observed_at": 1791146432.0670047,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -969,5 +969,5 @@
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105",
   "CaMCo 发布代码验证：7B / 13B 原链 失败：失败标记 1；阶段 7b；需核对链日志"
  ],
- "collect_s": 34.2
+ "collect_s": 37.1
 }
