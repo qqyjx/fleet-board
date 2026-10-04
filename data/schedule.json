@@ -1,0 +1,54 @@
+{
+ "generated_at": "2026-10-04 01:01 LA",
+ "basis": "共享所有权记录、真实进程与固定任务单；排期不代表已取得GPU。",
+ "rows": [
+  {
+   "task": "CaMCo 7B 发布代码验证（CLI）",
+   "resources": "new105 卡 1，共享现有常驻服务余量",
+   "start_condition": "固定权重完整校验；独占共享锁；启动时显存低于4GiB、利用率低于10%",
+   "status": "输入传输中；GPU 尚未启动"
+  },
+  {
+   "task": "CVPR 2f（桌面会话）",
+   "resources": "3090 卡 0–7",
+   "start_condition": "已启动；固定175单元队列；由原会话结束与读出",
+   "status": "运行中；完成数见实时作业行"
+  },
+  {
+   "task": "Science 72B 剩余算术与同机 goldll（CLI）",
+   "resources": "3090 卡 0–7，下一整机窗口",
+   "start_condition": "CVPR 2f 结束或交接；八卡无计算进程且共享锁可取得",
+   "status": "等待资源；输入已校验；迁移0/2"
+  },
+  {
+   "task": "WWW 补充实验（WWW 会话）",
+   "resources": "A800 卡 0–3",
+   "start_condition": "四卡无计算进程、显存低于1024MiB；共享锁及认领核查通过",
+   "status": "已部署；六组训练与18格T0尚未启动"
+  },
+  {
+   "task": "CVPR 2e 恢复（桌面会话）",
+   "resources": "A800，由原会话协调排期",
+   "start_condition": "原会话核查空卡、WWW分配与恢复任务单",
+   "status": "原链Terminated；已登记恢复，尚未重启"
+  },
+  {
+   "task": "Compass v2 G0（Compass 会话）",
+   "resources": "1张空闲卡，具体位置由原会话核查",
+   "start_condition": "原会话完成固定模型、数据和路径验证；避开已启动与有效认领",
+   "status": "登记与代码已发布；本CLI未代启动"
+  },
+  {
+   "task": "公司4090后续任务",
+   "resources": "4090-jm / new105 卡0",
+   "start_condition": "现有作业释放后，按具体任务显存、锁和输入检查分派",
+   "status": "现有预测作业与常驻服务保留；结束时间未核实"
+  },
+  {
+   "task": "公司不可达节点",
+   "resources": "fuxin / 194-yyd",
+   "start_condition": "恢复连接后核查；194驱动状态仅只读确认",
+   "status": "本轮连接失败；不计作可用空卡"
+  }
+ ]
+}

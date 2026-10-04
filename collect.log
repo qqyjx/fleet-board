@@ -357,3 +357,73 @@ Traceback (most recent call last):
   File "/usr/lib/python3.10/subprocess.py", line 1198, in _check_timeout
     raise TimeoutExpired(
 subprocess.TimeoutExpired: Command '['git', '-C', '/home/qq/fleet-board', 'push', '-q', 'origin', 'HEAD:main']' timed out after 300 seconds
+Traceback (most recent call last):
+  File "/home/qq/fleet-board/collect.py", line 6, in <module>
+    from active_jobs import collect_active_jobs, science_counts, science_snapshots, apply_allocations, held_card_locks
+  File "/home/qq/fleet-board/active_jobs.py", line 115
+    >>>>>>> c05a006 (Keep the A800 spec order (CPU chain first); test reads the 2e spec from the A800 list)
+                                                                                ^
+SyntaxError: invalid decimal literal
+Traceback (most recent call last):
+  File "/home/qq/fleet-board/collect.py", line 6, in <module>
+    from active_jobs import collect_active_jobs, science_counts, science_snapshots, apply_allocations, held_card_locks
+  File "/home/qq/fleet-board/active_jobs.py", line 115
+    >>>>>>> c05a006 (Keep the A800 spec order (CPU chain first); test reads the 2e spec from the A800 list)
+                                                                                ^
+SyntaxError: invalid decimal literal
+Traceback (most recent call last):
+  File "/home/qq/fleet-board/collect.py", line 6, in <module>
+    from active_jobs import collect_active_jobs, science_counts, science_snapshots, apply_allocations, held_card_locks
+  File "/home/qq/fleet-board/active_jobs.py", line 115
+    >>>>>>> c05a006 (Keep the A800 spec order (CPU chain first); test reads the 2e spec from the A800 list)
+                                                                                ^
+SyntaxError: invalid decimal literal
+Traceback (most recent call last):
+  File "/home/qq/fleet-board/collect.py", line 6, in <module>
+    from active_jobs import collect_active_jobs, science_counts, science_snapshots, apply_allocations, held_card_locks
+  File "/home/qq/fleet-board/active_jobs.py", line 115
+    >>>>>>> c05a006 (Keep the A800 spec order (CPU chain first); test reads the 2e spec from the A800 list)
+                                                                                ^
+SyntaxError: invalid decimal literal
+Traceback (most recent call last):
+  File "/home/qq/fleet-board/collect.py", line 6, in <module>
+    from active_jobs import collect_active_jobs, science_counts, science_snapshots, apply_allocations, held_card_locks
+  File "/home/qq/fleet-board/active_jobs.py", line 115
+    >>>>>>> c05a006 (Keep the A800 spec order (CPU chain first); test reads the 2e spec from the A800 list)
+                                                                                ^
+SyntaxError: invalid decimal literal
+Traceback (most recent call last):
+  File "/home/qq/fleet-board/collect.py", line 6, in <module>
+    from active_jobs import collect_active_jobs, science_counts, science_snapshots, apply_allocations, held_card_locks
+  File "/home/qq/fleet-board/active_jobs.py", line 115
+    >>>>>>> c05a006 (Keep the A800 spec order (CPU chain first); test reads the 2e spec from the A800 list)
+                                                                                ^
+SyntaxError: invalid decimal literal
+Traceback (most recent call last):
+  File "/home/qq/fleet-board/collect.py", line 6, in <module>
+    from active_jobs import collect_active_jobs, science_counts, science_snapshots, apply_allocations, held_card_locks
+  File "/home/qq/fleet-board/active_jobs.py", line 115
+    >>>>>>> c05a006 (Keep the A800 spec order (CPU chain first); test reads the 2e spec from the A800 list)
+                                                                                ^
+SyntaxError: invalid decimal literal
+Traceback (most recent call last):
+  File "/home/qq/fleet-board/collect.py", line 6, in <module>
+    from active_jobs import collect_active_jobs, science_counts, science_snapshots, apply_allocations, held_card_locks
+  File "/home/qq/fleet-board/active_jobs.py", line 115
+    >>>>>>> c05a006 (Keep the A800 spec order (CPU chain first); test reads the 2e spec from the A800 list)
+                                                                                ^
+SyntaxError: invalid decimal literal
+Traceback (most recent call last):
+  File "/home/qq/fleet-board/collect.py", line 6, in <module>
+    from active_jobs import collect_active_jobs, science_counts, science_snapshots, apply_allocations, held_card_locks
+  File "/home/qq/fleet-board/active_jobs.py", line 115
+    >>>>>>> c05a006 (Keep the A800 spec order (CPU chain first); test reads the 2e spec from the A800 list)
+                                                                                ^
+SyntaxError: invalid decimal literal
+Traceback (most recent call last):
+  File "/home/qq/fleet-board/collect.py", line 6, in <module>
+    from active_jobs import collect_active_jobs, science_counts, science_snapshots, apply_allocations, held_card_locks
+  File "/home/qq/fleet-board/active_jobs.py", line 115
+    >>>>>>> c05a006 (Keep the A800 spec order (CPU chain first); test reads the 2e spec from the A800 list)
+                                                                                ^
+SyntaxError: invalid decimal literal
