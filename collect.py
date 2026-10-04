@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
-"""Fleet & training board collector. Probes the four boxes over ssh (read-only),
-writes data/fleet.json (latest) and data/curves.json (training series), then commits
-and pushes. Runs from cron every 10 minutes; safe to run by hand."""
+"""Read-only fleet probes, external snapshot cache, then verified data-only PR."""
 import json, os, re, shlex, inspect, subprocess, time, datetime as dt, pathlib
 from active_jobs import collect_active_jobs, science_counts, science_snapshots, apply_allocations, held_card_locks
 
 ROOT = pathlib.Path(__file__).resolve().parent
-DATA = ROOT / "data"
-DATA.mkdir(exist_ok=True)
+DATA = None  # assigned to the configured external cache when collection starts
 from zoneinfo import ZoneInfo
 LA = ZoneInfo("America/Los_Angeles")   # was a fixed UTC-7, wrong after the November DST change
 
@@ -569,7 +566,7 @@ def status_job(host, path, repo, title, cards):
             "status": status, "progress": {"done": n_done, "total": 0, "unit": "步"}, "detail": last[:110],
             "alerts": [f[:110] for f in fails[-1:]] if status == "failed" else []}
 
-def main():
+def collect_snapshot():
     t0 = time.time()
     curves = json.loads((DATA / "curves.json").read_text()) if (DATA / "curves.json").exists() else {}
     boxes, jobs, alerts = [], [], []
@@ -642,16 +639,34 @@ def main():
     with hist.open("a") as f:
         f.write(json.dumps({"t": fleet["generated_at"], "cards": {b["name"]: [c["owner"] for c in b["cards"]] for b in boxes},
                             "jobs": {j["id"]: j["progress"] for j in jobs}}, ensure_ascii=False) + "\n")
-    if os.environ.get("FLEET_PUSH", "1") == "1":
-        subprocess.run(["git", "-C", str(ROOT), "add", "-A"], capture_output=True)
-        subprocess.run(["git", "-C", str(ROOT), "commit", "-qm", f"data {fleet['generated_at']}"], capture_output=True)
-        # Preserve accepted merge commits. Divergent remote work requires an
-        # explicit merge; a background collection must not rewrite main.
-        try:
-            subprocess.run(["git", "-C", str(ROOT), "pull", "-q", "--ff-only", "origin", "main"], capture_output=True, timeout=120)
-        except subprocess.TimeoutExpired:
-            pass
-        [subprocess.run(["git", "-C", str(ROOT), "push", "-q", "origin", "HEAD:main"], capture_output=True, timeout=300) for _ in range(2) if subprocess.run(["git", "-C", str(ROOT), "status", "-sb"], capture_output=True, text=True).stdout.splitlines()[0].find("ahead") >= 0]
+    return fleet
+
+
+def main():
+    from publishing import (collector_lock, git, initialize_cache, publish_snapshot,
+                            settings, synchronize)
+    global DATA
+    DATA, repository = settings(ROOT)
+    with collector_lock(DATA) as acquired:
+        if not acquired:
+            print(json.dumps({"status": "COLLECTOR_ALREADY_RUNNING"}))
+            return
+        publish = os.environ.get("FLEET_PUSH", "1") == "1"
+        if publish:
+            base, code_changed = synchronize(ROOT)
+            if code_changed:
+                print(json.dumps({"status": "CODE_UPDATED", "head": base,
+                                  "next": "next collection uses the synchronized code"}))
+                return
+        else:
+            base = git(ROOT, 'rev-parse', 'HEAD')
+        initialize_cache(ROOT, DATA)
+        fleet = collect_snapshot()
+        if publish:
+            print(json.dumps(publish_snapshot(ROOT, DATA, repository, base), ensure_ascii=False))
+        else:
+            print(json.dumps({"status": "COLLECTED_NOT_PUBLISHED", "generated_at": fleet['generated_at'],
+                              "cache": str(DATA)}, ensure_ascii=False))
 
 if __name__ == "__main__":
     main()
