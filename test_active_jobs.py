@@ -58,13 +58,13 @@ class ActiveJobsTests(unittest.TestCase):
             base = Path(td)
             inventory = base / "inventory.json"
             inventory.write_text("not read: metadata only")
-            spec = dict(next(s for s in SPECS["3090"] if s["id"] == "cvpr2e"))
+            spec = dict(next(s for s in SPECS["A800"] if s["id"] == "cvpr2e"))
             spec.update(root=str(base / "missing_queue"), ready=str(inventory),
                         code=str(base), logroot=str(base / "logs"))
             raw = subprocess.check_output([sys.executable, "-c", "specs = " + repr([spec]) + "\n" + REMOTE_PROBE], text=True)
             snap = json.loads(raw)
             self.assertEqual(len(snap), 1)
-            job = job_from_snapshot(spec, snap[0], "3090")
+            job = job_from_snapshot(spec, snap[0], "A800")
             self.assertEqual(job["status"], "waiting")
             self.assertEqual(job["progress"], dict(done=0, total=224, unit="作业"))
             self.assertEqual(job["cards"], [])
