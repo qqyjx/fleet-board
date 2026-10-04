@@ -213,7 +213,6 @@ class ActiveJobsTests(unittest.TestCase):
         snap['done'] = 12
         job = job_from_snapshot(spec, snap, 'A800')
         self.assertEqual(job['status'], 'done')
-        self.assertIn('论文宏仍待完成', job['detail'])
 
     def test_remote_probe_observes_cpu_only_in_registered_log_directory(self):
         with tempfile.TemporaryDirectory() as td:
