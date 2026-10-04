@@ -106,27 +106,48 @@ class PublishingTests(unittest.TestCase):
         with self.assertRaises(pub.PublicationError):pub.publish_snapshot(root,self.cache,'example/board',base)
 
     def test_mocked_pr_path_merges_exact_snapshot_and_syncs_main(self):
-        root,base=self.repository();original=pub.command;merged=False
-        def api(repo,path,payload=None):
+        root,base=self.repository();merged=False
+        def api(repo,path,payload=None,*,method='POST'):
+            nonlocal merged
             op=json.loads((self.cache/'publication-pending.json').read_text())
             if path=='pulls':return {'number':1,'html_url':'https://github.com/example/board/pull/1'}
             if path.endswith('/files'):return [{'filename':name} for name in op['changed_files']]
-            return {'head':{'sha':op['head']},'base':{'sha':base},'merged':merged,'merge_commit_sha':op['head'] if merged else None}
-        def run(args,**kwargs):
-            nonlocal merged
-            if args[:3]==['gh','pr','merge']:
-                op=json.loads((self.cache/'publication-pending.json').read_text())
-                self.assertEqual(args[-2:],['--match-head-commit',op['head']])
+            if path.endswith('/merge'):
+                self.assertEqual(method,'PUT')
+                self.assertEqual(payload,{'sha':op['head'],'merge_method':'merge'})
                 # Local bare fixture simulates GitHub's accepted merge; no network.
-                pub.git(root,'push','origin',op['head']+':refs/heads/main');merged=True;return b''
-            return original(args,**kwargs)
-        with patch.object(pub,'gh',side_effect=api),patch.object(pub,'command',side_effect=run):
+                pub.git(root,'push','origin',op['head']+':refs/heads/main');merged=True
+                return {'merged':True,'sha':op['head']}
+            return {'head':{'sha':op['head']},'base':{'sha':base},'merged':merged,'merge_commit_sha':op['head'] if merged else None}
+        with patch.object(pub,'gh',side_effect=api):
             result=pub.publish_snapshot(root,self.cache,'example/board',base)
         self.assertEqual(result['status'],'MERGED')
         self.assertEqual(result['ahead_behind'].split(),['0','0'])
         self.assertFalse((self.cache/'publication-pending.json').exists())
         self.assertTrue((self.cache/'publications/pr-1.json').exists())
         self.assertEqual(pub.git(root,'status','--porcelain'),'')
+
+    def test_merge_api_uses_put_and_expected_head_on_old_gh(self):
+        payload={'sha':'a'*40,'merge_method':'merge'}
+        with patch.object(pub,'command',return_value=b'{"merged":true,"sha":"merge"}') as run:
+            result=pub.gh('example/board','pulls/1/merge',payload,method='PUT')
+        self.assertTrue(result['merged'])
+        self.assertEqual(run.call_args.args[0],['gh','api','repos/example/board/pulls/1/merge','--method','PUT','--input','-'])
+        self.assertEqual(json.loads(run.call_args.kwargs['data']),payload)
+
+    def test_api_rejection_keeps_publication_pending(self):
+        root,base=self.repository()
+        def api(repo,path,payload=None,*,method='POST'):
+            op=json.loads((self.cache/'publication-pending.json').read_text())
+            if path=='pulls':return {'number':1,'html_url':'https://github.com/example/board/pull/1'}
+            if path.endswith('/files'):return [{'filename':name} for name in op['changed_files']]
+            if path.endswith('/merge'):return {'merged':False,'message':'head changed'}
+            return {'head':{'sha':op['head']},'base':{'sha':base},'merged':False}
+        with patch.object(pub,'gh',side_effect=api):
+            with self.assertRaises(pub.PublicationError):pub.publish_snapshot(root,self.cache,'example/board',base)
+        self.assertEqual(json.loads((self.cache/'publication-pending.json').read_text())['status'],'PR_CREATED')
+        self.assertEqual(pub.git(root,'rev-parse','HEAD'),base)
+        self.assertFalse((self.cache/'publications').exists())
 
     def test_changed_remote_head_retains_pending_without_merge(self):
         root,base=self.repository()
