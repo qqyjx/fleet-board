@@ -1,0 +1,42 @@
+{
+  "observed_utc": "2026-10-04T18:36:17.479785+00:00",
+  "source_sha256": "d24f9e85d54163cd6fb96db0acfe0f0b25cf9195ffcd9ca14d070a357cd72b1e",
+  "job": {
+    "id": "camco-cache-range-r2",
+    "repo": "AAAI2027-4",
+    "title": "CaMCo 7B：R2固定缓存分段交付",
+    "box": "new105",
+    "cards": [],
+    "kind": "cpu",
+    "status": "running",
+    "progress": {
+      "done": 7194.2,
+      "total": 13476.5,
+      "unit": "MiB"
+    },
+    "detail": "复制/分段接收；12/17整blob已晋级；未启动GPU",
+    "alerts": [],
+    "runtime": {
+      "observed_at": 1791138976.9206576,
+      "controllers": 1,
+      "compute": 0,
+      "log_bytes": 89175,
+      "log_mtime": 1791138972.6331928
+    }
+  },
+  "snapshot": {
+    "id": "camco-cache-range-r2",
+    "observed_at": 1791138976.9206576,
+    "controllers": 1,
+    "compute": 0,
+    "cards": [],
+    "log_bytes": 89175,
+    "log_mtime": 1791138972.6331928,
+    "cache_status": "running",
+    "cache_detail": "复制/分段接收；12/17整blob已晋级；未启动GPU",
+    "cache_bytes": 7543665735,
+    "verified_blobs": 12
+  },
+  "read_only": true,
+  "model_bytes_read": false
+}
