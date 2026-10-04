@@ -20,7 +20,17 @@ Configure an external cache using `FLEET_CACHE_DIR` or an ignored
 `.fleet-local.json` based on the example. Windows/WSL task artifacts use physical
 `D:\Codex` paths; the maintained host sets its cache under the task's `work`.
 Place collector logs there as well. The existing ten-minute schedule can be
-retained, pointing at `collect.py`.
+retained, pointing at `FLEET_PUSH=0 python3 -B collect.py`. Sampling uses no model
+and does not create commits or PRs. Collection-only is the default.
+
+The user assigned orchestration to Opus 5.5; this Codex chat executes concrete
+instructions. Publish a status batch only when directed, at most once per six
+hours, with `FLEET_PUSH=1`. The publisher checks the last data commit on synced
+remote main, so local/cloud publishers share the same minimum interval. Job
+outcomes/completed counts, blockers, reachability and resource ownership count
+as changes; timestamps, utilization/memory jitter, runtime log metadata and
+transfer-byte sampling alone do not. No material change means no PR. Retain
+intermediate history in the external cache for the next meaningful batch.
 
 The scheduled collector runs in Linux/WSL. Repository, PR and merge operations
 may be initiated from either the local or cloud side.

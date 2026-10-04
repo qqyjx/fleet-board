@@ -651,7 +651,7 @@ def main():
         if not acquired:
             print(json.dumps({"status": "COLLECTOR_ALREADY_RUNNING"}))
             return
-        publish = os.environ.get("FLEET_PUSH", "1") == "1"
+        publish = os.environ.get("FLEET_PUSH", "0") == "1"
         if publish:
             base, code_changed = synchronize(ROOT)
             if code_changed:
