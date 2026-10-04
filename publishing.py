@@ -14,6 +14,7 @@ import tempfile
 import uuid
 
 FILES = ('fleet.json', 'curves.json', 'history.jsonl')
+MIN_PUBLICATION_SECONDS = 6 * 60 * 60
 
 
 class PublicationError(RuntimeError):
@@ -183,6 +184,42 @@ def build_commit(root, cache, base, payloads):
     return commit, changed
 
 
+def material_state(fleet):
+    """Compare job outcomes/progress and ownership, not sampling noise."""
+    boxes = []
+    for box in fleet['boxes']:
+        cards = [{key: card.get(key) for key in ('idx', 'owner', 'lock_state', 'borrowed')}
+                 for card in sorted(box['cards'], key=lambda card: card['idx'])]
+        boxes.append({'name': box['name'], 'reachable': box['reachable'], 'cards': cards,
+                      'allocation_detail': box.get('allocation_detail')})
+    jobs = []
+    for job in fleet['jobs']:
+        item = {key: job.get(key) for key in ('id', 'status', 'box', 'cards')}
+        progress = job.get('progress', {})
+        if progress.get('unit') not in ('MiB', 'GiB', 'bytes'):
+            item['progress'] = progress
+        if job['status'] not in ('running', 'done'):
+            item['blocker'] = job.get('detail')
+        jobs.append(item)
+    return {'boxes': sorted(boxes, key=lambda box: box['name']),
+            'jobs': sorted(jobs, key=lambda job: job['id'])}
+
+
+def publication_decision(root, base, payloads, *, now=None):
+    """Use remote-main history so another publishing host shares the same cap."""
+    before = strict_json(command(['git', '-C', str(root), 'show', base + ':data/fleet.json']))
+    previous_curves = strict_json(command(['git', '-C', str(root), 'show', base + ':data/curves.json']))
+    if (material_state(before) == material_state(strict_json(payloads['fleet.json']))
+            and previous_curves == strict_json(payloads['curves.json'])):
+        return {'status': 'NO_MATERIAL_CHANGE'}
+    last = int(git(root, 'log', '-1', '--format=%ct', base, '--', 'data/fleet.json', 'data/curves.json'))
+    current = (now or dt.datetime.now(dt.timezone.utc)).timestamp()
+    eligible = last + MIN_PUBLICATION_SECONDS
+    if current < eligible:
+        return {'status': 'BATCH_NOT_DUE', 'next_eligible_utc': dt.datetime.fromtimestamp(eligible, dt.timezone.utc).isoformat()}
+    return {'status': 'ELIGIBLE'}
+
+
 def finish_publication(root, cache, operation, merge_sha):
     pending = cache / 'publication-pending.json'
     operation.update(status='MERGED', merge=merge_sha)
@@ -210,6 +247,9 @@ def publish_snapshot(root, cache, repo, base):
     if git(root, 'rev-parse', 'origin/main') != base:
         raise PublicationError('Remote main advanced; keep cache and synchronize on next collection')
     payloads, validation = validate_snapshot(cache)
+    decision = publication_decision(root, base, payloads)
+    if decision['status'] != 'ELIGIBLE':
+        return decision
     commit, changed = build_commit(root, cache, base, payloads)
     if commit is None:
         return {'status': 'NO_DATA_CHANGE'}

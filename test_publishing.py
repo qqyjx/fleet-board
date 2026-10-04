@@ -1,4 +1,5 @@
 import copy
+import datetime as dt
 import json
 import os
 from pathlib import Path
@@ -36,10 +37,13 @@ class PublishingTests(unittest.TestCase):
         pub.git(root,'config','core.fileMode','false')
         pub.git(root,'checkout','-b','main')
         (root/'data').mkdir();old=fixture('old')
+        old['jobs'][0]['progress']['done']=0
         for name,content in [('fleet.json',json.dumps(old)),('curves.json','{}'),('history.jsonl',json.dumps({'t':'old'})+'\n')]:
             (root/'data'/name).write_text(content)
         (root/'source.py').write_text('original source\n')
-        pub.git(root,'add','data','source.py');pub.git(root,'-c','core.hooksPath=/dev/null','commit','-m','base')
+        pub.git(root,'add','data','source.py')
+        pub.git(root,'-c','core.hooksPath=/dev/null','commit','-m','base',
+                env=dict(os.environ,GIT_AUTHOR_DATE='2020-01-01T00:00:00Z',GIT_COMMITTER_DATE='2020-01-01T00:00:00Z'))
         pub.git(root,'push','-u','origin','main')
         base=pub.git(root,'rev-parse','HEAD')
         (self.cache/'history.jsonl').write_bytes((root/'data/history.jsonl').read_bytes()+json.dumps({'t':'new'}).encode()+b'\n')
@@ -48,6 +52,56 @@ class PublishingTests(unittest.TestCase):
     def test_valid_snapshot(self):
         payload,summary=pub.validate_snapshot(self.cache)
         self.assertEqual(set(payload),set(pub.FILES));self.assertEqual(summary['jobs'],1)
+
+    def test_timestamp_utilization_and_runtime_noise_do_not_publish(self):
+        before=fixture('old');after=copy.deepcopy(before)
+        after.update(generated_at='new',collect_s=123)
+        after['boxes'][0]['cards'][0].update(mem_used=300,util=80)
+        after['jobs'][0].update(runtime={'observed_at':123},detail='new log timestamp')
+        self.assertEqual(pub.material_state(before),pub.material_state(after))
+
+    def test_completion_and_ownership_are_material(self):
+        before=fixture()
+        for change in ('done','status','owner','lock'):
+            after=copy.deepcopy(before)
+            if change=='done':after['jobs'][0]['progress']['done']=2
+            elif change=='status':after['jobs'][0]['status']='failed'
+            elif change=='owner':after['boxes'][0]['cards'][0]['owner']='other'
+            else:after['boxes'][0]['cards'][0]['lock_state']='held'
+            self.assertNotEqual(pub.material_state(before),pub.material_state(after))
+
+    def test_transfer_byte_sampling_waits_for_outcome(self):
+        before=fixture();before['jobs'][0]['progress']['unit']='MiB'
+        after=copy.deepcopy(before);after['jobs'][0]['progress']['done']=2
+        self.assertEqual(pub.material_state(before),pub.material_state(after))
+        after['jobs'][0]['status']='done'
+        self.assertNotEqual(pub.material_state(before),pub.material_state(after))
+
+    def test_remote_main_timestamp_enforces_six_hour_boundary(self):
+        root,base=self.repository();payload,_=pub.validate_snapshot(self.cache)
+        last=int(pub.git(root,'log','-1','--format=%ct',base,'--','data/fleet.json'))
+        self.assertEqual(pub.publication_decision(root,base,payload,
+            now=dt.datetime.fromtimestamp(last+21599,dt.timezone.utc))['status'],'BATCH_NOT_DUE')
+        self.assertEqual(pub.publication_decision(root,base,payload,
+            now=dt.datetime.fromtimestamp(last+21600,dt.timezone.utc))['status'],'ELIGIBLE')
+
+    def test_unchanged_state_skips_git_and_pr_creation(self):
+        root,base=self.repository();self.write_cache(fixture('old'))
+        fleet=fixture('new');fleet['jobs'][0]['progress']['done']=0
+        self.write_cache(fleet)
+        with patch.object(pub,'gh') as api,patch.object(pub,'build_commit') as commit:
+            self.assertEqual(pub.publish_snapshot(root,self.cache,'example/board',base)['status'],'NO_MATERIAL_CHANGE')
+        api.assert_not_called();commit.assert_not_called()
+
+    def test_changed_state_inside_window_preserves_cache_without_pr(self):
+        root,base=self.repository()
+        pub.git(root,'-c','core.hooksPath=/dev/null','commit','--amend','--no-edit')
+        base=pub.git(root,'rev-parse','HEAD');pub.git(root,'push','--force','origin','main')
+        before={name:(self.cache/name).read_bytes() for name in pub.FILES}
+        with patch.object(pub,'gh') as api,patch.object(pub,'build_commit') as commit:
+            self.assertEqual(pub.publish_snapshot(root,self.cache,'example/board',base)['status'],'BATCH_NOT_DUE')
+        api.assert_not_called();commit.assert_not_called()
+        self.assertEqual(before,{name:(self.cache/name).read_bytes() for name in pub.FILES})
 
     def test_duplicate_jobs_rejected(self):
         data=fixture();data['jobs'].append(copy.deepcopy(data['jobs'][0]));self.write_cache(data)
