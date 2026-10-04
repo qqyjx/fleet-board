@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04 07:34 LA",
+ "generated_at": "2026-10-04 07:43 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,7 +8,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 54942,
+     "mem_used": 55022,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -17,7 +17,7 @@
     },
     {
      "idx": 1,
-     "mem_used": 55042,
+     "mem_used": 54902,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -26,7 +26,7 @@
     },
     {
      "idx": 2,
-     "mem_used": 55058,
+     "mem_used": 55318,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -45,7 +45,7 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 5.06,
+    "load": 4.99,
     "mem_total": 503,
     "mem_avail": 449
    },
@@ -60,7 +60,7 @@
      "idx": 0,
      "mem_used": 6092,
      "mem_total": 24576,
-     "util": 31,
+     "util": 30,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -92,7 +92,7 @@
      "idx": 4,
      "mem_used": 5926,
      "mem_total": 24576,
-     "util": 33,
+     "util": 32,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -116,16 +116,16 @@
      "idx": 7,
      "mem_used": 6268,
      "mem_total": 24576,
-     "util": 30,
+     "util": 29,
      "lock_state": "held",
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 8.85,
+    "load": 8.6,
     "mem_total": 125,
-    "mem_avail": 101
+    "mem_avail": 102
    }
   },
   {
@@ -158,14 +158,14 @@
      "idx": 0,
      "mem_used": 24441,
      "mem_total": 49140,
-     "util": 87,
+     "util": 89,
      "lock_state": "free",
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 48,
-    "load": 1.49,
+    "load": 1.36,
     "mem_total": 251,
     "mem_avail": 217
    }
@@ -236,7 +236,7 @@
    "detail": "12 组 CPU 重算均 rc=0；实测宏、五图与26页改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124293.5946422,
+    "observed_at": 1791124872.203076,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -259,7 +259,7 @@
    "detail": "15 组 CPU 配对初始化复跑均 rc=0；99 对初始化一致；改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124293.5946422,
+    "observed_at": 1791124872.203076,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -282,7 +282,7 @@
    "detail": "失败标记 1；阶段 stop；需核对链日志",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124293.5946422,
+    "observed_at": 1791124872.203076,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -305,7 +305,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124294.9236646,
+    "observed_at": 1791124873.3012667,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -328,7 +328,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124294.9236646,
+    "observed_at": 1791124873.3012667,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -351,7 +351,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124294.9236646,
+    "observed_at": 1791124873.3012667,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -374,7 +374,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124294.9236646,
+    "observed_at": 1791124873.3012667,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -406,7 +406,7 @@
    "detail": "8 个计算进程；阶段 main",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124294.9236646,
+    "observed_at": 1791124873.3012667,
     "controllers": 1,
     "compute": 8,
     "log_bytes": 2771,
@@ -429,7 +429,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124294.9236646,
+    "observed_at": 1791124873.3012667,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -452,7 +452,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124294.9236646,
+    "observed_at": 1791124873.3012667,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -475,7 +475,7 @@
    "detail": "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 汇总与改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124294.9236646,
+    "observed_at": 1791124873.3012667,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -498,7 +498,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124294.9236646,
+    "observed_at": 1791124873.3012667,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -521,7 +521,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124294.9236646,
+    "observed_at": 1791124873.3012667,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -544,7 +544,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124294.9236646,
+    "observed_at": 1791124873.3012667,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -567,7 +567,7 @@
    "detail": "启动被共享锁或显存检查拦下；评测尚未开始；等待八张 3090 同时可用",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124294.9236646,
+    "observed_at": 1791124873.3012667,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -590,7 +590,7 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124330.1096632,
+    "observed_at": 1791124908.4764192,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -613,7 +613,7 @@
    "detail": "失败标记 1；阶段 7b；需核对链日志",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124330.1096632,
+    "observed_at": 1791124908.4764192,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -636,7 +636,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791124330.1096632,
+    "observed_at": 1791124908.4764192,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -832,5 +832,5 @@
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105",
   "CaMCo 发布代码验证：7B / 13B 原链 失败：失败标记 1；阶段 7b；需核对链日志"
  ],
- "collect_s": 262.3
+ "collect_s": 230.7
 }
