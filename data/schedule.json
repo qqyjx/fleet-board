@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-04 22:46 LA",
-  "basis": "ORDERS R8决定资源与顺序，科学做法遵循各仓已提交登记；现有owner不变。快照内旧失败链为历史事实，不替代下表后续独立步骤的验收。",
+  "generated_at": "2026-10-05 05:15 LA",
+  "basis": "ORDERS R10；05:10 LA快照与05:14–05:15 LA只读队列观察。科学生成完成、CPU读出失败和环境自检分别记录；原owner与排队顺序不变。",
   "rows": [
     {
       "task": "CaMCo 7B 发布代码验证（本App）",
@@ -11,44 +11,44 @@
     {
       "task": "CVPR 2f（桌面会话）",
       "resources": "3090 卡 0–7",
-      "start_condition": "R8 uniform登记，固定源dd35073；CV管理原锁和单写者交接",
-      "status": "22:46 LA：8个固定源runner，55/175、failed0；原路径q3_2b文件已归档保留，新计数不可与旧63直接相减；尚未科学读出"
+      "start_condition": "生成与合并门已完成；CPU读出恢复由CV等明确Task",
+      "status": "175/175、failed0、MERGE PASS；首次读出JSON序列化TypeError，readout.json=0字节，原失败保留；不能写成科学读出完成"
     },
     {
       "task": "Science 72B 剩余算术与同机 goldll（本App）",
       "resources": "3090 卡 0–7，下一整机窗口",
-      "start_condition": "2f→2g→2e全部完成后；八卡/owner/共享锁现场通过。PP不用2e前的两小时窗口，不新建等待器",
-      "status": "迁移0/2；未启动、保持盲态，排在CV登记链之后"
+      "start_condition": "2f→2g→2e全部结束后，再核八卡、owner与共享锁；不抢在2e前",
+      "status": "迁移0/2，保持盲态；2f生成完成、2g终态标记出现，仍须等2e"
     },
     {
       "task": "WWW 补充实验（WWW 会话）",
       "resources": "只等A800四卡，194已排除",
       "start_condition": "WW按原四卡空闲/低显存/锁/owner门控；10-07 23:59 LA无窗口由指挥者裁决",
-      "status": "WW02:26UTC回执smoke0/2、训练0/6、T0 0/18；194撤销未写入；22:40 LA A800仍外部占用"
+      "status": "WW最近回执smoke0/2、训练0/6、T0 0/18；05:10 LA A800仅卡3低显存，0–2外部占用，未满足四卡门控；194排除"
     },
     {
       "task": "CVPR 2e 恢复（桌面会话）",
       "resources": "3090 卡0–7，由原会话协调",
-      "start_condition": "R8固定源dd35073；实际顺序2f→2g→2e→Science，PP不占2e前空档",
-      "status": "22:38 LA唯一新CPU等待器3125399/birth1045810535，22:46核活；旧2824806退出，2e GPU未起；原A800失败历史保留"
+      "start_condition": "按原等待器先2f/2g及两小时Science空档；PP不用此空档，之后由CV原链启动",
+      "status": "05:14 LA原PID3125399/birth1045810535仍CPU等待；PP不替换/重启，不把空卡当作Science已获窗口"
     },
     {
       "task": "CVPR 2g（桌面会话）",
       "resources": "3090 卡0–7，由原会话协调",
-      "start_condition": "由CV原登记等待链在2f结束后启动，Qwen3-VL按R8批准路径",
-      "status": "保持CV owner；PP未代启动，发布窗口尚未轮到2g"
+      "start_condition": "CV原链接2f释放卡；科研验收仍归CV",
+      "status": "05:15 LA现场phase=done、19完成标记、0failed；无2g计算进程。未读指标或替CV重跑"
     },
     {
       "task": "Compass v2 G0（Compass 会话）",
       "resources": "new105卡1由CM按任务单认领；保留外部常驻服务",
-      "start_condition": "母栈固定5624b72后等测试工具层裁决；G0≤44GiB，原owner/锁/常驻服务门控不变",
-      "status": "CM03:48UTC BLOCKED：pytest工具层许可/固定版本待裁决，mig-g0/G0未创建，未下载或运行；母环境清单已归档"
+      "start_condition": "R10环境15passed/0skip已完成；下载通道须指挥者新裁决，随后仍按原GPU门控",
+      "status": "CM首模型下载Network is unreachable，模型0/5、数据0/3；原日志/partial/cache保留，未推理或读出；卡1仅常驻服务2819MiB"
     },
     {
-      "task": "GAVEL FLOP计量器校准（本App）",
-      "resources": "R2 new105卡1已释放",
-      "start_condition": "O-04校准DONE；O-03于10-05 02:00 LA后核实固定judge实际配额",
-      "status": "R2单次62.23秒部分dense-shape校准PASS；PR#1等待384次judge，完整成本比仍缺"
+      "task": "GAVEL校准与固定MMHal评审（本App）",
+      "resources": "O-04卡1已释放；O-03本地订阅判官批次已结束",
+      "start_condition": "本批O-03/O-04均已验收；后续科学步骤需新明确指令",
+      "status": "384/384返回，2解析标记按原规则记0；全部6配对比较不可区分；PR1合并1ac8647，完整统一成本比仍缺"
     },
     {
       "task": "公司不可达节点",
