@@ -124,6 +124,21 @@ class PublishingTests(unittest.TestCase):
         data=fixture();data['boxes'][0]['cards'][0]['util']=101;self.write_cache(data)
         with self.assertRaises(pub.PublicationError):pub.validate_snapshot(self.cache)
 
+    def test_unavailable_utilization_keeps_error_observation(self):
+        data=fixture();data['boxes'][0]['cards'][0].update(util=-1,error='[N/A]',owner='other',lock_state='held')
+        self.write_cache(data)
+        payload,_=pub.validate_snapshot(self.cache)
+        card=json.loads(payload['fleet.json'])['boxes'][0]['cards'][0]
+        self.assertEqual((card['util'],card['error'],card['owner'],card['lock_state']),
+                         (-1,'[N/A]','other','held'))
+
+    def test_invalid_negative_utilization_is_not_masked(self):
+        for util,error in [(-1,None),(-1,''),(-1,'  '),(-2,'[N/A]')]:
+            with self.subTest(util=util,error=error):
+                data=fixture();data['boxes'][0]['cards'][0].update(util=util,error=error)
+                self.write_cache(data)
+                with self.assertRaises(pub.PublicationError):pub.validate_snapshot(self.cache)
+
     def test_nonfinite_json_rejected(self):
         (self.cache/'curves.json').write_text('{"loss":NaN}')
         with self.assertRaises(pub.PublicationError):pub.validate_snapshot(self.cache)
