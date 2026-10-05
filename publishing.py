@@ -14,7 +14,7 @@ import tempfile
 import uuid
 
 FILES = ('fleet.json', 'curves.json', 'history.jsonl')
-MIN_PUBLICATION_SECONDS = 6 * 60 * 60
+MIN_PUBLICATION_SECONDS = 24 * 60 * 60
 
 
 class PublicationError(RuntimeError):
