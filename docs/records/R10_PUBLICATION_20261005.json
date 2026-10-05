@@ -1,0 +1,37 @@
+{
+  "revision": "R10",
+  "validation": {
+    "generated_at": "2026-10-05 05:10 LA",
+    "boxes": 6,
+    "jobs": 38,
+    "sha256": {
+      "fleet.json": "42ca83a79b7a172d87b5255a98b981f2c254df520f5b20a85b884dff9f6e82b8",
+      "curves.json": "73b7987e949a31f391530fef01d18e387fe317389328ea54897163a5bb095e2d",
+      "history.jsonl": "501230b84a8a78cb0fd3d488273c153074fc23b71a74127426f2a8573428c37c"
+    }
+  },
+  "decision": {
+    "status": "ELIGIBLE"
+  },
+  "append_only_history": true,
+  "source_code_changed": false,
+  "schema_tests": "existing validator passed current snapshot; no source change or redundant suite rerun",
+  "cv_chain": {
+    "utc": "2026-10-05T12:15:49.607831+00:00",
+    "queue_2g": {
+      "exists": true,
+      "done": 19,
+      "failed": 0,
+      "claims": 19,
+      "todo": null,
+      "phase": "done"
+    },
+    "processes_2g": []
+  },
+  "gavel_result": "PR1 merged1ac8647; 384 returns, six neutral comparisons",
+  "rename_checked": {
+    "id": 1230421035,
+    "full_name": "qqyjx/AAAI2027-2",
+    "renamed": false
+  }
+}
