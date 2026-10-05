@@ -77,13 +77,13 @@ class PublishingTests(unittest.TestCase):
         after['jobs'][0]['status']='done'
         self.assertNotEqual(pub.material_state(before),pub.material_state(after))
 
-    def test_remote_main_timestamp_enforces_six_hour_boundary(self):
+    def test_remote_main_timestamp_enforces_daily_boundary(self):
         root,base=self.repository();payload,_=pub.validate_snapshot(self.cache)
         last=int(pub.git(root,'log','-1','--format=%ct',base,'--','data/fleet.json'))
         self.assertEqual(pub.publication_decision(root,base,payload,
-            now=dt.datetime.fromtimestamp(last+21599,dt.timezone.utc))['status'],'BATCH_NOT_DUE')
+            now=dt.datetime.fromtimestamp(last+86399,dt.timezone.utc))['status'],'BATCH_NOT_DUE')
         self.assertEqual(pub.publication_decision(root,base,payload,
-            now=dt.datetime.fromtimestamp(last+21600,dt.timezone.utc))['status'],'ELIGIBLE')
+            now=dt.datetime.fromtimestamp(last+86400,dt.timezone.utc))['status'],'ELIGIBLE')
 
     def test_unchanged_state_skips_git_and_pr_creation(self):
         root,base=self.repository();self.write_cache(fixture('old'))

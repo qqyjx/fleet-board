@@ -24,8 +24,8 @@ retained, pointing at `FLEET_PUSH=0 python3 -B collect.py`. Sampling uses no mod
 and does not create commits or PRs. Collection-only is the default.
 
 The user assigned orchestration to Opus 5.5; this Codex chat executes concrete
-instructions. Publish a status batch only when directed, at most once per six
-hours, with `FLEET_PUSH=1`. The publisher checks the last data commit on synced
+instructions. Publish a status batch only when directed, at most once per day
+(24 hours), with `FLEET_PUSH=1`. The publisher checks the last data commit on synced
 remote main, so local/cloud publishers share the same minimum interval. Job
 outcomes/completed counts, blockers, reachability and resource ownership count
 as changes; timestamps, utilization/memory jitter, runtime log metadata and
