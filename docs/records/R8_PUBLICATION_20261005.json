@@ -1,0 +1,46 @@
+{
+  "order": "R8 PP O-08",
+  "base_sha": "55a3db6d25ee324a4171c292bdcbd059b2a4bdfd",
+  "snapshot": {
+    "generated_at": "2026-10-04 22:50 LA",
+    "boxes": 6,
+    "jobs": 38,
+    "sha256": {
+      "fleet.json": "2dbb9926068022576517db851c534720b606fecea50481de3733cc639d454910",
+      "curves.json": "73b7987e949a31f391530fef01d18e387fe317389328ea54897163a5bb095e2d",
+      "history.jsonl": "4507bdb199e0525ac67020a22e134b6c41338e7576340c854ee9d5522eedea9d"
+    }
+  },
+  "publication_decision": {
+    "status": "ELIGIBLE"
+  },
+  "history_prefix_preserved": true,
+  "unavailable_gpu_values_preserved": [
+    [
+      "194-yyd",
+      2,
+      -1,
+      "[N/A]"
+    ]
+  ],
+  "tests": {
+    "command": "python3 -m unittest test_active_jobs test_publishing test_cache_range_status",
+    "tests": 54,
+    "seconds": 38.677,
+    "result": "PASS"
+  },
+  "publication_path_audit": {
+    "fleet_cron_count": 1,
+    "all_fleet_jobs_collection_only": true,
+    "paper_post_commit_hook_exists": true,
+    "paper_post_commit_executable": true,
+    "paper_post_commit_effective_commands": [
+      "exit 0"
+    ],
+    "paper_post_commit_sha256": "c45c4b04c95ef00596d9f5d38aca53ea9b9f3b8461fb52a4f02d039b3ffc1911"
+  },
+  "cv_runtime_observed_utc": "2026-10-05T05:46:06.551443+00:00",
+  "scientific_results_recomputed": false,
+  "new_experiment_dispatches": 0,
+  "note": "Historical failed chains remain visible; independent later completion receipts are in schedule.json. Unknown utilization remains ERR, never 0%."
+}

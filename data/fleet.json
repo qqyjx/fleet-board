@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04 15:10 LA",
+ "generated_at": "2026-10-04 22:50 LA",
  "boxes": [
   {
    "name": "A800",
@@ -8,7 +8,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 73802,
+     "mem_used": 55042,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -17,16 +17,16 @@
     },
     {
      "idx": 1,
-     "mem_used": 73442,
+     "mem_used": 54382,
      "mem_total": 81920,
-     "util": 100,
+     "util": 92,
      "lock_state": "free",
      "owner": "other",
      "borrowed": false
     },
     {
      "idx": 2,
-     "mem_used": 74378,
+     "mem_used": 54558,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -35,7 +35,7 @@
     },
     {
      "idx": 3,
-     "mem_used": 39724,
+     "mem_used": 36782,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -45,9 +45,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 5.2,
+    "load": 4.74,
     "mem_total": 503,
-    "mem_avail": 448
+    "mem_avail": 453
    },
    "allocation_detail": "0–3 号卡已归还；实际空闲且共享锁可用时可分派。WWW 由另一 session 处理。"
   },
@@ -58,75 +58,76 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 6274,
+     "mem_used": 6158,
      "mem_total": 24576,
-     "util": 30,
+     "util": 0,
      "lock_state": "held",
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 6274,
+     "mem_used": 18534,
      "mem_total": 24576,
-     "util": 32,
+     "util": 26,
      "lock_state": "held",
      "owner": "ours"
     },
     {
      "idx": 2,
-     "mem_used": 6450,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 32,
+     "util": 0,
      "lock_state": "held",
-     "owner": "ours"
+     "owner": "reserved"
     },
     {
      "idx": 3,
-     "mem_used": 6274,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 31,
+     "util": 0,
      "lock_state": "held",
-     "owner": "ours"
+     "owner": "reserved"
     },
     {
      "idx": 4,
-     "mem_used": 6108,
+     "mem_used": 6158,
      "mem_total": 24576,
-     "util": 32,
+     "util": 0,
      "lock_state": "held",
      "owner": "ours"
     },
     {
      "idx": 5,
-     "mem_used": 6332,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 30,
+     "util": 0,
      "lock_state": "held",
-     "owner": "ours"
+     "owner": "reserved"
     },
     {
      "idx": 6,
-     "mem_used": 6450,
+     "mem_used": 0,
      "mem_total": 24576,
-     "util": 32,
+     "util": 0,
      "lock_state": "held",
-     "owner": "ours"
+     "owner": "reserved"
     },
     {
      "idx": 7,
-     "mem_used": 6450,
+     "mem_used": 6108,
      "mem_total": 24576,
-     "util": 30,
+     "util": 99,
      "lock_state": "held",
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 8.44,
+    "load": 8.96,
     "mem_total": 125,
     "mem_avail": 103
-   }
+   },
+   "reservation_detail": "调度锁已占用的空闲卡：2, 3, 5, 6"
   },
   {
    "name": "fuxin",
@@ -161,14 +162,48 @@
     "cores": 112,
     "load": 1.21,
     "mem_total": 188,
-    "mem_avail": 151
+    "mem_avail": 152
    }
   },
   {
    "name": "194-yyd",
    "label": "194 4090D ×4 (48 GB, 公司)",
-   "reachable": false,
-   "cards": [],
+   "reachable": true,
+   "cards": [
+    {
+     "idx": 0,
+     "mem_used": 15,
+     "mem_total": 49140,
+     "util": 0,
+     "lock_state": "free",
+     "owner": "free"
+    },
+    {
+     "idx": 1,
+     "mem_used": 15,
+     "mem_total": 49140,
+     "util": 0,
+     "lock_state": "free",
+     "owner": "free"
+    },
+    {
+     "idx": 2,
+     "mem_used": 44252,
+     "mem_total": 49140,
+     "util": -1,
+     "error": "[N/A]",
+     "lock_state": "held",
+     "owner": "other"
+    },
+    {
+     "idx": 3,
+     "mem_used": 18,
+     "mem_total": 49140,
+     "util": 0,
+     "lock_state": "free",
+     "owner": "free"
+    }
+   ],
    "sys": null
   },
   {
@@ -178,18 +213,18 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 24441,
+     "mem_used": 1928,
      "mem_total": 49140,
-     "util": 90,
+     "util": 0,
      "lock_state": "free",
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 48,
-    "load": 1.22,
+    "load": 0.42,
     "mem_total": 251,
-    "mem_avail": 217
+    "mem_avail": 225
    }
   }
  ],
@@ -258,7 +293,7 @@
    "detail": "12 组 CPU 重算均 rc=0；实测宏、五图与26页改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151829.2485275,
+    "observed_at": 1791179414.7679875,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -281,7 +316,7 @@
    "detail": "15 组 CPU 配对初始化复跑均 rc=0；99 对初始化一致；改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151829.2485275,
+    "observed_at": 1791179414.7679875,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -304,7 +339,7 @@
    "detail": "失败标记 1；阶段 stop；需核对链日志",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151829.2485275,
+    "observed_at": 1791179414.7679875,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -327,7 +362,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151829.4967422,
+    "observed_at": 1791179414.9812827,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -350,7 +385,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151829.4967422,
+    "observed_at": 1791179414.9812827,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -373,7 +408,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151829.4967422,
+    "observed_at": 1791179414.9812827,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -396,7 +431,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151829.4967422,
+    "observed_at": 1791179414.9812827,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -410,29 +445,24 @@
    "box": "3090",
    "cards": [
     0,
-    1,
-    2,
-    3,
     4,
-    5,
-    6,
     7
    ],
    "kind": "gen",
    "status": "running",
    "progress": {
-    "done": 63,
+    "done": 56,
     "total": 175,
     "unit": "作业"
    },
-   "detail": "8 个计算进程；阶段 main",
+   "detail": "3 个计算进程；阶段 main",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151829.4967422,
+    "observed_at": 1791179414.9812827,
     "controllers": 1,
-    "compute": 8,
-    "log_bytes": 4075,
-    "log_mtime": 1791151172.8571105
+    "compute": 3,
+    "log_bytes": 1529,
+    "log_mtime": 1791179388.3464758
    }
   },
   {
@@ -451,7 +481,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151829.4967422,
+    "observed_at": 1791179414.9812827,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -474,7 +504,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151829.4967422,
+    "observed_at": 1791179414.9812827,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -497,7 +527,7 @@
    "detail": "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 汇总与改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151829.4967422,
+    "observed_at": 1791179414.9812827,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -520,7 +550,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151829.4967422,
+    "observed_at": 1791179414.9812827,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -543,7 +573,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151829.4967422,
+    "observed_at": 1791179414.9812827,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -566,7 +596,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151829.4967422,
+    "observed_at": 1791179414.9812827,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -589,7 +619,7 @@
    "detail": "启动被共享锁或显存检查拦下；评测尚未开始；等待八张 3090 同时可用",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151829.4967422,
+    "observed_at": 1791179414.9812827,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -612,7 +642,7 @@
    "detail": "缓存READY回执与文件元数据一致；GPU验证是下一独立步骤",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151832.3173807,
+    "observed_at": 1791179416.20401,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 272191,
@@ -635,7 +665,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151832.3173807,
+    "observed_at": 1791179416.20401,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -658,7 +688,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151832.3173807,
+    "observed_at": 1791179416.20401,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -681,7 +711,7 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151832.6345825,
+    "observed_at": 1791179416.4528463,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -704,7 +734,7 @@
    "detail": "失败标记 1；阶段 7b；需核对链日志",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151832.6345825,
+    "observed_at": 1791179416.4528463,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -727,7 +757,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791151832.6345825,
+    "observed_at": 1791179416.4528463,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -963,11 +993,10 @@
   }
  ],
  "alerts": [
-  "194-yyd 本轮采集失败：该机任务状态为上次快照，不作数",
   "fuxin 本轮采集失败：该机任务状态为上次快照，不作数",
   "CVPR-2e：复制帧代价的规模 / 代 / 家族扫描（CLEVRER，8 个模型，A800） 失败：失败标记 1；阶段 stop；需核对链日志",
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105",
   "CaMCo 发布代码验证：7B / 13B 原链 失败：失败标记 1；阶段 7b；需核对链日志"
  ],
- "collect_s": 39.7
+ "collect_s": 23.0
 }

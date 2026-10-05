@@ -145,7 +145,15 @@ def validate_snapshot(cache):
         if len(card_ids) != len(set(card_ids)):
             raise PublicationError('Duplicate GPU indices')
         for card in box['cards']:
-            if not all(number(card.get(key)) for key in ('idx', 'mem_used', 'mem_total', 'util')):
+            if not all(number(card.get(key)) for key in ('idx', 'mem_used', 'mem_total')):
+                raise PublicationError('Invalid GPU observation')
+            # The collector preserves nvidia-smi N/A as -1 with its error text;
+            # the board renders this as ERR, never as an idle 0% observation.
+            unavailable = (type(card.get('util')) in (int, float)
+                           and card['util'] == -1
+                           and isinstance(card.get('error'), str)
+                           and bool(card['error'].strip()))
+            if not (number(card.get('util')) or unavailable):
                 raise PublicationError('Invalid GPU observation')
             if card['mem_used'] > card['mem_total'] or card['util'] > 100:
                 raise PublicationError('GPU observation out of range')

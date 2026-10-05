@@ -1,60 +1,61 @@
 {
- "generated_at": "2026-10-04 18:19 UTC",
- "basis": "本App负责维护；以共享owner、固定任务单和实际运行记录为依据；排期不代表GPU已取得。",
- "rows": [
-  {
-   "task": "CaMCo 7B 发布代码验证（本App）",
-   "resources": "new105 卡 1，共享现有常驻服务余量",
-   "start_condition": "固定权重完整校验；独占共享锁；启动时显存低于4GiB、利用率低于10%",
-   "status": "R2分段交付已于18:19 UTC启动，复用4.42GB源hash匹配前缀；实时字节进度见R2作业行，完整READY后再核验GPU条件"
-  },
-  {
-   "task": "CVPR 2f（桌面会话）",
-   "resources": "3090 卡 0–7",
-   "start_condition": "已启动；固定175单元队列；由原会话结束与读出",
-   "status": "运行中；完成数见实时作业行"
-  },
-  {
-   "task": "Science 72B 剩余算术与同机 goldll（本App）",
-   "resources": "3090 卡 0–7，下一整机窗口",
-   "start_condition": "按共享队列保留窗口协调；八卡无计算进程、显存与共享锁/有效认领全部通过",
-   "status": "等待资源；输入已校验；迁移0/2"
-  },
-  {
-   "task": "WWW 补充实验（WWW 会话）",
-   "resources": "A800 卡 0–3",
-   "start_condition": "四卡无计算进程、显存低于1024MiB；共享锁及认领核查通过",
-   "status": "已部署；六组训练与18格T0尚未启动"
-  },
-  {
-   "task": "CVPR 2e 恢复（桌面会话）",
-   "resources": "3090 卡0–7，由原会话协调",
-   "start_condition": "2f、2g及Science保留窗口后，按已登记的3090任务单启动",
-   "status": "原A800失败产物保留；已登记3090 CPU等待链，未取得GPU"
-  },
-  {
-   "task": "CVPR 2g（桌面会话）",
-   "resources": "3090 卡0–7，由原会话协调",
-   "start_condition": "按已登记队列在2f释放后执行，保留其他任务窗口及共享锁",
-   "status": "清单与CPU验收已登记，已有等待链；未代启动GPU"
-  },
-  {
-   "task": "Compass v2 G0（Compass 会话）",
-   "resources": "1张空闲卡，具体位置由原会话核查",
-   "start_condition": "原会话完成固定模型、数据和路径验证；避开已启动与有效认领",
-   "status": "由原会话继续推进；本App不代启动"
-  },
-  {
-   "task": "GAVEL FLOP计量器校准（本App）",
-   "resources": "4090-jm 卡0；启动前核查常驻服务及其他计算占用",
-   "start_condition": "固定13B/图像/配置SHA通过；CPU仪器验收；共享锁；显存低于4GiB、利用率低于10%；单次上限15分钟",
-   "status": "原校准失败记录保留；CPU修复17项通过；R1止于部署前资源门控，PR继续Draft"
-  },
-  {
-   "task": "公司不可达节点",
-   "resources": "fuxin / 194-yyd",
-   "start_condition": "恢复连接后核查；194驱动状态仅只读确认",
-   "status": "本轮连接失败；不计作可用空卡"
-  }
- ]
+  "generated_at": "2026-10-04 22:46 LA",
+  "basis": "ORDERS R8决定资源与顺序，科学做法遵循各仓已提交登记；现有owner不变。快照内旧失败链为历史事实，不替代下表后续独立步骤的验收。",
+  "rows": [
+    {
+      "task": "CaMCo 7B 发布代码验证（本App）",
+      "resources": "new105卡1已释放；无需重复验证",
+      "start_condition": "O-01 DONE，原固定输入与单次验证已验收",
+      "status": "7B单次SMOKE_PASS 37.79秒；PR#3合并bfb926a；原13B PASS保留，非新增科学质量指标"
+    },
+    {
+      "task": "CVPR 2f（桌面会话）",
+      "resources": "3090 卡 0–7",
+      "start_condition": "R8 uniform登记，固定源dd35073；CV管理原锁和单写者交接",
+      "status": "22:46 LA：8个固定源runner，55/175、failed0；原路径q3_2b文件已归档保留，新计数不可与旧63直接相减；尚未科学读出"
+    },
+    {
+      "task": "Science 72B 剩余算术与同机 goldll（本App）",
+      "resources": "3090 卡 0–7，下一整机窗口",
+      "start_condition": "2f→2g→2e全部完成后；八卡/owner/共享锁现场通过。PP不用2e前的两小时窗口，不新建等待器",
+      "status": "迁移0/2；未启动、保持盲态，排在CV登记链之后"
+    },
+    {
+      "task": "WWW 补充实验（WWW 会话）",
+      "resources": "只等A800四卡，194已排除",
+      "start_condition": "WW按原四卡空闲/低显存/锁/owner门控；10-07 23:59 LA无窗口由指挥者裁决",
+      "status": "WW02:26UTC回执smoke0/2、训练0/6、T0 0/18；194撤销未写入；22:40 LA A800仍外部占用"
+    },
+    {
+      "task": "CVPR 2e 恢复（桌面会话）",
+      "resources": "3090 卡0–7，由原会话协调",
+      "start_condition": "R8固定源dd35073；实际顺序2f→2g→2e→Science，PP不占2e前空档",
+      "status": "22:38 LA唯一新CPU等待器3125399/birth1045810535，22:46核活；旧2824806退出，2e GPU未起；原A800失败历史保留"
+    },
+    {
+      "task": "CVPR 2g（桌面会话）",
+      "resources": "3090 卡0–7，由原会话协调",
+      "start_condition": "由CV原登记等待链在2f结束后启动，Qwen3-VL按R8批准路径",
+      "status": "保持CV owner；PP未代启动，发布窗口尚未轮到2g"
+    },
+    {
+      "task": "Compass v2 G0（Compass 会话）",
+      "resources": "new105卡1由CM按任务单认领；保留外部常驻服务",
+      "start_condition": "母栈固定5624b72后等测试工具层裁决；G0≤44GiB，原owner/锁/常驻服务门控不变",
+      "status": "CM03:48UTC BLOCKED：pytest工具层许可/固定版本待裁决，mig-g0/G0未创建，未下载或运行；母环境清单已归档"
+    },
+    {
+      "task": "GAVEL FLOP计量器校准（本App）",
+      "resources": "R2 new105卡1已释放",
+      "start_condition": "O-04校准DONE；O-03于10-05 02:00 LA后核实固定judge实际配额",
+      "status": "R2单次62.23秒部分dense-shape校准PASS；PR#1等待384次judge，完整成本比仍缺"
+    },
+    {
+      "task": "公司不可达节点",
+      "resources": "fuxin离线；194经new105可达但不作任何放置",
+      "start_condition": "194须用户另行同意才可调度；卡2只读隔离，不改锁/进程/驱动",
+      "status": "22:40 LA：194卡2 44252MiB、util=N/A、锁持有；0/1/3低显存也不视为获准空卡。fuxin不可达"
+    }
+  ],
+  "orders_url": "https://github.com/qqyjx/paper-progress/blob/claude/nifty-knuth-a3n996/docs/dispatch/ORDERS.md"
 }
