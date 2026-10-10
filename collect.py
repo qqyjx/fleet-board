@@ -424,10 +424,12 @@ def science_a800_jobs():
     for s in snapshots:
         model = s["model"].rsplit("/", 1)[-1]
         status = "running" if s["running"] else ("done" if s["done"] == 17 else "unknown")
-        if not s["running"] and s["done"] < 17 and model == "Qwen2.5-72B":
-            status = "waiting"
-        detail = ("进程在线" if s["running"] else "17 项任务 rc=0" if status == "done"
-                  else "剩余算术已登记迁移至八张 3090；A800 0–3 已归还，当前仍有占用" if status == "waiting" else "未确认在跑")
+        migrated = model == "Qwen2.5-72B" and not s["running"] and s["done"] == 16
+        if migrated:
+            # the 17th task (modified arithmetic) ran on the 3090 under AMEND_72B_3090_20261002 and was landed on 2026-10-10
+            status = "done"
+        detail = ("进程在线" if s["running"] else "16 项在 A800 rc=0；算术格按修正案在 3090 完成并于 10-10 落地" if migrated
+                  else "17 项任务 rc=0" if status == "done" else "未确认在跑")
         jobs.append({"id": "science-a800-" + model.lower().replace("qwen2.5-", ""), "repo": "Science",
                      "title": f"Phase-Trans A800：{model} 离散评测", "box": "A800", "cards": s["cards"],
                      "kind": "gen", "status": status, "progress": {"done": s["done"], "total": 17, "unit": "任务"},
