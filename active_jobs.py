@@ -228,7 +228,7 @@ SPECS = {
         dict(id="certhar-w5-a4", repo="IMWUT2027-1", title="CertHAR W5-A4：LLM 标注与学生同设备成本（4 个数据集，3090）",
              root="/data/xyf/IMWUT2027-1-a4/results/w5/a4", code="/data/xyf/IMWUT2027-1-a4", controller="W5_A4_cost4_3090.sh",
              logs="logs", markers="markers", total=4, terminal="CHAIN_DONE"),
-        dict(id="cvpr1-1r-a1-3090", repo="CVPR2027-1", title="CVPR-1 1r 修正案 A1：BGR 输入重跑（3090，W5-A4 之后用卡 0–3）",
+        dict(id="cvpr1-1r-a1-3090", repo="CVPR2027-1", title="CVPR-1 1r 修正案 A1：BGR 输入重跑（3090 卡 2、3）",
              root="/data/xyf/CVPR2027-1-1r/results_1r_a1", code="/data/xyf/CVPR2027-1-1r", controller="launch_1r.sh",
              logs="logs", total=2,
              completion_markers={"G1": "markers/g1.done", "shards": "markers/ALL_SHARDS_EXITED"},
@@ -238,15 +238,29 @@ SPECS = {
              gate=dict(file="readout.json", stop_key="stopped", fields_file="g0.json",
                        fields=["protocol_top1_pp", "reference_top1_pp", "tolerance_pp"],
                        stop_detail="运行完成，但复现门 G0 不过（{protocol_top1_pp:.2f}% 对登记参考 {reference_top1_pp}%，"
-                                   "门槛 ±{tolerance_pp}）：按登记停止，未做比较"),
+                                   "门槛 ±{tolerance_pp}）：按登记停止，未做比较",
+                       pass_fields={"criterion": "criterion", "d": "differences_pp|D_tube_minus_random_r0.25|estimate",
+                                    "lo": "differences_pp|D_tube_minus_random_r0.25|ci95|0",
+                                    "hi": "differences_pp|D_tube_minus_random_r0.25|ci95|1"},
+                       pass_detail="读出完成：G0 通过（{protocol_top1_pp:.2f}% 对 {reference_top1_pp}%）；判据 {criterion}，"
+                                   "D(0.25) = {d:+.2f} pp [{lo:.2f}, {hi:.2f}]"),
              pending_detail="运行完成；读出尚未运行，不能视为通过"),
-        dict(id="cvpr2-f7-novideo", repo="CVPR2027-1", title="CVPR-2 F7：无视频基线（3 个模型，3090，排在 1r A1 之后）",
+        dict(id="cvpr2-f7-novideo", repo="CVPR2027-1", title="CVPR-2 F7：无视频基线（3 个模型，3090 卡 3）",
              root="/data/xyf/CVPR2027-1-f7/results_2c_novideo", code="/data/xyf/CVPR2027-1-f7", controller="launch_novideo_3090.sh",
              logs="logs", total=3,
              completion_markers={"qwen25": "markers/qwen25.done", "qwen2": "markers/qwen2.done", "internvl": "markers/internvl.done"},
              failure_markers=["markers/qwen25.FAIL", "markers/qwen2.FAIL", "markers/internvl.FAIL"],
              terminal="markers/ALL_UNITS_EXITED", ready="queue.log",
-             ready_detail="排队中：1r A1 两份跑完后依次在卡 2、3 上跑三个模型（每个一次）"),
+             ready_detail="qwen2、internvl 已完成；qwen25 原定的卡 2 被另一条链占用，改在卡 3 补跑（一次）"),
+        dict(id="cvpr1-r8-bilinear", repo="CVPR2027-1", title="CVPR-1 R8：双线性缩放重测 Tab. 2 视图增益（6 个主干 × 4 份，3090 卡 3、2）",
+             root="/data/xyf/CVPR2027-1-r8/results_r8", code="/data/xyf/CVPR2027-1-r8", controller="launch_r8_3090.sh",
+             logs="logs", total=24,
+             completion_markers={f"s{i}_{k}": f"markers/shard{i}of4_{k}.done" for i in range(1, 5)
+                                 for k in ("ssv2_S", "ssv2_B", "ssv2_g", "k400_VB", "k400_B", "k400_L")},
+             failure_markers=["markers/g1.FAIL"] + [f"markers/shard{i}of4_{k}.FAIL" for i in range(1, 5)
+                                                    for k in ("ssv2_S", "ssv2_B", "ssv2_g", "k400_VB", "k400_B", "k400_L")],
+             terminal="readout.done", ready="wait.log",
+             ready_detail="队列在线：F7 qwen25 结束后在空闲的卡 3、2 上先跑门 G1，再依次跑 4 份；全部完成后读出一次（描述性，未登记为判据）"),
         dict(id="cvpr2e-scale-a3", repo="CVPR2027-1", title="CVPR-2 规模点（2e 修订 A3：3 个模型，3090）",
              root="/data/xyf/CVPR2027-1-scale-a3", code="/data/xyf/CVPR2027-1-scale-a3/src", controller="chain_scale_3090.sh",
              logroot="/data/xyf/CVPR2027-1-scale-a3/logs", total=3,
@@ -430,9 +444,17 @@ for s in specs:
             g = json.loads((root/gate['file']).read_text())
             gate_read = True
             gate_stopped = g.get(gate['stop_key']) or None
+            for k, path in gate.get('pass_fields', {}).items():
+                try:
+                    v = g
+                    for part in path.split('|'):
+                        v = v[int(part)] if isinstance(v, list) else v[part]
+                    gate_fields[k] = v
+                except (KeyError, IndexError, TypeError, ValueError):
+                    pass      # a stopped read-out has no comparison; pass_detail then falls back
             if gate.get('fields_file'):
                 f = json.loads((root/gate['fields_file']).read_text())
-                gate_fields = {k: f[k] for k in gate.get('fields', []) if k in f}
+                gate_fields.update({k: f[k] for k in gate.get('fields', []) if k in f})
         except (OSError, ValueError, TypeError, AttributeError):
             gate_read = False
     out.append(dict(id=s['id'], done=len(completed), failed=len(failures), phase=phase,
@@ -480,6 +502,11 @@ def job_from_snapshot(spec, snap, host):
             elif not snap.get("gate_read"):
                 status = "waiting"
                 detail = spec.get("pending_detail", "运行完成；读出尚未运行")
+            elif spec["gate"].get("pass_detail"):
+                try:
+                    detail = spec["gate"]["pass_detail"].format(**snap.get("gate_fields", {}))
+                except (KeyError, ValueError, IndexError):
+                    detail = "全部完成；读出已运行"
     elif snap["compute"]:
         status = "running"
         detail = f"{snap['compute']} 个计算进程；阶段 {phase or '作业运行'}"

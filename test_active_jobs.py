@@ -48,6 +48,40 @@ class ActiveJobsTests(unittest.TestCase):
             self.assertEqual(job['cards'], [])
             self.assertIn('评测尚未开始', job['detail'])
 
+    def probe_job(self, job_id, files):
+        with tempfile.TemporaryDirectory() as td:
+            for name, text in files.items():
+                (Path(td)/name).parent.mkdir(parents=True, exist_ok=True)
+                (Path(td)/name).write_text(text)
+            spec = dict(next(s for s in SPECS['3090'] if s['id'] == job_id), root=td, code=td)
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                exec(REMOTE_PROBE, {'specs': [spec]})
+            snap = json.loads(buf.getvalue())[0]
+            return job_from_snapshot(spec, snap, '3090')
+
+    def test_registered_readout_pass_is_shown_with_its_criterion(self):
+        g0 = json.dumps({"protocol_top1_pp": 59.3615, "reference_top1_pp": 59.5, "tolerance_pp": 2.0})
+        ro = json.dumps({"criterion": "hold", "differences_pp": {"D_tube_minus_random_r0.25": {
+            "estimate": 9.0743, "ci95": [8.6505, 9.4846]}}})
+        files = {"markers/g1.done": "", "markers/ALL_SHARDS_EXITED": "", "g0.json": g0, "readout.json": ro}
+        job = self.probe_job('cvpr1-1r-a1-3090', files)
+        self.assertEqual(job['status'], 'done')
+        self.assertIn('判据 hold', job['detail'])
+        self.assertIn('+9.07 pp [8.65, 9.48]', job['detail'])
+        stopped = dict(files, **{"readout.json": json.dumps({"stopped": "G0 failed", "criterion": "not_evaluated"})})
+        self.assertEqual(self.probe_job('cvpr1-1r-a1-3090', stopped)['status'], 'failed')
+        pending = {k: v for k, v in files.items() if k != "readout.json"}
+        self.assertEqual(self.probe_job('cvpr1-1r-a1-3090', pending)['status'], 'waiting')
+
+    def test_r8_queue_waits_until_all_units_and_readout(self):
+        job = self.probe_job('cvpr1-r8-bilinear', {"wait.log": "waiter up\n"})
+        self.assertEqual(job['status'], 'waiting')
+        self.assertEqual(job['progress']['total'], 24)
+        self.assertIn('门 G1', job['detail'])
+        failed = self.probe_job('cvpr1-r8-bilinear', {"wait.log": "", "markers/g1.FAIL": ""})
+        self.assertEqual(failed['status'], 'failed')
+
     def snap(self, **kw):
         return dict(done=0, failed=0, phase="full", terminal=False, timeout=False,
                     controllers=1, compute=0, cards=[], observed_at=1,
