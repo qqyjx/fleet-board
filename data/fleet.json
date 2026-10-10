@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-09 18:03 LA",
+ "generated_at": "2026-10-10 06:03 LA",
  "boxes": [
   {
    "name": "A800",
@@ -26,7 +26,7 @@
     },
     {
      "idx": 2,
-     "mem_used": 76132,
+     "mem_used": 76134,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -35,7 +35,7 @@
     },
     {
      "idx": 3,
-     "mem_used": 47240,
+     "mem_used": 42964,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -45,9 +45,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 4.29,
+    "load": 5.45,
     "mem_total": 503,
-    "mem_avail": 466
+    "mem_avail": 465
    },
    "allocation_detail": "0–3 号卡已归还；实际空闲且共享锁可用时可分派。WWW 由另一 session 处理。"
   },
@@ -58,39 +58,39 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 18224,
+     "mem_used": 14630,
      "mem_total": 24576,
-     "util": 26,
+     "util": 75,
      "lock_state": "held",
      "owner": "ours"
     },
     {
      "idx": 1,
-     "mem_used": 21104,
-     "mem_total": 24576,
-     "util": 31,
-     "lock_state": "held",
-     "owner": "ours"
-    },
-    {
-     "idx": 2,
-     "mem_used": 21104,
-     "mem_total": 24576,
-     "util": 30,
-     "lock_state": "held",
-     "owner": "ours"
-    },
-    {
-     "idx": 3,
-     "mem_used": 21104,
+     "mem_used": 17100,
      "mem_total": 24576,
      "util": 0,
      "lock_state": "held",
      "owner": "ours"
     },
     {
+     "idx": 2,
+     "mem_used": 1822,
+     "mem_total": 24576,
+     "util": 100,
+     "lock_state": "held",
+     "owner": "ours"
+    },
+    {
+     "idx": 3,
+     "mem_used": 22308,
+     "mem_total": 24576,
+     "util": 99,
+     "lock_state": "held",
+     "owner": "ours"
+    },
+    {
      "idx": 4,
-     "mem_used": 21104,
+     "mem_used": 16014,
      "mem_total": 24576,
      "util": 0,
      "lock_state": "held",
@@ -98,7 +98,7 @@
     },
     {
      "idx": 5,
-     "mem_used": 21104,
+     "mem_used": 17840,
      "mem_total": 24576,
      "util": 0,
      "lock_state": "held",
@@ -106,26 +106,26 @@
     },
     {
      "idx": 6,
-     "mem_used": 21104,
+     "mem_used": 17840,
      "mem_total": 24576,
-     "util": 0,
+     "util": 14,
      "lock_state": "held",
      "owner": "ours"
     },
     {
      "idx": 7,
-     "mem_used": 14602,
+     "mem_used": 16470,
      "mem_total": 24576,
-     "util": 21,
+     "util": 100,
      "lock_state": "held",
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 2.86,
+    "load": 11.66,
     "mem_total": 125,
-    "mem_avail": 113
+    "mem_avail": 101
    }
   },
   {
@@ -135,7 +135,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 19995,
+     "mem_used": 23510,
      "mem_total": 49140,
      "util": 0,
      "lock_state": "free",
@@ -159,19 +159,19 @@
     },
     {
      "idx": 3,
-     "mem_used": 18,
+     "mem_used": 25175,
      "mem_total": 49140,
-     "util": 0,
+     "util": 18,
      "lock_state": "free",
-     "owner": "free"
+     "owner": "other"
     },
     {
      "idx": 4,
-     "mem_used": 18,
+     "mem_used": 22619,
      "mem_total": 49140,
-     "util": 0,
+     "util": 85,
      "lock_state": "free",
-     "owner": "free"
+     "owner": "other"
     },
     {
      "idx": 5,
@@ -183,9 +183,9 @@
     },
     {
      "idx": 6,
-     "mem_used": 1597,
+     "mem_used": 32085,
      "mem_total": 49140,
-     "util": 0,
+     "util": 12,
      "lock_state": "free",
      "owner": "other"
     },
@@ -193,16 +193,16 @@
      "idx": 7,
      "mem_used": 47645,
      "mem_total": 49140,
-     "util": 0,
+     "util": 85,
      "lock_state": "free",
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 152,
-    "load": 7.69,
+    "load": 11.73,
     "mem_total": 1007,
-    "mem_avail": 713
+    "mem_avail": 698
    }
   },
   {
@@ -229,7 +229,7 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.28,
+    "load": 1.18,
     "mem_total": 188,
     "mem_avail": 152
    }
@@ -266,7 +266,7 @@
     },
     {
      "idx": 3,
-     "mem_used": 19,
+     "mem_used": 20,
      "mem_total": 49140,
      "util": 0,
      "lock_state": "free",
@@ -291,7 +291,7 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.21,
+    "load": 3.37,
     "mem_total": 251,
     "mem_avail": 219
    }
@@ -362,7 +362,7 @@
    "detail": "12 组 CPU 重算均 rc=0；实测宏、五图与26页改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594186.9191031,
+    "observed_at": 1791637396.8568103,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -385,7 +385,7 @@
    "detail": "15 组 CPU 配对初始化复跑均 rc=0；99 对初始化一致；改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594186.9191031,
+    "observed_at": 1791637396.8568103,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -408,7 +408,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.0867674,
+    "observed_at": 1791637396.978445,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -431,7 +431,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.0867674,
+    "observed_at": 1791637396.978445,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -454,7 +454,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.0867674,
+    "observed_at": 1791637396.978445,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -477,7 +477,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.0867674,
+    "observed_at": 1791637396.978445,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -500,7 +500,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.0867674,
+    "observed_at": 1791637396.978445,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -523,7 +523,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.0867674,
+    "observed_at": 1791637396.978445,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -546,7 +546,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.0867674,
+    "observed_at": 1791637396.978445,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -569,7 +569,7 @@
    "detail": "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 汇总与改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.0867674,
+    "observed_at": 1791637396.978445,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -592,7 +592,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.0867674,
+    "observed_at": 1791637396.978445,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -615,7 +615,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.0867674,
+    "observed_at": 1791637396.978445,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -638,7 +638,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.0867674,
+    "observed_at": 1791637396.978445,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -650,31 +650,22 @@
    "repo": "science",
    "title": "Science 72B：剩余算术与同机 goldll",
    "box": "3090",
-   "cards": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7
-   ],
+   "cards": [],
    "kind": "gen",
-   "status": "running",
+   "status": "done",
    "progress": {
-    "done": 0,
+    "done": 2,
     "total": 2,
     "unit": "作业"
    },
-   "detail": "1 个计算进程；阶段 discrete",
+   "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.0867674,
-    "controllers": 1,
-    "compute": 1,
+    "observed_at": 1791637396.978445,
+    "controllers": 0,
+    "compute": 0,
     "log_bytes": 0,
-    "log_mtime": 1791298693.8676813
+    "log_mtime": 0
    }
   },
   {
@@ -693,7 +684,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.0867674,
+    "observed_at": 1791637396.978445,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -705,22 +696,49 @@
    "repo": "IMWUT2027-1",
    "title": "CertHAR W5-A4：LLM 标注与学生同设备成本（4 个数据集，3090）",
    "box": "3090",
-   "cards": [],
+   "cards": [
+    3
+   ],
    "kind": "gen",
-   "status": "waiting",
+   "status": "running",
    "progress": {
-    "done": 0,
+    "done": 3,
     "total": 4,
     "unit": "作业"
    },
-   "detail": "链在线；等待依赖、空卡或已登记检查点",
+   "detail": "1 个计算进程；阶段 作业运行",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.0867674,
-    "controllers": 1,
-    "compute": 0,
-    "log_bytes": 0,
-    "log_mtime": 0
+    "observed_at": 1791637396.978445,
+    "controllers": 2,
+    "compute": 1,
+    "log_bytes": 55941,
+    "log_mtime": 1791637386.900976
+   }
+  },
+  {
+   "id": "cvpr1-1r-a1-3090",
+   "repo": "CVPR2027-1",
+   "title": "CVPR-1 1r 修正案 A1：BGR 输入重跑（3090，W5-A4 之后用卡 0–3）",
+   "box": "3090",
+   "cards": [
+    2
+   ],
+   "kind": "gen",
+   "status": "running",
+   "progress": {
+    "done": 1,
+    "total": 2,
+    "unit": "作业"
+   },
+   "detail": "1 个计算进程；阶段 作业运行",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1791637396.978445,
+    "controllers": 2,
+    "compute": 1,
+    "log_bytes": 866,
+    "log_mtime": 1791637345.2490487
    }
   },
   {
@@ -728,22 +746,29 @@
    "repo": "CVPR2027-1",
    "title": "CVPR-2 规模点（2e 修订 A3：3 个模型，3090）",
    "box": "3090",
-   "cards": [],
+   "cards": [
+    0,
+    1,
+    4,
+    5,
+    6,
+    7
+   ],
    "kind": "gen",
-   "status": "waiting",
+   "status": "running",
    "progress": {
     "done": 0,
     "total": 3,
     "unit": "作业"
    },
-   "detail": "三个模型权重已下载并核验；等 Science 72B 与 CertHAR W5-A4 让卡后部署",
+   "detail": "2 个计算进程；阶段 作业运行",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.0867674,
-    "controllers": 0,
-    "compute": 0,
-    "log_bytes": 0,
-    "log_mtime": 0
+    "observed_at": 1791637396.978445,
+    "controllers": 1,
+    "compute": 2,
+    "log_bytes": 30463,
+    "log_mtime": 1791637394.788963
    }
   },
   {
@@ -762,7 +787,53 @@
    "detail": "判官权重 47/47 核验通过；等 fuxin 4 张卡各空出 ≥42000 MiB 后手动启动",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594187.9225593,
+    "observed_at": 1791637397.4015415,
+    "controllers": 0,
+    "compute": 0,
+    "log_bytes": 0,
+    "log_mtime": 0
+   }
+  },
+  {
+   "id": "cvpr1-1r",
+   "repo": "CVPR2027-1",
+   "title": "CVPR-1 1r：TimeSformer-B SSv2 掩码对比（登记 1r，fuxin 卡 3、4）",
+   "box": "fuxin",
+   "cards": [],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 3,
+    "total": 3,
+    "unit": "作业"
+   },
+   "detail": "运行完成，但复现门 G0 不过（56.69% 对登记参考 59.5%，门槛 ±2.0）：按登记停止，未做比较；原因已查明（checkpoint 按 BGR 训练），见修正案 A1",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1791637397.4015415,
+    "controllers": 0,
+    "compute": 0,
+    "log_bytes": 0,
+    "log_mtime": 0
+   }
+  },
+  {
+   "id": "cvpr1-1r-a1",
+   "repo": "CVPR2027-1",
+   "title": "CVPR-1 1r 修正案 A1：BGR 输入重跑（fuxin 卡 3、4）",
+   "box": "fuxin",
+   "cards": [],
+   "kind": "gen",
+   "status": "failed",
+   "progress": {
+    "done": 1,
+    "total": 3,
+    "unit": "作业"
+   },
+   "detail": "失败标记 2；阶段 未写入；需核对链日志",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1791637397.4015415,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -785,7 +856,7 @@
    "detail": "缓存READY回执与文件元数据一致；GPU验证是下一独立步骤",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594188.8817563,
+    "observed_at": 1791637397.5531454,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 272191,
@@ -808,7 +879,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594188.8817563,
+    "observed_at": 1791637397.5531454,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -831,7 +902,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594188.8817563,
+    "observed_at": 1791637397.5531454,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -854,7 +925,7 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594189.198328,
+    "observed_at": 1791637397.6344733,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -877,7 +948,7 @@
    "detail": "失败标记 1；阶段 7b；需核对链日志",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594189.198328,
+    "observed_at": 1791637397.6344733,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -900,7 +971,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791594189.198328,
+    "observed_at": 1791637397.6344733,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -980,11 +1051,11 @@
    "kind": "gen",
    "status": "waiting",
    "progress": {
-    "done": 14,
+    "done": 15,
     "total": 40,
     "unit": "part"
    },
-   "detail": "dump 14/40 part；完成分片 1/4；读出未跑；最新日志：RUN3S2V_DONE 500 videos (bad 0) 789s",
+   "detail": "dump 15/40 part；完成分片 1/4；读出未跑；最新日志：[03:32:59] wrote part_0017.npz (500)",
    "alerts": []
   },
   {
@@ -1136,8 +1207,10 @@
   }
  ],
  "alerts": [
+  "CVPR-1 1r：TimeSformer-B SSv2 掩码对比（登记 1r，fuxin 卡 3、4） 失败：运行完成，但复现门 G0 不过（56.69% 对登记参考 59.5%，门槛 ±2.0）：按登记停止，未做比较；原因已查明（checkpoint 按 BGR 训练），见修正案 A1",
+  "CVPR-1 1r 修正案 A1：BGR 输入重跑（fuxin 卡 3、4） 失败：失败标记 2；阶段 未写入；需核对链日志",
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105",
   "CaMCo 发布代码验证：7B / 13B 原链 失败：失败标记 1；阶段 7b；需核对链日志"
  ],
- "collect_s": 17.1
+ "collect_s": 5.8
 }
