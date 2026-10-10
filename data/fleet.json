@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08 02:07 LA",
+ "generated_at": "2026-10-09 18:03 LA",
  "boxes": [
   {
    "name": "A800",
@@ -19,7 +19,7 @@
      "idx": 1,
      "mem_used": 76132,
      "mem_total": 81920,
-     "util": 96,
+     "util": 100,
      "lock_state": "free",
      "owner": "other",
      "borrowed": false
@@ -35,7 +35,7 @@
     },
     {
      "idx": 3,
-     "mem_used": 42964,
+     "mem_used": 47240,
      "mem_total": 81920,
      "util": 100,
      "lock_state": "free",
@@ -45,9 +45,9 @@
    ],
    "sys": {
     "cores": 80,
-    "load": 4.58,
+    "load": 4.29,
     "mem_total": 503,
-    "mem_avail": 461
+    "mem_avail": 466
    },
    "allocation_detail": "0–3 号卡已归还；实际空闲且共享锁可用时可分派。WWW 由另一 session 处理。"
   },
@@ -60,7 +60,7 @@
      "idx": 0,
      "mem_used": 18224,
      "mem_total": 24576,
-     "util": 0,
+     "util": 26,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -68,7 +68,7 @@
      "idx": 1,
      "mem_used": 21104,
      "mem_total": 24576,
-     "util": 22,
+     "util": 31,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -76,7 +76,7 @@
      "idx": 2,
      "mem_used": 21104,
      "mem_total": 24576,
-     "util": 22,
+     "util": 30,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -84,7 +84,7 @@
      "idx": 3,
      "mem_used": 21104,
      "mem_total": 24576,
-     "util": 22,
+     "util": 0,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -92,7 +92,7 @@
      "idx": 4,
      "mem_used": 21104,
      "mem_total": 24576,
-     "util": 22,
+     "util": 0,
      "lock_state": "held",
      "owner": "ours"
     },
@@ -116,16 +116,16 @@
      "idx": 7,
      "mem_used": 14602,
      "mem_total": 24576,
-     "util": 0,
+     "util": 21,
      "lock_state": "held",
      "owner": "ours"
     }
    ],
    "sys": {
     "cores": 80,
-    "load": 1.63,
+    "load": 2.86,
     "mem_total": 125,
-    "mem_avail": 112
+    "mem_avail": 113
    }
   },
   {
@@ -135,7 +135,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 16561,
+     "mem_used": 19995,
      "mem_total": 49140,
      "util": 0,
      "lock_state": "free",
@@ -183,24 +183,24 @@
     },
     {
      "idx": 6,
-     "mem_used": 18,
+     "mem_used": 1597,
      "mem_total": 49140,
      "util": 0,
      "lock_state": "free",
-     "owner": "free"
+     "owner": "other"
     },
     {
      "idx": 7,
-     "mem_used": 47643,
+     "mem_used": 47645,
      "mem_total": 49140,
-     "util": 88,
+     "util": 0,
      "lock_state": "free",
      "owner": "other"
     }
    ],
    "sys": {
     "cores": 152,
-    "load": 11.7,
+    "load": 7.69,
     "mem_total": 1007,
     "mem_avail": 713
    }
@@ -212,7 +212,7 @@
    "cards": [
     {
      "idx": 0,
-     "mem_used": 40281,
+     "mem_used": 40283,
      "mem_total": 49140,
      "util": 0,
      "lock_state": "free",
@@ -229,9 +229,9 @@
    ],
    "sys": {
     "cores": 112,
-    "load": 1.23,
+    "load": 1.28,
     "mem_total": 188,
-    "mem_avail": 153
+    "mem_avail": 152
    }
   },
   {
@@ -257,7 +257,7 @@
     },
     {
      "idx": 2,
-     "mem_used": 44252,
+     "mem_used": 44253,
      "mem_total": 49140,
      "util": -1,
      "error": "[N/A]",
@@ -266,7 +266,7 @@
     },
     {
      "idx": 3,
-     "mem_used": 18,
+     "mem_used": 19,
      "mem_total": 49140,
      "util": 0,
      "lock_state": "free",
@@ -291,9 +291,9 @@
    ],
    "sys": {
     "cores": 48,
-    "load": 0.19,
+    "load": 0.21,
     "mem_total": 251,
-    "mem_avail": 223
+    "mem_avail": 219
    }
   }
  ],
@@ -362,7 +362,7 @@
    "detail": "12 组 CPU 重算均 rc=0；实测宏、五图与26页改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450436.5368903,
+    "observed_at": 1791594186.9191031,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -385,30 +385,7 @@
    "detail": "15 组 CPU 配对初始化复跑均 rc=0；99 对初始化一致；改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450436.5368903,
-    "controllers": 0,
-    "compute": 0,
-    "log_bytes": 0,
-    "log_mtime": 0
-   }
-  },
-  {
-   "id": "cvpr2e",
-   "repo": "CVPR2027-1",
-   "title": "CVPR-2e：复制帧代价的规模 / 代 / 家族扫描（CLEVRER，8 个模型，A800）",
-   "box": "A800",
-   "cards": [],
-   "kind": "gen",
-   "status": "failed",
-   "progress": {
-    "done": 13,
-    "total": 224,
-    "unit": "作业"
-   },
-   "detail": "失败标记 1；阶段 stop；需核对链日志",
-   "alerts": [],
-   "runtime": {
-    "observed_at": 1791450436.5368903,
+    "observed_at": 1791594186.9191031,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -431,7 +408,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450436.710217,
+    "observed_at": 1791594187.0867674,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -454,7 +431,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450436.710217,
+    "observed_at": 1791594187.0867674,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -477,7 +454,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450436.710217,
+    "observed_at": 1791594187.0867674,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -500,7 +477,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450436.710217,
+    "observed_at": 1791594187.0867674,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -523,7 +500,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450436.710217,
+    "observed_at": 1791594187.0867674,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -546,7 +523,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450436.710217,
+    "observed_at": 1791594187.0867674,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -569,7 +546,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450436.710217,
+    "observed_at": 1791594187.0867674,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -592,7 +569,7 @@
    "detail": "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 汇总与改写稿已同步（50d51f0）",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450436.710217,
+    "observed_at": 1791594187.0867674,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -615,7 +592,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450436.710217,
+    "observed_at": 1791594187.0867674,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -638,7 +615,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450436.710217,
+    "observed_at": 1791594187.0867674,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -661,7 +638,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450436.710217,
+    "observed_at": 1791594187.0867674,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -693,11 +670,103 @@
    "detail": "1 个计算进程；阶段 discrete",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450436.710217,
+    "observed_at": 1791594187.0867674,
     "controllers": 1,
     "compute": 1,
     "log_bytes": 0,
     "log_mtime": 1791298693.8676813
+   }
+  },
+  {
+   "id": "cvpr2e",
+   "repo": "CVPR2027-1",
+   "title": "CVPR-2e：复制帧代价的规模 / 代 / 家族扫描（CLEVRER，8 个模型，3090）",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "done",
+   "progress": {
+    "done": 224,
+    "total": 224,
+    "unit": "作业"
+   },
+   "detail": "全部完成",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1791594187.0867674,
+    "controllers": 0,
+    "compute": 0,
+    "log_bytes": 0,
+    "log_mtime": 0
+   }
+  },
+  {
+   "id": "certhar-w5-a4",
+   "repo": "IMWUT2027-1",
+   "title": "CertHAR W5-A4：LLM 标注与学生同设备成本（4 个数据集，3090）",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "waiting",
+   "progress": {
+    "done": 0,
+    "total": 4,
+    "unit": "作业"
+   },
+   "detail": "链在线；等待依赖、空卡或已登记检查点",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1791594187.0867674,
+    "controllers": 1,
+    "compute": 0,
+    "log_bytes": 0,
+    "log_mtime": 0
+   }
+  },
+  {
+   "id": "cvpr2e-scale-a3",
+   "repo": "CVPR2027-1",
+   "title": "CVPR-2 规模点（2e 修订 A3：3 个模型，3090）",
+   "box": "3090",
+   "cards": [],
+   "kind": "gen",
+   "status": "waiting",
+   "progress": {
+    "done": 0,
+    "total": 3,
+    "unit": "作业"
+   },
+   "detail": "三个模型权重已下载并核验；等 Science 72B 与 CertHAR W5-A4 让卡后部署",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1791594187.0867674,
+    "controllers": 0,
+    "compute": 0,
+    "log_bytes": 0,
+    "log_mtime": 0
+   }
+  },
+  {
+   "id": "dcas-j6",
+   "repo": "ACL2027-1",
+   "title": "DCAS J6：72B 本地判官（修订 6A，fuxin 4 卡）",
+   "box": "fuxin",
+   "cards": [],
+   "kind": "gen",
+   "status": "waiting",
+   "progress": {
+    "done": 0,
+    "total": 1,
+    "unit": "作业"
+   },
+   "detail": "判官权重 47/47 核验通过；等 fuxin 4 张卡各空出 ≥42000 MiB 后手动启动",
+   "alerts": [],
+   "runtime": {
+    "observed_at": 1791594187.9225593,
+    "controllers": 0,
+    "compute": 0,
+    "log_bytes": 0,
+    "log_mtime": 0
    }
   },
   {
@@ -716,7 +785,7 @@
    "detail": "缓存READY回执与文件元数据一致；GPU验证是下一独立步骤",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450437.5705643,
+    "observed_at": 1791594188.8817563,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 272191,
@@ -739,7 +808,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450437.5705643,
+    "observed_at": 1791594188.8817563,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -762,7 +831,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450437.5705643,
+    "observed_at": 1791594188.8817563,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -785,7 +854,7 @@
    "detail": "原训练链中断；8 个训练完成，最后种子迁移至 new105",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450437.736309,
+    "observed_at": 1791594189.198328,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -808,7 +877,7 @@
    "detail": "失败标记 1；阶段 7b；需核对链日志",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450437.736309,
+    "observed_at": 1791594189.198328,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -831,7 +900,7 @@
    "detail": "全部完成",
    "alerts": [],
    "runtime": {
-    "observed_at": 1791450437.736309,
+    "observed_at": 1791594189.198328,
     "controllers": 0,
     "compute": 0,
     "log_bytes": 0,
@@ -1067,9 +1136,8 @@
   }
  ],
  "alerts": [
-  "CVPR-2e：复制帧代价的规模 / 代 / 家族扫描（CLEVRER，8 个模型，A800） 失败：失败标记 1；阶段 stop；需核对链日志",
   "CaMCo E12：原 13B 训练链 失败：原训练链中断；8 个训练完成，最后种子迁移至 new105",
   "CaMCo 发布代码验证：7B / 13B 原链 失败：失败标记 1；阶段 7b；需核对链日志"
  ],
- "collect_s": 11.2
+ "collect_s": 17.1
 }
