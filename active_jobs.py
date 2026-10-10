@@ -242,6 +242,12 @@ SPECS = {
              logs="logs", total=1, completion_markers={"G-J6": "MANIFEST_fuxin.sha256"}, terminal="MANIFEST_fuxin.sha256",
              failure_markers=["state/FAILED"], ready="HUB_FILES.json",
              ready_detail="判官权重 47/47 核验通过；等 fuxin 4 张卡各空出 ≥42000 MiB 后手动启动"),
+        dict(id="cvpr1-1r", repo="CVPR2027-1", title="CVPR-1 1r：TimeSformer-B SSv2 掩码对比（登记 1r，fuxin 卡 3、4）",
+             root="/data/xyf/CVPR2027-1-1r/results_1r", code="/data/xyf/CVPR2027-1-1r", controller="launch_1r.sh",
+             logs="logs", total=3,
+             completion_markers={"G1": "markers/g1.done", "shard 1/2": "markers/shard_1.done", "shard 2/2": "markers/shard_2.done"},
+             failure_markers=["markers/g1.FAIL", "markers/shard_1.FAIL", "markers/shard_2.FAIL"],
+             terminal="markers/ALL_SHARDS_EXITED"),
     ],
     "new105": [
         dict(id="camco-cache-range-r2", repo="AAAI2027-4", title="CaMCo 7B：R2固定缓存分段交付",
