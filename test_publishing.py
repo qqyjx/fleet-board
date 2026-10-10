@@ -85,6 +85,14 @@ class PublishingTests(unittest.TestCase):
         self.assertEqual(pub.publication_decision(root,base,payload,
             now=dt.datetime.fromtimestamp(last+86400,dt.timezone.utc))['status'],'ELIGIBLE')
 
+    def test_force_skips_only_the_interval(self):
+        root,base=self.repository();payload,_=pub.validate_snapshot(self.cache)
+        last=int(pub.git(root,'log','-1','--format=%ct',base,'--','data/fleet.json'))
+        d=pub.publication_decision(root,base,payload,now=dt.datetime.fromtimestamp(last+60,dt.timezone.utc),force=True)
+        self.assertEqual(d,{'status':'ELIGIBLE','forced':True})
+        d=pub.publication_decision(root,base,payload,now=dt.datetime.fromtimestamp(last+86400,dt.timezone.utc),force=True)
+        self.assertEqual(d,{'status':'ELIGIBLE','forced':False})
+
     def test_unchanged_state_skips_git_and_pr_creation(self):
         root,base=self.repository();self.write_cache(fixture('old'))
         fleet=fixture('new');fleet['jobs'][0]['progress']['done']=0

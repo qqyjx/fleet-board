@@ -213,8 +213,11 @@ def material_state(fleet):
             'jobs': sorted(jobs, key=lambda job: job['id'])}
 
 
-def publication_decision(root, base, payloads, *, now=None):
-    """Use remote-main history so another publishing host shares the same cap."""
+def publication_decision(root, base, payloads, *, now=None, force=False):
+    """Use remote-main history so another publishing host shares the same cap.
+
+    force=True (FLEET_FORCE_PUBLISH=1, only when the user asks for an extra publication) skips the 24-hour interval and
+    nothing else: an unchanged material state still means no PR, and the publication record says it was forced."""
     before = strict_json(command(['git', '-C', str(root), 'show', base + ':data/fleet.json']))
     previous_curves = strict_json(command(['git', '-C', str(root), 'show', base + ':data/curves.json']))
     if (material_state(before) == material_state(strict_json(payloads['fleet.json']))
@@ -223,9 +226,9 @@ def publication_decision(root, base, payloads, *, now=None):
     last = int(git(root, 'log', '-1', '--format=%ct', base, '--', 'data/fleet.json', 'data/curves.json'))
     current = (now or dt.datetime.now(dt.timezone.utc)).timestamp()
     eligible = last + MIN_PUBLICATION_SECONDS
-    if current < eligible:
+    if current < eligible and not force:
         return {'status': 'BATCH_NOT_DUE', 'next_eligible_utc': dt.datetime.fromtimestamp(eligible, dt.timezone.utc).isoformat()}
-    return {'status': 'ELIGIBLE'}
+    return {'status': 'ELIGIBLE', 'forced': bool(force and current < eligible)}
 
 
 def finish_publication(root, cache, operation, merge_sha):
@@ -255,7 +258,7 @@ def publish_snapshot(root, cache, repo, base):
     if git(root, 'rev-parse', 'origin/main') != base:
         raise PublicationError('Remote main advanced; keep cache and synchronize on next collection')
     payloads, validation = validate_snapshot(cache)
-    decision = publication_decision(root, base, payloads)
+    decision = publication_decision(root, base, payloads, force=os.environ.get('FLEET_FORCE_PUBLISH') == '1')
     if decision['status'] != 'ELIGIBLE':
         return decision
     commit, changed = build_commit(root, cache, base, payloads)
@@ -263,13 +266,15 @@ def publish_snapshot(root, cache, repo, base):
         return {'status': 'NO_DATA_CHANGE'}
     branch = 'codex/fleet-data-' + dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%SZ') + '-' + uuid.uuid4().hex[:6]
     operation = {'status': 'PREPARED', 'repo': repo, 'branch': branch, 'base': base, 'head': commit,
-                 'changed_files': changed, 'validation': validation, 'recorded_utc': dt.datetime.now(dt.timezone.utc).isoformat()}
+                 'changed_files': changed, 'validation': validation, 'recorded_utc': dt.datetime.now(dt.timezone.utc).isoformat(),
+                 'forced_inside_24h': decision.get('forced', False)}
     write_json(pending, operation)
     git(root, 'push', '-q', 'origin', commit + ':refs/heads/' + branch)
     operation['status'] = 'PUSHED'; write_json(pending, operation)
     body = ('Publish the current read-only fleet observations. Only generated fleet.json, curves.json and history.jsonl may change. '
             'Local snapshot schema/range/id checks and append-only history checks passed; no collector code or scientific results changed. '
-            'Base SHA: ' + base + '. Snapshot: ' + validation['generated_at'] + '.')
+            'Base SHA: ' + base + '. Snapshot: ' + validation['generated_at'] + '.'
+            + (' Published inside the 24-hour interval at the user\'s request (FLEET_FORCE_PUBLISH=1).' if decision.get('forced') else ''))
     pr = gh(repo, 'pulls', {'head': branch, 'base': 'main', 'title': 'Update fleet snapshot ' + validation['generated_at'], 'body': body})
     operation.update(status='PR_CREATED', pr_number=pr['number'], url=pr['html_url']); write_json(pending, operation)
     # Recheck the actual PR payload after creation, before asking GitHub to merge.
