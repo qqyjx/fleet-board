@@ -251,7 +251,7 @@ SPECS = {
              gate=dict(file="readout.json", stop_key="stopped", fields_file="g0.json",
                        fields=["protocol_top1_pp", "reference_top1_pp", "tolerance_pp"],
                        stop_detail="运行完成，但复现门 G0 不过（{protocol_top1_pp:.2f}% 对登记参考 {reference_top1_pp}%，"
-                                   "门槛 ±{tolerance_pp}）：按登记停止，未做比较；R1 未解决，先查复现差距"),
+                                   "门槛 ±{tolerance_pp}）：按登记停止，未做比较；原因已查明（checkpoint 按 BGR 训练），见修正案 A1"),
              pending_detail="运行完成；读出尚未运行，不能视为通过"),
         dict(id="cvpr1-1r-a1", repo="CVPR2027-1", title="CVPR-1 1r 修正案 A1：BGR 输入重跑（fuxin 卡 3、4）",
              root="/data/xyf/CVPR2027-1-1r/results_1r_a1", code="/data/xyf/CVPR2027-1-1r", controller="launch_1r.sh",
