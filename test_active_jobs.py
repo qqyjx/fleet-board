@@ -113,6 +113,36 @@ class ActiveJobsTests(unittest.TestCase):
             self.assertEqual(snap["done"], 1)
             self.assertFalse(snap["terminal"])
 
+    def _gate_job(self, readout, g0):
+        spec = next(x for x in SPECS["fuxin"] if x["id"] == "cvpr1-1r")
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            (root/"markers").mkdir(); (root/"logs").mkdir()
+            for m in ("g1.done", "shard_1.done", "shard_2.done", "ALL_SHARDS_EXITED"):
+                (root/"markers"/m).touch()
+            if readout is not None:
+                (root/"readout.json").write_text(json.dumps(readout))
+            if g0 is not None:
+                (root/"g0.json").write_text(json.dumps(g0))
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                exec(REMOTE_PROBE, {"specs": [dict(spec, root=td, code=td)]})
+            return job_from_snapshot(spec, json.loads(buf.getvalue())[0], "fuxin")
+
+    def test_finished_run_with_stopped_gate_is_not_done(self):
+        g0 = {"protocol_top1_pp": 56.6856, "reference_top1_pp": 59.5, "tolerance_pp": 2.0, "pass": False}
+        j = self._gate_job({"stopped": "G0 failed; no comparison was computed", "criterion": "not_evaluated"}, g0)
+        self.assertEqual(j["status"], "failed")
+        self.assertIn("56.69%", j["detail"]); self.assertIn("59.5%", j["detail"]); self.assertIn("未做比较", j["detail"])
+
+    def test_finished_run_without_readout_is_waiting(self):
+        j = self._gate_job(None, None)
+        self.assertEqual(j["status"], "waiting"); self.assertIn("不能视为通过", j["detail"])
+
+    def test_finished_run_with_passing_gate_is_done(self):
+        j = self._gate_job({"criterion": "hold"}, {"pass": True})
+        self.assertEqual(j["status"], "done")
+
     def test_dataloader_forks_are_not_counted_as_runs(self):
         candidates = [(10, 1, '/log/a', [0]), (11, 10, '/log/a', [0]),
                       (12, 11, '/log/a', [0]), (20, 1, '/log/b', [6])]

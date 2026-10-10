@@ -247,7 +247,12 @@ SPECS = {
              logs="logs", total=3,
              completion_markers={"G1": "markers/g1.done", "shard 1/2": "markers/shard_1.done", "shard 2/2": "markers/shard_2.done"},
              failure_markers=["markers/g1.FAIL", "markers/shard_1.FAIL", "markers/shard_2.FAIL"],
-             terminal="markers/ALL_SHARDS_EXITED"),
+             terminal="markers/ALL_SHARDS_EXITED",
+             gate=dict(file="readout.json", stop_key="stopped", fields_file="g0.json",
+                       fields=["protocol_top1_pp", "reference_top1_pp", "tolerance_pp"],
+                       stop_detail="运行完成，但复现门 G0 不过（{protocol_top1_pp:.2f}% 对登记参考 {reference_top1_pp}%，"
+                                   "门槛 ±{tolerance_pp}）：按登记停止，未做比较；R1 未解决，先查复现差距"),
+             pending_detail="运行完成；读出尚未运行，不能视为通过"),
     ],
     "new105": [
         dict(id="camco-cache-range-r2", repo="AAAI2027-4", title="CaMCo 7B：R2固定缓存分段交付",
@@ -389,11 +394,23 @@ for s in specs:
     interrupted = any(name.startswith('INTERRUPTED_') for name in failures)
     terminal = device_terminal if device_terminal is not None else ((root/s['terminal']).exists() if s.get('terminal') else phase == 'done')
     timed_out = any(logroot.glob('TIMEOUT*'))
+    gate = s.get('gate'); gate_read = gate_stopped = None; gate_fields = {}
+    if gate:
+        try:
+            g = json.loads((root/gate['file']).read_text())
+            gate_read = True
+            gate_stopped = g.get(gate['stop_key']) or None
+            if gate.get('fields_file'):
+                f = json.loads((root/gate['fields_file']).read_text())
+                gate_fields = {k: f[k] for k in gate.get('fields', []) if k in f}
+        except (OSError, ValueError, TypeError, AttributeError):
+            gate_read = False
     out.append(dict(id=s['id'], done=len(completed), failed=len(failures), phase=phase,
                     terminal=terminal, timeout=timed_out, controllers=live, compute=compute, interrupted=interrupted, holds=holds,
                     cards=sorted(cards), log_bytes=log_bytes, log_mtime=log_mtime,
                     ready=(root/s['ready']).is_file() if s.get('ready') else False,
-                    observed_at=now, cost_recorded=(root/s['cost_gate']).exists() if s.get('cost_gate') else None))
+                    observed_at=now, cost_recorded=(root/s['cost_gate']).exists() if s.get('cost_gate') else None,
+                    gate_read=gate_read, gate_stopped=gate_stopped, gate_fields=gate_fields))
 print(json.dumps(out))
 '''
 
@@ -420,6 +437,17 @@ def job_from_snapshot(spec, snap, host):
             detail = "3 个固定种子均 rc=0；CUDA 运行记录齐全；W5 汇总与改写稿已同步（50d51f0）"
         elif spec.get("kind") == "cpu" and status == "done":
             detail = spec.get("complete_detail", "12 组 CPU 重算均 rc=0；结果已落地，WSL 论文宏仍待完成")
+        if spec.get("gate") and status == "done":
+            # A finished run is not a passed experiment: the registered read-out decides.
+            if snap.get("gate_stopped"):
+                status = "failed"
+                try:
+                    detail = spec["gate"]["stop_detail"].format(**snap.get("gate_fields", {}))
+                except (KeyError, ValueError, IndexError):
+                    detail = "运行完成，但登记的门未通过：" + str(snap["gate_stopped"])
+            elif not snap.get("gate_read"):
+                status = "waiting"
+                detail = spec.get("pending_detail", "运行完成；读出尚未运行")
     elif snap["compute"]:
         status = "running"
         detail = f"{snap['compute']} 个计算进程；阶段 {phase or '作业运行'}"
