@@ -450,7 +450,7 @@ def job_from_snapshot(spec, snap, host):
         status = "failed"
         detail = f"失败标记 {snap['failed']}；阶段 {phase or '未写入'}；需核对链日志"
         if spec['id'] == 'camco-e12-train' and snap.get('interrupted'):
-            detail = "原链在 4090-jm 中断（8 个训练完成）；第 9 个按修正案在 new105 重跑完成，见 camco-e12-recovery"
+            detail = "原训练链中断；8 个训练完成，最后种子迁移至 new105 并按修正案重跑完成，见 camco-e12-recovery"
         elif spec['id'] == 'camco-artifact-smoke':
             detail = "原 7B 权重缓存缺失，该链未跑完；13B 见独立验证 camco-artifact-smoke-13b"
     elif snap["terminal"]:
