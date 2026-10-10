@@ -240,6 +240,13 @@ SPECS = {
                        stop_detail="运行完成，但复现门 G0 不过（{protocol_top1_pp:.2f}% 对登记参考 {reference_top1_pp}%，"
                                    "门槛 ±{tolerance_pp}）：按登记停止，未做比较"),
              pending_detail="运行完成；读出尚未运行，不能视为通过"),
+        dict(id="cvpr2-f7-novideo", repo="CVPR2027-1", title="CVPR-2 F7：无视频基线（3 个模型，3090，排在 1r A1 之后）",
+             root="/data/xyf/CVPR2027-1-f7/results_2c_novideo", code="/data/xyf/CVPR2027-1-f7", controller="launch_novideo_3090.sh",
+             logs="logs", total=3,
+             completion_markers={"qwen25": "markers/qwen25.done", "qwen2": "markers/qwen2.done", "internvl": "markers/internvl.done"},
+             failure_markers=["markers/qwen25.FAIL", "markers/qwen2.FAIL", "markers/internvl.FAIL"],
+             terminal="markers/ALL_UNITS_EXITED", ready="queue.log",
+             ready_detail="排队中：1r A1 两份跑完后依次在卡 2、3 上跑三个模型（每个一次）"),
         dict(id="cvpr2e-scale-a3", repo="CVPR2027-1", title="CVPR-2 规模点（2e 修订 A3：3 个模型，3090）",
              root="/data/xyf/CVPR2027-1-scale-a3", code="/data/xyf/CVPR2027-1-scale-a3/src", controller="chain_scale_3090.sh",
              logroot="/data/xyf/CVPR2027-1-scale-a3/logs", total=3,
